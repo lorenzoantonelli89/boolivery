@@ -5,7 +5,8 @@
 use App\Restaurant;
 use Faker\Generator as Faker;
 
-$factory->define(Restaurant::class, function (Faker $faker) {
+$autoIncrement = autoIncrement();
+$factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement) {
     $restaurants = [
             [
                 'user_id' => '1',
@@ -128,9 +129,11 @@ $factory->define(Restaurant::class, function (Faker $faker) {
                 'vote' => '5'
             ],
         ];
-    $index= $faker -> unique() -> numberBetween(0, 9);
+    $autoIncrement->next();
+    $index= $autoIncrement->current();
     $restaurant = $restaurants[$index];
     return [
+        // 'id'=>$autoIncrement->current(),
         'user_id' => $restaurant['user_id'],
         'restaurant_name' => $restaurant['restaurant_name'],
         'address_restaurant' => $restaurant['address_restaurant'] ,
@@ -143,3 +146,9 @@ $factory->define(Restaurant::class, function (Faker $faker) {
         'vote' => $restaurant['vote'],
     ];
 });
+function autoIncrement()
+{
+    for ($i = -1; $i < 10; $i++) {
+        yield $i;
+    }
+}
