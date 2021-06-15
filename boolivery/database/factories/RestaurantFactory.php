@@ -69,10 +69,10 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '3',
-                'restaurant_name' => 'Il Bistroit',//mediterraneo, pesce
+                'restaurant_name' => 'Il Bistrot',//mediterraneo, pesce
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521421',
-                'email' => 'bistroit@mail.it',
+                'email' => 'bistrot@mail.it',
                 'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
                 'image_cover' => '',
                 'image_profile' => '',
@@ -128,6 +128,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
                 'vote' => '5'
             ],
         ];
+    
     $index= $faker -> unique() -> numberBetween(0, 9);
     $restaurant = $restaurants[$index];
     return [
