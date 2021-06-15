@@ -21,6 +21,7 @@ class CreatePlatesTable extends Migration
             $table->string('image');
             $table->decimal('price', 8, 2);
             $table->boolean('visible') -> default(true);
+            $table->boolean('popular') -> default(false);
             $table->timestamps();
         });
     }
