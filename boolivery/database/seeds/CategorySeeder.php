@@ -11,6 +11,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        // array di tutte le categorie
         $categories = [
 
             [
@@ -45,7 +46,7 @@ class CategorySeeder extends Seeder
             ],
         ];
 
-
+        // ciclo su array categorie e inserimento in tabella di ogni elemento
         foreach($categories as $key => $category){
 
             DB::table('categories') -> insert([
