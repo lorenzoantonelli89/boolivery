@@ -14,10 +14,10 @@ class CategorySeeder extends Seeder
         $categories = [
 
             [
-                'category' => 'Italiano'
+                'category' => 'Mediterraneo'
             ],
             [
-                'category' => 'Internazionale' 
+                'category' => 'Etnico' 
             ],
             [
                 'category' => 'Cinese'
@@ -29,7 +29,7 @@ class CategorySeeder extends Seeder
                 'category' => 'Vegano'
             ],
             [
-                'category' => 'Indiano'
+                'category' => 'FastFood'
             ],
             [
                 'category' => 'Messicano'

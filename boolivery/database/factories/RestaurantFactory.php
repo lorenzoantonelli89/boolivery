@@ -9,7 +9,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
     $restaurants = [
             [
                 'user_id' => '1',
-                'restaurant_name' => 'Five Guys',
+                'restaurant_name' => 'Five Guys', //fastfood
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521321',
                 'email' => 'fiveguys@mail.it',
@@ -21,7 +21,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '1',
-                'restaurant_name' => 'Poke House',
+                'restaurant_name' => 'Poke House', //etnico, giapponese
                 'address_restaurant' => 'Via Buenos Aires 11',
                 'phone' => '025579873',
                 'email' => 'pokehouse@mail.it',
@@ -33,7 +33,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '2',
-                'restaurant_name' => 'Homu',
+                'restaurant_name' => 'Antica Cina', //cinese, etnico
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '0235215678',
                 'email' => 'homu@mail.it',
@@ -45,7 +45,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '2',
-                'restaurant_name' => 'Da Giannino',
+                'restaurant_name' => 'Da Giannino',//mediterranea, carne
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521999',
                 'email' => 'dagiannino@mail.it',
@@ -57,7 +57,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '3',
-                'restaurant_name' => 'El Centenario',
+                'restaurant_name' => 'El Centenario',//messicano, carne, pesce
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521879',
                 'email' => 'elcentenario@mail.it',
@@ -69,7 +69,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '3',
-                'restaurant_name' => 'Il Bistroit',
+                'restaurant_name' => 'Il Bistroit',//mediterraneo, pesce
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521421',
                 'email' => 'bistroit@mail.it',
@@ -81,7 +81,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '4',
-                'restaurant_name' => 'Sicily',
+                'restaurant_name' => 'Bella Napoli',//pizza, mediterraneo
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521843',
                 'email' => 'sicily@mail.it',
@@ -93,7 +93,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '4',
-                'restaurant_name' => 'La Taverna',
+                'restaurant_name' => 'Piaceri di Patata',//vegano
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521199',
                 'email' => 'lataverna@mail.it',
@@ -105,7 +105,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '5',
-                'restaurant_name' => 'Cantine Risso',
+                'restaurant_name' => 'Pizza Hut',//pizza, fastfood
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521766',
                 'email' => 'cantinerisso@mail.it',
@@ -117,7 +117,7 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '5',
-                'restaurant_name' => 'Casa Goffi',
+                'restaurant_name' => 'Homu',//etnico, cinese, giapponese
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521498',
                 'email' => 'casagoffi@mail.it',
