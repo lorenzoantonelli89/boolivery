@@ -5,7 +5,8 @@
 use App\Restaurant;
 use Faker\Generator as Faker;
 
-$factory->define(Restaurant::class, function (Faker $faker) {
+$autoIncrement = autoIncrement();
+$factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement) {
     $restaurants = [
             [
                 'user_id' => '1',
@@ -69,10 +70,10 @@ $factory->define(Restaurant::class, function (Faker $faker) {
             ],
             [
                 'user_id' => '3',
-                'restaurant_name' => 'Il Bistroit',//mediterraneo, pesce
+                'restaurant_name' => 'Il Bistrot',//mediterraneo, pesce
                 'address_restaurant' => 'Piazza Duomo 25',
                 'phone' => '023521421',
-                'email' => 'bistroit@mail.it',
+                'email' => 'bistrot@mail.it',
                 'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
                 'image_cover' => '',
                 'image_profile' => '',
@@ -128,9 +129,11 @@ $factory->define(Restaurant::class, function (Faker $faker) {
                 'vote' => '5'
             ],
         ];
-    $index= $faker -> unique() -> numberBetween(0, 9);
+    $autoIncrement->next();
+    $index= $autoIncrement->current();
     $restaurant = $restaurants[$index];
     return [
+        // 'id'=>$autoIncrement->current(),
         'user_id' => $restaurant['user_id'],
         'restaurant_name' => $restaurant['restaurant_name'],
         'address_restaurant' => $restaurant['address_restaurant'] ,
@@ -143,3 +146,9 @@ $factory->define(Restaurant::class, function (Faker $faker) {
         'vote' => $restaurant['vote'],
     ];
 });
+function autoIncrement()
+{
+    for ($i = -1; $i < 10; $i++) {
+        yield $i;
+    }
+}
