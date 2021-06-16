@@ -19,7 +19,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento.',
             'image_cover' => 'fiveguyscover.png',
             'image_profile' => 'fiveguyslogo.png',
-            'popular' => '1',
+            'popular' => 1,
             'vote' => '5'
         ],
         [
@@ -31,7 +31,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Nelle nostre House potrai gustare freschissime poke bowl, immerso in un ambiente trendy e rilassato.',
             'image_cover' => 'pokehousecover.png',
             'image_profile' => 'pokehouselogo.png',
-            'popular' => '1',
+            'popular' => 1,
             'vote' => '5'
         ],
         [
@@ -43,7 +43,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Nel nostro locale potrai assaporare la vera cucina tradizionale cinese.',
             'image_cover' => 'anticacinacover.png',
             'image_profile' => 'anticacinalogo.png',
-            'popular' => '0',
+            'popular' => 0,
             'vote' => '5'
         ],
         [
@@ -55,7 +55,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Da Giannino troverai un vero angolo abruzzese con le specialità della nostra terra.',
             'image_cover' => 'dagianninocover.png',
             'image_profile' => 'dagianninologo.png',
-            'popular' => '0',
+            'popular' => 0,
             'vote' => '5'
         ],
         [
@@ -67,7 +67,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => "Locale spazioso dove si possono ordinare diverse proposte messicane, soprattutto di carne. El Centenario si trova nella centralissima Via Garibaldi e ne rappresenta perfettamente lo spirito: qui non si viene soltanto per mangiare ma anche per scatenarsi tra canti, balli e durante le tantissime feste a tema che vengono organizzate.",
             'image_cover' => 'elcentenariocover.png',
             'image_profile' => 'elcentenariologo.png',
-            'popular' => '1',
+            'popular' => 1,
             'vote' => '5'
         ],
         [
@@ -79,7 +79,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => "Il Ristorante offre genuinità di prodotti dell’orto di famiglia con sapori inconsueti. Essi generano sulla tavola alchimie armoniose che inebriano anche i palati più esigenti. Dall'atmosfera della sala alle calde serate nel centro città.Questo locale mette l’accento sul gusto e sulla qualità delle materie prime e fonda la sua proposta su piatti easy a prezzi corretti.",
             'image_cover' => 'ilbistroitcover.png',
             'image_profile' => 'ilbistroitlogo.png',
-            'popular' => '1',
+            'popular' => 1,
             'vote' => '5'
         ],
         [
@@ -91,7 +91,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => "E’ un nuovo modo di intendere, preparare e gustare la pizza. Dal 2015, portiamo nel panorama gastronomico una filosofia basata sulla leggerezza del prodotto e sulla particolarità delle ricette. La continua ricerca di un attento equilibrio tra tradizione napoletana e innovazione contemporanea ci spinge a migliorare ogni giorno per offrirvi un’esperienza veramente gourmet.",
             'image_cover' => 'bellanapolicover.png',
             'image_profile' => 'bellanapolilogo.png',
-            'popular' => '1',
+            'popular' => 1,
             'vote' => '5'
         ],
         [
@@ -103,7 +103,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Tutto, dagli antipasti ai dolci, è interamente pensato per valorizzare la regina del Piaceri di Patata, che vedrete preparata in numerosi modi diversi, sempre squisiti, curando non solo il gusto, ma anche la vista.',
             'image_cover' => 'piaceridipatatacover.png',
             'image_profile' => 'piaceridipatatalogo.png',
-            'popular' => '1',
+            'popular' => 0,
             'vote' => '5'
         ],
         [
@@ -115,7 +115,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Pizza Hut è una catena di ristorazione statunitense con sede a Dallas, in Texas, nel quartiere settentrionale di Addison, fondata nel 1958 dai fratelli Dan e Frank. Approda in italia per soddisfare i tuoi desideridi pizza. ',
             'image_cover' => 'pizzahutcover.png',
             'image_profile' => 'pizzahutlogo.png',
-            'popular' => '1',
+            'popular' => 0,
             'vote' => '5'
         ],
         [
@@ -127,7 +127,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => "Ideato da Johnny Hu, con l'obiettivo  di offrire ai propri clienti una pura esperienza, non solo culinaria, del Giappone: cibo, bevande, usi e costumi dell'estremo oriente.",
             'image_cover' => 'pokehousecover.png',
             'image_profile' => 'pokehouselogo.png',
-            'popular' => '1',
+            'popular' => 1,
             'vote' => '5'
         ],
     ];
