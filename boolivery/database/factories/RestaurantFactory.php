@@ -77,8 +77,8 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'phone' => '023521421',
             'email' => 'bistrot@mail.it',
             'description' => "Il Ristorante offre genuinità di prodotti dell’orto di famiglia con sapori inconsueti. Essi generano sulla tavola alchimie armoniose che inebriano anche i palati più esigenti. Dall'atmosfera della sala alle calde serate nel centro città.Questo locale mette l’accento sul gusto e sulla qualità delle materie prime e fonda la sua proposta su piatti easy a prezzi corretti.",
-            'image_cover' => 'ilbistroitcover',
-            'image_profile' => 'ilbistroitlogo',
+            'image_cover' => 'ilbistroitcover.png',
+            'image_profile' => 'ilbistroitlogo.png',
             'popular' => '1',
             'vote' => '5'
         ],
@@ -89,8 +89,8 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'phone' => '023521843',
             'email' => 'bellanapoli@mail.it',
             'description' => "E’ un nuovo modo di intendere, preparare e gustare la pizza. Dal 2015, portiamo nel panorama gastronomico una filosofia basata sulla leggerezza del prodotto e sulla particolarità delle ricette. La continua ricerca di un attento equilibrio tra tradizione napoletana e innovazione contemporanea ci spinge a migliorare ogni giorno per offrirvi un’esperienza veramente gourmet.",
-            'image_cover' => 'bellanapolicover',
-            'image_profile' => 'bellanapolilogo',
+            'image_cover' => 'bellanapolicover.png',
+            'image_profile' => 'bellanapolilogo.png',
             'popular' => '1',
             'vote' => '5'
         ],
