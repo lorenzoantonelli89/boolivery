@@ -61,36 +61,36 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
         [
             'user_id' => '3',
             'restaurant_name' => 'El Centenario',//messicano, carne, pesce
-            'address_restaurant' => 'Piazza Duomo 25',
+            'address_restaurant' => 'Via Garibaldi 4',
             'phone' => '023521879',
             'email' => 'elcentenario@mail.it',
-            'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
-            'image_cover' => '',
-            'image_profile' => '',
+            'description' => "Locale spazioso dove si possono ordinare diverse proposte messicane, soprattutto di carne. El Centenario si trova nella centralissima Via Garibaldi e ne rappresenta perfettamente lo spirito: qui non si viene soltanto per mangiare ma anche per scatenarsi tra canti, balli e durante le tantissime feste a tema che vengono organizzate.",
+            'image_cover' => 'elcentenariocover.png',
+            'image_profile' => 'elcentenariologo.png',
             'popular' => '1',
             'vote' => '5'
         ],
         [
             'user_id' => '3',
             'restaurant_name' => 'Il Bistrot',//mediterraneo, pesce
-            'address_restaurant' => 'Piazza Duomo 25',
+            'address_restaurant' => 'Via dei Giardini 20',
             'phone' => '023521421',
             'email' => 'bistrot@mail.it',
-            'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
-            'image_cover' => '',
-            'image_profile' => '',
+            'description' => "Il Ristorante offre genuinità di prodotti dell’orto di famiglia con sapori inconsueti. Essi generano sulla tavola alchimie armoniose che inebriano anche i palati più esigenti. Dall'atmosfera della sala alle calde serate nel centro città.Questo locale mette l’accento sul gusto e sulla qualità delle materie prime e fonda la sua proposta su piatti easy a prezzi corretti.",
+            'image_cover' => 'ilbistroitcover',
+            'image_profile' => 'ilbistroitlogo',
             'popular' => '1',
             'vote' => '5'
         ],
         [
             'user_id' => '4',
             'restaurant_name' => 'Bella Napoli',//pizza, mediterraneo
-            'address_restaurant' => 'Piazza Duomo 25',
+            'address_restaurant' => 'Viale Mazzini 32',
             'phone' => '023521843',
-            'email' => 'sicily@mail.it',
-            'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
-            'image_cover' => '',
-            'image_profile' => '',
+            'email' => 'bellanapoli@mail.it',
+            'description' => "E’ un nuovo modo di intendere, preparare e gustare la pizza. Dal 2015, portiamo nel panorama gastronomico una filosofia basata sulla leggerezza del prodotto e sulla particolarità delle ricette. La continua ricerca di un attento equilibrio tra tradizione napoletana e innovazione contemporanea ci spinge a migliorare ogni giorno per offrirvi un’esperienza veramente gourmet.",
+            'image_cover' => 'bellanapolicover',
+            'image_profile' => 'bellanapolilogo',
             'popular' => '1',
             'vote' => '5'
         ],
@@ -103,7 +103,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
             'image_cover' => '',
             'image_profile' => '',
-            'popular' => '1',
+            'popular' => '0',
             'vote' => '5'
         ],
         [
@@ -115,7 +115,7 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
             'image_cover' => '',
             'image_profile' => '',
-            'popular' => '1',
+            'popular' => '0',
             'vote' => '5'
         ],
         [
