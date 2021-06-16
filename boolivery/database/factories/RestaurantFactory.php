@@ -97,36 +97,36 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
         [
             'user_id' => '4',
             'restaurant_name' => 'Piaceri di Patata',//vegano
-            'address_restaurant' => 'Piazza Duomo 25',
+            'address_restaurant' => 'Via Salasco 34',
             'phone' => '023521199',
-            'email' => 'lataverna@mail.it',
-            'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
-            'image_cover' => '',
-            'image_profile' => '',
+            'email' => 'piaceridipatata@mail.it',
+            'description' => 'Tutto, dagli antipasti ai dolci, è interamente pensato per valorizzare la regina del Piaceri di Patata, che vedrete preparata in numerosi modi diversi, sempre squisiti, curando non solo il gusto, ma anche la vista.',
+            'image_cover' => 'piaceridipatatacover.png',
+            'image_profile' => 'piaceridipatatalogo.png',
             'popular' => '1',
             'vote' => '5'
         ],
         [
             'user_id' => '5',
             'restaurant_name' => 'Pizza Hut',//pizza, fastfood
-            'address_restaurant' => 'Piazza Duomo 25',
+            'address_restaurant' => 'Via Torquato Tasso 5',
             'phone' => '023521766',
-            'email' => 'cantinerisso@mail.it',
-            'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
-            'image_cover' => '',
-            'image_profile' => '',
+            'email' => 'pizzahut@mail.it',
+            'description' => 'Pizza Hut è una catena di ristorazione statunitense con sede a Dallas, in Texas, nel quartiere settentrionale di Addison, fondata nel 1958 dai fratelli Dan e Frank. Approda in italia per soddisfare i tuoi desideridi pizza. ',
+            'image_cover' => 'pizzahutcover.png',
+            'image_profile' => 'pizzahutlogo.png',
             'popular' => '1',
             'vote' => '5'
         ],
         [
             'user_id' => '5',
             'restaurant_name' => 'Homu',//etnico, cinese, giapponese
-            'address_restaurant' => 'Piazza Duomo 25',
+            'address_restaurant' => 'Corso Filippo Turati 9/A',
             'phone' => '023521498',
-            'email' => 'casagoffi@mail.it',
-            'description' => 'Famosa catena di hamburger Americana, tutti i prodotti sono freschi e preparati al momento',
-            'image_cover' => '',
-            'image_profile' => '',
+            'email' => 'Homu@mail.it',
+            'description' => "Ideato da Johnny Hu, con l'obiettivo  di offrire ai propri clienti una pura esperienza, non solo culinaria, del Giappone: cibo, bevande, usi e costumi dell'estremo oriente.",
+            'image_cover' => 'pokehousecover.png',
+            'image_profile' => 'pokehouselogo.png',
             'popular' => '1',
             'vote' => '5'
         ],
