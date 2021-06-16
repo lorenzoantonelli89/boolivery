@@ -27,6 +27,28 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
+document.addEventListener('DOMContentLoaded', function () {
+
+    new Vue({
+        el: '#app',
+        data: {
+            test: 'ciao',
+            arr: '',
+        },
+        // mounted() {
+        //     axios.get('/api/test')
+        //         .then(res => {
+        //             this.arr = res.data;
+        //         })
+        // },
+        methods: {
+            // click: function () {
+            //     console.log(this.arr);
+
+
+            // },
+           
+        },
+    });
 });
+
