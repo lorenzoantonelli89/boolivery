@@ -29,10 +29,10 @@ class PlateController extends Controller
 
         $restaurant = Restaurant::findOrFail($id);
         
-
+        
         return view('admin.list-plate', compact('restaurant' ));
-/*         $plates =Plate::where('restaurant_id', Restaurant::restaurant() -> id) -> get(); 
- */
+        /*         $plates =Plate::where('restaurant_id',$restaurant-> id) -> get(); 
+        */
     }
 
 
@@ -53,6 +53,12 @@ class PlateController extends Controller
             'price' => 'required|numeric|between:0,99.99',
         ]);
 
+
+        $img=$request->file('image');
+        $imgExt = $img -> getClientOriginalExtension();
+        $imgNewName = time() . '_plateImage.' . $imgExt;
+        $folder = '/restaurant-plate/';
+        $imgFile=$img->storeAs($folder,$imgNewName,'public');
         /* dd($validated); */
 
         
@@ -61,8 +67,8 @@ class PlateController extends Controller
         $plate ->restaurant() -> associate($request -> restaurant_id);
         $plate -> save();
 
-/*         $plate ->restaurant() ->sync($request -> plate_id);
- */
+        $plate ->restaurant() ->sync($request -> plate_id);
+
         return redirect() ->route('admin.list-plate');
     }
 
@@ -74,23 +80,30 @@ class PlateController extends Controller
     }
 
 
-    public function storePlate(Request $request){
+    public function storePlate(Request $request, $id){
 
         $validated = $request -> validate([
-           'plate_name' => 'required|string',
-            'description' => 'required|string',
+           'plate_name' => 'required|string|min:3|max:255',
+            'description' => 'required|string|min:3',
             'image' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'price' => 'required|numeric|between:0,99.99',
         ]);
 
+        $img=$request->file('image');
+        $imgExt = $img -> getClientOriginalExtension();
+        $imgNewName = time() . '_plateImage.' . $imgExt;
+        $folder = '/restaurant-plate/';
+        $imgFile=$img->storeAs($folder,$imgNewName,'public');
 
-        $restaurant = Restaurant::findOrFail($request -> get('restaurant_id'));
+
+        $restaurant = Restaurant::findOrFail($id);
         $plate = Plate::make($validated);
         $plate -> restaurant() -> associate($restaurant);
+        $plate->image = $imgNewName;
         $plate -> save();
-        $plate -> plate() -> attach($request -> plate_id);
+/*      $plate -> plate() -> attach($request -> plate_id); 
         $plate -> save();
-
+ */
         
 
      

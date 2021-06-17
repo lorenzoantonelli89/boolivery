@@ -8,6 +8,7 @@
     </a> 
     <ul>
         @foreach ($restaurants as $restaurant)
+        
             <h2>{{$restaurant->restaurant_name}}</h2>   
             <div>{{$restaurant->address_restaurant}}</div>        
             <div>{{$restaurant->phone}}</div>        
@@ -17,7 +18,7 @@
                 <img src="{{asset('/storage/restaurant-profile/'.$restaurant->image_profile)}}" alt="" width="200px">
             </div> 
             <div>
-                <a href="">
+                <a href="{{route('plateList', $restaurant-> id)}}">
                     <button>VIEW</button>
                 </a>
                 <a href="">
