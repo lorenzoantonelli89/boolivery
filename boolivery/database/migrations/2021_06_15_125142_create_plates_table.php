@@ -16,7 +16,7 @@ class CreatePlatesTable extends Migration
         Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('restaurant_id') -> unsigned() -> index();
-            $table->string('plate_name');
+            $table->string('name');
             $table->text('description');
             $table->string('image');
             $table->decimal('price', 8, 2);

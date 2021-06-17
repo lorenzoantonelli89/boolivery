@@ -50,7 +50,7 @@ class CategorySeeder extends Seeder
         foreach($categories as $key => $category){
 
             DB::table('categories') -> insert([
-                'category_name' => $category['category'] 
+                'name' => $category['category'] 
             ]);
             
         }

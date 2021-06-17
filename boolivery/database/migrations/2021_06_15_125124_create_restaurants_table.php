@@ -16,15 +16,15 @@ class CreateRestaurantsTable extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id') -> unsigned() -> index();
-            $table->string('restaurant_name');
-            $table->string('address_restaurant');
+            $table->string('name');
+            $table->string('address');
             $table->string('phone'); 
             $table->string('email')->unique();
             $table->text('description');
             $table->string('image_cover');
             $table->string('image_profile');
             $table->boolean('popular') -> default(false);
-            $table->integer('vote');
+            // $table->integer('vote');
             $table->timestamps();
         });
     }

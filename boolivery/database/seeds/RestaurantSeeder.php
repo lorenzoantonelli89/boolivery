@@ -19,7 +19,7 @@ class RestaurantSeeder extends Seeder
 
             $categories = Category::all();
 
-            switch($restaurant['restaurant_name']){
+            switch($restaurant['name']){
 
                 case 'Five Guys': 
                     $restaurant -> categories() -> attach($categories[5]);
