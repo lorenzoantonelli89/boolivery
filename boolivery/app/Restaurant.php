@@ -8,15 +8,14 @@ class Restaurant extends Model
 {
     protected $fillable = [
         'user_id', 
-        'restaurant_name',
-        'address_restaurant',
+        'restaurant',
+        'address',
         'phone',
         'email',
         'description',
         'image_cover',
         'image_profile',
         'popular',
-        'vote',
     ];
 
     public function user(){
