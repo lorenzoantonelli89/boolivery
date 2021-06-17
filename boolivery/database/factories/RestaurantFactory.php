@@ -94,8 +94,8 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'phone' => '023521199',
             'email' => 'piaceridipatata@mail.it',
             'description' => 'Tutto, dagli antipasti ai dolci, è interamente pensato per valorizzare la regina del Piaceri di Patata, che vedrete preparata in numerosi modi diversi, sempre squisiti, curando non solo il gusto, ma anche la vista.',
-            'image_cover' => 'piaceridipatatacover.png',
-            'image_profile' => 'piaceridipatatalogo.png',
+            'image_cover' => 'piacieridipatatacover.png',
+            'image_profile' => 'piacieridipatatalogo.png',
             'popular' => 0,
         ],
         [
