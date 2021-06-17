@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('company_name');
-            $table->string('address_head_office');
-            $table->bigInteger('p_iva');
+            $table->string('address');
+            $table->bigInteger('VAT_number');
             $table->rememberToken();
             $table->timestamps();
         });

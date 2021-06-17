@@ -8,7 +8,12 @@
     </a> 
     <ul>
         @foreach ($restaurants as $restaurant)
-            <h2>{{$restaurant->restaurant_name}}</h2>   
+            <h2>{{$restaurant->restaurant_name}}</h2>
+            <div>Tipo di ristorante:
+                @foreach ($restaurant->categories as $category)
+                   <span>{{$category->category_name}},</span> 
+                @endforeach
+            </div>  
             <div>{{$restaurant->address_restaurant}}</div>        
             <div>{{$restaurant->phone}}</div>        
             <div>{{$restaurant->email}}</div>        
@@ -17,10 +22,10 @@
                 <img src="{{asset('/storage/restaurant-profile/'.$restaurant->image_profile)}}" alt="" width="200px">
             </div> 
             <div>
-                <a href="">
+                <a href="{{route('plateList',$restaurant->id)}}">
                     <button>VIEW</button>
                 </a>
-                <a href="">
+                <a href="{{route('editRestaurant',$restaurant->id)}}">
                     <button>EDIT</button>
                 </a>
             </div>    

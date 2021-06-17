@@ -3,7 +3,7 @@
 @section('content')
 
     <main>
-        <a class="mx-5" href="{{route('restaurantList')}}">Torna ai ristoranti</a>
+        <a class="mx-5" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
 
         <a class="mx-5" href="{{route('createPlate')}}">Aggiungi un piatto</a>
         

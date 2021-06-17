@@ -55,6 +55,19 @@
                     <option value="1">1</option>
                 </select>
             </div>
+            {{-- categorie --}}
+            <div class="form-group">
+                <p>Scegli categorie</p>
+                @foreach ($categories as $category)
+                <div>
+                    <div>
+                        <label for="category_id[]">{{$category->category_name}}</label>
+                        <input type="checkbox" name="category_id[]" id="category_id[]" value="{{$category->id}}">
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            {{-- ERRORI --}}
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
