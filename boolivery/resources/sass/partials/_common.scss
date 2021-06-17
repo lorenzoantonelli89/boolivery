@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+//   BOTTONE CLASSICO
+
+.blink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2caead;
+    padding: 5px;
+    height: 50px;
+    width: 150px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+  }
+
+//   container per layout
+
+.my-container {
+    // @include flex(column, flex-start, center);
+    width: 100%;
+    
+  }
+
+//   div per creare i margini
+
+  .div-margin {
+    
+    margin: 0 auto;
+    width: 60%;
+  }
+
+//   FONT
+
+body {
+    font-family: 'Open Sans', sans-serif;;
+  }
+
+//   Flex con colonne accentrate
+
+  .flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
