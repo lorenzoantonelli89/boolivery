@@ -19,3 +19,11 @@ Route::get('/', 'HomeController@home') -> name('home');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/user/{id}/my-restaurants','Admin\RestaurantController@listRestaurant')
+->name('listRestaurant');
+
+Route::get('/user/{id}/createRestaurant','Admin\RestaurantController@createRestaurant')
+->name('createRestaurant');
+Route::post('/user/{id}/storeRestaurant','Admin\RestaurantController@storeRestaurant')
+->name('storeRestaurant');
