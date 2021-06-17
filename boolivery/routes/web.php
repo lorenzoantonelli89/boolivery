@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 // route home principale
 Route::get('/', 'HomeController@home') -> name('home');
+// route dettagli ristorante selezionato
+Route::get('/restaurant-details/{id}', 'GuestController@detailsRestaurant') -> name('restaurant-details');
 
 Auth::routes();
 

@@ -49872,18 +49872,29 @@ document.addEventListener('DOMContentLoaded', function () {
   new Vue({
     el: '#app',
     data: {
-      test: 'ciao',
-      arr: ''
+      restaurants: '',
+      activeRestaurant: ''
     },
-    // mounted() {
-    //     axios.get('/api/test')
-    //         .then(res => {
-    //             this.arr = res.data;
-    //         })
-    // },
-    methods: {// click: function () {
-      //     console.log(this.arr);
-      // },
+    mounted: function mounted() {
+      var _this = this;
+
+      // chiamata axio che ritorna array di tutti i ristoranti
+      axios.get('/api/restaurants').then(function (res) {
+        _this.restaurants = res.data;
+        console.log(_this.restaurants);
+      });
+    },
+    methods: {
+      // funzione che valora il dato active restaurant al click del ristorante selezionato
+      getActiveRestaurant: function getActiveRestaurant(elem) {
+        this.activeRestaurant = elem.id;
+      }
+    },
+    computed: {
+      // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
+      getHref: function getHref() {
+        return '/restaurant-details/' + this.activeRestaurant;
+      }
     }
   });
 });
@@ -50022,8 +50033,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\BOOLEAN\FINAL PROJECT\boolivery\boolivery\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\BOOLEAN\FINAL PROJECT\boolivery\boolivery\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/lorenzoantonelli/Desktop/boolivery/boolivery/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lorenzoantonelli/Desktop/boolivery/boolivery/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

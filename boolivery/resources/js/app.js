@@ -32,23 +32,30 @@ document.addEventListener('DOMContentLoaded', function () {
     new Vue({
         el: '#app',
         data: {
-            test: 'ciao',
-            arr: '',
+            restaurants: '',
+            activeRestaurant: '',
         },
-        // mounted() {
-        //     axios.get('/api/test')
-        //         .then(res => {
-        //             this.arr = res.data;
-        //         })
-        // },
+        mounted() {
+            // chiamata axio che ritorna array di tutti i ristoranti
+            axios.get('/api/restaurants')
+                .then(res => {
+                    this.restaurants = res.data;
+                    console.log(this.restaurants);
+                })
+        },
         methods: {
-            // click: function () {
-            //     console.log(this.arr);
-
-
-            // },
+            // funzione che valora il dato active restaurant al click del ristorante selezionato
+            getActiveRestaurant: function(elem){
+                this.activeRestaurant = elem.id;
+            }
            
         },
+        computed: {
+            // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
+            getHref: function(){
+                return '/restaurant-details/' + this.activeRestaurant;
+            }
+        }
     });
 });
 
