@@ -22,13 +22,16 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/user/{id}/my-restaurants','Admin\RestaurantController@listRestaurant')
+Route::get('/user/my-restaurants','Admin\RestaurantController@listRestaurant')
 ->name('listRestaurant');
 
 Route::get('/user/{id}/createRestaurant','Admin\RestaurantController@createRestaurant')
 ->name('createRestaurant');
 Route::post('/user/{id}/storeRestaurant','Admin\RestaurantController@storeRestaurant')
 ->name('storeRestaurant');
+
+Route::get('/editRestaurant/{id}','Admin\RestaurantController@editRestaurant')
+->name('editRestaurant');
 
 
  Route::get('/list-plate{id}', 'Admin\PlateController@plateList')->name('plateList');

@@ -15,7 +15,7 @@ class PlateSeeder extends Seeder
         $plates = [
             [
                 'restaurant_id' => 1,
-                'plate_name' => 'Cheese Burger',
+                'name' => 'Cheese Burger',
                 'description' => 'Due fette di formaggio americano Kraft fuso tra due polpette appena grigliate con pane morbido tostato.',
                 'image' => 'cheeseburger.png',
                 'price' => 10,50,
@@ -24,7 +24,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 1,
-                'plate_name' => 'Bacon Cheese Burger',
+                'name' => 'Bacon Cheese Burger',
                 'description' => 'Due polpette fatte a mano grigliate al momento - con due fette di bacon croccante e due fette di formaggio americano Kraft con pane morbido ai semi di sesamo.',
                 'image' => 'baconcheeseburger.png',
                 'price' => 12,90,
@@ -33,7 +33,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 1,
-                'plate_name' => 'Cheese Veggie Sandwich',
+                'name' => 'Cheese Veggie Sandwich',
                 'description' => 'Cipolle, funghi e peperoni verdi grigliati con formaggio fuso americano Kraft servito su pane dorato e tostato con lattuga e pomodori. Più una delle tue 16 guarnizioni preferite!',
                 'image' => 'cheeseveggiesandwich.png',
                 'price' => 7,50,
@@ -42,7 +42,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 1,
-                'plate_name' => 'Kosher Style Hot Dog',
+                'name' => 'Kosher Style Hot Dog',
                 'description' => 'L’hot dog nazionale ebraico di sola carne di manzo è spaccato e grigliato longitudinalmente per un esterno caramellato.',
                 'image' => 'kosherstylehotdog.png',
                 'price' => 8,50,
@@ -51,7 +51,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 2,
-                'plate_name' => 'Bowl Classic',
+                'name' => 'Bowl Classic',
                 'description' => 'riso, salmone, edamame, avocado, sesamo, alghe nori e salsa unaghi',
                 'image' => 'bowlclassic.png',
                 'price' => 9,90,
@@ -60,7 +60,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 2,
-                'plate_name' => 'Bowl Salmon Anaua',
+                'name' => 'Bowl Salmon Anaua',
                 'description' => 'riso, salmone griglia, edamame, sesamo e salsa teriyaki',
                 'image' => 'bowlsalmonanaua.png',
                 'price' => 11,50,
@@ -69,7 +69,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 2,
-                'plate_name' => 'Bowl Tonno Hawa',
+                'name' => 'Bowl Tonno Hawa',
                 'description' => 'riso, spicy tonno, jalapeño, avocado, cetrioli, carote, sesamo, tobiko e spicy maionese',
                 'image' => 'bowltonnohawa.png',
                 'price' => 11,90,
@@ -78,7 +78,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 2,
-                'plate_name' => 'Bowl White Fish',
+                'name' => 'Bowl White Fish',
                 'description' => 'riso, spigola, mango, avocado, edamame, sesamo, alghe nori e ponzu',
                 'image' => 'bowlwhitefish.png',
                 'price' => 10,90,
@@ -87,7 +87,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 2,
-                'plate_name' => 'Edamame',
+                'name' => 'Edamame',
                 'description' => 'Fagioli di soia bolliti.',
                 'image' => 'edamame.png',
                 'price' => 3,50,
@@ -96,7 +96,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 2,
-                'plate_name' => 'Ebi gyoza',
+                'name' => 'Ebi gyoza',
                 'description' => 'Ravioli di gamberetti al vapore.',
                 'image' => 'ebygyoza.png',
                 'price' => 3,00,
@@ -105,7 +105,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 3,
-                'plate_name' => 'Riso Cantonese',
+                'name' => 'Riso Cantonese',
                 'description' => 'Riso con prosciutto, piselli e frittata.',
                 'image' => 'risocantonese.png',
                 'price' => 4,20,
@@ -114,7 +114,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 3,
-                'plate_name' => 'Noodles',
+                'name' => 'Noodles',
                 'description' => 'Noodles di riso con mix di verdure & uovo (carote, zucchine,cavolo).',
                 'image' => 'noodles.png',
                 'price' => 5,20,
@@ -123,7 +123,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 3,
-                'plate_name' => 'Ravioli di Manzo',
+                'name' => 'Ravioli di Manzo',
                 'description' => 'Ravioli cotti al vapore farciti con mix di verdure e manzo.',
                 'image' => 'raviolidimanzo.png',
                 'price' => 3,5,
@@ -132,7 +132,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 3,
-                'plate_name' => 'Involtini Primavera',
+                'name' => 'Involtini Primavera',
                 'description' => 'Involtini fritti con ripieno di verdure miste, preparati a mano dai nostri cuochi il tutto accompagnato da salsa agrodolce a parte.',
                 'image' => 'involtiniprimavera.png',
                 'price' => 3,00,
@@ -141,7 +141,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 3,
-                'plate_name' => 'Pollo con Mandorle',
+                'name' => 'Pollo con Mandorle',
                 'description' => 'Bocconcini di pollo saltato in padella con mandorle.',
                 'image' => 'polloconmandorle.png',
                 'price' => 4,10,
@@ -150,7 +150,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 4,
-                'plate_name' => 'Spaghetti alla carbonara',
+                'name' => 'Spaghetti alla carbonara',
                 'description' => 'Spaghetti alla chitarra freschi, con guanciale pecorino e uova.',
                 'image' => 'spaghettiallacarbonara.png',
                 'price' => 10,00,
@@ -159,7 +159,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 4,
-                'plate_name' => 'Paccheri alla Giannino',
+                'name' => 'Paccheri alla Giannino',
                 'description' => 'Paccheri con bufala, pachino e basilico.',
                 'image' => 'paccheriallagiannino.png',
                 'price' => 9,50,
@@ -168,7 +168,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 4,
-                'plate_name' => 'Gnocchi ai 4 formaggi',
+                'name' => 'Gnocchi ai 4 formaggi',
                 'description' => 'Gnocchi di patate fatti in casa, con toma, gorgonzola, fontina e parmigiano.',
                 'image' => 'gnocchiai4formaggi.png',
                 'price' => 8,50,
@@ -177,7 +177,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 4,
-                'plate_name' => 'Arrosticini',
+                'name' => 'Arrosticini',
                 'description' => 'Spiedini di agnello cotti alla griglia.',
                 'image' => 'arrosticini.png',
                 'price' => 5,50,
@@ -186,7 +186,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 4,
-                'plate_name' => 'Tagliata con rucola',
+                'name' => 'Tagliata con rucola',
                 'description' => 'Tagliata di manzo cotta alla brace con rucola.',
                 'image' => 'tagliataconrucola.png',
                 'price' => 15,50,
@@ -195,7 +195,7 @@ class PlateSeeder extends Seeder
             ], /* update img giordano */
             [
                 'restaurant_id' => 5,
-                'plate_name' => 'Nachos Blancos',
+                'name' => 'Nachos Blancos',
                 'description' => 'Chips di mais della casa con formaggio fondente.',
                 'image' => 'nachosblancos.png',
                 'price' => 6,00,
@@ -204,7 +204,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 5,
-                'plate_name' => 'Quesadillas Marrana',
+                'name' => 'Quesadillas Marrana',
                 'description' => '2 tortillas di farina alla piastra con ripieno di porchetta, formaggio, pomodoro accompagnate da tostadas de mais con insalata.',
                 'image' => 'quesadillasmarrana.png',
                 'price' => 9,50,
@@ -213,7 +213,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 5,
-                'plate_name' => 'Frittura Centenario',
+                'name' => 'Frittura Centenario',
                 'description' => 'Gustosi anelli di cipolla dolce dorati e bastoncini di mozzarella fritti accompagnati da tostada de mais con insalata.',
                 'image' => 'fritturacentenario.png',
                 'price' => 10,00,
@@ -222,7 +222,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 5,
-                'plate_name' => 'Alitas de pollo doradas',
+                'name' => 'Alitas de pollo doradas',
                 'description' => 'La Specialità della Casa: alette di pollo impanate accompagnati da tostada de mais con insalata.',
                 'image' => 'alitasdepollodoradas.png',
                 'price' => 11,50,
@@ -231,7 +231,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 5,
-                'plate_name' => 'Barbecue Ribs',
+                'name' => 'Barbecue Ribs',
                 'description' => 'Tipico piatto Ranchero…costine di maiale(10 dita)cotte al forno in salsa BBQ e patatine fritte.',
                 'image' => 'barbecueribs.png',
                 'price' => 16,00,
@@ -240,7 +240,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 5,
-                'plate_name' => 'Mixed Grill Salsiccia',
+                'name' => 'Mixed Grill Salsiccia',
                 'description' => 'Salsiccia e salsicciotti alla griglia serviti con patatine fritte.',
                 'image' => 'mixedgrillsalsiccia.png',
                 'price' => 12,00,
@@ -249,7 +249,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 6,
-                'plate_name' => 'Tonno Vitellato',
+                'name' => 'Tonno Vitellato',
                 'description' => 'Filetto di tonno con salsa di vitello e maionese di bottarga.',
                 'image' => 'tonnovitellato.png',
                 'price' => 19,00,
@@ -258,7 +258,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 6,
-                'plate_name' => 'Spaghetti di gragnano con asparagi e calamari.',
+                'name' => 'Spaghetti di gragnano con asparagi e calamari.',
                 'description' => 'Spaghetti risottati in padella con i calamari e acqua al profumo di asparagi.',
                 'image' => 'spaghettidigragnanoconasparagiecalamari.png',
                 'price' => 23,00,
@@ -267,7 +267,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 6,
-                'plate_name' => 'Salmone affumicato',
+                'name' => 'Salmone affumicato',
                 'description' => 'Salmone cotto e affumicato a bassa temperatura con legno di cedro.',
                 'image' => 'salmoneaffumicato.png',
                 'price' => 29,00,
@@ -276,7 +276,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 7,
-                'plate_name' => 'Regina', //pizza margherita
+                'name' => 'Regina', //pizza margherita
                 'description' => 'Pomodoro, fiord di latte, olio EVO e basilico.',
                 'image' => 'regina.png',
                 'price' => 8,00,
@@ -285,7 +285,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 7,
-                'plate_name' => 'Tris di montanare',
+                'name' => 'Tris di montanare',
                 'description' => 'Tre montanare: Classica, Parmigiana di melanzane, Crudo e Bufala',
                 'image' => 'trisdimontanare.png',
                 'price' => 9,00,
@@ -294,7 +294,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 7,
-                'plate_name' => 'Vicaria',
+                'name' => 'Vicaria',
                 'description' => 'Pomodoro, fior di latte, salsiccia fresca(in cottura), olio EVO e basilico.',
                 'image' => '',
                 'price' => 9,00,
@@ -303,7 +303,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 7,
-                'plate_name' => 'Pesto di basilico',
+                'name' => 'Pesto di basilico',
                 'description' => 'Fior di latte, pesto fresco di basilico, pomodorini pachino, olio EVO e basilico.',
                 'image' => 'pestodibasilico.png',
                 'price' => 8,50,
@@ -312,7 +312,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 7,
-                'plate_name' => 'Ripieno (calzone)',
+                'name' => 'Ripieno (calzone)',
                 'description' => 'Pomodoro, fior di latte, ricotta fresca di bufala, salame, olio EVO basilico.',
                 'image' => 'ripieno.png',
                 'price' => 10,00,
@@ -321,7 +321,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 7,
-                'plate_name' => 'Melanzane alla parmigiana',
+                'name' => 'Melanzane alla parmigiana',
                 'description' => 'La classica ricetta delle Melanzane alla Parmigiana.',
                 'image' => 'melanzaneallaparmigiana.png',
                 'price' => 8,00,
@@ -330,7 +330,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 8,
-                'plate_name' => 'Green Crust',
+                'name' => 'Green Crust',
                 'description' => 'Crostone con foglia verde saltata con maionese di cicoria e mandorle.',
                 'image' => 'greencrust.png',
                 'price' => 9,00,
@@ -339,7 +339,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 8,
-                'plate_name' => 'Vellutata di stagione',
+                'name' => 'Vellutata di stagione',
                 'description' => 'Minestra vellutata con verdure di stagione.',
                 'image' => 'vellutatadistagione.png',
                 'price' => 9,00,
@@ -348,7 +348,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 8,
-                'plate_name' => 'Hamburger di ceci',
+                'name' => 'Hamburger di ceci',
                 'description' => 'Hamburger di ceci homemade con contorno di avocado e zucchine.',
                 'image' => 'hamburgerdiceci.png',
                 'price' => 11,50,
@@ -357,7 +357,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 9,
-                'plate_name' => 'Pepperoni Feast',
+                'name' => 'Pepperoni Feast',
                 'description' => 'Pepperoni, pepperoni and more pepperoni.',
                 'image' => 'pepperonifeast.png',
                 'price' => 8,99,
@@ -366,7 +366,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 9,
-                'plate_name' => 'Chicken Supreme',
+                'name' => 'Chicken Supreme',
                 'description' => 'Chicken breast, mushrooms, caramelised onions.',
                 'image' => 'chickensupreme.png',
                 'price' => 9,25,
@@ -375,7 +375,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 9,
-                'plate_name' => 'BBQ Americano',
+                'name' => 'BBQ Americano',
                 'description' => 'Smoky BBq sauce, chicken breast, bacon, sweetcorn with a BBQ drizzle.',
                 'image' => 'bbqamericano.png',
                 'price' => 9,75,
@@ -384,7 +384,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 9,
-                'plate_name' => 'Hawaiian',
+                'name' => 'Hawaiian',
                 'description' => 'Ham and pineapple',
                 'image' => 'hawaiian.png',
                 'price' => 7,99,
@@ -393,7 +393,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 9,
-                'plate_name' => 'Cheese triangles',
+                'name' => 'Cheese triangles',
                 'description' => 'Triangoli di mais con formaggio',
                 'image' => 'cheesetriangles.png',
                 'price' => 4,10,
@@ -402,7 +402,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 10,
-                'plate_name' => 'Ebi yaki meshi',
+                'name' => 'Ebi yaki meshi',
                 'description' => 'Riso saltato con gamberi, verdura e uova.',
                 'image' => 'ebiyakimeshi.png',
                 'price' => 6,00,
@@ -411,7 +411,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 10,
-                'plate_name' => 'Ebi tempura',
+                'name' => 'Ebi tempura',
                 'description' => 'Gamberi fritti in salsa teriyaki.',
                 'image' => 'ebitempura.png',
                 'price' => 8,00,
@@ -420,7 +420,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 10,
-                'plate_name' => 'Hosomaki Avocado',
+                'name' => 'Hosomaki Avocado',
                 'description' => 'Riso, alga, avocado e sesamo.',
                 'image' => 'hosomakiavocado.png',
                 'price' => 3,50,
@@ -429,7 +429,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 10,
-                'plate_name' => 'Temaki Sake',
+                'name' => 'Temaki Sake',
                 'description' => 'Salmone, philadephia, avocado e sesamo.',
                 'image' => 'temakisake.png',
                 'price' => 4,00,
@@ -438,7 +438,7 @@ class PlateSeeder extends Seeder
             ],
             [
                 'restaurant_id' => 10,
-                'plate_name' => 'Gunkan Tobiko',
+                'name' => 'Gunkan Tobiko',
                 'description' => 'Riso, uova di pesce volante.',
                 'image' => 'gunkantobiko.png',
                 'price' => 4,00,
@@ -452,7 +452,7 @@ class PlateSeeder extends Seeder
 
             DB::table('plates') -> insert([
                 'restaurant_id' => $plate['restaurant_id'],
-                'plate_name' => $plate['plate_name'],
+                'name' => $plate['name'],
                 'description' => $plate['description'],
                 'image' => $plate['image'],
                 'price' => $plate['price'],

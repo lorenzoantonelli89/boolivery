@@ -20,8 +20,8 @@ class UserSeeder extends Seeder
                 'email' => 'lorenzo@mail.com',
                 'password'=> bcrypt('password123'),
                 'company_name' => 'Jumbotron S.R.L',
-                'address_head_office' => 'Via Roma 21',
-                'p_iva' => '10692170011'
+                'address' => 'Via Roma 21',
+                'VAT_number' => '10692170011'
             ],
             [
                 'name' => 'Nicola',
@@ -29,8 +29,8 @@ class UserSeeder extends Seeder
                 'email' => 'nicola@mail.com',
                 'password'=> bcrypt('password123'),
                 'company_name' => 'Milani S.R.L',
-                'address_head_office' => 'Via Garibaldi 33',
-                'p_iva' => '10692170021'
+                'address' => 'Via Garibaldi 33',
+                'VAT_number' => '10692170021'
             ],
             [
                 'name' => 'Jacopo',
@@ -38,8 +38,8 @@ class UserSeeder extends Seeder
                 'email' => 'jacopo@mail.com',
                 'password'=> bcrypt('password123'),
                 'company_name' => 'Zandonà S.R.L',
-                'address_head_office' => 'Via Pò 44',
-                'p_iva' => '10692170034'
+                'address' => 'Via Pò 44',
+                'VAT_number' => '10692170034'
             ],
             [
                 'name' => 'Simone',
@@ -47,8 +47,8 @@ class UserSeeder extends Seeder
                 'email' => 'simone@mail.com',
                 'password'=> bcrypt('password123'),
                 'company_name' => 'Swinow S.R.L',
-                'address_head_office' => 'Corso Fiume 211',
-                'p_iva' => '10692170067'
+                'address' => 'Corso Fiume 211',
+                'VAT_number' => '10692170067'
             ],
             [
                 'name' => 'Giordano',
@@ -56,8 +56,8 @@ class UserSeeder extends Seeder
                 'email' => 'giordano@mail.com',
                 'password'=> bcrypt('password123'),
                 'company_name' => 'Vita S.R.L',
-                'address_head_office' => 'Corso Vittorio Emanuele 311',
-                'p_iva' => '10692170099'
+                'address' => 'Corso Vittorio Emanuele 311',
+                'VAT_number' => '10692170099'
             ],
         ];
 
