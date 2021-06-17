@@ -15,7 +15,7 @@ class RestaurantController extends Controller
         $this->middleware('auth');
     }
 
-    public function listRestaurant($id){
+    public function listRestaurant(){
 
         
         $user= Auth::user();

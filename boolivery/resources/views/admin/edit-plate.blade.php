@@ -19,8 +19,8 @@
         
                 <div class="form-group">
                   
-                  <label for="plate_name">Nome</label>
-                  <input type="text" class="form-control" name="plate_name" value="{{$plate -> plate_name}}" placeholder="Nome piatto">
+                  <label for="name">Nome</label>
+                  <input type="text" class="form-control" name="name" value="{{$plate -> name}}" placeholder="Nome piatto">
                   
                 </div>
 
