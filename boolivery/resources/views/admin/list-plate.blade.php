@@ -5,14 +5,14 @@
     <main>
         <a class="mx-5" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
 
-        <a class="mx-5" href="{{route('createPlate')}}">Aggiungi un piatto</a>
+        <a class="mx-5" href="{{route('createPlate', $restaurant->id)}}">Aggiungi un piatto</a>
         
 
          <ol style="list-style: none">
                             @foreach ($restaurant -> plates as $plate)
                                 <li class="py-3" style="border: 1px solid red; text-align:center">   
                                     <div>
-                                        <h4>{{ $plate -> plate_name}}</h4>
+                                        <h4>{{ $plate -> plate}}</h4>
                                         <p>
                                             {{ $plate -> description}}
                                             

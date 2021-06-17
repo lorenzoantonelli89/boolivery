@@ -8,7 +8,7 @@
     </a> 
     <ul>
         @foreach ($restaurants as $restaurant)
-            <h2>{{$restaurant->restaurant_name}}</h2>
+            <h2>{{$restaurant->name}}</h2>
             <div>Tipo di ristorante:
                 @foreach ($restaurant->categories as $category)
                    <span>{{$category->category_name}},</span> 
@@ -32,7 +32,7 @@
         @endforeach
 
         {{-- @foreach ($user->restaurants as $restaurant)
-            <h2>{{$restaurant->restaurant_name}}</h2>   
+            <h2>{{$restaurant->name}}</h2>   
             <div>{{$restaurant->address_restaurant}}</div>        
             <div>{{$restaurant->phone}}</div>        
             <div>{{$restaurant->email}}</div>        
