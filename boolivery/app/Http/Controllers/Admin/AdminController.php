@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-class Admin extends Controller
+class AdminController extends Controller
 {
     public function __construct()
     {
