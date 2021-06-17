@@ -7,7 +7,75 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+@import 'partials/common';
 @import 'partials/variables';
 @import 'partials/home';
+@import 'partials/restaurant-details';
 
 // regole style header e footer
+
+
+// HEADER
+
+// FOOTER
+
+footer {
+    
+    width: 100%;
+
+    background-color: #fc6a01;
+    
+    .footer-container {
+        // @include flex(column, space-between, center);
+        height: 402px;
+        width: 100%;  
+        
+      
+        .footer-section-container {
+            display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 100%;
+            
+            .footer-section {
+                height: 300px;
+                width: calc( 95% / 4 );
+                background-color: #f1ad7d;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+    
+                .footer-list {
+                    height: 90%;
+                    width: 90%;
+                }
+            }    
+        }
+    }
+  
+  //   ZONA BASSA DEL FOOTER
+  
+    .footer-links {
+        height: 44px;
+          display: flex;
+          justify-content: space-between;
+  
+          .links {
+              color:white;
+              font-size: 24px;
+            }
+
+            .weAre {
+              font-size: 18px;;
+              color: #696d6d;
+          }
+    }
+
+}
+
+  
+
+  
+
+  
