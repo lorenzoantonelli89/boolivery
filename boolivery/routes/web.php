@@ -19,3 +19,21 @@ Route::get('/', 'HomeController@home') -> name('home');
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
+
+ Route::get('/list-restaurant', 'Admin\PlateController@restaurantList')->name('restaurantList');
+
+
+ Route::get('/list-plate{id}', 'Admin\PlateController@plateList')->name('plateList');
+
+ Route::get('/edit-plate{id}', 'Admin\PlateController@editPlate')->name('editPlate');
+
+ Route::post('/update-plate{id}', 'Admin\PlateController@updatePlate')->name('updatePlate');
+
+ Route::get('/create-plate', 'Admin\PlateController@createPlate')->name('createPlate');
+
+ Route::post('/store-plate', 'Admin\PlateController@storePlate')->name('storePlate');
+
+
+
+ 
+ 
