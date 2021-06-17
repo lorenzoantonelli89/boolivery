@@ -7,8 +7,7 @@
     <div class="container">
 
 
-        <div class="container">
-
+       
             <h2>
                 Aggiungi un nuovo piatto:
             </h2>
@@ -20,8 +19,8 @@
         
                 <div class="form-group">
                   
-                  <label for="plate_name">Nome</label>
-                  <input type="text" class="form-control" name="plate_name" placeholder="Nome piatto">
+                  <label for="name">Nome</label>
+                  <input type="text" class="form-control" name="name" placeholder="Nome piatto">
                   
                 </div>
 
