@@ -42,7 +42,7 @@ Route::get('/editRestaurant/{id}','Admin\RestaurantController@editRestaurant')
 
  Route::get('/create-plate{id}', 'Admin\PlateController@createPlate')->name('createPlate');
 
- Route::post('/store-plate', 'Admin\PlateController@storePlate')->name('storePlate');
+ Route::post('/store-plate{id}', 'Admin\PlateController@storePlate')->name('storePlate');
 
 
 

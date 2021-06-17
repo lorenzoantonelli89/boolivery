@@ -8,7 +8,7 @@ class Plate extends Model
 {
     protected $fillable = [
         'restaurant_id',
-        'plate_name',
+        'name',
         'description',
         'image',
         'price',
