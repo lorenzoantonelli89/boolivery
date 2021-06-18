@@ -49873,7 +49873,9 @@ document.addEventListener('DOMContentLoaded', function () {
     el: '#app',
     data: {
       restaurants: '',
-      activeRestaurant: ''
+      activeRestaurant: '',
+      categories: '',
+      plates: ''
     },
     mounted: function mounted() {
       var _this = this;
@@ -49882,12 +49884,27 @@ document.addEventListener('DOMContentLoaded', function () {
       axios.get('/api/restaurants').then(function (res) {
         _this.restaurants = res.data;
         console.log(_this.restaurants);
+      }); // chiamata axio che ritorna array di tutte le categorie
+
+      axios.get('/api/categories').then(function (res) {
+        _this.categories = res.data;
+        console.log(_this.categories);
       });
     },
     methods: {
       // funzione che valora il dato active restaurant al click del ristorante selezionato
       getActiveRestaurant: function getActiveRestaurant(elem) {
         this.activeRestaurant = elem.id;
+      },
+      // funzione che al click fa una chiamata axios per avere array di piatti
+      getActivePlates: function getActivePlates() {
+        var _this2 = this;
+
+        // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
+        axios.get('/api/plates/' + this.activeRestaurant).then(function (res) {
+          _this2.plates = res.data;
+          console.log(_this2.plates);
+        });
       }
     },
     computed: {
@@ -50033,13 +50050,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-__webpack_require__(/*! /Users/jacopozandona/Code/boolivery/boolivery/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jacopozandona/Code/boolivery/boolivery/resources/sass/app.scss */"./resources/sass/app.scss");
-=======
-__webpack_require__(/*! /opt/lampp/htdocs/boolivery/boolivery/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/boolivery/boolivery/resources/sass/app.scss */"./resources/sass/app.scss");
->>>>>>> main
+__webpack_require__(/*! /Users/lorenzoantonelli/Desktop/boolivery/boolivery/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/lorenzoantonelli/Desktop/boolivery/boolivery/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

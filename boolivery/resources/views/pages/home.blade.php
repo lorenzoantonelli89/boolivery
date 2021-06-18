@@ -92,16 +92,16 @@
       </div>
 
         <ul>
-            <li v-for="elem in restaurants" v-on:click="getActiveRestaurant(elem)">
+            <li v-for="elem in restaurants" v-on:click="(getActiveRestaurant(elem), getActivePlates)">
                 <a :href=getHref>
-                    @{{elem.restaurant_name}}
+                    @{{elem.name}}
                 </a>
                 <div>
                     <span >
-                        @{{elem.address_restaurant}}
+                        @{{elem.address}}
                     </span>
                 </div>
-                <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="">
+                <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="" width="150px" height="150px">
             </li>
         </ul>
     </main>
