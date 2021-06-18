@@ -8,11 +8,6 @@
         <form method="POST" action="{{route('updateRestaurant',$restaurant->id)}}"  enctype="multipart/form-data">
             @csrf
             @method('POST')
-            {{-- user --}}
-            <div class="form-group">
-                <label for="customer_id">ID Ristoratore</label>
-                <input type="text" class="form-control" name="user_id" id="user_id" value="{{$restaurant->user->id}}" readonly>
-            </div>
             {{-- restaurant --}}
             <div class="form-group">
                 <label for="name">Nome Ristorante</label>
@@ -36,11 +31,11 @@
             </div>
             <div class="form-group">
                 <label for="image_profile">Foto Profilo</label>
-                <input type="file" id="image_profile" name="image_profile" value="{{$restaurant->image_profile}}">
+                <input type="file" id="image_profile" name="image_profile">
             </div>
             <div class="form-group">
                 <label for="image_cover">Foto Copertina</label>
-                <input type="file" id="image_cover" name="image_cover" value="{{$restaurant->image_cover}}">
+                <input type="file" id="image_cover" name="image_cover">
             </div>
             {{-- <div class="form-group">
                 <label for="popular">Vuoi sponsorizzare il ristorante?</label>
