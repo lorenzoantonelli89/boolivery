@@ -49867,54 +49867,65 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-document.addEventListener('DOMContentLoaded', function () {
-  new Vue({
-    el: '#app',
-    data: {
-      restaurants: '',
-      activeRestaurant: '',
-      categories: '',
-      plates: ''
-    },
-    mounted: function mounted() {
-      var _this = this;
-
-      // chiamata axio che ritorna array di tutti i ristoranti
-      axios.get('/api/restaurants').then(function (res) {
-        _this.restaurants = res.data;
-        console.log(_this.restaurants);
-      }); // chiamata axio che ritorna array di tutte le categorie
-
-      axios.get('/api/categories').then(function (res) {
-        _this.categories = res.data;
-        console.log(_this.categories);
-      });
-    },
-    methods: {
-      // funzione che valora il dato active restaurant al click del ristorante selezionato
-      getActiveRestaurant: function getActiveRestaurant(elem) {
-        this.activeRestaurant = elem.id;
-      },
-      // funzione che al click fa una chiamata axios per avere array di piatti
-      getActivePlates: function getActivePlates() {
-        var _this2 = this;
-
-        // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
-        axios.get('/api/plates/' + this.activeRestaurant).then(function (res) {
-          _this2.plates = res.data;
-          console.log(_this2.plates);
-        });
-      }
-    },
-    computed: {
-      // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
-      getHref: function getHref() {
-        return '/restaurant-details/' + this.activeRestaurant;
-      }
-    }
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     new Vue({
+//         el: '#app',
+//         data: {
+//             restaurants: '',
+//             activeRestaurant: '',
+//             categories: '',
+//             plates: '',
+//         },
+//         mounted() {
+//             // chiamata axio che ritorna array di tutti i ristoranti
+//             axios.get('/api/restaurants')
+//                 .then(res => {
+//                     this.restaurants = res.data;
+//                     console.log(this.restaurants);
+//                 })
+//             // chiamata axio che ritorna array di tutte le categorie
+//             axios.get('/api/categories')
+//                 .then(res => {
+//                     this.categories = res.data;
+//                     console.log(this.categories);
+//                 })
+//             // axios.get('/api/plates/' + this.activeRestaurant)
+//             //     .then(res => {
+//             //         this.plates = res.data;
+//             //         console.log(this.plates);
+//             //     })
+//         },
+//         methods: {
+//             // funzione che valora il dato active restaurant al click del ristorante selezionato
+//             getActiveRestaurant: function(elem){
+//                 this.activeRestaurant = elem.id;
+//             },
+//             // funzione che al click fa una chiamata axios per avere array di piatti
+//             getActivePlates: function(){
+//                 // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
+//                 // axios.get('/api/plates/' + this.activeRestaurant)
+//                 //     .then(res => {
+//                 //         this.plates = res.data;
+//                 //         console.log('this.plates');
+//                 //     })
+//             },
+//             test: function(){
+//                 axios.get('/api/plates/' + this.activeRestaurant)
+//                     .then(res => {
+//                         this.plates = res.data;
+//                         console.log(this.plates);
+//                     })
+//                 console.log(this.activeRestaurant);
+//             }
+//         },
+//         computed: {
+//             // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
+//             getHref: function(){
+//                 return '/restaurant-details/' + this.activeRestaurant;
+//             }
+//         }
+//     });
+// });
 
 /***/ }),
 
