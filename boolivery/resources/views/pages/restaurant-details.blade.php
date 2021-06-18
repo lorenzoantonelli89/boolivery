@@ -10,10 +10,10 @@
     <main>
         <div>
             <h1>
-                {{$restaurant -> restaurant_name}}
+                {{$restaurant -> name}}
             </h1>
             <h3>
-                {{$restaurant -> address_restaurant}}
+                {{$restaurant -> restaurant}}
             </h3>
             <p>
                 {{$restaurant -> description}}
