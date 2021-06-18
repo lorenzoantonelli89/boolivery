@@ -10967,7 +10967,7 @@ a.text-dark:focus {
 
 .div-margin {
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
 }
 
 body {
@@ -10987,47 +10987,50 @@ main {
   align-items: center;
 }
 
-.jumbotron {
+/*@media screen and (min-width: 480px) and (max-width: 768px) {
+  .myjumbotron {
+    background-image: none;
+    background-color: blue;
+    .research-request {
+      width: 100%;
+    }
+  }
+}*/
+
+.myjumbotron {
   width: 100%;
-  height: 500px;
   background-image: url("/storage/graphics/jumbotron.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  padding: 150px 0;
+  /*.logo-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    flex-grow: 1;     
+    align-items: center;
+
+    .logo {
+      width: 150px;
+    }
+  } */
 }
 
-.jumbotron .logo-login {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  flex-grow: 1;
-  align-items: center;
-}
-
-.jumbotron .logo-login .logo {
-  width: 150px;
-}
-
-.jumbotron .wellcome {
+.myjumbotron .welcome {
   display: flex;
   flex-direction: column;
-  width: 650px;
+  width: 600px;
   height: 100%;
-  justify-content: space-between;
 }
 
-.jumbotron .title-research {
-  margin-bottom: 30px;
-}
-
-.jumbotron .title-research h1 {
+.myjumbotron .title-research h1 {
   margin-bottom: 30px;
   font-size: 45px;
 }
 
-.jumbotron .research-request {
+.myjumbotron .research-request {
   flex-grow: 1;
   height: 170px;
   display: flex;
@@ -11038,19 +11041,34 @@ main {
   background-color: white;
 }
 
-.jumbotron .research-request .input-adresse {
+.myjumbotron .research-request .input-adresse {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.jumbotron .research-request .input-adresse #guest-request {
+.myjumbotron .research-request .input-adresse #guest-request {
   font-size: 25px;
   flex-grow: 1;
   height: 45px;
 }
 
-.jumbotron .research-request .input-adresse #guest-request-click {
+.myjumbotron .research-request .input-adresse #guest-request::-moz-placeholder {
+  padding-left: 8px;
+  font-size: 16pt;
+}
+
+.myjumbotron .research-request .input-adresse #guest-request:-ms-input-placeholder {
+  padding-left: 8px;
+  font-size: 16pt;
+}
+
+.myjumbotron .research-request .input-adresse #guest-request::placeholder {
+  padding-left: 8px;
+  font-size: 16pt;
+}
+
+.myjumbotron .research-request .input-adresse #guest-request-click {
   height: 45px;
   width: 100px;
   margin-left: 15px;
@@ -11060,18 +11078,24 @@ main {
     } */
 }
 
+/*@media screen and (max-width: 769px) {
+  .main-1-container {
+    display: flex;
+    align-items: center;
+  }
+}*/
+
 .main-sec-1 {
-  height: 680px;
   width: 100%;
   background-image: url("/storage/assets/sfondo8.png");
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 150px 0;
 }
 
 .main-sec-1 .main-1-container {
-  height: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -11084,18 +11108,54 @@ main {
   align-items: center;
   justify-content: space-between;
   height: 360px;
-  width: 320px;
+  width: 340px;
 }
 
 .main-sec-1 .main-1-container .piatto img {
   width: 280px;
-  border-radius: 15px;
+  border-radius: 50%;
+}
+
+.main-sec-1 .main-1-container .piatto img:hover {
+  transform: scale(1.03);
+  transition: all 2s ease;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    text-align: center;
+  }
+
+  .cards {
+    background-color: white;
+    width: 100%;
+    height: 300px;
+  }
+
+  .cards .dx {
+    background-image: url("/storage/restaurant-plates/barbecueribs.png");
+    /* Inserisci array di immagini */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .cards .sx {
+    display: none;
+  }
 }
 
 #section-2 {
   background-color: #7faf48;
   width: 100%;
   padding: 70px 0;
+}
+
+#section-2 h1 {
+  color: white;
+}
+
+#section-2 h1 .fa-star {
+  color: #ffbb00;
 }
 
 #section-2 .cards {
@@ -11112,6 +11172,8 @@ main {
 #section-2 .cards .dx {
   background-image: url("/storage/restaurant-plates/barbecueribs.png");
   /* Inserisci array di immagini */
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   -webkit-clip-path: polygon(86% 0, 100% 51%, 88% 100%, 0 100%, 0 0);
           clip-path: polygon(86% 0, 100% 51%, 88% 100%, 0 100%, 0 0);
@@ -11201,16 +11263,11 @@ main {
   cursor: pointer;
 }
 
-#contacts #mail #mail:hover {
-  background-color: white;
-  width: -70px;
-  height: 20px;
-}
-
 #contacts #mail .fa-at {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  vertical-align: middle;
+  align-items: center;
   line-height: 40px;
 }
 
@@ -11228,6 +11285,50 @@ main {
   justify-content: center;
   align-items: center;
   line-height: 40px;
+}
+
+#header-log {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin: 10px 20px;
+}
+
+#header-log #logo img {
+  width: 40px;
+  height: 40px;
+}
+
+#header-log #login-a {
+  vertical-align: middle;
+  line-height: 40px;
+}
+
+#header-log #login-a ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header-log #login-a ul li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+#header-log #login-a ul li a {
+  color: #00c2b8;
+  text-decoration: none;
+}
+
+#header-log #login-a ul li:last-child {
+  background-color: #00c2b8;
+  text-align: center;
+  width: 100px;
+  border-radius: 7px;
+}
+
+#header-log #login-a ul li:last-child a {
+  color: white;
+  text-decoration: none;
 }
 
 footer {

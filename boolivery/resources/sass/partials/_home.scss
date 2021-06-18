@@ -9,41 +9,46 @@ main {
 
 // GRAFICA JUMBOTRON
 
-.jumbotron {
+// MEDIA QUERY JUMBOTRON -- > TABLET 
+/*@media screen and (min-width: 480px) and (max-width: 768px) {
+  .myjumbotron {
+    background-image: none;
+    background-color: blue;
+    .research-request {
+      width: 100%;
+    }
+  }
+}*/
+.myjumbotron {
     width: 100%;
-    height: 500px;
     background-image: url("/storage/graphics/jumbotron.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    padding: 150px 0; 
 
-    .logo-login {
+    /*.logo-login {
       display: flex;
       justify-content: space-between;
       margin-top: 15px;
-      flex-grow: 1;
-      
+      flex-grow: 1;     
       align-items: center;
   
       .logo {
         width: 150px;
       }
-  
-    }
+    } */
     
-    .wellcome {
+    .welcome {
       display: flex;
       flex-direction: column;
-      width: 650px;
-      height: 100%;
-      justify-content: space-between;
-      
+      width: 600px;
+      height: 100%;    
     }
 
     .title-research {
-      margin-bottom: 30px;
+      
       
       h1 {
         margin-bottom: 30px;
@@ -70,7 +75,10 @@ main {
          font-size: 25px;
          flex-grow: 1;
          height: 45px;
-         
+        }
+        #guest-request::placeholder {
+          padding-left: 8px;
+          font-size: 16pt;
         }
 
         #guest-request-click {
@@ -87,22 +95,24 @@ main {
 
     }
   }
-
+/*@media screen and (max-width: 769px) {
+  .main-1-container {
+    display: flex;
+    align-items: center;
+  }
+}*/
   .main-sec-1 {
-  
-    height: 680px;
     width: 100%;
     background-image: url("/storage/assets/sfondo8.png");
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 150px 0;
 
     .main-1-container {
-      height: 100%;
       display: flex;
       align-items: center;
-     
       flex-wrap: wrap;
       justify-content: space-between;
       
@@ -113,26 +123,49 @@ main {
         align-items: center;
         justify-content: space-between;
         height: 360px;
-        width: 320px;
-       
-        
-        
+        width: 340px; 
         img {
           width: 280px;
-          border-radius: 15px;
+          border-radius: 50%;
         }
-    }
-
+      }
+      .piatto img:hover {
+        transform: scale(1.03);
+        transition: all 2s ease;
+      }
     }
 
   }
 
 // sezione dei piatti
-
+@media screen and (max-width: 768px) {
+  h1 {
+    text-align: center;
+  }
+  .cards {
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    .dx {
+      background-image: url("/storage/restaurant-plates/barbecueribs.png"); /* Inserisci array di immagini */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .sx {
+      display: none;
+    }
+  }
+}
   #section-2 {
     background-color: #7faf48;
     width: 100%;
     padding: 70px 0;
+    h1 {
+      color: white;
+      .fa-star {
+        color: rgb(255, 187, 0);
+      }
+    }
     .cards {
         display: flex;
         background-color: white;
@@ -144,6 +177,8 @@ main {
         z-index: 99;
         .dx {
             background-image: url("/storage/restaurant-plates/barbecueribs.png"); /* Inserisci array di immagini */
+            background-repeat: no-repeat;
+            background-size: cover;
             background-position: center;
             clip-path: polygon(86% 0, 100% 51%, 88% 100%, 0 100%, 0 0);
             min-width: 300px;
@@ -226,16 +261,8 @@ main {
       border-radius: 50%;
       margin-bottom: 10px;
       cursor: pointer;
-    #mail:hover {
-      background-color: white;
-      width: -70px;
-      height: 20px;
-    }
       .fa-at {
-        
-        display: flex;
-        justify-content: center;
-        vertical-align: middle;
+        @include flex(column, center, center);
         line-height: 40px;
       }
     }
@@ -248,7 +275,6 @@ main {
       .fa-phone {
         @include flex(column, center, center);
         line-height: 40px;
-        
       }
     }
   }

@@ -5,14 +5,9 @@
     <div class="container py-4">
         {{-- DA INSERIRE CODICE RILEVAZIONE ERRORI --}}
         <h1>Aggiungi nuovo Ristorante</h1>
-        <form method="POST" action="{{route('storeRestaurant',$user->id)}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('storeRestaurant')}}" enctype="multipart/form-data">
             @csrf
             @method('POST')
-            {{-- user --}}
-            <div class="form-group">
-                <label for="customer_id">ID Ristoratore</label>
-                <input type="text" class="form-control" name="user_id" id="user_id" value="{{$user->id}}" readonly>
-            </div>
             {{-- restaurant --}}
             <div class="form-group">
                 <label for="name">Nome Ristorante</label>
@@ -73,7 +68,7 @@
             @endif
                
             <button type="submit" class="btn btn-primary">Crea</button>
-            </form>
+        </form>
     </div>
 
 @endsection
