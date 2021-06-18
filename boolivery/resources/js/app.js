@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             activeRestaurant: '',
             categories: '',
             plates: '',
+            price:0
         },
         mounted() {
             // chiamata axio che ritorna array di tutti i ristoranti
@@ -64,6 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         this.plates = res.data;
                         console.log(this.plates);
                     })
+            },
+            getPlate: function(item){
+
+                this.price = this.price+item;
             }
            
         },

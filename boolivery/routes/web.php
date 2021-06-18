@@ -25,9 +25,9 @@ Auth::routes();
 Route::get('/user/my-restaurants','Admin\RestaurantController@listRestaurant')
     -> name('listRestaurant');
 // rotte per la creazione di un nuovo ristorante
-Route::get('/user/{id}/createRestaurant','Admin\RestaurantController@createRestaurant')
+Route::get('/user/createRestaurant','Admin\RestaurantController@createRestaurant')
     -> name('createRestaurant');
-Route::post('/user/{id}/storeRestaurant','Admin\RestaurantController@storeRestaurant')
+Route::post('/user/storeRestaurant','Admin\RestaurantController@storeRestaurant')
     -> name('storeRestaurant');
 // rotta che porta al form per fare la modifica di un ristorante
 Route::get('/editRestaurant/{id}','Admin\RestaurantController@editRestaurant')
