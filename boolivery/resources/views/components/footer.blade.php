@@ -43,16 +43,17 @@
                 </div>
             </div>
         </div>
-                    <!-- zona BASSA del footer -->
-                    <div class="footer-links div-margin">
-                        <div class="links">
-                            <i class="fab fa-facebook"></i>
-                            <i class="fab fa-twitter"></i>
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <div>
-                            <span class="weAre">&copy; Team 4</span>
-                        </div>
-                    </div>
-    </div>      
-</footer>
+        <!-- zona BASSA del footer -->
+        <div class="footer-links div-margin">
+            <div class="links">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div>
+                <span class="weAre">&copy; Team 4</span>
+            </div>
+        </div>
+    </div>
+      
+    </footer>

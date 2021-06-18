@@ -11,15 +11,15 @@
             {{-- restaurant --}}
             <div class="form-group">
                 <label for="name">Nome Ristorante</label>
-                <input type="text" id="name" name="name" value="{{$restaurant->name}}">
+                <input type="text" id="name" name="name" value="{{$restaurant->name}}" maxlength="255">
             </div>
             <div class="form-group">
                 <label for="address">Indirizzo Ristorante</label>
-                <input type="text" id="address" name="address" value="{{$restaurant->address}}">
+                <input type="text" id="address" name="address" value="{{$restaurant->address}}" maxlength="255">
             </div>
             <div class="form-group">
                 <label for="phone">Num telefono</label>
-                <input type="number" id="phone" name="phone" value="{{$restaurant->phone}}">
+                <input type="number" id="phone" name="phone" value="{{$restaurant->phone}}" maxlength="64">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descrizione</label>
-                <input type="text" id="description" name="description" value="{{$restaurant->description}}">
+                <input type="text" id="description" name="description" value="{{$restaurant->description}}" maxlength="1000">
             </div>
             <div class="form-group">
                 <label for="image_profile">Foto Profilo</label>
