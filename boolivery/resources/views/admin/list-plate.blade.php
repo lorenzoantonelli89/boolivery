@@ -12,12 +12,12 @@
                             @foreach ($restaurant -> plates as $plate)
                                 <li class="py-3" style="border: 1px solid red; text-align:center">   
                                     <div>
-                                        <h4>{{ $plate -> plate}}</h4>
+                                        <h4>{{ $plate -> name}}</h4>
                                         <p>
                                             {{ $plate -> description}}
                                             
                                         </p>
-                                        <img style="height: 250px; width:350px" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate->image }}" alt="{{ $plate->plate_name }}">
+                                        <img style="height: 250px; width:350px;object-fit:contain" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate->image }}" alt="{{ $plate->plate_name }}">
 
                                         <h6>
                                             € {{ $plate -> price}}

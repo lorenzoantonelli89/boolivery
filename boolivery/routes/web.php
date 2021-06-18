@@ -39,11 +39,9 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
  Route::get('/list-plate{id}', 'Admin\PlateController@plateList')->name('plateList');
 
  Route::get('/edit-plate{id}', 'Admin\PlateController@editPlate')->name('editPlate');
-
  Route::post('/update-plate{id}', 'Admin\PlateController@updatePlate')->name('updatePlate');
 
  Route::get('/create-plate{id}', 'Admin\PlateController@createPlate')->name('createPlate');
-
  Route::post('/store-plate{id}', 'Admin\PlateController@storePlate')->name('storePlate');
 
 
