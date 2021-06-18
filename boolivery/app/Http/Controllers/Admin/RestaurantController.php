@@ -18,20 +18,18 @@ class RestaurantController extends Controller
 
     public function listRestaurant(){
 
-        
         $user= Auth::user();
-        $restaurants=Restaurant::where('user_id',$user->id)->get();
+        $restaurants=$user->restaurants()->get();
         return view('admin.list-restaurant', compact('restaurants','user'));
     }
 
-    public function createRestaurant($id){
+    public function createRestaurant(){
 
-        $user = User::findOrFail($id);
         $categories = Category::all();
-        return view('admin.create-restaurant',compact('user','categories'));
+        return view('admin.create-restaurant',compact('categories'));
     }
 
-    public function storeRestaurant(Request $request,$id){
+    public function storeRestaurant(Request $request){
 
         $validated=$request->validate([
            'name' => 'required|min:3|max:255',
@@ -41,7 +39,8 @@ class RestaurantController extends Controller
            'description'=>'max: 1000',
            'image_cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            'image_profile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-           'user_id'=>'exists:users,id',
+           'category_id' => 'required_without_all',
+           //'user_id'=>'exists:users,id',
         ]);
 
         $img=$request->file('image_profile');
@@ -56,14 +55,18 @@ class RestaurantController extends Controller
         $folderCover = '/restaurant-cover/';
         $coverFile=$cover->storeAs($folderCover,$coverNewName,'public');
 
-        $user = User::findOrFail($id);
+        $user= Auth::user();
         $restaurant= Restaurant::make($validated);
         $restaurant->user()->associate($user);
         $restaurant->image_profile = $imgNewName;
         $restaurant->image_cover = $coverNewName;
         $restaurant->save();
 
-        return redirect()->route('listRestaurant',$id);
+        $categories = Category::findOrFail($request->category_id);
+        $restaurant->categories()->attach($categories);
+        $restaurant->save();
+
+        return redirect()->route('listRestaurant',$user->id);
     }
 
     public function editRestaurant($id){
@@ -74,6 +77,7 @@ class RestaurantController extends Controller
     }
 
     public function updateRestaurant(Request $request,$id){
+
         $validated=$request->validate([
             'name' => 'required|min:3|max:255',
             'address'=>'required|min:3',
@@ -82,6 +86,7 @@ class RestaurantController extends Controller
             'description'=>'max: 1000',
             'image_cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_profile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category_id'=>'required_without_all',
             'user_id'=>'exists:users,id',
          ]);
         
