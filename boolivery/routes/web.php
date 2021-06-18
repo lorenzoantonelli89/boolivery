@@ -25,9 +25,9 @@ Auth::routes();
 Route::get('/user/my-restaurants','Admin\RestaurantController@listRestaurant')
 ->name('listRestaurant');
 
-Route::get('/user/{id}/createRestaurant','Admin\RestaurantController@createRestaurant')
+Route::get('/createRestaurant','Admin\RestaurantController@createRestaurant')
 ->name('createRestaurant');
-Route::post('/user/{id}/storeRestaurant','Admin\RestaurantController@storeRestaurant')
+Route::post('/storeRestaurant','Admin\RestaurantController@storeRestaurant')
 ->name('storeRestaurant');
 
 Route::get('/editRestaurant/{id}','Admin\RestaurantController@editRestaurant')

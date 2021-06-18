@@ -1,13 +1,15 @@
 @extends('layouts.main-layout')
+
 @section('content')
     
-<div>
+<div class="container">
     <h1>LISTA RISTORANTI DI {{$user->name}} {{$user->lastname}}</h1>
-    <a href="{{route('createRestaurant',$user->id)}}">
+    <a href="{{route('createRestaurant')}}">
         <button>CREA NUOVO</button>
-    </a> 
+    </a>
     <ul>
         @foreach ($restaurants as $restaurant)
+        <li>
             <h2>{{$restaurant->name}}</h2>
             <div>Tipo di ristorante:
                 @foreach ($restaurant->categories as $category)
@@ -28,28 +30,9 @@
                 <a href="{{route('editRestaurant',$restaurant->id)}}">
                     <button>EDIT</button>
                 </a>
-            </div>    
+            </div>  
+        </li>
         @endforeach
-
-        {{-- @foreach ($user->restaurants as $restaurant)
-            <h2>{{$restaurant->name}}</h2>   
-            <div>{{$restaurant->address_restaurant}}</div>        
-            <div>{{$restaurant->phone}}</div>        
-            <div>{{$restaurant->email}}</div>        
-            <div>{{$restaurant->description}}</div>        
-            <div>
-                <img src="{{asset('/storage/restaurant-profile/'.$restaurant->image_profile)}}" alt="" width="200px">
-            </div> 
-            <div>
-                <a href="">
-                    <button>VIEW</button>
-                </a>
-                <a href="">
-                    <button>EDIT</button>
-                </a>
-            </div>    
-        @endforeach --}}
-
     </ul>
 </div>
 

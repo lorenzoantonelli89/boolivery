@@ -7,29 +7,23 @@
 
     <main>
     <!-- PARTE SUPERIODE DEL SITO -->
-    <div class=jumbotron>
+    <div class=myjumbotron>
           <div class="div-margin">
-          <div class="wellcome ">
-                
-                <div class="logo-login">
-                  <img class="logo" src={{ asset('/storage/graphics/logocompleto.png') }} alt="">
-                  <a class="blink" href="#">LOGIN</a>
-                </div>
-                
+          <div class="welcome ">
+            <!-- <div class="logo-login">
+              <img class="logo" src={{ asset('/storage/graphics/logocompleto.png') }} alt="">
+              <a class="blink" href="#">LOGIN</a>
+            </div> -->
                 <div class="title-research">                  
                     <h1>I piatti che ami, a domicilio</h1>
-                <div class="research-request">
-
+                  <div class="research-request">
                   <span>Cerca il tuo ristorante preferito</span> 
-                  
-                  <div class="input-adresse">
-                    <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito...">
-                    <input id="guest-request-click" type="submit" name="" value="CERCA"></input>
-                  </div>
-
+                    <div class="input-adresse">
+                      <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito...">
+                      <input id="guest-request-click" type="submit" name="" value="CERCA">
+                    </div>
                   <span><a href="#">Accedi</a> per vedere le tue ricerche recenti</span>
-                
-                </div>
+                  </div>
                 </div>        
             </div>
           </div>          
@@ -59,6 +53,7 @@
       <!-- SECONDA SEZIONE, VISIONE DEI PIATTI -->
       <div id="section-2">
         <div class="div-margin">
+          <h1><i class="fas fa-star"></i> I migliori piatti</h1>
             <div class="cards" id="details">
               <div class="dx">
               </div>
