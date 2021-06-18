@@ -20,7 +20,7 @@ class PlateSeeder extends Seeder
                 'image' => 'cheeseburger.png',
                 'price' => 10,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 1,
@@ -29,7 +29,7 @@ class PlateSeeder extends Seeder
                 'image' => 'baconcheeseburger.png',
                 'price' => 12,90,
                 'visible' => '1',
-                'popular' => '1',
+                'popular' => 1,
             ],
             [
                 'restaurant_id' => 1,
@@ -38,7 +38,7 @@ class PlateSeeder extends Seeder
                 'image' => 'cheeseveggiesandwich.png',
                 'price' => 7,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 1,
@@ -47,7 +47,7 @@ class PlateSeeder extends Seeder
                 'image' => 'kosherstylehotdog.png',
                 'price' => 8,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 1,
             ],
             [
                 'restaurant_id' => 2,
@@ -56,7 +56,7 @@ class PlateSeeder extends Seeder
                 'image' => 'bowlclassic.png',
                 'price' => 9,90,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 2,
@@ -65,7 +65,7 @@ class PlateSeeder extends Seeder
                 'image' => 'bowlsalmonanaua.png',
                 'price' => 11,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 2,
@@ -74,7 +74,7 @@ class PlateSeeder extends Seeder
                 'image' => 'bowltonnohawa.png',
                 'price' => 11,90,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 2,
@@ -83,7 +83,7 @@ class PlateSeeder extends Seeder
                 'image' => 'bowlwhitefish.png',
                 'price' => 10,90,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 1,
             ],
             [
                 'restaurant_id' => 2,
@@ -92,7 +92,7 @@ class PlateSeeder extends Seeder
                 'image' => 'edamame.png',
                 'price' => 3,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 2,
@@ -101,7 +101,7 @@ class PlateSeeder extends Seeder
                 'image' => 'ebygyoza.png',
                 'price' => 3,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 3,
@@ -110,7 +110,7 @@ class PlateSeeder extends Seeder
                 'image' => 'risocantonese.png',
                 'price' => 4,20,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 3,
@@ -119,7 +119,7 @@ class PlateSeeder extends Seeder
                 'image' => 'noodles.png',
                 'price' => 5,20,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 3,
@@ -128,7 +128,7 @@ class PlateSeeder extends Seeder
                 'image' => 'raviolidimanzo.png',
                 'price' => 3,5,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 3,
@@ -137,7 +137,7 @@ class PlateSeeder extends Seeder
                 'image' => 'involtiniprimavera.png',
                 'price' => 3,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 3,
@@ -146,7 +146,7 @@ class PlateSeeder extends Seeder
                 'image' => 'polloconmandorle.png',
                 'price' => 4,10,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 4,
@@ -155,7 +155,7 @@ class PlateSeeder extends Seeder
                 'image' => 'spaghettiallacarbonara.png',
                 'price' => 10,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 1,
             ],
             [
                 'restaurant_id' => 4,
@@ -164,7 +164,7 @@ class PlateSeeder extends Seeder
                 'image' => 'paccheriallagiannino.png',
                 'price' => 9,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 4,
@@ -173,7 +173,7 @@ class PlateSeeder extends Seeder
                 'image' => 'gnocchiai4formaggi.png',
                 'price' => 8,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 4,
@@ -182,7 +182,7 @@ class PlateSeeder extends Seeder
                 'image' => 'arrosticini.png',
                 'price' => 5,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 4,
@@ -191,7 +191,7 @@ class PlateSeeder extends Seeder
                 'image' => 'tagliataconrucola.png',
                 'price' => 15,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ], /* update img giordano */
             [
                 'restaurant_id' => 5,
@@ -200,7 +200,7 @@ class PlateSeeder extends Seeder
                 'image' => 'nachosblancos.png',
                 'price' => 6,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 5,
@@ -209,7 +209,7 @@ class PlateSeeder extends Seeder
                 'image' => 'quesadillasmarrana.png',
                 'price' => 9,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 5,
@@ -218,7 +218,7 @@ class PlateSeeder extends Seeder
                 'image' => 'fritturacentenario.png',
                 'price' => 10,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 5,
@@ -227,7 +227,7 @@ class PlateSeeder extends Seeder
                 'image' => 'alitasdepollodoradas.png',
                 'price' => 11,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 1,
             ],
             [
                 'restaurant_id' => 5,
@@ -236,7 +236,7 @@ class PlateSeeder extends Seeder
                 'image' => 'barbecueribs.png',
                 'price' => 16,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 5,
@@ -245,7 +245,7 @@ class PlateSeeder extends Seeder
                 'image' => 'mixedgrillsalsiccia.png',
                 'price' => 12,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 6,
@@ -254,7 +254,7 @@ class PlateSeeder extends Seeder
                 'image' => 'tonnovitellato.png',
                 'price' => 19,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 6,
@@ -263,7 +263,7 @@ class PlateSeeder extends Seeder
                 'image' => 'spaghettidigragnanoconasparagiecalamari.png',
                 'price' => 23,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 6,
@@ -272,7 +272,7 @@ class PlateSeeder extends Seeder
                 'image' => 'salmoneaffumicato.png',
                 'price' => 29,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 7,
@@ -281,7 +281,7 @@ class PlateSeeder extends Seeder
                 'image' => 'regina.png',
                 'price' => 8,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 1,
             ],
             [
                 'restaurant_id' => 7,
@@ -290,7 +290,7 @@ class PlateSeeder extends Seeder
                 'image' => 'trisdimontanare.png',
                 'price' => 9,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 7,
@@ -299,7 +299,7 @@ class PlateSeeder extends Seeder
                 'image' => '',
                 'price' => 9,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 7,
@@ -308,7 +308,7 @@ class PlateSeeder extends Seeder
                 'image' => 'pestodibasilico.png',
                 'price' => 8,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 7,
@@ -317,7 +317,7 @@ class PlateSeeder extends Seeder
                 'image' => 'ripieno.png',
                 'price' => 10,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 7,
@@ -326,7 +326,7 @@ class PlateSeeder extends Seeder
                 'image' => 'melanzaneallaparmigiana.png',
                 'price' => 8,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 8,
@@ -335,7 +335,7 @@ class PlateSeeder extends Seeder
                 'image' => 'greencrust.png',
                 'price' => 9,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 8,
@@ -344,7 +344,7 @@ class PlateSeeder extends Seeder
                 'image' => 'vellutatadistagione.png',
                 'price' => 9,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 8,
@@ -353,7 +353,7 @@ class PlateSeeder extends Seeder
                 'image' => 'hamburgerdiceci.png',
                 'price' => 11,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 9,
@@ -362,7 +362,7 @@ class PlateSeeder extends Seeder
                 'image' => 'pepperonifeast.png',
                 'price' => 8,99,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 9,
@@ -371,7 +371,7 @@ class PlateSeeder extends Seeder
                 'image' => 'chickensupreme.png',
                 'price' => 9,25,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 9,
@@ -380,7 +380,7 @@ class PlateSeeder extends Seeder
                 'image' => 'bbqamericano.png',
                 'price' => 9,75,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 9,
@@ -389,7 +389,7 @@ class PlateSeeder extends Seeder
                 'image' => 'hawaiian.png',
                 'price' => 7,99,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 9,
@@ -398,7 +398,7 @@ class PlateSeeder extends Seeder
                 'image' => 'cheesetriangles.png',
                 'price' => 4,10,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 10,
@@ -407,7 +407,7 @@ class PlateSeeder extends Seeder
                 'image' => 'ebiyakimeshi.png',
                 'price' => 6,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 10,
@@ -416,7 +416,7 @@ class PlateSeeder extends Seeder
                 'image' => 'ebitempura.png',
                 'price' => 8,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 10,
@@ -425,7 +425,7 @@ class PlateSeeder extends Seeder
                 'image' => 'hosomakiavocado.png',
                 'price' => 3,50,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 10,
@@ -434,7 +434,7 @@ class PlateSeeder extends Seeder
                 'image' => 'temakisake.png',
                 'price' => 4,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
             [
                 'restaurant_id' => 10,
@@ -443,7 +443,7 @@ class PlateSeeder extends Seeder
                 'image' => 'gunkantobiko.png',
                 'price' => 4,00,
                 'visible' => '1',
-                'popular' => '0',
+                'popular' => 0,
             ],
         ];
 
