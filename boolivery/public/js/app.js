@@ -49889,6 +49889,11 @@ document.addEventListener('DOMContentLoaded', function () {
       axios.get('/api/categories').then(function (res) {
         _this.categories = res.data;
         console.log(_this.categories);
+      }); // chiamata axio che ritorna array di tutti i piatti
+
+      axios.get('/api/plates/').then(function (res) {
+        _this.plates = res.data;
+        console.log(_this.plates);
       });
     },
     methods: {
@@ -50050,8 +50055,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lorenzoantonelli/Desktop/boolivery/boolivery/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/lorenzoantonelli/Desktop/boolivery/boolivery/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Git repo\boolivery\boolivery\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Git repo\boolivery\boolivery\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -32,39 +32,38 @@
     <!-- PRIMA SEZIONE, VISIONE DEI RISTORANTI -->
       <div class="main-sec-1">
         <div class="main-1-container div-margin">
-          <div class="piatto">
-            <img src={{ asset('/storage/restaurant-profile/dagianninologo.png') }} alt="">
-            <h3>Nome Ristorante</h3>
-            <span>Specialità</span>
-          </div>
-          <div class="piatto">
-            <img src={{ asset('/storage/restaurant-profile/homulogo.png') }} alt="">
-            <h3>Nome Ristorante</h3>
-            <span>Specialità</span>
-          </div>
-          <div class="piatto">
-            <img src={{ asset('/storage/restaurant-profile/pokehouselogo.png') }} alt="">
-            <h3>Nome Ristorante</h3>
-            <span>Specialità</span>
-          </div>        
+          <ul>
+            <li v-for="elem in restaurants" v-on:click="(getActiveRestaurant(elem), getActivePlates)">
+              <a :href="getHref">
+                <div class="restaurants">
+                  <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
+                  <div id="text">
+                    <h3>@{{ elem.restaurant_name }}</h3>
+                    <p>@{{ elem.address_restaurant }}</p>
+                  </div>
+                  <div id="layover"> <!-- Layover in absolute -->
+                  </div>
+                </div>
+              </a>        
+            </li>
+          </ul>
         </div>
       </div>
 
       <!-- SECONDA SEZIONE, VISIONE DEI PIATTI -->
       <div id="section-2">
-        <div class="div-margin">
-          <h1><i class="fas fa-star"></i> I migliori piatti</h1>
-            <div class="cards" id="details">
-              <div class="dx">
-              </div>
-              <div id="column">
-                <div class="sx">
-                  <p><b>Nome: </b></p>
-                  <p><b>Votazioni medie: </b></p>
-                  <p><b>Descrizione: </b></p>
-                </div>
-              </div>
-            </div>
+        <div class="flexible-carusel">
+          <div id="prev">
+          </div>
+          <div class="div-margin">
+            <ul>
+              <li v-for="elem in plates">
+                <img src="elem.image" alt="Immagine di portate">
+              </li>
+            </ul>
+          </div>
+          <div id="next">          
+          </div>
         </div>
       </div>
 
@@ -77,6 +76,8 @@
             <a class="blink" href="#">LOGIN</a>     
           </div>
       </div>
+
+      <!-- CONTENITORE CONTATTI IN ABSOLUTE -->
       <div id="contacts">
         <div id="mail">
           <i class="fas fa-at"></i>
