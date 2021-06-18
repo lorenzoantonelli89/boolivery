@@ -42,7 +42,7 @@
                         <h3 >@{{ elem.name }}</h3>
                         <p>@{{ elem.restaurant }}</p>
                       </div>
-                      <div id="layover"> <!-- Layover in absolute -->
+                      <div id="layover" > <!-- Layover in absolute -->
                       </div>
                     </div>
                   </a>        
@@ -54,17 +54,28 @@
           <!-- SECONDA SEZIONE, VISIONE DEI PIATTI -->
           <div id="section-2">
             <div class="flexible-carusel">
-              <div id="prev">
+              <div id="prev" class="chevron">
+                <i class="fas fa-chevron-left"></i>
               </div>
+              <div class="position-carousel"></div>
               <div class="div-margin">
                 <ul>
-                  <li v-for="elem in platesPopular">
-                    <img :src="'/storage/restaurant-plates/' + elem.image " alt="Immagine di portate">
+                  <li>
+                    <img :src="'/storage/restaurant-plates/' + platesPopular[0].image" alt="Immagine di portate">
+                    <div id="plates-info">
+                      <div id="text-plates">
+                        <h3><i>Nome ristorante</i></h3>
+                        <h4><i>Nome cibo</i></h4>
+                        <p><i>Ratings</i></p>
+                        <p><i>Descrizione</i></p>
+                      </div>
+                    </div>
                   </li>
                 </ul>
               </div>
-              <div id="next">          
-              </div>
+              <div id="next" class="chevron">
+                <i class="fas fa-chevron-right"></i>          
+              </div>            
             </div>
           </div>
 
@@ -97,7 +108,7 @@
               restaurants: '',
               activeRestaurant: '',
               categories: '',
-              platesPopular: [],
+              platesPopular: [] 
           },
           mounted() {
               // chiamata axio che ritorna array di tutti i ristoranti
@@ -129,8 +140,7 @@
               // funzione che valora il dato active restaurant al click del ristorante selezionato
               getActiveRestaurant: function(elem){
                   this.activeRestaurant = elem.id;
-              },
-              
+              }
           },
           computed: {
               // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
