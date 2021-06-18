@@ -49875,7 +49875,8 @@ document.addEventListener('DOMContentLoaded', function () {
       restaurants: '',
       activeRestaurant: '',
       categories: '',
-      plates: ''
+      plates: '',
+      price: 0
     },
     mounted: function mounted() {
       var _this = this;
@@ -49905,6 +49906,9 @@ document.addEventListener('DOMContentLoaded', function () {
           _this2.plates = res.data;
           console.log(_this2.plates);
         });
+      },
+      getPlate: function getPlate(item) {
+        this.price = this.price + item;
       }
     },
     computed: {

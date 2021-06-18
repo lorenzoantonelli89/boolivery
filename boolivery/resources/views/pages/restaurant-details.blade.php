@@ -25,6 +25,28 @@
             <a href="{{route('home')}}">
                 Back Home
             </a>
+            <div>PIATTI</div>
+            <ul>
+                @foreach ($restaurant->plates as $plate)
+                   <li>
+                       <h3>{{$plate->name}}</h3>
+                       <div v-on:click="getPlate({{$plate->price}})">{{$plate->price}}</div>
+                    </li> 
+                @endforeach
+            </ul>
+            <div>
+                <form action="">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input type="text">
+                    </div>
+                    <div>
+                        <label for="">Totale</label>
+                        
+                        <input type="number" readonly :value="price">
+                    </div>
+                </form>
+            </div>
         </div>
     </main>
     
