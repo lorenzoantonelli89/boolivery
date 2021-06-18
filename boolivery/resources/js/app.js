@@ -78,7 +78,6 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 //                     })
 //                 console.log(this.activeRestaurant);
 //             }
-           
 //         },
 //         computed: {
 //             // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
