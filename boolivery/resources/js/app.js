@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function () {
         data: {
             restaurants: '',
             activeRestaurant: '',
+            categories: '',
+            plates: '',
         },
         mounted() {
             // chiamata axio che ritorna array di tutti i ristoranti
@@ -42,11 +44,26 @@ document.addEventListener('DOMContentLoaded', function () {
                     this.restaurants = res.data;
                     console.log(this.restaurants);
                 })
+            // chiamata axio che ritorna array di tutte le categorie
+            axios.get('/api/categories')
+                .then(res => {
+                    this.categories = res.data;
+                    console.log(this.categories);
+                })
         },
         methods: {
             // funzione che valora il dato active restaurant al click del ristorante selezionato
             getActiveRestaurant: function(elem){
                 this.activeRestaurant = elem.id;
+            },
+            // funzione che al click fa una chiamata axios per avere array di piatti
+            getActivePlates: function(){
+                // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
+                axios.get('/api/plates/' + this.activeRestaurant)
+                    .then(res => {
+                        this.plates = res.data;
+                        console.log(this.plates);
+                    })
             }
            
         },

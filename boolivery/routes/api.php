@@ -17,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+// rotta per chiamata axios ristoranti
+Route::get('/restaurants', 'Api\RestaurantHomeController@getRestaurants')
+    -> name('restaurants-api');
+// rotta per chiamata axios categorie
+Route::get('/categories', 'Api\CategoryHomeController@getCategories')
+    -> name('categories-api');
+// rotta per chiamata axios piatti del ristorante selezionato
+Route::get('/plates/{id}', 'Api\PlateDetailController@getPlates')
+    -> name('plates-api');    
 
-Route::get('/restaurants', 'Api\RestaurantHomeController@getRestaurant')->name('restaurant-api');
