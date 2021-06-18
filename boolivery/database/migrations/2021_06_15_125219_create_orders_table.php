@@ -19,8 +19,8 @@ class CreateOrdersTable extends Migration
             $table->string('lastname');
             $table->string('email')->unique();
             $table->string('shipping_address');
-            $table->date('date_delivery');
-            $table->dateTime('time_delivery', 0);
+            // $table->date('date_delivery');
+            // $table->dateTime('time_delivery', 0);
             $table->decimal('total_price', 8, 2); 
             $table->boolean('status')->default(false);
             $table->timestamps();
