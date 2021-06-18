@@ -1,0 +1,149 @@
+@import 'partials/variables';
+
+.restaurant-show-container {
+    width: 100%;
+    height: 340px;
+    border: 1px solid $ourgrey;
+    
+
+    .restaurant-show {
+        height: 340px;
+        @include flex(row, space-between, center );
+    
+    }
+// Valutazione, indirizzo e descrizione
+        .restaurant-description {
+            flex-grow: 1;
+            @include flex(column, space-around, flex-start);
+            height: 100%;
+        
+        }
+
+        .restaurant-details {
+            ul {
+                @include flex(row, space-between, center);
+            list-style-type: none;
+            
+            a {
+                color: $ourblue;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: $ourgreen;
+                }
+            }
+
+            }
+        }
+
+        .atHome {
+            color: black;
+        }
+
+//foto e indicazioni sull'ordine 
+    .restaurant-foto-order {
+        width: 370px;
+        height: 100%;
+        @include flex(column, space-around, center);
+                
+        img {
+            border-radius: 15px;
+            width: 100%;
+        }
+
+        .fa-clock {
+            margin-right: 10px;
+        }
+
+        .types-of-payment {
+            height: 50px;
+            width: 100%;
+            border: 1px solid $ourgrey;
+            @include flex(row, center, center);
+            
+            i {
+                
+                font-size: 35px;
+                margin-right: 15px;
+                
+            }
+
+            .fa-cc-paypal {
+                color: $paypal;
+            }
+
+            .fa-cc-visa {
+                color: $visa;
+            }
+
+            .fa-cc-mastercard {
+                color: $mastercard;
+            }
+        }
+
+        .shop-link {
+            height: 50px;
+            width: 100%;
+            background-color: $ouryellow;
+            color: black;
+            @include flex(row, center, center);
+
+            i {
+                width: 35px;
+                color: $ourblue; 
+   
+            }
+        }
+
+        
+               
+    }
+}
+
+.restaurant-fooding-list {
+    @include flex(row, space-between, center);
+    height: 49px;
+    color: $ourblue;
+
+    .fooding-list {
+
+        flex-grow: 1;
+        margin-right: 10%;
+        height: 100%;
+        
+
+        ul {
+            margin-top: 11px;
+            @include flex(row, flex-start, center);
+            list-style-type: none;
+            
+            li {
+                margin-right: 30px;
+            }
+        }
+
+    }
+
+    .delivery-promotion {
+        @include flex(row, flex-end, center);
+        font-size: 13px;
+        color: red;
+        width: 370px;
+        
+    }
+
+    .plates-choosing-view {
+
+        width: 100%;
+        background-color: $ourgrey;
+
+        .choosing-and-total {
+
+            @include flex(row, flex-start, flex-start);
+
+        }
+
+    }
+
+}
+
