@@ -7,16 +7,16 @@
             <ul>
                 <!-- Authentication Links -->
                 @guest
-                    <li>
+                    <li id="first">
                         <a href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li>
+                        <li id="second">
                             <a href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
-                    <li >
+                    <li id="third">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
                         </a>
