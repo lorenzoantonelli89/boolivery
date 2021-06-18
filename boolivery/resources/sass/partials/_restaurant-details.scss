@@ -1,9 +1,11 @@
 @import 'partials/variables';
+@import 'partials/common';
 
 .restaurant-show-container {
     width: 100%;
     height: 340px;
     border: 1px solid $ourgrey;
+    display: flex;
     
 
     .restaurant-show {
@@ -51,8 +53,10 @@
             width: 100%;
         }
 
-        .fa-clock {
+        .fa-clock
+         {
             margin-right: 10px;
+            color: black;
         }
 
         .types-of-payment {
@@ -132,18 +136,110 @@
         
     }
 
-    .plates-choosing-view {
+    
 
-        width: 100%;
-        background-color: $ourgrey;
+}
 
-        .choosing-and-total {
+.plates-choosing-view {
+    min-height: 400px;
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $ourgrey;
+    
+    
 
+    .choosing-and-total-container {
+
+        display: flex;
+        position: relative;
+
+        .plate-selection-container {
+            
+            width: calc(100% - 340px);
             @include flex(row, flex-start, flex-start);
+            flex-wrap: wrap;
+            
+        
+            .plate-selection-view {
+        
+                width: 400px;
+                height: 120px;
+                @include flex(row, space-around, center);
+                margin-top: 15px;
+                background-color: white;
+                
+
+                .plate-description {
+                    height: 100%;
+                    flex-grow: 1;
+                    @include flex(column, space-around, flex-start);
+                    margin-left: 5px;
+
+                    span {
+                        font-size: 12px;
+                    }
+                }
+        
+                img {
+                    width: 100px;
+                    margin-right: 5px;
+                }
+                
+            }
+
+            .plate-selection-view:nth-child(2n + 1) {
+                margin-right: 5%;
+            }
+        
+        }
+
+        .momentary-total {
+
+            width: 370px;
+            position: relative;
+            background-color: white;
+            
+            .total-sticky {
+                position: sticky;
+                width: 370px;
+                display: flex;
+                @include flex(column, flex-start, center);
+
+                .shop-link {
+                     
+                    height: 50px;
+                    width: 370px;
+                    background-color: $ouryellow;
+                    color: black;
+                    @include flex(row, center, center);
+                
+                    i {
+                        width: 35px;
+                        color: $ourblue; 
+                
+                    }
+                }
+                .mykart {
+                    @include flex(column, flex-start, center); 
+                   width: 90%;
+                   border-bottom: 1px solid $ourgrey;
+                    
+    
+                }
+    
+                
+
+            }
+
+            
 
         }
 
     }
 
+    
+
 }
+
 

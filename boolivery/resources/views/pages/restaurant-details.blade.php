@@ -11,8 +11,7 @@
         <div class="restaurant-show-container">
             <div class="restaurant-show div-margin">
                 <div class="restaurant-description">
-
-                <span><a href="">Home</a> / <a href="">Monti</a> / Elleniki </span>
+                <span><a href="{{route('home')}}">Home</a> / ristorante di</span>
                 
                     <!-- valutazione, indirizzo e descrizione -->
                     <div class="restaurant-details">
@@ -23,9 +22,9 @@
 
                     <h3>***** 4,7 (500+ valutazioni)</h3>
 
-                    <h3>
+                    <h5>
                         {{$restaurant -> address_restaurant}}
-                    </h3>
+                    </h5>
 
                     <p>
                         <i>{{$restaurant -> description}}</i>
@@ -33,20 +32,20 @@
                         <ul>
                         
                         @foreach ($restaurant -> plates as $plate)
-
                         <li> <a href=""> {{$plate -> plate_name}}</a></li>
                         <i class="fas fa-utensils"></i>
                         @endforeach
                         
                         
-                    </ul>
+                        </ul>
+
                     </p>
 
                     </div>
 
-                    <a class="atHome" href="{{route('home')}}">
-                        Torna alla lista principale
-                    </a>
+                        <a class="atHome" href="{{route('home')}}">
+                            Torna alla lista principale
+                        </a>
                     </div>
                 <!-- IMMAGINE LATERALE E SHOP -->
                 <div class="restaurant-foto-order">
@@ -55,39 +54,25 @@
 
                 <span><i class="far fa-clock"></i>Consegnamo entro 30 minuti dall'ordine</span>
 
+                <span><i class="far fa-clock"></i>Puoi pagare subito o alla consegna</span>
+
                 <div class="types-of-payment">
                 <i class="fab fa-cc-paypal"></i>
                 <i class="fab fa-cc-visa"></i>
                 <i class="fab fa-cc-mastercard"></i>
                 </div>
                 
-                <a class="shop-link" href=""><i class="fas fa-shopping-cart"></i>CONCLUDI ORDINE</a>
                 
-
                 </div>
-            
-                <div>
-                    
+                <div>                    
                 </div>
-
-        <div id="app2">
-            <div>
-            <h1 >
-                {{$restaurant -> name}}
-            </h1>
-            <h3>
-                {{$restaurant -> restaurant}}
-            </h3>
-            <p>
-                {{$restaurant -> description}}
-            </p>
-            <div>
-                <img src="{{ asset('/storage/restaurant-profile/' . $restaurant -> image_profile) }}" alt="">
-            </div>
-           
         </div>
-        <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
-        <div class="restaurant-fooding-list div-margin">
+        <div>            
+        </div>
+        </div>
+
+    <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
+    <div class="restaurant-fooding-list div-margin">
                 <div class="fooding-list">
                     <ul class="">
                          
@@ -105,49 +90,56 @@
                     <span>Spendi almeno 10,00€ per la <b>consegna gratuita</b></span>
                 </div>
             
-                <div class="plates-choosing-view">
+                
+            </div>
+            <!-- SEZIONE PER LA SCELTA DEI PIATTI -->
+            <div class="plates-choosing-view">
+            
                     
-                    <div class="choosing-and-total div-margin">
-
+                <div class="choosing-and-total-container div-margin">
+               
                     <div class="plate-selection-container">
                         @foreach ($restaurant -> plates as $plate)
                         <div class="plate-selection-view">
+                            
+                            <div class="plate-description">
+
+                                <h7><b>{{$plate -> plate_name}}</b></h7>
+                                
+                                <span>{{$plate -> description}}</span>
+                                
+                                <h7>{{$plate -> price}}&euro;</h7>
+                                
+
+                            </div>
 
 
+                            <img id="imgchoice" src="{{asset('/storage/restaurant-plates/' . $plate -> image)}}" alt="">
 
                         </div>
                         @endforeach
-                    </div>
+                    </div>                    
                     
                     <div class="momentary-total">
+                    
+                    <div class="total-sticky">
+                    <a class="shop-link" href=""><i class="fas fa-shopping-cart"></i>CONCLUDI ORDINE</a>
+                    
+                    <div class="mykart">
 
+                        <h1>ciao</h1>
 
-
-                    </div>
-
-
+                    </div> 
+                   
                     </div>
                     
+                    </div>
+                
                 </div>
-            
+             
             </div>
-        
-        
-        
-            <a href="{{route('home')}}">
-                Back Home
-            </a>
+
         </div>
-        <div>
-            <ul>
-                <li v-for="elem in plates">
-                    @{{elem.name}} <br>
-                    @{{elem.price}}
-                </li>
-            </ul>
-        </div>
-        </div>
-        
     </main>
 
     <script>
