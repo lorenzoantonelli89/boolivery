@@ -40,6 +40,19 @@
                     <input id="price" type="number" step="0.01" name="price"  placeholder="Prezzo piatto">
                 </div>
 
+
+                <div class="form-group">
+                    <div class="my-3">Visibilità:</div>
+                    <div>
+                        <label for="visible">Non visibile</label>
+                        <input id="visible" type="radio"  name="visible" value="0" >
+                    </div>
+                    <div>
+                        <label for="visible">Visibile</label>
+                        <input id="visible" type="radio"  name="visible" value="1" >
+                    </div>
+                </div>
+
                
                 @if ($errors->any())
                   <div class="alert alert-danger">
