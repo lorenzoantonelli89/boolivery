@@ -54,7 +54,6 @@
                 <span class="weAre">&copy; Team 4</span>
             </div>
         </div>
-        
     </div>
       
     </footer>

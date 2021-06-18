@@ -61,7 +61,7 @@ footer {
     background-color: #fc6a01;
     
     .footer-container {
-        // @include flex(column, space-between, center);
+        @include flex(column, space-between, center);
         height: 402px;
         width: 100%;  
         

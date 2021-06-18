@@ -19,6 +19,9 @@ Route::get('/', 'HomeController@home')
 // route dettagli ristorante selezionato
 Route::get('/restaurant-details/{id}', 'GuestController@detailsRestaurant') 
     -> name('restaurant-details');
+//rotta che porta all apgina chi siamo
+Route::get('/info-company', 'GuestController@infoCompany') 
+    -> name('info-company'); 
 //inizio delle rotte in cui serve essere loggati 
 Auth::routes();
 // rotta lista ristoranti utente loggato

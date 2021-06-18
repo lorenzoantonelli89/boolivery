@@ -23,7 +23,10 @@ Route::get('/restaurants', 'Api\RestaurantHomeController@getRestaurants')
 // rotta per chiamata axios categorie
 Route::get('/categories', 'Api\CategoryHomeController@getCategories')
     -> name('categories-api');
+//rotta per tornatu tutti i piatti 
+Route::get('/all-plates', 'Api\PlateDetailController@getAllPlates')   
+    -> name('all-plates-api'); 
 // rotta per chiamata axios piatti del ristorante selezionato
-Route::get('/plates/{id}', 'Api\PlateDetailController@getPlates')
+Route::get('/plates/{id}', 'Api\PlateDetailController@getPlate')
     -> name('plates-api');    
 
