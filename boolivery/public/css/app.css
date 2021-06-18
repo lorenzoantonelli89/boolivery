@@ -11102,7 +11102,7 @@ main {
 }
 
 .main-sec-1 ul {
-  width: 100%;
+  flex-grow: 1;
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
@@ -11128,6 +11128,12 @@ main {
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
 }
 
+.main-sec-1 ul li a .restaurants .restaurants:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 200px;
+  height: 200px;
+}
+
 .main-sec-1 ul li a .restaurants img {
   width: 100%;
   border-radius: 10px;
@@ -11151,38 +11157,82 @@ main {
   z-index: 3;
 }
 
-.main-sec-1 ul .piatto img:hover {
+.main-sec-1 ul .restaurants img:hover {
   transform: scale(1.03);
   transition: all 2s ease;
 }
 
-@media screen and (max-width: 768px) {
-  h1 {
-    text-align: center;
-  }
-
-  .cards {
-    background-color: white;
-    width: 100%;
-    height: 300px;
-  }
-
-  .cards .dx {
-    background-image: url("/storage/restaurant-plates/barbecueribs.png");
-    /* Inserisci array di immagini */
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .cards .sx {
-    display: none;
-  }
-}
-
 #section-2 {
   background-image: url(/images/back-carosel.jpg?916f24cb154f5b40c05a9a254ad47392);
-  width: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
   padding: 70px 0;
+}
+
+#section-2 .flexible-carusel {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+#section-2 .flexible-carusel .position-carousel {
+  background-color: #ff94a6;
+  position: absolute;
+  top: 10%;
+  left: 13%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+#section-2 .flexible-carusel ul {
+  display: flex;
+  flex-direction: row;
+}
+
+#section-2 .flexible-carusel ul li {
+  display: flex;
+  flex-grow: 1;
+}
+
+#section-2 .flexible-carusel ul li img {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#section-2 .flexible-carusel ul li #plates-info {
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#section-2 .flexible-carusel ul li #plates-info #text-plates {
+  float: right;
+  margin-top: 30px;
+  margin-right: 25px;
+}
+
+#section-2 .flexible-carusel ul li #plates-info #text-plates h3,
+#section-2 .flexible-carusel ul li #plates-info #text-plates h4,
+#section-2 .flexible-carusel ul li #plates-info #text-plates p {
+  color: white;
+}
+
+#section-2 .flexible-carusel #prev {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+#section-2 .flexible-carusel #next {
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+#section-2 .flexible-carusel .chevron {
+  font-size: 15pt;
 }
 
 .main-sec-3 {
@@ -11551,13 +11601,13 @@ body {
 #header-log {
   display: flex;
   justify-content: space-between;
-  height: 40px;
+  height: 50px;
   margin: 10px 20px;
 }
 
 #header-log #logo img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 #header-log #login-a {
@@ -11592,17 +11642,17 @@ body {
   text-decoration: none;
 }
 
+#header-log #login-a ul li:last-child .dropdown-item {
+  color: #00c2b8;
+}
+
 footer {
   width: 100%;
   background-color: #fc6a01;
+  padding: 40px 0;
 }
 
 footer .footer-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 402px;
   width: 100%;
 }
 
@@ -11615,12 +11665,13 @@ footer .footer-container .footer-section-container {
 
 footer .footer-container .footer-section-container .footer-section {
   height: 300px;
-  width: calc( 95% / 4 );
+  width: calc( 100% / 4 );
   background-color: #f1ad7d;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  margin-right: 10px;
 }
 
 footer .footer-container .footer-section-container .footer-section .footer-list {
@@ -11641,6 +11692,6 @@ footer .footer-links .links {
 
 footer .footer-links .weAre {
   font-size: 18px;
-  color: #696d6d;
+  color: white;
 }
 

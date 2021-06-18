@@ -11,15 +11,15 @@
             {{-- restaurant --}}
             <div class="form-group">
                 <label for="name">Nome Ristorante</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" maxlength="255">
             </div>
             <div class="form-group">
                 <label for="address">Indirizzo Ristorante</label>
-                <input type="text" id="address" name="address">
+                <input type="text" id="address" name="address" maxlength="255">
             </div>
             <div class="form-group">
                 <label for="phone">Num telefono</label>
-                <input type="number" id="phone" name="phone">
+                <input type="number" id="phone" name="phone" maxlength="64">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
@@ -27,14 +27,14 @@
             </div>
             <div class="form-group">
                 <label for="description">Descrizione</label>
-                <input type="text" id="description" name="description">
+                <input type="text" id="description" name="description"  maxlength="1000">
             </div>
             <div class="form-group">
-                <label for="image_profile">Foto Profilo</label>
+                <label for="image_profile">Caricare una foto profilo</label>
                 <input type="file" id="image_profile" name="image_profile">
             </div>
             <div class="form-group">
-                <label for="image_cover">Foto Copertina</label>
+                <label for="image_cover">Caricare una foto copertina</label>
                 <input type="file" id="image_cover" name="image_cover">
             </div>
             {{-- <div class="form-group">
@@ -46,7 +46,7 @@
             </div> --}}
             {{-- categorie --}}
             <div class="form-group">
-                <p>Scegli categorie</p>
+                <p>Scegli almeno 1 categoria</p>
                 @foreach ($categories as $category)
                 <div>
                     <div>

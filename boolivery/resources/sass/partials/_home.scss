@@ -47,14 +47,11 @@ main {
       height: 100%;    
     }
 
-    .title-research {
-      
-      
+    .title-research {  
       h1 {
         margin-bottom: 30px;
         font-size: 45px;
       }
-
     }
     .research-request {
       flex-grow: 1;
@@ -113,7 +110,7 @@ main {
     flex-wrap: wrap;
     padding: 150px 0;
       ul {
-        width: 100%;
+        flex-grow: 1;
         display: flex;
         flex-flow: wrap;
         justify-content: space-between;
@@ -131,6 +128,11 @@ main {
             position: relative; 
             margin-bottom: 20px;
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+            .restaurants:hover {
+              background-color: rgba(0, 0, 0, 0.7);
+              width: 200px;
+              height: 200px;
+            }
             img {
               width: 100%;
               border-radius: 10px;
@@ -154,7 +156,7 @@ main {
           }
         }
       }
-      .piatto img:hover {
+      .restaurants img:hover {
         transform: scale(1.03);
         transition: all 2s ease;
       }
@@ -162,29 +164,65 @@ main {
   }
 
 
-// sezione dei piatti
-@media screen and (max-width: 768px) {
-  h1 {
-    text-align: center;
-  }
-  .cards {
-    background-color: white;
-    width: 100%;
-    height: 300px;
-    .dx {
-      background-image: url("/storage/restaurant-plates/barbecueribs.png"); /* Inserisci array di immagini */
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .sx {
-      display: none;
-    }
-  }
-}
+// Sezione piatti -> Carousel
   #section-2 {
     background-image: url("storage/graphics/back-carosel.jpg");
-    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
     padding: 70px 0;
+    .flexible-carusel {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      .position-carousel {
+        background-color: rgb(255, 148, 166);
+        position: absolute;
+        top: 10%;
+        left: 13%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          display: flex;
+          flex-grow: 1;
+          img {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+          }
+          #plates-info {
+            background-color: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            #text-plates {
+              float: right;
+              margin-top: 30px;
+              margin-right: 25px;
+              h3,  h4, p{
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      #prev {
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+      }
+      #next {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+      }
+      .chevron {
+        font-size: 15pt;
+      }
+    }
   }
 
 //   SEZIONE DEDICATA AI RISTORATORI
