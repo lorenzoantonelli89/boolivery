@@ -10,7 +10,8 @@ use App\Restaurant;
 
 class RestaurantHomeController extends Controller
 {
-    public function getRestaurant(){
+    // funzione che manda al FE tramite chiamata axios in vue array di ristoranti
+    public function getRestaurants(){
 
         $restaurants = Restaurant::all();
 

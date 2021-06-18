@@ -10971,7 +10971,7 @@ a.text-dark:focus {
 
 .div-margin {
   margin: 0 auto;
-  width: 60%;
+  width: 70%;
 }
 
 body {
@@ -10991,47 +10991,50 @@ main {
   align-items: center;
 }
 
-.jumbotron {
+/*@media screen and (min-width: 480px) and (max-width: 768px) {
+  .myjumbotron {
+    background-image: none;
+    background-color: blue;
+    .research-request {
+      width: 100%;
+    }
+  }
+}*/
+
+.myjumbotron {
   width: 100%;
-  height: 500px;
   background-image: url("/storage/graphics/jumbotron.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  padding: 150px 0;
+  /*.logo-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    flex-grow: 1;     
+    align-items: center;
+
+    .logo {
+      width: 150px;
+    }
+  } */
 }
 
-.jumbotron .logo-login {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
-  flex-grow: 1;
-  align-items: center;
-}
-
-.jumbotron .logo-login .logo {
-  width: 150px;
-}
-
-.jumbotron .wellcome {
+.myjumbotron .welcome {
   display: flex;
   flex-direction: column;
-  width: 650px;
+  width: 600px;
   height: 100%;
-  justify-content: space-between;
 }
 
-.jumbotron .title-research {
-  margin-bottom: 30px;
-}
-
-.jumbotron .title-research h1 {
+.myjumbotron .title-research h1 {
   margin-bottom: 30px;
   font-size: 45px;
 }
 
-.jumbotron .research-request {
+.myjumbotron .research-request {
   flex-grow: 1;
   height: 170px;
   display: flex;
@@ -11042,112 +11045,144 @@ main {
   background-color: white;
 }
 
-.jumbotron .research-request .input-adresse {
+.myjumbotron .research-request .input-adresse {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.jumbotron .research-request .input-adresse #guest-request {
+.myjumbotron .research-request .input-adresse #guest-request {
   font-size: 25px;
   flex-grow: 1;
   height: 45px;
 }
 
-.jumbotron .research-request .input-adresse #guest-request-click {
+.myjumbotron .research-request .input-adresse #guest-request::-moz-placeholder {
+  padding-left: 8px;
+  font-size: 16pt;
+}
+
+.myjumbotron .research-request .input-adresse #guest-request:-ms-input-placeholder {
+  padding-left: 8px;
+  font-size: 16pt;
+}
+
+.myjumbotron .research-request .input-adresse #guest-request::placeholder {
+  padding-left: 8px;
+  font-size: 16pt;
+}
+
+.myjumbotron .research-request .input-adresse #guest-request-click {
+  background-color: #ffe600;
   height: 45px;
   width: 100px;
   margin-left: 15px;
-  /*  #guest-request-click:hover {
-      background-color: #2caead;
-      color: white;
-    } */
+  border: none;
+  border-radius: 5px;
 }
 
+.myjumbotron .research-request .input-adresse #guest-request-click #guest-request-click:hover {
+  background-color: #2caead;
+  color: white;
+}
+
+/*@media screen and (max-width: 769px) {
+  .main-1-container {
+    display: flex;
+    align-items: center;
+  }
+}*/
+
 .main-sec-1 {
-  height: 680px;
   width: 100%;
-  background-image: url("/storage/assets/sfondo8.png");
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  padding: 150px 0;
 }
 
-.main-sec-1 .main-1-container {
-  height: 100%;
+.main-sec-1 ul {
+  width: 100%;
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-flow: wrap;
   justify-content: space-between;
 }
 
-.main-sec-1 .main-1-container .piatto {
+.main-sec-1 ul li {
+  list-style: none;
+}
+
+.main-sec-1 ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.main-sec-1 ul li a .restaurants {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  height: 360px;
-  width: 320px;
-}
-
-.main-sec-1 .main-1-container .piatto img {
-  width: 280px;
-  border-radius: 15px;
-}
-
-#section-2 {
-  background-color: #7faf48;
-  width: 100%;
-  padding: 70px 0;
-}
-
-#section-2 .cards {
-  display: flex;
-  background-color: white;
-  min-width: 80%;
-  width: 100%;
+  width: 300px;
   height: 300px;
-  margin: 40px 0;
-  border-radius: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+.main-sec-1 ul li a .restaurants img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.main-sec-1 ul li a .restaurants #text {
+  display: none;
+  position: absolute;
+  top: 125px;
+  left: 175px;
   z-index: 99;
 }
 
-#section-2 .cards .dx {
-  background-image: url("/storage/restaurant-plates/barbecueribs.png");
-  /* Inserisci array di immagini */
-  background-position: center;
-  -webkit-clip-path: polygon(86% 0, 100% 51%, 88% 100%, 0 100%, 0 0);
-          clip-path: polygon(86% 0, 100% 51%, 88% 100%, 0 100%, 0 0);
-  min-width: 300px;
-  width: 600px;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  z-index: 2;
+.main-sec-1 ul li a .restaurants #layover {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  z-index: 3;
 }
 
-#section-2 .cards #column {
-  display: flex;
-  flex-flow: column wrap;
-  align-self: center;
-  margin-left: 40px;
+.main-sec-1 ul .piatto img:hover {
+  transform: scale(1.03);
+  transition: all 2s ease;
 }
 
-#section-2 .cards #column .sx p {
-  margin: 30px 0;
+@media screen and (max-width: 768px) {
+  h1 {
+    text-align: center;
+  }
+
+  .cards {
+    background-color: white;
+    width: 100%;
+    height: 300px;
+  }
+
+  .cards .dx {
+    background-image: url("/storage/restaurant-plates/barbecueribs.png");
+    /* Inserisci array di immagini */
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .cards .sx {
+    display: none;
+  }
 }
 
-#section-2 .cards:first-child {
-  margin-top: 0;
-}
-
-#section-2 .cards:last-child {
-  margin-bottom: 0;
-}
-
-#section-2 .cards:hover {
-  transform: scale(1.1);
-  transition: all 2s;
+#section-2 {
+  background-image: url(/images/back-carosel.jpg?916f24cb154f5b40c05a9a254ad47392);
+  width: 100%;
+  padding: 70px 0;
 }
 
 .main-sec-3 {
@@ -11205,16 +11240,11 @@ main {
   cursor: pointer;
 }
 
-#contacts #mail #mail:hover {
-  background-color: white;
-  width: -70px;
-  height: 20px;
-}
-
 #contacts #mail .fa-at {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  vertical-align: middle;
+  align-items: center;
   line-height: 40px;
 }
 
@@ -11387,6 +11417,50 @@ main {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+#header-log {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin: 10px 20px;
+}
+
+#header-log #logo img {
+  width: 40px;
+  height: 40px;
+}
+
+#header-log #login-a {
+  vertical-align: middle;
+  line-height: 40px;
+}
+
+#header-log #login-a ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#header-log #login-a ul li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+#header-log #login-a ul li a {
+  color: #00c2b8;
+  text-decoration: none;
+}
+
+#header-log #login-a ul li:last-child {
+  background-color: #00c2b8;
+  text-align: center;
+  width: 100px;
+  border-radius: 7px;
+}
+
+#header-log #login-a ul li:last-child a {
+  color: white;
+  text-decoration: none;
 }
 
 footer {

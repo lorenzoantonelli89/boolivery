@@ -22,7 +22,7 @@ class User extends Authenticatable
         'password',
         'company_name',
         'address_head_office',
-        'p_iva',
+        'VAT_number',
     ];
 
     /**

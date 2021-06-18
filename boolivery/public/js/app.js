@@ -49867,37 +49867,65 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
-document.addEventListener('DOMContentLoaded', function () {
-  new Vue({
-    el: '#app',
-    data: {
-      restaurants: '',
-      activeRestaurant: ''
-    },
-    mounted: function mounted() {
-      var _this = this;
-
-      // chiamata axio che ritorna array di tutti i ristoranti
-      axios.get('/api/restaurants').then(function (res) {
-        _this.restaurants = res.data;
-        console.log(_this.restaurants);
-      });
-    },
-    methods: {
-      // funzione che valora il dato active restaurant al click del ristorante selezionato
-      getActiveRestaurant: function getActiveRestaurant(elem) {
-        this.activeRestaurant = elem.id;
-      }
-    },
-    computed: {
-      // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
-      getHref: function getHref() {
-        return '/restaurant-details/' + this.activeRestaurant;
-      }
-    }
-  });
-});
+// document.addEventListener('DOMContentLoaded', function () {
+//     new Vue({
+//         el: '#app',
+//         data: {
+//             restaurants: '',
+//             activeRestaurant: '',
+//             categories: '',
+//             plates: '',
+//         },
+//         mounted() {
+//             // chiamata axio che ritorna array di tutti i ristoranti
+//             axios.get('/api/restaurants')
+//                 .then(res => {
+//                     this.restaurants = res.data;
+//                     console.log(this.restaurants);
+//                 })
+//             // chiamata axio che ritorna array di tutte le categorie
+//             axios.get('/api/categories')
+//                 .then(res => {
+//                     this.categories = res.data;
+//                     console.log(this.categories);
+//                 })
+//             // axios.get('/api/plates/' + this.activeRestaurant)
+//             //     .then(res => {
+//             //         this.plates = res.data;
+//             //         console.log(this.plates);
+//             //     })
+//         },
+//         methods: {
+//             // funzione che valora il dato active restaurant al click del ristorante selezionato
+//             getActiveRestaurant: function(elem){
+//                 this.activeRestaurant = elem.id;
+//             },
+//             // funzione che al click fa una chiamata axios per avere array di piatti
+//             getActivePlates: function(){
+//                 // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
+//                 // axios.get('/api/plates/' + this.activeRestaurant)
+//                 //     .then(res => {
+//                 //         this.plates = res.data;
+//                 //         console.log('this.plates');
+//                 //     })
+//             },
+//             test: function(){
+//                 axios.get('/api/plates/' + this.activeRestaurant)
+//                     .then(res => {
+//                         this.plates = res.data;
+//                         console.log(this.plates);
+//                     })
+//                 console.log(this.activeRestaurant);
+//             }
+//         },
+//         computed: {
+//             // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
+//             getHref: function(){
+//                 return '/restaurant-details/' + this.activeRestaurant;
+//             }
+//         }
+//     });
+// });
 
 /***/ }),
 
@@ -50033,8 +50061,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/jacopozandona/Code/boolivery/boolivery/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/jacopozandona/Code/boolivery/boolivery/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Git repo\boolivery\boolivery\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Git repo\boolivery\boolivery\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
