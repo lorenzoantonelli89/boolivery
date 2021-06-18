@@ -53,6 +53,9 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
  Route::post('/store-plate{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
 
+Route::post('/createOrder','GuestController@createOrder')
+->name('createOrder');
+
 
 
  
