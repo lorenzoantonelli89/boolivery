@@ -50,6 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     this.categories = res.data;
                     console.log(this.categories);
                 })
+            // chiamata axio che ritorna array di tutti i piatti
+            axios.get('/api/plates/')
+                .then(res => {
+                    this.plates = res.data;
+                    console.log(this.plates);
+                })
         },
         methods: {
             // funzione che valora il dato active restaurant al click del ristorante selezionato
