@@ -87,7 +87,7 @@
         </div>
       </div>
 
-        <ul>
+        <ul id="app3">
             <li v-for="elem in restaurants" v-on:click="(getActiveRestaurant(elem), getActivePlates)">
                 <a :href=getHref>
                     @{{elem.name}}
@@ -101,6 +101,50 @@
             </li>
         </ul>
     </main>
+
+    <script>
+        new Vue({
+          el: '#app3',
+          data: {
+              restaurants: '',
+              activeRestaurant: '',
+              categories: '',
+              plates: '',
+          },
+          mounted() {
+              // chiamata axio che ritorna array di tutti i ristoranti
+              axios.get('/api/restaurants')
+                  .then(res => {
+                      this.restaurants = res.data;
+                      console.log(this.restaurants);
+                  })
+              // chiamata axio che ritorna array di tutte le categorie
+              axios.get('/api/categories')
+                  .then(res => {
+                      this.categories = res.data;
+                      console.log(this.categories);
+                  })
+              axios.get('/api/all-plates')
+                  .then(res => {
+                      this.plates = res.data;
+                      console.log(this.plates);
+                  })    
+          },
+          methods: {
+              // funzione che valora il dato active restaurant al click del ristorante selezionato
+              getActiveRestaurant: function(elem){
+                  this.activeRestaurant = elem.id;
+              },
+              
+          },
+          computed: {
+              // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
+              getHref: function(){
+                  return '/restaurant-details/' + this.activeRestaurant;
+              }
+          }
+      });
+    </script>
 
     
     
