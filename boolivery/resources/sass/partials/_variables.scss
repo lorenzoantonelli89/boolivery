@@ -7,17 +7,23 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
+$ourblue: #3490dc;
+$ourgreen: #7faf48;
+$ourorange: #fc6a01;
+$ourgrey: #e8ebeb;
+$ouryellow: #f4e432;
+$paypal: #253b80;
+$visa: #f5b226;
+$mastercard: #eb001b;
 
+
+// $teal: #4dc0b5;
+// $cyan: #6cb2eb;
+// $yellow: #ffed4a;
+// $indigo: #6574cd;
+// $purple: #9561e2;
+// $pink: #f66d9b;
+// $red: #e3342f;
 
 //My-Style
 @mixin flex($direction, $justify, $align) {

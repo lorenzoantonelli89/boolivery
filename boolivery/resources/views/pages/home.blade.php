@@ -90,7 +90,7 @@
           <i class="fas fa-phone"></i>
         </div>
       </div>
-
+  <!-- <example-component> -->
         <ul>
             <li v-for="elem in restaurants" v-on:click="getActiveRestaurant(elem)">
                 <a :href=getHref>
@@ -104,6 +104,7 @@
                 <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="">
             </li>
         </ul>
+        <!-- </example-component> -->
     </main>
 
     
