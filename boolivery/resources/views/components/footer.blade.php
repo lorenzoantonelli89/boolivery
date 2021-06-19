@@ -33,14 +33,14 @@
             </div>
             </div>
             <!-- sezione del footer -->
-            <div class="footer-section">
-            <div class="footer-list">
-            <p>Investitori</p>
-                <p>Chi Siamo</p>
-                <p>Ristoranti</p>
-                <p>Altro</p>
-                <p>PressRoom</p>
-            </div>
+            <div class="footer-section" style="margin-right: 0">
+                <div class="footer-list">
+                    <p>Investitori</p>
+                    <p>Chi Siamo</p>
+                    <p>Ristoranti</p>
+                    <p>Altro</p>
+                    <p>PressRoom</p>
+                </div>
             </div>
         </div>
         <!-- zona BASSA del footer -->
