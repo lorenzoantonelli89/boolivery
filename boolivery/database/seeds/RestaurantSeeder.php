@@ -29,12 +29,13 @@ class RestaurantSeeder extends Seeder
                 case  'Poke House':
                     $restaurant -> categories() -> attach($categories[1]);
                     $restaurant -> categories() -> attach($categories[3]);
+                    $restaurant -> categories() -> attach($categories[9]);
                     $restaurant -> save();
                     break;
 
                 case  'Antica Cina':
                     $restaurant -> categories() -> attach($categories[1]);
-                    $restaurant -> categories() -> attach($categories[3]);
+                    $restaurant -> categories() -> attach($categories[2]);
                     $restaurant -> save();
                     break;
 
@@ -47,7 +48,6 @@ class RestaurantSeeder extends Seeder
                 case 'El Centenario':
                     $restaurant -> categories() -> attach($categories[6]);
                     $restaurant -> categories() -> attach($categories[8]);
-                    $restaurant -> categories() -> attach($categories[9]);
                     $restaurant -> save();
                     break;  
 
@@ -76,8 +76,8 @@ class RestaurantSeeder extends Seeder
                 
                 case 'Homu':
                     $restaurant -> categories() -> attach($categories[1]);
-                    $restaurant -> categories() -> attach($categories[2]);
                     $restaurant -> categories() -> attach($categories[3]);
+                    $restaurant -> categories() -> attach($categories[9]);
                     $restaurant -> save();
                     break;     
                 
