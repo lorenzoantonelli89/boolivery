@@ -5,6 +5,261 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+      #home-container{
+        width: 100%;
+        .myjumbotron {
+          width: 100%;
+          background-image: url("/storage/graphics/jumbotron.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          display: flex;
+          padding: 150px 0; 
+
+          /*.logo-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            flex-grow: 1;     
+            align-items: center;
+        
+            .logo {
+              width: 150px;
+            }
+          } */
+          
+          .welcome {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            height: 100%; 
+            
+            .title-research {
+            
+              
+              h1 {
+                margin-bottom: 30px;
+                font-size: 45px;
+              }
+
+              .research-request {
+                flex-grow: 1;
+                height: 170px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 32px;
+                border-radius: 5px;
+                background-color: white;
+
+                .input-adresse {
+                  display: flex;
+                  width: 100%;
+                  justify-content: space-between;
+                        
+                  #guest-request {
+                  font-size: 25px;
+                  flex-grow: 1;
+                  height: 45px;
+                  }
+                  #guest-request::placeholder {
+                    padding-left: 8px;
+                    font-size: 16pt;
+                  }
+
+                  #guest-request-click {
+                    background-color: rgb(255, 230, 0);
+                    height: 45px;
+                    width: 100px;
+                    margin-left: 15px;
+                    border: none;
+                    border-radius: 5px;
+                    #guest-request-click:hover {
+                      background-color: #2caead;
+                      color: white;
+                    }
+                  }
+                }
+              }
+            }
+            .categories{
+
+              #category-container-list{
+                margin-top: 30px;
+                list-style-type: none;
+                @include flex(row, center, center);
+                flex-wrap: wrap;
+
+                .category-list{
+                  padding-right: 15px;
+                }
+              }
+            }
+          }
+
+          
+          
+        }
+        /*@media screen and (max-width: 769px) {
+          .main-1-container {
+            display: flex;
+            align-items: center;
+          }
+        }*/
+        .main-sec-1 {
+          width: 100%;
+          //background-image: url("/storage/assets/sfondo8.png");
+          //background-repeat: no-repeat;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          padding: 150px 0;
+            ul {
+              width: 100%;
+              display: flex;
+              flex-flow: wrap;
+              justify-content: space-between;
+              li {
+                list-style: none;
+                a {
+                  text-decoration: none;
+                  color: white;
+                .restaurants {
+                  display: flex;
+                  flex-direction: column;
+                  width: 300px;
+                  height: 300px;
+                  border-radius: 10px;
+                  position: relative; 
+                  margin-bottom: 20px;
+                  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+                  img {
+                    width: 100%;
+                    border-radius: 10px;
+                  }
+                  #text {
+                    display: none;
+                    position: absolute;
+                    top: 125px;
+                    left: 175px;
+                    z-index: 99;
+                  }
+                  #layover {
+                    display: none;
+                    position: absolute;
+                    background-color: rgba(0, 0, 0, 0.7);
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 10px;
+                    z-index: 3;
+                  }
+                }
+              }
+            }
+            .piatto img:hover {
+              transform: scale(1.03);
+              transition: all 2s ease;
+            }
+          }
+        }
+
+
+      // sezione dei piatti
+      @media screen and (max-width: 768px) {
+        h1 {
+          text-align: center;
+        }
+        .cards {
+          background-color: white;
+          width: 100%;
+          height: 300px;
+          .dx {
+            background-image: url("/storage/restaurant-plates/barbecueribs.png"); /* Inserisci array di immagini */
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          .sx {
+            display: none;
+          }
+        }
+      }
+        #section-2 {
+          background-image: url("storage/graphics/back-carosel.jpg");
+          width: 100%;
+          padding: 70px 0;
+        }
+
+      //   SEZIONE DEDICATA AI RISTORATORI
+
+          .main-sec-3 {
+              background-color: white;
+              height: 350px;
+              background-image: url("/storage/graphics/sectionRestaurant.png");
+              background-repeat: no-repeat;
+              display: flex;
+              justify-content: flex-end;  
+              margin-top: 50px;
+              margin-bottom: 50px;
+          
+          .business-adv {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            width: 580px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .business-adv h1 {
+              margin-bottom: 15px;
+              }
+
+              span {
+              margin-bottom: 15px;
+              }
+
+              .img-icon {
+              width: 100px;
+              margin-bottom: 15px;
+          }
+        }
+
+
+        /* Container in absolute */
+        .fas {
+          color: white;
+        }
+        #contacts {
+          position: fixed;
+          top: 50.5%;
+          right: 1%;
+          #mail {
+            background-color: rgb(255, 196, 0);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            .fa-at {
+              @include flex(column, center, center);
+              line-height: 40px;
+            }
+          }
+          #phone {
+            background-color: rgb(28, 138, 0);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            .fa-phone {
+              @include flex(column, center, center);
+              line-height: 40px;
+            }
+          }
+        }
+    }
 }
 
 // GRAFICA JUMBOTRON
@@ -19,240 +274,4 @@ main {
     }
   }
 }*/
-.myjumbotron {
-    width: 100%;
-    background-image: url("/storage/graphics/jumbotron.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    padding: 150px 0; 
 
-    /*.logo-login {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-      flex-grow: 1;     
-      align-items: center;
-  
-      .logo {
-        width: 150px;
-      }
-    } */
-    
-    .welcome {
-      display: flex;
-      flex-direction: column;
-      width: 600px;
-      height: 100%;    
-    }
-
-    .title-research {
-      
-      
-      h1 {
-        margin-bottom: 30px;
-        font-size: 45px;
-      }
-
-    }
-    .research-request {
-      flex-grow: 1;
-      height: 170px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 32px;
-      border-radius: 5px;
-      background-color: white;
-
-      .input-adresse {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-              
-        #guest-request {
-         font-size: 25px;
-         flex-grow: 1;
-         height: 45px;
-        }
-        #guest-request::placeholder {
-          padding-left: 8px;
-          font-size: 16pt;
-        }
-
-        #guest-request-click {
-          background-color: rgb(255, 230, 0);
-          height: 45px;
-          width: 100px;
-          margin-left: 15px;
-          border: none;
-          border-radius: 5px;
-          #guest-request-click:hover {
-            background-color: #2caead;
-            color: white;
-          }
-        }
-       
-      }
-
-    }
-  }
-/*@media screen and (max-width: 769px) {
-  .main-1-container {
-    display: flex;
-    align-items: center;
-  }
-}*/
-  .main-sec-1 {
-    width: 100%;
-    //background-image: url("/storage/assets/sfondo8.png");
-    //background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 150px 0;
-      ul {
-        width: 100%;
-        display: flex;
-        flex-flow: wrap;
-        justify-content: space-between;
-        li {
-          list-style: none;
-          a {
-            text-decoration: none;
-            color: white;
-          .restaurants {
-            display: flex;
-            flex-direction: column;
-            width: 300px;
-            height: 300px;
-            border-radius: 10px;
-            position: relative; 
-            margin-bottom: 20px;
-            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
-            img {
-              width: 100%;
-              border-radius: 10px;
-            }
-            #text {
-              display: none;
-              position: absolute;
-              top: 125px;
-              left: 175px;
-              z-index: 99;
-            }
-            #layover {
-              display: none;
-              position: absolute;
-              background-color: rgba(0, 0, 0, 0.7);
-              width: 300px;
-              height: 300px;
-              border-radius: 10px;
-              z-index: 3;
-            }
-          }
-        }
-      }
-      .piatto img:hover {
-        transform: scale(1.03);
-        transition: all 2s ease;
-      }
-    }
-  }
-
-
-// sezione dei piatti
-@media screen and (max-width: 768px) {
-  h1 {
-    text-align: center;
-  }
-  .cards {
-    background-color: white;
-    width: 100%;
-    height: 300px;
-    .dx {
-      background-image: url("/storage/restaurant-plates/barbecueribs.png"); /* Inserisci array di immagini */
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    .sx {
-      display: none;
-    }
-  }
-}
-  #section-2 {
-    background-image: url("storage/graphics/back-carosel.jpg");
-    width: 100%;
-    padding: 70px 0;
-  }
-
-//   SEZIONE DEDICATA AI RISTORATORI
-
-    .main-sec-3 {
-        background-color: white;
-        height: 350px;
-        background-image: url("/storage/graphics/sectionRestaurant.png");
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: flex-end;  
-        margin-top: 50px;
-        margin-bottom: 50px;
-    
-    .business-adv {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      width: 580px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .business-adv h1 {
-        margin-bottom: 15px;
-        }
-
-        span {
-        margin-bottom: 15px;
-        }
-
-        .img-icon {
-        width: 100px;
-        margin-bottom: 15px;
-    }
-  }
-
-
-  /* Container in absolute */
-  .fas {
-    color: white;
-  }
-  #contacts {
-    position: fixed;
-    top: 50.5%;
-    right: 1%;
-    #mail {
-      background-color: rgb(255, 196, 0);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      cursor: pointer;
-      .fa-at {
-        @include flex(column, center, center);
-        line-height: 40px;
-      }
-    }
-    #phone {
-      background-color: rgb(28, 138, 0);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      .fa-phone {
-        @include flex(column, center, center);
-        line-height: 40px;
-      }
-    }
-  }

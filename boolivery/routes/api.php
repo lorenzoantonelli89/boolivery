@@ -28,5 +28,8 @@ Route::get('/all-plates', 'Api\PlateDetailController@getAllPlates')
     -> name('all-plates-api'); 
 // rotta per chiamata axios piatti del ristorante selezionato
 Route::get('/plates/{id}', 'Api\PlateDetailController@getPlate')
-    -> name('plates-api');    
+    -> name('plates-api');
+// rotta per chiamata axios collegamento categoria/ristoranti
+Route::get('/pivot', 'Api\RestaurantHomeController@getRestaurantCategory')
+    -> name('pivot-api');           
 

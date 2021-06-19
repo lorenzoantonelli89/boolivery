@@ -40,7 +40,6 @@ class RestaurantController extends Controller
            'image_cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            'image_profile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            'category_id' => 'required_without_all',
-           //'user_id'=>'exists:users,id',
         ]);
         //rinomina foto profilo
         $img=$request->file('image_profile');
@@ -87,7 +86,6 @@ class RestaurantController extends Controller
             'image_cover' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_profile' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id'=>'required_without_all',
-            //'user_id'=>'exists:users,id',
          ]);
          //salvataggio dati
         $categories = Category::findOrFail($request->category_id);

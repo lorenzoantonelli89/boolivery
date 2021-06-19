@@ -79,7 +79,7 @@ class PlateController extends Controller
             'price' => 'required|between:0.01,99.99', 
             'visible' => 'required|boolean', 
 
-         ]);
+        ]);
 
         $restaurant = Restaurant::findOrFail($id);
         $plate = Plate::make($validated);
@@ -92,10 +92,10 @@ class PlateController extends Controller
              $folder = '/restaurant-plates/';
              $imgFile=$img->storeAs($folder,$imgNewName,'public'); 
              $plate->image=$imgNewName;
-            }
-            else{
-                $plate->image = 'default-plate.png';
-            }
+        }
+        else{
+            $plate->image = 'default-plate.png';
+        }
         $plate -> save();
 
         return redirect() -> route('plateList', $id);

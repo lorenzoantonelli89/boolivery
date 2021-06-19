@@ -1,180 +1,163 @@
 @extends('layouts.main-layout')
 @section('title')
 
-    {{$restaurant -> restaurant_name}} 
+    {{$restaurant -> name}} 
     
 @endsection
 
 @section('content')
 
     <main>
-        <div class="restaurant-show-container">
-            <div class="restaurant-show div-margin">
-                <div class="restaurant-description">
+        <div id="restaurant-details-container">
+            <div class="restaurant-show-container">
+                <div class="restaurant-show div-margin">
+                    <div class="restaurant-description">
 
-                <span><a href="">Home</a> / <a href="">Monti</a> / Elleniki </span>
-                
-                    <!-- valutazione, indirizzo e descrizione -->
-                    <div class="restaurant-details">
-
-                    <h1>
-                        {{$restaurant -> restaurant_name}}
-                    </h1>
-
-                    <h3>***** 4,7 (500+ valutazioni)</h3>
-
-                    <h3>
-                        {{$restaurant -> address_restaurant}}
-                    </h3>
-
-                    <p>
-                        <i>{{$restaurant -> description}}</i>
+                        <span>
+                            <a href="">Home</a> / <a href="">Monti</a> 
+                                / Elleniki 
+                        </span>
                         
-                        <ul>
-                        
-                        @foreach ($restaurant -> plates as $plate)
+                        <!-- valutazione, indirizzo e descrizione -->
+                        <div class="restaurant-details">
 
-                        <li> <a href=""> {{$plate -> plate_name}}</a></li>
-                        <i class="fas fa-utensils"></i>
-                        @endforeach
-                        
-                        
-                    </ul>
-                    </p>
+                            <h1>
+                                {{$restaurant -> name}}
+                            </h1>
 
-                    </div>
+                            <h3>***** 4,7 (500+ valutazioni)</h3>
 
-                    <a class="atHome" href="{{route('home')}}">
-                        Torna alla lista principale
-                    </a>
-                    </div>
-                <!-- IMMAGINE LATERALE E SHOP -->
-                <div class="restaurant-foto-order">
+                            <h3>
+                                {{$restaurant -> restaurant}}
+                            </h3>
 
-                <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
+                            <p>
+                                <i>{{$restaurant -> description}}</i>
+                                
+                                <ul>
+                                
+                                    @foreach ($restaurant -> plates as $plate)
 
-                <span><i class="far fa-clock"></i>Consegnamo entro 30 minuti dall'ordine</span>
-
-                <div class="types-of-payment">
-                <i class="fab fa-cc-paypal"></i>
-                <i class="fab fa-cc-visa"></i>
-                <i class="fab fa-cc-mastercard"></i>
-                </div>
-                
-                <a class="shop-link" href=""><i class="fas fa-shopping-cart"></i>CONCLUDI ORDINE</a>
-                
-
-                </div>
-            
-                <div>
-                    
-                </div>
-
-        <div id="app2">
-            <div>
-            <h1 >
-                {{$restaurant -> name}}
-            </h1>
-            <h3>
-                {{$restaurant -> restaurant}}
-            </h3>
-            <p>
-                {{$restaurant -> description}}
-            </p>
-            <div>
-                <img src="{{ asset('/storage/restaurant-profile/' . $restaurant -> image_profile) }}" alt="">
-            </div>
-           
-        </div>
-        <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
-        <div class="restaurant-fooding-list div-margin">
-                <div class="fooding-list">
-                    <ul class="">
-                         
-                        <li>ANTIPASTI</li>
-                        <li>PRIMI</li>
-                        <li>SECONDI</li>
-                        <li>DESSERT</li>
-                        <li>BEVANDE</li>
-                        <li>BAR</li>
-                        
-                    </ul>
-                </div>
-
-                <div class="delivery-promotion">
-                    <span>Spendi almeno 10,00€ per la <b>consegna gratuita</b></span>
-                </div>
-            
-                <div class="plates-choosing-view">
-                    
-                    <div class="choosing-and-total div-margin">
-
-                    <div class="plate-selection-container">
-                        @foreach ($restaurant -> plates as $plate)
-                        <div class="plate-selection-view">
-
-
+                                        <li> <a href=""> {{$plate -> name}}</a></li>
+                                        <i class="fas fa-utensils"></i>
+                                    @endforeach
+                                
+                                
+                                </ul>
+                            </p>
 
                         </div>
-                        @endforeach
+
+                        <a class="atHome" href="{{route('home')}}">
+                            Torna alla lista principale
+                        </a>
                     </div>
-                    
-                    <div class="momentary-total">
+                    <!-- IMMAGINE LATERALE E SHOP -->
+                    <div class="restaurant-foto-order">
 
+                        <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
 
+                        <span>
+                            <i class="far fa-clock"></i>
+                            Consegnamo entro 30 minuti dall'ordine
+                        </span>
 
+                        <div class="types-of-payment">
+                            <i class="fab fa-cc-paypal"></i>
+                            <i class="fab fa-cc-visa"></i>
+                            <i class="fab fa-cc-mastercard"></i>
+                        </div>
+                        
+                        <a class="shop-link" href="">
+                            <i class="fas fa-shopping-cart"></i>
+                            CONCLUDI ORDINE
+                        </a>
+                    </div>
+                </div>
+            <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
+            <div class="restaurant-fooding-list div-margin">
+                    <div class="fooding-list">
+                        <ul class="">
+                            
+                            <li>ANTIPASTI</li>
+                            <li>PRIMI</li>
+                            <li>SECONDI</li>
+                            <li>DESSERT</li>
+                            <li>BEVANDE</li>
+                            <li>BAR</li>
+                            
+                        </ul>
                     </div>
 
-
+                    <div class="delivery-promotion">
+                        <span>Spendi almeno 10,00€ per la <b>consegna gratuita</b></span>
                     </div>
-                    
+                
+                    <div class="plates-choosing-view">
+                        
+                        <div class="choosing-and-total div-margin">
+                            <div class="plate-selection-container">
+                                @foreach ($restaurant -> plates as $plate)
+                                    <div class="plate-selection-view">
+
+                                        <h3>
+                                            {{$plate -> name}}
+                                        </h3>
+
+
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        
+                    </div>
+                
                 </div>
             
+            
+            
+                <a href="{{route('home')}}">
+                    Back Home
+                </a>
+                <div>PIATTI</div>
+                {{-- <ul>
+                    @foreach ($restaurant->plates as $plate)
+                    <li>
+                        <h3>{{$plate->name}}</h3>
+                        <div v-on:click="getPlate({{$plate->price}})">{{$plate->price}}</div>
+                        </li> 
+                    @endforeach
+                </ul>
+                <div>
+                    <form action="">
+                        <div>
+                            <label for="nome">Nome</label>
+                            <input type="text">
+                        </div>
+                        <div>
+                            <label for="">Totale</label>
+                            
+                            <input type="number" readonly :value="price">
+                        </div>
+                    </form>
+                </div> --}}
             </div>
-        
-        
-        
-            <a href="{{route('home')}}">
-                Back Home
-            </a>
-            <div>PIATTI</div>
-            <ul>
-                @foreach ($restaurant->plates as $plate)
-                   <li>
-                       <h3>{{$plate->name}}</h3>
-                       <div v-on:click="getPlate({{$plate->price}})">{{$plate->price}}</div>
-                    </li> 
-                @endforeach
-            </ul>
-            <div>
-                <form action="">
-                    <div>
-                        <label for="nome">Nome</label>
-                        <input type="text">
-                    </div>
-                    <div>
-                        <label for="">Totale</label>
-                        
-                        <input type="number" readonly :value="price">
-                    </div>
-                </form>
+                <div>
+                    {{-- <ul>
+                        <li v-for="elem in plates">
+                            @{{elem.name}} <br>
+                            @{{elem.price}}
+                        </li>
+                    </ul> --}}
+                </div>
             </div>
-        </div>
-        <div>
-            <ul>
-                <li v-for="elem in plates">
-                    @{{elem.name}} <br>
-                    @{{elem.price}}
-                </li>
-            </ul>
-        </div>
         </div>
         
     </main>
 
     <script>
         new Vue({
-          el: '#app2',
+          el: '#restaurant-details-container',
           data: {
               restaurants: '',
               activeRestaurant: 1,
@@ -186,9 +169,9 @@
               axios.get('/api/plates/' + this.activeRestaurant)
                       .then(res => {
                           this.plates = res.data;
-                          console.log(this.plates);
+                        //   console.log(this.plates);
                       })
-                  console.log(this.activeRestaurant);
+                //   console.log(this.activeRestaurant);
           },
           methods: {
               // funzione che valora il dato active restaurant al click del ristorante selezionato
