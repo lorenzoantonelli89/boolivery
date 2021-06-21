@@ -100,23 +100,20 @@
           <div id="section-2">
             <div class="flexible-carusel">
               <div id="prev" class="chevron">
-                <i class="fas fa-chevron-left" @click='prevImg'></i>
+                <i class="fas fa-chevron-left" v-on:click='prevImg'></i>
               </div>
               <div class="position-carousel"></div>
               <div class="div-margin">
-                
-                    <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
-                    <div id="plates-info">
-                      <div id="text-plates">
-
-                        <h3><i>@{{platesPopular[counter].name}}</i></h3>
-                        <p><i>@{{platesPopular[counter].description}}</i></p>
-                      </div>
-                    </div>
-                  
+                <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
+                <div id="plates-info">
+                  <div id="text-plates">
+                    <h3><i>@{{platesPopular[counter].name}}</i></h3>
+                    <p><i>@{{platesPopular[counter].description}}</i></p>
+                  </div>
+                </div>
               </div>
               <div id="next" class="chevron">
-                <i class="fas fa-chevron-right" @click='nextImg'></i>          
+                <i class="fas fa-chevron-right" v-on:click='nextImg'></i>          
               </div>            
             </div>
           </div>
@@ -205,9 +202,11 @@
             getActiveCategory: function(elem){
               this.activeCategory = elem.id
             },
+            // funzione che ripulisce 
             refreshCategory: function(){
               this.activeCategory = '';
             },
+            // slider che passa all'immagine successiva
             nextImg: function () {
 
               if(this.counter === this.platesPopular.length -1) {
@@ -219,21 +218,18 @@
 
               }
             },
-
+            // slider che passa all'immagine precedente
             prevImg: function() {
-              
               this.counter--;
               if(this.counter < 0) {
                 this.counter = this.platesPopular.length -1;
               }
             },
-          
-
-          autoSlide: function() {
-            setInterval(this.nextImg, 4000);
-          }
-        },
-
+            // funzione che fa lo slide automatico e viene richiamata quanto si monta la pagina
+            autoSlide: function() {
+              setInterval(this.nextImg, 4000);
+            }
+          },
           computed: {
               // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
             getHref: function(){
