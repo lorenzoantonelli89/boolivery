@@ -96,10 +96,7 @@ main {
                 }
               }
             }
-          }
-
-          
-          
+          }   
         }
         /*@media screen and (max-width: 769px) {
           .main-1-container {
@@ -108,64 +105,50 @@ main {
           }
         }*/
         .main-sec-1 {
-          width: 100%;
           //background-image: url("/storage/assets/sfondo8.png");
           //background-repeat: no-repeat;
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
           padding: 150px 0;
+          .main-1-container {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
             ul {
-              width: 100%;
               display: flex;
-              flex-flow: wrap;
-              justify-content: space-between;
+              flex-wrap: wrap;
               li {
+                width: calc(90% / 3);
                 list-style: none;
+                margin-right: 20px;
                 a {
                   text-decoration: none;
                   color: white;
-                .restaurants {
-                  display: flex;
-                  flex-direction: column;
-                  width: 300px;
-                  height: 300px;
+                  .restaurants {
                   border-radius: 10px;
-                  position: relative; 
                   margin-bottom: 20px;
                   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
                   img {
                     width: 100%;
                     border-radius: 10px;
-                  }
-                  #text {
-                    display: none;
-                    position: absolute;
-                    top: 125px;
-                    left: 175px;
-                    z-index: 99;
-                  }
-                  #layover {
-                    display: none;
-                    position: absolute;
-                    background-color: rgba(0, 0, 0, 0.7);
-                    width: 300px;
-                    height: 300px;
-                    border-radius: 10px;
-                    z-index: 3;
+                    }
+                    #text {
+                      padding: 20px 0;
+                      h3 {
+                        color: #000;
+                        text-align: center;
+                      }
+                    }
                   }
                 }
               }
-            }
-            .piatto img:hover {
-              transform: scale(1.03);
-              transition: all 2s ease;
+              .restaurants:hover {
+                transform: scale(1.03);
+                transition: all 1s ease;
+              }
             }
           }
         }
 
-
-      // sezione dei piatti
+      // SECONDA SEZIONE -> VISIONE PIATTI -> REGOLE DI STILE
       @media screen and (max-width: 768px) {
         h1 {
           text-align: center;
@@ -188,6 +171,64 @@ main {
           background-image: url("storage/graphics/back-carosel.jpg");
           width: 100%;
           padding: 70px 0;
+          position: relative;
+          #top-rating-plates {
+            background-color: salmon;
+            clip-path: polygon(100% 0, 100% 51%, 100% 100%, 0% 100%, 5% 51%, 0% 0%);
+            width: 600px;
+            height: 100px;
+            position: absolute;
+            top: -8.5%;
+            right: 0%;
+            h1 {
+              font-family: 'Pacifico', cursive;
+              color: rgb(255, 255, 255);
+              text-align: center;
+              vertical-align: middle;
+              line-height: 90px;
+              letter-spacing: 2px;
+              .fa-star {
+                color: rgb(255, 208, 0);
+              }
+            }
+          }
+          .flexible-carusel {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            #prev {
+              margin-left: 70px;
+            }
+            #plates-info {
+              display: flex;
+              align-items: center;
+              background-color: rgba(0, 0, 0, .7);
+              border-radius: 10px;
+              img {
+                width: 800px;
+                height: 450px;
+                clip-path: polygon(87% 0, 100% 49%, 87% 100%, 0 100%, 0 0);
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+              }
+              #text-plates {
+                width: 100%;
+                margin-right: 20px;
+                margin-left: 20px;
+                color: white;
+                text-align: right;
+              }
+              h3 {
+                text-decoration: underline;
+              }
+            }
+            #next {
+              margin-right: 70px;
+            }
+          }
+          .fas {
+            font-size: 18pt;
+          }
         }
 
       //   SEZIONE DEDICATA AI RISTORATORI

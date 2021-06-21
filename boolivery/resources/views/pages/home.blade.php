@@ -39,77 +39,73 @@
 
         <!-- PRIMA SEZIONE, VISIONE DEI RISTORANTI -->
         <div class="main-sec-1" v-if="(activeCategory == '' && searchName == '')">
-            <div class="main-1-container div-margin">
-              <ul>
-                <li v-for="elem in restaurantsPopular" v-on:click="getActiveRestaurant(elem)">
-                  <a :href="getHref">
-                    <div class="restaurants">
-                      <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
-                      <div id="text">
-                        <h3 >@{{ elem.name }}</h3>
-                        <p>@{{ elem.address }}</p>
+            <div class="div-margin">
+              <div class="main-1-container">
+                <ul>
+                  <li v-for="elem in restaurantsPopular" v-on:click="getActiveRestaurant(elem)">
+                    <a :href="getHref">
+                      <div class="restaurants">
+                        <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
+                        <div id="text">
+                          <h3 >@{{ elem.name }}</h3>
+                        </div>
                       </div>
-                      <div id="layover" > <!-- Layover in absolute -->
-                      </div>
-                    </div>
-                  </a>        
-                </li>
-              </ul>
+                    </a>        
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="main-sec-1" v-else-if="activeCategory == ''">
-            <div class="main-1-container div-margin">
-              <ul>
-                <li v-for="elem in filteredRestaurantsName" v-on:click="getActiveRestaurant(elem)">
-                  <a :href="getHref">
-                    <div class="restaurants">
-                      <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
-                      <div id="text">
-                        <h3 >@{{ elem.name }}</h3>
-                        <p>@{{ elem.address }}</p>
+            <div class="main-sec-1" v-else-if="activeCategory == ''">
+              <div class="main-1-container">
+                <ul>
+                  <li v-for="elem in filteredRestaurantsName" v-on:click="getActiveRestaurant(elem)">
+                    <a :href="getHref">
+                      <div class="restaurants">
+                        <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
+                        <div id="text">
+                          <h3 >@{{ elem.name }}</h3>
+                        </div>
                       </div>
-                      <div id="layover"> <!-- Layover in absolute -->
-                      </div>
-                    </div>
-                  </a>        
-                </li>
-              </ul>
+                    </a>        
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="main-sec-1" v-else>
-            <div class="main-1-container div-margin">
-              <ul>
-                <li v-for="elem in filteredRestaurantsCategory" v-on:click="(getActiveRestaurant(elem), getActivePlates)">
-                  <a :href="getHref">
-                    <div class="restaurants">
-                      <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
-                      <div id="text">
-                        <h3 >@{{ elem.name }}</h3>
-                        <p>@{{ elem.address }}</p>
+            <div class="main-sec-1" v-else>
+              <div class="main-1-container">
+                <ul>
+                  <li v-for="elem in filteredRestaurantsCategory" v-on:click="(getActiveRestaurant(elem), getActivePlates)">
+                    <a :href="getHref">
+                      <div class="restaurants">
+                        <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
+                        <div id="text">
+                          <h3 >@{{ elem.name }}</h3>
+                        </div>
                       </div>
-                      <div id="layover"> <!-- Layover in absolute -->
-                      </div>
-                    </div>
-                  </a>        
-                </li>
-              </ul>
+                    </a>        
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <!-- SECONDA SEZIONE, VISIONE DEI PIATTI -->
           <div id="section-2">
+            <div id="top-rating-plates">
+              <h1><i><sup><i class="fas fa-star"></i></sup>Top ratings</i></h1>
+            </div>
             <div class="flexible-carusel">
               <div id="prev" class="chevron">
                 <i class="fas fa-chevron-left" v-on:click='prevImg'></i>
               </div>
               <div class="position-carousel"></div>
               <div class="div-margin">
-                <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
                 <div id="plates-info">
-                  <div id="text-plates">
-                    <h3><i>@{{platesPopular[counter].name}}</i></h3>
-                    <p><i>@{{platesPopular[counter].description}}</i></p>
-                  </div>
+                  <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
+                    <div id="text-plates">
+                      <h3><i>@{{platesPopular[counter].name}}</i></h3>
+                      <p><i>@{{platesPopular[counter].description}}</i></p>
+                    </div>
                 </div>
               </div>
               <div id="next" class="chevron">
