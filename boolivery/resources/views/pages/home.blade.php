@@ -100,26 +100,23 @@
           <div id="section-2">
             <div class="flexible-carusel">
               <div id="prev" class="chevron">
-                <i class="fas fa-chevron-left"></i>
+                <i class="fas fa-chevron-left" @click='prevImg'></i>
               </div>
               <div class="position-carousel"></div>
               <div class="div-margin">
-                <ul>
-                  <li>
-                    <img :src="'/storage/restaurant-plates/' + platesPopular[1].image" alt="Immagine di portate">
+                
+                    <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
                     <div id="plates-info">
                       <div id="text-plates">
-                        <h3><i>Nome ristorante</i></h3>
-                        <h4><i>Nome cibo</i></h4>
-                        <p><i>Ratings</i></p>
-                        <p><i>Descrizione</i></p>
+
+                        <h3><i>@{{platesPopular[counter].name}}</i></h3>
+                        <p><i>@{{platesPopular[counter].description}}</i></p>
                       </div>
                     </div>
-                  </li>
-                </ul>
+                  
               </div>
               <div id="next" class="chevron">
-                <i class="fas fa-chevron-right"></i>          
+                <i class="fas fa-chevron-right" @click='nextImg'></i>          
               </div>            
             </div>
           </div>
@@ -157,9 +154,14 @@
               categories: '',
               activeCategory: '',
               platesPopular: [],
-              categoryRestaurant: ''
+              categoryRestaurant: '',
+              counter: 0
           },
           mounted() {
+
+            //scorrimento automatico delle immagini
+            this.autoSlide();
+
             // chiamata axio che ritorna array di tutti i ristoranti
             axios.get('/api/restaurants')
                 .then(res => {
@@ -205,8 +207,33 @@
             },
             refreshCategory: function(){
               this.activeCategory = '';
-            }
-          },
+            },
+            nextImg: function () {
+
+              if(this.counter === this.platesPopular.length -1) {
+                this.counter = 0;
+                console.log(this.counter);
+              } else {
+
+                this.counter++;
+
+              }
+            },
+
+            prevImg: function() {
+              
+              this.counter--;
+              if(this.counter < 0) {
+                this.counter = this.platesPopular.length -1;
+              }
+            },
+          
+
+          autoSlide: function() {
+            setInterval(this.nextImg, 4000);
+          }
+        },
+
           computed: {
               // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
             getHref: function(){
