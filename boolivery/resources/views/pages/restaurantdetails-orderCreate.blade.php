@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 @section('title')
 
-    {{$restaurant -> restaurant_name}} 
+    {{$restaurant -> name}} 
     
 @endsection
 
@@ -83,58 +83,28 @@
 
     <script>
         new Vue({
-          el: '#app2',
+          el: '#restaurant-details-container',
           data: {
-              restaurants: '',
-              activeRestaurant: 1,
-              categories: '',
-              plates: '',
               cart: [],
               total:0
           },
-          mounted() {
-              // chiamata axio che ritorna array di tutti i ristoranti
-              axios.get('/api/plates/' + this.activeRestaurant)
-                      .then(res => {
-                          this.plates = res.data;
-                          console.log(this.plates);
-                      })
-                  console.log(this.activeRestaurant);
-          },
           methods: {
-              // funzione che valora il dato active restaurant al click del ristorante selezionato
-              getActiveRestaurant: function(elem){
-                  this.activeRestaurant = elem.id;
-              },
-              // funzione che al click fa una chiamata axios per avere array di piatti
-              getActivePlates: function(){
-                  // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
-                  // axios.get('/api/plates/' + this.activeRestaurant)
-                  //     .then(res => {
-                  //         this.plates = res.data;
-                  //         console.log('this.plates');
-                  //     })
-              },
-              addPlate: function (value,price){
-                this.cart.push(value);
-                this.total = this.total+price;
-                console.log(this.cart,price);
-              },
-              removePlate: function(value,price){
-                const index = this.cart.indexOf(value);
-                if(index>-1){
-                    this.cart.splice(index,1);
-                    this.total = this.total-price;
-                }
-                console.log(this.cart);
-              },
-            
+                addPlate: function (value, price){
+                    this.cart.push(value);
+                    this.total = this.total+price;
+                    console.log(this.cart, price);
+                },
+                removePlate: function(value, price){
+                    const index = this.cart.indexOf(value);
+                    if(index > -1){
+                        this.cart.splice(index, 1);
+                        this.total = this.total-price;
+                    }
+                    console.log(this.cart);
+                },
           },
           computed: {
-              // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
-              getHref: function(){
-                  return '/restaurant-details/' + this.activeRestaurant;
-              }
+              
           }
       });
     </script>
