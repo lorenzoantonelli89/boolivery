@@ -40,6 +40,63 @@ body {
   align-items: center;
 }
 
+#login-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: orange;
+}
+
+#login-container #container-top {
+  margin: 100px 0;
+}
+
+#login-container #container-top span {
+  color: #fff;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+#login-container #container-form form .container-email-password .label {
+  color: #fff;
+  font-size: 18px;
+}
+
+#login-container #container-form form .container-email-password .container-input {
+  margin: 10px 0;
+}
+
+#login-container #container-form form .container-email-password .container-input .input-text {
+  width: 220px;
+  height: 40px;
+  padding: 0 8px;
+}
+
+#login-container #container-form form .container-remember {
+  margin-bottom: 10px;
+}
+
+#login-container #container-form form .container-remember .label {
+  color: #fff;
+  font-size: 16px;
+}
+
+#login-container #container-form form .container-button #submit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background-color: lawngreen;
+  color: #fff;
+  font-size: 16px;
+}
+
+#login-container #container-form form .container-button #submit:hover {
+  background-color: purple;
+  cursor: pointer;
+}
+
 main {
   width: 100%;
   display: flex;
@@ -490,7 +547,6 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 49px;
   color: #3490dc;
 }
 
@@ -620,51 +676,57 @@ body {
   border-bottom: 1px solid #e8ebeb;
 }
 
-#header-log {
+header {
+  width: 100%;
+}
+
+header #header-log {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   height: 50px;
   margin: 10px 20px;
 }
 
-#header-log #logo img {
+header #header-log #logo img {
   width: 50px;
   height: 50px;
 }
 
-#header-log #login-a {
+header #header-log #login-a {
   vertical-align: middle;
   line-height: 40px;
 }
 
-#header-log #login-a ul {
+header #header-log #login-a ul {
   display: flex;
   justify-content: flex-end;
 }
 
-#header-log #login-a ul li {
+header #header-log #login-a ul li {
   display: inline-block;
   margin-left: 15px;
 }
 
-#header-log #login-a ul li a {
+header #header-log #login-a ul li a {
   color: #00c2b8;
   text-decoration: none;
 }
 
-#header-log #login-a ul li:last-child {
+header #header-log #login-a ul li:last-child {
   background-color: #00c2b8;
   text-align: center;
   width: 100px;
   border-radius: 7px;
 }
 
-#header-log #login-a ul li:last-child a {
+header #header-log #login-a ul li:last-child a {
   color: white;
   text-decoration: none;
 }
 
-#header-log #login-a ul li:last-child .dropdown-item {
+header #header-log #login-a ul li:last-child .dropdown-item {
   color: #00c2b8;
 }
 

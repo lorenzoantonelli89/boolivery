@@ -21,9 +21,7 @@
                           <span>Cerca il tuo ristorante preferito</span> 
                             <div class="input-adresse">
                               <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchName" v-on:keyup="refreshCategory">
-                              {{-- <input id="guest-request-click" type="submit" name="" value="CERCA"> --}}
                             </div>
-                          {{-- <span><a href="#">Accedi</a> per vedere le tue ricerche recenti</span> --}}
                         </div>
                       </div>   
                       <div class="categories">
@@ -108,7 +106,7 @@
               <div class="div-margin">
                 <ul>
                   <li>
-                    <img :src="'/storage/restaurant-plates/' + platesPopular[0].image" alt="Immagine di portate">
+                    <img :src="'/storage/restaurant-plates/' + platesPopular[1].image" alt="Immagine di portate">
                     <div id="plates-info">
                       <div id="text-plates">
                         <h3><i>Nome ristorante</i></h3>
@@ -188,6 +186,7 @@
                         this.platesPopular.push(elem);
                       }
                     }
+                    console.log(this.platesPopular);
                 })
             // chiamata axios e filtro che mi ritorna array tabella pivot category_restaurant    
             axios.get('/api/pivot')

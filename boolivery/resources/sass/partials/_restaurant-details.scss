@@ -106,7 +106,6 @@
 
 .restaurant-fooding-list {
     @include flex(row, space-between, center);
-    height: 49px;
     color: $ourblue;
 
     .fooding-list {
