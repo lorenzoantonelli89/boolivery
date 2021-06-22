@@ -106,10 +106,18 @@ main {
 
 main #home-container {
   width: 100%;
-  /*@media screen and (max-width: 769px) {
-    .main-1-container {
-      display: flex;
-      align-items: center;
+  /*@media screen and (min-width: 480px) and (max-width:768px) {
+    .main-sec-1 {
+      .main-1-contai-ner {
+        ul {
+          display: flex;
+
+          li {
+            width: calc(90% / 2);
+            margin: 0 auto;
+          }
+        }
+      }
     }
   }*/
   /* Container in absolute */
@@ -225,6 +233,7 @@ main #home-container .main-sec-1 .main-1-container {
 }
 
 main #home-container .main-sec-1 .main-1-container ul {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
@@ -232,7 +241,7 @@ main #home-container .main-sec-1 .main-1-container ul {
 main #home-container .main-sec-1 .main-1-container ul li {
   width: calc(90% / 3);
   list-style: none;
-  margin-right: 20px;
+  margin: 0 auto;
 }
 
 main #home-container .main-sec-1 .main-1-container ul li a {
@@ -263,29 +272,6 @@ main #home-container .main-sec-1 .main-1-container ul li a .restaurants #text h3
 main #home-container .main-sec-1 .main-1-container ul .restaurants:hover {
   transform: scale(1.03);
   transition: all 1s ease;
-}
-
-@media screen and (max-width: 768px) {
-  main #home-container h1 {
-    text-align: center;
-  }
-
-  main #home-container .cards {
-    background-color: white;
-    width: 100%;
-    height: 300px;
-  }
-
-  main #home-container .cards .dx {
-    background-image: url("/storage/restaurant-plates/barbecueribs.png");
-    /* Inserisci array di immagini */
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  main #home-container .cards .sx {
-    display: none;
-  }
 }
 
 main #home-container #section-2 {
@@ -366,7 +352,6 @@ main #home-container #section-2 .fas {
 }
 
 main #home-container .main-sec-3 {
-  background-color: white;
   height: 350px;
   background-image: url("/storage/graphics/sectionRestaurant.png");
   background-repeat: no-repeat;
@@ -1124,6 +1109,148 @@ body {
 
 .superlogo img {
   width: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.blink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2caead;
+  padding: 5px;
+  height: 50px;
+  width: 150px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.my-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.div-margin {
+  width: 70%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* @mixin flex($direction, $justify, $align) {
+
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+
+} */
+
+h2 {
+  font-family: "Pacifico", cursive;
+  /*         color: rgb(255, 255, 255);
+  */
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  letter-spacing: 2px;
+}
+
+.coverRestRel {
+  width: 100%;
+  position: relative;
+  opacity: 0.9;
+}
+
+.restaurantCover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 400px;
+  /*     background-image: url("{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}");
+
+      background-repeat: no-repeat;
+      background-size: cover;
+   */
+}
+
+.restaurantCover .ms_button {
+  background-color: #00c2b8;
+  text-align: center;
+  width: 100px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: white;
+  margin: 30px 20px;
+  position: absolute;
+}
+
+.restaurantCover .createPlateButt {
+  top: 50px;
+  right: 48px;
+}
+
+.restaurantCover .listRestButt {
+  top: 50px;
+  left: 48px;
+}
+
+.platesCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 90%;
+  flex-wrap: wrap;
+  padding-top: 80px;
+  background-color: darkgoldenrod;
+}
+
+.platesCards li {
+  width: calc(90% / 5);
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.platesCards li img {
+  width: 100%;
+  border-radius: 10px;
+  position: relative;
+}
+
+.platesCards li img:hover {
+  transform: scale(1.03);
+  transition: all 1s ease;
+}
+
+.platesCards li .editPlate {
+  position: absolute;
+}
+
+.platesCards li .editPlate .fa-pencil-alt {
+  font-size: 45px;
+  color: white;
 }
 
 header {
