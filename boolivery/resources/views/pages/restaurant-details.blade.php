@@ -9,7 +9,7 @@
         <div class="restaurant-show-container div-margin">             
             <div class="restaurant-description">                       
                 <img src="{{ asset('/storage/restaurant-profile/' . $restaurant -> image_profile) }}" alt="">
-                    <!-- nome, indirizzo e descrizione -->
+                    <!-- ZONA ALTO SX nome, indirizzo e descrizione -->
                 <div class="restaurant-details">
                     <!-- nome      -->
                     <h1>
@@ -241,7 +241,7 @@
             },
             getTimeDelivery: function() {
                 const now = new Date();
-                now.setMinutes(now.getMinutes() + 20);
+                now.setMinutes(now.getMinutes() + this.getRandomNumberBetween(15, 45));
                 const time = now.getHours() + ":" + now.getMinutes();
                 return time;
             },
@@ -251,7 +251,12 @@
             } else {           
                 return 5;
             }
+            },
+            getRandomNumberBetween: function(min,max){
+            return Math.floor(Math.random()*(max-min+1)+min);
             }
+
+
         },
         computed: {
             
