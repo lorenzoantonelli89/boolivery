@@ -5,7 +5,7 @@
     <main>
         <a class="mx-5" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
 
-        <a class="mx-5" href="{{route('createPlate', $restaurant->id)}}">Aggiungi un piatto</a>
+        <a class="mx-5" href="{{route('createPlate', encrypt($restaurant -> id))}}">Aggiungi un piatto</a>
         
 
          <ol style="list-style: none">
@@ -17,7 +17,7 @@
                                             {{ $plate -> description}}
                                             
                                         </p>
-                                        <img style="height: 250px; width:350px;object-fit:contain" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate->image }}" alt="{{ $plate->plate_name }}">
+                                        <img style="height: 250px; width:350px;object-fit:contain" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
 
                                         <h6>
                                             € {{ $plate -> price}}
@@ -25,7 +25,7 @@
                                     </div>
                                    
 
-                                    <a href="{{route('editPlate', $plate -> id)}}">Modifica</a>
+                                    <a href="{{route('editPlate', encrypt($plate -> id))}}">Modifica</a>
                                 </li>
 
                             @endforeach

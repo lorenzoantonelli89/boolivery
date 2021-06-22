@@ -24,10 +24,10 @@
                 <img src="{{asset('/storage/restaurant-profile/'.$restaurant->image_profile)}}" alt="" width="200px">
             </div> 
             <div>
-                <a href="{{route('plateList',$restaurant->id)}}">
+                <a href="{{route('plateList', encrypt($restaurant -> id))}}">
                     <button>VIEW</button>
                 </a>
-                <a href="{{route('editRestaurant',$restaurant->id)}}">
+                <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
                     <button>EDIT</button>
                 </a>
             </div>  

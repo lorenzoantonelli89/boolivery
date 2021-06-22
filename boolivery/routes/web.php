@@ -39,18 +39,18 @@ Route::get('/editRestaurant/{id}','Admin\RestaurantController@editRestaurant')
 Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestaurant')
     -> name('updateRestaurant');
 // rotta che porta alla lista dei piatti del ristorante cliccato 
- Route::get('/list-plate{id}', 'Admin\PlateController@plateList')
+ Route::get('/list-plate/{id}', 'Admin\PlateController@plateList')
     -> name('plateList');
 // rotta per modificare piatto
- Route::get('/edit-plate{id}', 'Admin\PlateController@editPlate')
+ Route::get('/edit-plate/{id}', 'Admin\PlateController@editPlate')
     -> name('editPlate');
 // rotta per che fa update piatto e ritorna poi alla pagina della lista piatti
- Route::post('/update-plate{id}', 'Admin\PlateController@updatePlate')
+ Route::post('/update-plate/{id}', 'Admin\PlateController@updatePlate')
     -> name('updatePlate');
 // rotte per la creazione di un nuovo piatto
- Route::get('/create-plate{id}', 'Admin\PlateController@createPlate')
+ Route::get('/create-plate/{id}', 'Admin\PlateController@createPlate')
     -> name('createPlate');
- Route::post('/store-plate{id}', 'Admin\PlateController@storePlate')
+ Route::post('/store-plate/{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
 // rotta per creazione nuovo ordine
 Route::post('/createOrder','PaymentController@createOrder')

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use App\Restaurant;
 use App\Plate;
 
@@ -20,8 +21,8 @@ class PlateController extends Controller
    
     /* funzione che permette la visualizzazione di tutti i piatti del singolo ritorante */
     public function plateList($id){
-
-        $restaurant = Restaurant::findOrFail($id);
+        
+        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
         
         return view('admin.list-plate', compact('restaurant'));
         
@@ -30,7 +31,7 @@ class PlateController extends Controller
     /* funzione che permette la modifica del singolo piatto */
     public function editPlate($id){
         
-        $plate = Plate::findOrFail($id);
+        $plate = Plate::findOrFail(Crypt::decrypt($id));
 
         return view('admin.edit-plate', compact('plate'));
     }
@@ -65,12 +66,12 @@ class PlateController extends Controller
 
     /* funzione che permette la creazione di un piatto */
     public function createPlate($id){
-        $restaurant=Restaurant::findOrFail($id);
+        $restaurant=Restaurant::findOrFail(Crypt::decrypt($id));
         return view('admin.create-plate', compact('restaurant'));
     }
 
     /* funzione associata a createPlate che salva il piatto creato */
-    public function storePlate(Request $request,$id){
+    public function storePlate(Request $request, $id){
 
         $validated = $request -> validate([
             'name' => 'required|min:3|max:255',
