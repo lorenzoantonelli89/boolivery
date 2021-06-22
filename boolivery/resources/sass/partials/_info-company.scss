@@ -1,0 +1,47 @@
+@import 'partials/variables';
+
+
+
+#info-container {
+    width: 100%;
+    background-color: $ourgreen;
+    @include flex (column, flex-start, center);
+    margin-bottom: 25px;
+}
+
+
+
+.backend-container,
+.frontend-container {
+    @include flex(column, center, center);
+    width: 80%;
+    margin: 25px 0;
+
+    img {
+        width: 150px;
+        margin: 30px;
+        border-radius: 50%;
+    }
+}
+
+.images-container {
+    @include flex(row, center, center);
+}
+
+.info-foto-details {
+    @include flex(column, center, center);
+    margin: 15px 0;
+}
+
+
+
+.superlogo {
+    margin-bottom: 25px;
+    width: 100%;
+    img {
+    
+        width: 100%;
+    }
+
+
+}
