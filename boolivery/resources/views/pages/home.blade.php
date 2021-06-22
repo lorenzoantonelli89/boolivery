@@ -107,11 +107,11 @@
               <div class="position-carousel"></div>
               <div class="div-margin">
                 <div id="plates-info">
-                  <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
+                  {{-- <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
                     <div id="text-plates">
                       <h3><i>@{{platesPopular[counter].name}}</i></h3>
                       <p><i>@{{platesPopular[counter].description}}</i></p>
-                    </div>
+                    </div> --}}
                 </div>
               </div>
               <div id="next" class="chevron">
@@ -165,6 +165,7 @@
             axios.get('/api/restaurants')
                 .then(res => {
                     this.restaurants = res.data;
+                    console.log(this.restaurants);
                     // filtro con cui creo array piatti popolari
                     for(let i = 0; i < this.restaurants.length; i++){
                       let elem = this.restaurants[i];
@@ -230,6 +231,7 @@
             },
             test: function(){
               console.log(this.categoryChecked);
+              console.log(this.testCat());
             }
           },
           computed: {
@@ -259,18 +261,46 @@
             // funzione per filtrare i ristoranti in base al nome
             filteredRestaurantsCategory: function() {
               const filtered = [];
+              const restaurantFilter = [];
               let categoryId;
+              let restaurantId;
 
               for(let i = 0; i < this.categoryRestaurant.length; i++){
-                  let elem = this.categoryRestaurant[i];
+                  restaurantId = this.categoryRestaurant[i]['restaurant_id'];
                   categoryId = this.categoryRestaurant[i]['category_id'];
-                  if (this.categoryChecked.includes(categoryId) && !filtered.some(item => item.category_id == categoryId)) {
-                    
-                      filtered.push(this.categoryRestaurant[i]);
-                  }
+                if (this.categoryChecked.includes(categoryId) && !restaurantFilter.includes(restaurantId)) {
+                  
+                    filtered.push(this.categoryRestaurant[i]);
+                    restaurantFilter.push(restaurantId);
+                }
+                  
               }
+
               return filtered;
+             
+
+              // const test =  this.categoryRestaurant.filter(({category_id}) => this.categoryChecked.includes(category_id));
+
+              // console.log(test);
+              
             },
+            // testCat: function(){
+            //   const filtered = [];
+            //   let categoryId;
+            //   let elemX;
+            //   for(let i = 0; i < this.categoryRestaurant.length; i++){
+            //       let elem = this.categoryRestaurant[i];
+            //       categoryId = this.categoryRestaurant[i]['category_id'];
+            //       for(let x = 0; x < this.categoryChecked.length; x++){
+            //         elemX = this.categoryChecked[i];
+            //         if (categoryId === elemX.id ) {
+                      
+            //         }
+            //       }
+                  
+            //   }
+            //   return filtered;
+            // }
           }
       });
     </script>
