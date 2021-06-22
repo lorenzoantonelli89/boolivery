@@ -877,22 +877,12 @@ body {
   align-items: center;
 }
 
-/* @mixin flex($direction, $justify, $align) {
-
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-
-} */
-
-h2 {
+h2,
+.speciality {
   font-family: "Pacifico", cursive;
-  /*         color: rgb(255, 255, 255);
-  */
   text-align: center;
   vertical-align: middle;
-  line-height: 90px;
+  line-height: 72px;
   letter-spacing: 2px;
 }
 
@@ -900,6 +890,8 @@ h2 {
   width: 100%;
   position: relative;
   opacity: 0.9;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .restaurantCover {
@@ -909,11 +901,7 @@ h2 {
   align-items: flex-start;
   width: 100%;
   height: 400px;
-  /*     background-image: url("{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}");
-
-      background-repeat: no-repeat;
-      background-size: cover;
-   */
+  margin-bottom: 100px;
 }
 
 .restaurantCover .ms_button {
@@ -928,53 +916,90 @@ h2 {
 }
 
 .restaurantCover .createPlateButt {
-  top: 50px;
+  top: 56px;
   right: 48px;
 }
 
 .restaurantCover .listRestButt {
-  top: 50px;
+  top: 56px;
   left: 48px;
+}
+
+.menuContainer {
+  background-image: linear-gradient(#00c2b8, #8d8989);
+  padding-top: 90px;
+  margin-top: 14px;
+}
+
+.menuContainer .speciality {
+  margin-bottom: 20px;
 }
 
 .platesCards {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: baseline;
   width: 90%;
+  margin: auto;
+  min-height: 500px;
   flex-wrap: wrap;
-  padding-top: 80px;
-  background-color: darkgoldenrod;
+  overflow-y: auto;
+  background-image: linear-gradient(#00c2b8, #8d8989);
 }
 
 .platesCards li {
   width: calc(90% / 5);
-  height: 250px;
+  min-height: 250px;
+  margin-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.platesCards li .plateCard {
+  position: relative;
+  margin-bottom: 10px;
 }
 
 .platesCards li img {
   width: 100%;
+  height: 220px;
+  -o-object-fit: contain;
+     object-fit: contain;
   border-radius: 10px;
-  position: relative;
 }
 
 .platesCards li img:hover {
   transform: scale(1.03);
   transition: all 1s ease;
+  opacity: 0.75;
+}
+
+.platesCards li img:hover + .editPlate {
+  display: block;
 }
 
 .platesCards li .editPlate {
+  font-size: 50px;
+  color: #1b1a1a;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  display: none;
 }
 
-.platesCards li .editPlate .fa-pencil-alt {
-  font-size: 45px;
-  color: white;
+.platesCards li .editPlate:hover {
+  display: block;
+}
+
+.platesCards li h6 {
+  margin-top: 10px;
 }
 
 header {

@@ -18,32 +18,38 @@
             
         </div>
 
+        <div class="menuContainer">
 
-        <ol class="platesCards">
-                @foreach ($restaurant -> plates as $plate)
-                    <li>   
-                        <div>
-                            <img  src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
-                            <h4>{{ $plate -> name}}</h4>
-                            <p>
-                                {{ $plate -> description}}
-                                
-                            </p>
-
-                            <h6>
-                                € {{ $plate -> price}}
-                            </h6>
-                        </div>
+                <h2 class="speciality">
+                    Le nostre specialità:
+                </h2>
+                
+                <ol class="platesCards">
                         
+                        @foreach ($restaurant -> plates as $plate)
+                            <li>   
+                                <div class="plateCard">
+                                    <img  src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
+                                    <a class="editPlate" href="{{route('editPlate', encrypt($plate -> id))}}">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                    </div>
+                                    <h4>{{ $plate -> name}}</h4>
+                                    <p>
+                                        {{ $plate -> description}}
+                                    </p>
 
-                        <a class="editPlate" href="{{route('editPlate', encrypt($plate -> id))}}">
-                            <i class="fas fa-pencil-alt"></i>
-                        </a>
-                    </li>
+                                    <h6>
+                                        € {{ $plate -> price}}
+                                    </h6>
+                                
+                            </li>
 
-                @endforeach
+                        @endforeach
 
-        </ol>
+                </ol>
+
+        </div>
     </main>
     
 @endsection
