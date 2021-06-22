@@ -3,34 +3,47 @@
 @section('content')
 
     <main>
-        <a class="mx-5" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
-
-        <a class="mx-5" href="{{route('createPlate', encrypt($restaurant -> id))}}">Aggiungi un piatto</a>
         
+        <h2>
+            Qui trovi tutti i piatti del ristorante {{$restaurant -> name}}
+        </h2>
 
-         <ol style="list-style: none">
-                            @foreach ($restaurant -> plates as $plate)
-                                <li class="py-3" style="border: 1px solid red; text-align:center">   
-                                    <div>
-                                        <h4>{{ $plate -> name}}</h4>
-                                        <p>
-                                            {{ $plate -> description}}
-                                            
-                                        </p>
-                                        <img style="height: 250px; width:350px;object-fit:contain" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
+        {{-- immagine cover restaurant --}}
+        <div class="restaurantCover">
+            <img class="coverRestRel" src="{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}" alt="{{ $restaurant -> image_cover }}">
 
-                                        <h6>
-                                            € {{ $plate -> price}}
-                                        </h6>
-                                    </div>
-                                   
+            <a class="ms_button listRestButt" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
 
-                                    <a href="{{route('editPlate', encrypt($plate -> id))}}">Modifica</a>
-                                </li>
+            <a class="ms_button createPlateButt" href="{{route('createPlate', encrypt($restaurant -> id))}}">Aggiungi un piatto</a>
+            
+        </div>
 
-                            @endforeach
 
-                        </ol>
+        <ol class="platesCards">
+                @foreach ($restaurant -> plates as $plate)
+                    <li>   
+                        <div>
+                            <img  src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
+                            <h4>{{ $plate -> name}}</h4>
+                            <p>
+                                {{ $plate -> description}}
+                                
+                            </p>
+
+                            <h6>
+                                € {{ $plate -> price}}
+                            </h6>
+                        </div>
+                        
+
+                        <a class="editPlate" href="{{route('editPlate', encrypt($plate -> id))}}">
+                            <i class="fas fa-pencil-alt"></i>
+                        </a>
+                    </li>
+
+                @endforeach
+
+        </ol>
     </main>
     
 @endsection
