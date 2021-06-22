@@ -25,17 +25,17 @@
                                     {{$restaurant -> description}}
                                 </i>
                             </p>
-                            </div>
+                        </div>
                             
                             
                         <br>
                             <a class="atHome" href="{{route('home')}}">
-                            Torna alla lista principale
-                        </a>
-                        </div>
+                                Torna alla lista principale
+                            </a>
+                    </div>
 
                         
-                    </div>
+                </div>
                     <!-- IMMAGINE LATERALE E SHOP -->
                     <div class="restaurant-foto-order">
                         <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
@@ -123,7 +123,8 @@
                                             </div>
                                             <div>
                                                 <div v-for="item in cart">
-                                                    <input  type="text" name="plates_ids[]" :value="item.name">
+                                                    <input  type="hidden" name="plates_ids[]" :value="item.id" readonly>
+                                                    <span>@{{item.name}}</span>
                                                 </div>
                                             </div>
                                             
@@ -184,17 +185,12 @@
                             </div>
                         </div>
                     </div>    
-                    
                     <div class="delivery-promotion">
-                        
-
                         <span>Spendi almeno 10,00€ per la <b>consegna gratuita </b>|| La mancia al Ryder non è obbligatoria ma è ben voluta &hearts; </span>
-
-                        
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </main>
 
     <script>

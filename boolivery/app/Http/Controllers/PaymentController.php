@@ -21,7 +21,6 @@ class PaymentController extends Controller
             'total_price'=> 'required|integer',
             'status'=> 'required|boolean',
         ]);
-
         $plates=Plate::findOrFail($request->plates_ids);
         $order=Order::make($validated);
         $order->save();

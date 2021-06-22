@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 use App\Restaurant;
 use App\User;
 use App\Category;
@@ -70,7 +71,7 @@ class RestaurantController extends Controller
 
     public function editRestaurant($id){ // pag. edit ristorante
 
-        $restaurant = Restaurant::findOrFail($id);
+        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
         $categories = Category::all();
         return view('admin.edit-restaurant',compact('restaurant','categories'));
     }
