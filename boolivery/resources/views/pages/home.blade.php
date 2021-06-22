@@ -16,20 +16,17 @@
                 <a class="blink" href="#">LOGIN</a>
               </div> -->
                   <div class="title-research">                  
-                    <h1 v-on:click="test">I piatti che ami, a domicilio</h1>
+                    <h1>I piatti che ami, a domicilio</h1>
                     <div class="research-request">
                       <span>Cerca il tuo ristorante preferito</span> 
                         <div class="input-adresse">
-                          <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchName" v-on:keyup="refreshCategory">
+                          <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchRestaurant">
                         </div>
                     </div>
                   </div>   
                   <div class="categories">
                       <ul id="category-container-list">
                           <li class="category-list" v-for="category in categories">
-                              {{-- <h3 v-on:click="getActiveCategory(category)">
-                                  @{{category.name}}
-                              </h3> --}}
                               <label for="">@{{category.name}}</label>
                               <input type="checkbox" :value="category.id"  v-model="categoryChecked">
                           </li>
@@ -40,7 +37,7 @@
         </div>
 
         <!-- PRIMA SEZIONE, VISIONE DEI RISTORANTI -->
-        <div class="main-sec-1" v-if="(categoryChecked.length == 0 )">
+        <div class="main-sec-1" v-if="(categoryChecked.length == 0 && searchRestaurant == '')">
           <div class="div-margin">
             <div class="main-1-container">
               <ul>
@@ -58,7 +55,7 @@
             </div>
           </div>
         </div>
-        {{-- <div class="main-sec-1" v-else-if="categoryChecked.length > 0">
+        <div class="main-sec-1" v-else-if="searchRestaurant != ''">
           <div class="div-margin">
             <div class="main-1-container">
               <ul>
@@ -75,7 +72,7 @@
               </ul>
             </div>
           </div>
-        </div> --}}
+        </div>
         <div class="main-sec-1" v-else>
           <div class="div-margin">
             <div class="main-1-container">
@@ -148,16 +145,15 @@
         new Vue({
           el: '#home-container',
           data: {
-              searchName: '',
+              searchRestaurant: '',
               restaurants: '',
               restaurantsPopular: [],
               activeRestaurant: '',
               categories: '',
-              activeCategory: '',
-              platesPopular: [],
-              categoryRestaurant: '',
-              counter: 0,
               categoryChecked: [],
+              categoryRestaurant: '',
+              platesPopular: [],
+              counter: 0,
           },
           mounted() {
             //scorrimento automatico delle immagini
@@ -176,10 +172,16 @@
                       }
                     }
                 })
+                .catch(error => {
+                    console.log(error)
+                })
             // chiamata axio che ritorna array di tutte le categorie
             axios.get('/api/categories')
                 .then(res => {
                     this.categories = res.data;
+                })
+                .catch(error => {
+                    console.log(error)
                 })
             // chiamata axios e filtro che mi ritorna array piatti popolari 
             axios.get('/api/all-plates')
@@ -191,25 +193,22 @@
                       }
                     }
                 })
+                .catch(error => {
+                    console.log(error)
+                })
             // chiamata axios e filtro che mi ritorna array tabella pivot category_restaurant    
             axios.get('/api/pivot')
                 .then(res => {
                     this.categoryRestaurant = res.data;
+                })
+                .catch(error => {
+                    console.log(error)
                 })        
           },
           methods: {
             // funzione che valora il dato active restaurant al click del ristorante selezionato
             getActiveRestaurant: function(elem){
                 this.activeRestaurant = elem.id;
-            },
-            // funzione che valora il dato active category al click della categoria selezionato
-            getActiveCategory: function(elem){
-              this.activeCategory = elem.id
-              console.log(this.activeCategory);
-            },
-            // funzione che ripulisce 
-            refreshCategory: function(){
-              this.activeCategory = '';
             },
             // slider che passa all'immagine successiva
             nextImg: function () {
@@ -231,10 +230,6 @@
             autoSlide: function() {
               setInterval(this.nextImg, 4000);
             },
-            test: function(){
-              console.log(this.categoryChecked);
-              console.log(this.testCat());
-            }
           },
           computed: {
               // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
@@ -244,7 +239,7 @@
             // funzione per filtrare i ristoranti in base al nome
             // filteredRestaurantsName: function () {
             //   return this.restaurants.filter(elem => {
-            //       return elem.name.toLowerCase().includes(this.searchName.toLowerCase());
+            //       return elem.name.toLowerCase().includes(this.searchRestaurant.toLowerCase());
             //   });
             // },
             // funzione per filtrare i ristoranti in base al nome
@@ -254,55 +249,32 @@
 
               for(let i = 0; i < this.restaurants.length; i++){
                   name = this.restaurants[i]['name'];
-                  if (name.toLowerCase().includes(this.searchName.toLowerCase())) {
+                  if (name.toLowerCase().includes(this.searchRestaurant.toLowerCase())) {
                       filtered.push(this.restaurants[i]);
                   }
               }
               return filtered;
             },
-            // funzione per filtrare i ristoranti in base al nome
+            // funzione per filtrare i ristoranti in base alla categoria
             filteredRestaurantsCategory: function() {
               const filtered = [];
               const restaurantFilter = [];
               let categoryId;
               let restaurantId;
+              let name;
 
               for(let i = 0; i < this.categoryRestaurant.length; i++){
                   restaurantId = this.categoryRestaurant[i]['restaurant_id'];
                   categoryId = this.categoryRestaurant[i]['category_id'];
+                  name = this.categoryRestaurant[i]['name'];
                 if (this.categoryChecked.includes(categoryId) && !restaurantFilter.includes(restaurantId)) {
                   
                     filtered.push(this.categoryRestaurant[i]);
                     restaurantFilter.push(restaurantId);
                 }
-                  
               }
-
               return filtered;
-             
-
-              // const test =  this.categoryRestaurant.filter(({category_id}) => this.categoryChecked.includes(category_id));
-
-              // console.log(test);
-              
             },
-            // testCat: function(){
-            //   const filtered = [];
-            //   let categoryId;
-            //   let elemX;
-            //   for(let i = 0; i < this.categoryRestaurant.length; i++){
-            //       let elem = this.categoryRestaurant[i];
-            //       categoryId = this.categoryRestaurant[i]['category_id'];
-            //       for(let x = 0; x < this.categoryChecked.length; x++){
-            //         elemX = this.categoryChecked[i];
-            //         if (categoryId === elemX.id ) {
-                      
-            //         }
-            //       }
-                  
-            //   }
-            //   return filtered;
-            // }
           }
       });
     </script>

@@ -6,9 +6,59 @@ use Illuminate\Http\Request;
 
 use App\Plate;
 use App\Order;
+use Braintree;
 
 class PaymentController extends Controller
 {
+    private function braintree(){
+        $gateway = new Braintree\Gateway([
+            'environment' => env('BT_ENVIRONMENT'),
+            'merchantId' => env('BT_MERCHANT_ID'),
+            'publicKey' => env('BT_PUBLIC_KEY'),
+            'privateKey' => env('BT_PRIVATE_KEY')
+        ]);
+
+        return $gateway;
+    }
+    public function payment($total){
+        $gateway = $this -> braintree();
+        $token = $gateway->ClientToken()->generate();
+        $totalPrice = $total;
+
+        return view('pages.payment', compact('token', 'totalPrice'));
+    }
+    public function checkout(Request $request){
+        $gateway = $this -> braintree();
+        $amount = $request -> amount;
+        $nonce = $request -> payment_method_nonce;
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        if ($result->success) {
+            $transaction = $result->transaction;
+            // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
+            // return back() -> with('success_message', 'Transazione riuscita, con id: ' . $transaction -> id);
+            return view('pages.checkout');
+        } else {
+            $errorString = "";
+
+            foreach($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+
+            $error = $result -> message;
+            // $_SESSION["errors"] = $errorString;
+            // header("Location: " . $baseUrl . "index.php");
+            return back() -> withErrors('An error occured with the message:' . $result -> message);
+            // return view('pages.check-out', compact('error'));
+        }
+    }
     public function storeOrder(Request $request){
 
         $validated = $request -> validate([

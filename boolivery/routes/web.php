@@ -25,6 +25,11 @@ Route::get('/info-company', 'GuestController@infoCompany')
 //rotta che porta all pagina delle domande frequenti
 Route::get('/faq', 'GuestController@faq') 
     -> name('faq');     
+//rotte per i pagamenti
+Route::get('/payment/{total}', 'PaymentController@payment')
+    -> name('payment');
+Route::post('/checkout', 'PaymentController@checkout')
+    -> name('checkout');    
 //inizio delle rotte in cui serve essere loggati 
 Auth::routes();
 // rotta lista ristoranti utente loggato
