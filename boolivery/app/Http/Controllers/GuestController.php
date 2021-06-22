@@ -20,6 +20,11 @@ class GuestController extends Controller
 
         return view('pages.info-company');
     }
+    // funzione che riporta alla pagina delle faq
+    public function faq(){
+
+        return view('pages.faq');
+    }
 
     
 }
