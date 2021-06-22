@@ -16,8 +16,8 @@
             <div class="footer-section">
                 <div class="footer-list">
                 <p>Investitori</p>
-                <p>Chi Siamo</p>
-                <p>Ristoranti</p>
+                <a href="{{route('info-company')}}">Chi Siamo</a>
+                <a href="{{route('faq')}}">faq</a>
                 <p>Altro</p>
                 <p>PressRoom</p>
             </div>
