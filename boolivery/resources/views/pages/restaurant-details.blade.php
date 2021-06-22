@@ -43,7 +43,7 @@
                 <!-- tempi di consegna -->
                 <span>
                     <i class="far fa-clock"></i>
-                    Consegnamo entro 30 minuti: consegna prevista per le
+                    Consegna prevista tra 30 e 40 minuti. Primo orario utile:
                     @{{getTimeDelivery()}}
                 </span>
                 <!-- dettagli del pagamento -->
@@ -202,7 +202,7 @@
 
                                             <label for="total_price">    
                                             </label>
-                                            <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total"  readonly>                                         
+                                            <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 10 ? total+5 : total"  readonly>                                        
                                             
                                         </div>
                                         <!-- OGGETTI NEL CARRELLO -->
@@ -219,6 +219,7 @@
                                 
                                 <!-- calcolo del totale -->
                                 <div class="total-calculator">
+                                    <div>Totale(consegna esclusa): @{{total}}</div>
                                     <span>Spese di consegna: @{{getDeliveryCost()}}€</span>
                                     <!-- indicatore rosso verde sulla consegna gratuita -->
                                     <div :class="total < 10 ? 'pay-delivery' : 'free-delivery'">
@@ -272,8 +273,12 @@
             },
             getTimeDelivery: function() {
                 const now = new Date();
-                now.setMinutes(now.getMinutes() + this.getRandomNumberBetween(15, 45));
-                const time = now.getHours() + ":" + now.getMinutes();
+                now.setMinutes(now.getMinutes() + 30);
+                let time = now.getHours() + ":" + now.getMinutes();
+                if(now.getMinutes() < 10){
+                    time = now.getHours() + ":0" + now.getMinutes();
+                };
+                
                 return time;
             },
             getDeliveryCost: function() {
@@ -283,9 +288,9 @@
                 return 5;
             }
             },
-            getRandomNumberBetween: function(min,max){
-            return Math.floor(Math.random()*(max-min+1)+min);
-            }
+            // getRandomNumberBetween: function(min,max){
+            // return Math.floor(Math.random()*(max-min+1)+min);
+            // }
 
 
         },
