@@ -99,9 +99,6 @@ body {
 
 main {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 main #home-container {
@@ -1573,6 +1570,45 @@ h2,
   margin-top: 10px;
 }
 
+#faq-container {
+  padding: 80px 0;
+}
+
+#faq-container #back-h1 {
+  background-color: #ff7b00;
+  width: 140px;
+  height: 80px;
+  -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+#faq-container #back-h1 h1 {
+  margin: 20px 0;
+  padding: 0 25px;
+  vertical-align: middle;
+  line-height: 80px;
+}
+
+#faq-container #faq {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+#faq-container #faq #quest li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+#faq-container #faq #quest li p:first-child:hover {
+  font-size: 20pt;
+}
+
+#faq-container #faq #quest li p:first-child {
+  font-weight: bold;
+}
+
 header {
   width: 100%;
 }
@@ -1641,7 +1677,6 @@ footer .footer-container .footer-section-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 
 footer .footer-container .footer-section-container .footer-section {
