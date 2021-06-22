@@ -11,8 +11,8 @@ class Order extends Model
         'name',
         'lastname',
         'shipping_address',
-        // 'date_delivery',
-        // 'time_delivery',
+        'date_delivery',
+        'time_delivery',
         'total_price',
         'status',
     ];

@@ -56,8 +56,8 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
  Route::post('/store-plate/{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
 // rotta per creazione nuovo ordine
-Route::post('/createOrder','PaymentController@createOrder')
-    ->name('createOrder');
+Route::post('/storeOrder','PaymentController@storeOrder')
+    ->name('storeOrder');
 
 
 
