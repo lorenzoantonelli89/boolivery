@@ -22,6 +22,9 @@ Route::get('/restaurant-details/{id}', 'GuestController@detailsRestaurant')
 //rotta che porta all apgina chi siamo
 Route::get('/info-company', 'GuestController@infoCompany') 
     -> name('info-company'); 
+//rotta che porta all pagina delle domande frequenti
+Route::get('/faq', 'GuestController@faq') 
+    -> name('faq');     
 //inizio delle rotte in cui serve essere loggati 
 Auth::routes();
 // rotta lista ristoranti utente loggato

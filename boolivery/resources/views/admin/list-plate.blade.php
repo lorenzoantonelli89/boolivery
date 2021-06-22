@@ -3,34 +3,53 @@
 @section('content')
 
     <main>
-        <a class="mx-5" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
-
-        <a class="mx-5" href="{{route('createPlate', encrypt($restaurant -> id))}}">Aggiungi un piatto</a>
         
+        <h2>
+            Qui trovi tutti i piatti del ristorante {{$restaurant -> name}}
+        </h2>
 
-         <ol style="list-style: none">
-                            @foreach ($restaurant -> plates as $plate)
-                                <li class="py-3" style="border: 1px solid red; text-align:center">   
-                                    <div>
-                                        <h4>{{ $plate -> name}}</h4>
-                                        <p>
-                                            {{ $plate -> description}}
-                                            
-                                        </p>
-                                        <img style="height: 250px; width:350px;object-fit:contain" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
+        {{-- immagine cover restaurant --}}
+        <div class="restaurantCover">
+            <img class="coverRestRel" src="{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}" alt="{{ $restaurant -> image_cover }}">
 
-                                        <h6>
-                                            € {{ $plate -> price}}
-                                        </h6>
+            <a class="ms_button listRestButt" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
+
+            <a class="ms_button createPlateButt" href="{{route('createPlate', encrypt($restaurant -> id))}}">Aggiungi un piatto</a>
+            
+        </div>
+
+        <div class="menuContainer">
+
+                <h2 class="speciality">
+                    Le nostre specialità:
+                </h2>
+                
+                <ol class="platesCards">
+                        
+                        @foreach ($restaurant -> plates as $plate)
+                            <li>   
+                                <div class="plateCard">
+                                    <img  src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate-> name }}">
+                                    <a class="editPlate" href="{{route('editPlate', encrypt($plate -> id))}}">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
                                     </div>
-                                   
+                                    <h4>{{ $plate -> name}}</h4>
+                                    <p>
+                                        {{ $plate -> description}}
+                                    </p>
 
-                                    <a href="{{route('editPlate', encrypt($plate -> id))}}">Modifica</a>
-                                </li>
+                                    <h6>
+                                        € {{ $plate -> price}}
+                                    </h6>
+                                
+                            </li>
 
-                            @endforeach
+                        @endforeach
 
-                        </ol>
+                </ol>
+
+        </div>
     </main>
     
 @endsection
