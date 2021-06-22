@@ -109,7 +109,7 @@
                                     </div>
 
                                     <div class="mykart">
-                                        <form action="{{route('createOrder')}}" method="POST">
+                                        <form action="{{route('storeOrder')}}" method="POST">
                                             @csrf
                                             @method('POST')
                                             <div class="total-price">
@@ -122,8 +122,8 @@
 
                                             </div>
                                             <div>
-                                                <div v-for="item in cart">
-                                                    <input  type="hidden" name="plates_ids[]" :value="item.id" readonly>
+                                                <div v-for="item in orderedItems">
+                                                    <input  type="hidden" name="plate_id[]" :value="item.id" readonly>
                                                     <span>@{{item.name}}</span>
                                                 </div>
                                             </div>
@@ -132,36 +132,53 @@
                                                 <label for="name">
                                                     Nome
                                                 </label>
-                                                <input type="text" id="name" name="name">
+                                                <input type="text" id="name" name="name" required>
                                             </div>
                                             <div>
                                                 <label for="lastname">
                                                     Cognome
                                                 </label>
-                                                <input type="text" id="lastname" name="lastname">
+                                                <input type="text" id="lastname" name="lastname" required>
                                             </div>
                                             <div>
-                                                <label for="Telefono">
-                                                    Telefono
+                                                <label for="email">
+                                                    Email
                                                 </label>
-                                                <input type="email" id="email" name="email">
+                                                <input type="email" id="email" name="email" required>
                                             </div>
                                             <div>
                                                 <label for="shipping_address">  
                                                     Indirizzo
                                                 </label>
-                                                <input type="text" id="shipping_address" name="shipping_address">
+                                                <input type="text" id="shipping_address" name="shipping_address" required>
                                             </div>
                                             
                                             <div>
                                                 <label for="date_delivery">
                                                     Data
                                                 </label>
-                                                <input type="date" id="date_delivery" name="date_delivery">
+                                                <input type="date" id="date_delivery" name="date_delivery"
+                                                min="<?php
+                                                echo date('Y-m-d');
+                                                ?>" value="<?php
+                                                echo date('Y-m-d');
+                                                ?>" required>
                                             </div>
                                             <div>
-                                                <label for="time_delivery"></label>
-                                                <input type="time" id="time_delivery" name="time_delivery">
+                                                <label for="time_delivery">
+                                                    Orario (attesa minima: <i>30minuti</i>)
+                                                </label>
+                                                <input type="time" id="time_delivery" name="time_delivery"
+                                                min="08:00" max="23:00" value= "<?php
+                                                date_default_timezone_set("Europe/Rome");
+                                                if(date('H:i')>'08:00' && date('H:i')<'23:00'){
+                                                    $now = date("H:i");
+                                                    $firstAvailable = date('H:i', strtotime('+30 minutes', strtotime($now)));
+                                                    echo $firstAvailable;
+                                                } else {
+                                                    echo '08:00';
+                                                };
+                                                ?>" required>
                                             </div>
                                             <div>
                                                 <label for="status">
@@ -176,6 +193,16 @@
                                                     </option>
                                                 </select>
                                             </div>
+                                            {{-- ERRORI --}}
+                                            @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                            @endif
                                             <div>
                                                 <button type="submit" class="btn btn-primary">Crea</button>
                                             </div>
@@ -197,21 +224,24 @@
         new Vue({
           el: '#restaurant-details-container',
           data: {
-              cart: [],
-              total:0,
+              orderedItems: [], // array di piatti ordinati
+              cart: [], // array di ID ordinati
+              total:0, // prezzo totale
               deliveryTime:0
           },
           methods: {
                 addPlate: function (elem){
-                    this.cart.push(elem);
+                    this.orderedItems.push(elem);
+                    this.cart.push(elem.id);
                     this.total += parseInt(elem.price);
                     console.log(this.cart, elem.price);
                     console.log(elem);
                 },
                 removePlate: function(elem){
-                    const index = this.cart.indexOf(elem);
+                    const index = this.cart.indexOf(elem.id);
                     if(index > -1){
                         this.cart.splice(index, 1);
+                        this.orderedItems.splice(index, 1);
                         this.total -= elem.price;
                     }
                     console.log(this.cart);
