@@ -104,7 +104,7 @@
               <div id="prev" class="chevron">
                 <i class="fas fa-chevron-left" v-on:click='prevImg'></i>
               </div>
-              <div class="position-carousel"></div>
+              <!--<div class="position-carousel"></div>-->
               <div class="div-margin">
                 <div id="plates-info">
                   <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
@@ -121,13 +121,15 @@
           </div>
 
           <!-- TERZA SEZIONE, SEZIONE PER I RISTORATORI -->
-          <div class="main-sec-3 div-margin">
+          <div class="main-sec-3">
+            <div class="div-margin">
               <div class="business-adv">
                 <img class="img-icon" src={{ asset('/storage/graphics/restaurant_icon.png') }} alt="">
                 <h1>Diventa partner Boolivery</h1>
                 <span>Aumenta le tue vendite fino al 30% grazie alle consegne a domicilio</span>
                 <a class="blink" href="#">LOGIN</a>     
               </div>
+            </div>
           </div>
 
           <!-- CONTENITORE CONTATTI IN ABSOLUTE -->
