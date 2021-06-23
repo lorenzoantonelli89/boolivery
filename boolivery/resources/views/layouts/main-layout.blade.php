@@ -12,6 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    {{-- braintree --}}
+    <script src="https://js.braintreegateway.com/web/dropin/1.30.1/js/dropin.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="{{asset('/css/app.css')}}">
     {{-- chartJs --}}

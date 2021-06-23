@@ -3,12 +3,61 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 use App\Plate;
 use App\Order;
+use Braintree;
 
 class PaymentController extends Controller
 {
+    private function braintree(){
+        $gateway = new Braintree\Gateway([
+            'environment' => env('BT_ENVIRONMENT'),
+            'merchantId' => env('BT_MERCHANT_ID'),
+            'publicKey' => env('BT_PUBLIC_KEY'),
+            'privateKey' => env('BT_PRIVATE_KEY')
+        ]);
+
+        return $gateway;
+    }
+    public function checkout(Request $request, $id){
+
+        $order = Order::findOrFail(Crypt::decrypt($id));
+        
+        $gateway = $this -> braintree();
+        $amount = $request -> amount;
+        $nonce = $request -> payment_method_nonce;
+
+        $result = $gateway->transaction()->sale([
+            'amount' => $amount,
+            'paymentMethodNonce' => $nonce,
+            'options' => [
+                'submitForSettlement' => true
+            ]
+        ]);
+
+        if ($result->success) {
+            $transaction = $result->transaction;
+            $order -> status = true;
+            $order -> save();
+            // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
+            // return back() -> with('success_message', 'Transazione riuscita, con id: ' . $transaction -> id);
+            return view('pages.checkout', compact('transaction'));
+        } else {
+            $errorString = "";
+
+            foreach($result->errors->deepAll() as $error) {
+                $errorString .= 'Error: ' . $error->code . ": " . $error->message . "\n";
+            }
+
+            $error = $result -> message;
+            // $_SESSION["errors"] = $errorString;
+            // header("Location: " . $baseUrl . "index.php");
+            return back() -> withErrors('An error occured with the message:' . $result -> message);
+            // return view('pages.check-out', compact('error'));
+        }
+    }
     public function storeOrder(Request $request){
 
         $validated = $request -> validate([
@@ -47,7 +96,11 @@ class PaymentController extends Controller
             $order->save();
         }
         $order->save();
+        $gateway = $this -> braintree();
+        $token = $gateway->ClientToken()->generate();
+        // dd($order);
         
-        return redirect()->route('home');
+        return view('pages.payment', compact('token','order'));
+        // return redirect()->route('payment', compact('order'));
     }
 }

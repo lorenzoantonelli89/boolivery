@@ -214,7 +214,7 @@
                                 </div>
                                 
                                 <!-- link giallo per concludere l'ordine -->
-                                <a class="shop-link" href="">
+                                <a class="shop-link" :href="getHref">
                                     <i class="fas fa-shopping-cart"></i>
                                     CONCLUDI ORDINE
                                 </a>
@@ -244,17 +244,16 @@
                 this.orderedItems.push(elem);
                 this.cart.push(elem.id);
                 this.total += parseInt(elem.price);
-                console.log(this.cart, elem.price);
-                console.log(elem);
+                console.log(this.total);
             },
             removePlate: function(elem){
                 const index = this.cart.indexOf(elem.id);
                 if(index > -1){
                     this.cart.splice(index, 1);
                     this.orderedItems.splice(index, 1);
-                    this.total -= elem.price;
+                    this.total -= parseInt(elem.price);
                 }
-                console.log(this.cart);
+                console.log(this.total);
             },
             getTimeDelivery: function() {
                 const now = new Date();
@@ -280,7 +279,10 @@
 
         },
         computed: {
-            
+              // funzione per creare href da inserire nel form che porta il totale carello nella pagina payment
+            getHref: function(){
+                return '/payment/' + this.orderedItems;
+            },
         }
     });
 
