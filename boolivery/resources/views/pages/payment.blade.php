@@ -6,13 +6,13 @@
     
     <main>
         <div id="container-payment">
-            <form method="post" id="payment-form" action="{{route('checkout')}}">
+            <form method="post" id="payment-form" action="{{route('checkout', encrypt($order -> id))}}">
                 @csrf
                 <section>
                     <label for="amount">
                         <span class="input-label">Amount</span>
                         <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$totalPrice}}">
+                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order -> total_price}}">
                         </div>
                     </label>
 

@@ -6,7 +6,7 @@
     
     <main>
         <div id="container-checkout">
-            pagamento avvenuto con successo
+            transazione avvenuta con successo con id: {{$transaction -> id}}
         </div>
     </main>
 

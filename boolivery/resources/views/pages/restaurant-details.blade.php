@@ -289,7 +289,7 @@
         computed: {
               // funzione per creare href da inserire nel form che porta il totale carello nella pagina payment
             getHref: function(){
-                return '/payment/' + this.total;
+                return '/payment/' + this.orderedItems;
             },
         }
     });

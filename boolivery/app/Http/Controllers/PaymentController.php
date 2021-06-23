@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 use App\Plate;
 use App\Order;
@@ -20,14 +21,10 @@ class PaymentController extends Controller
 
         return $gateway;
     }
-    public function payment($total){
-        $gateway = $this -> braintree();
-        $token = $gateway->ClientToken()->generate();
-        $totalPrice = $total;
+    public function checkout(Request $request, $id){
 
-        return view('pages.payment', compact('token', 'totalPrice'));
-    }
-    public function checkout(Request $request){
+        $order = Order::findOrFail(Crypt::decrypt($id));
+        
         $gateway = $this -> braintree();
         $amount = $request -> amount;
         $nonce = $request -> payment_method_nonce;
@@ -42,9 +39,11 @@ class PaymentController extends Controller
 
         if ($result->success) {
             $transaction = $result->transaction;
+            $order -> status = true;
+            $order -> save();
             // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
             // return back() -> with('success_message', 'Transazione riuscita, con id: ' . $transaction -> id);
-            return view('pages.checkout');
+            return view('pages.checkout', compact('transaction'));
         } else {
             $errorString = "";
 
@@ -98,7 +97,11 @@ class PaymentController extends Controller
             $order->save();
         }
         $order->save();
+        $gateway = $this -> braintree();
+        $token = $gateway->ClientToken()->generate();
+        // dd($order);
         
-        return redirect()->route('home');
+        return view('pages.payment', compact('token','order'));
+        // return redirect()->route('payment', compact('order'));
     }
 }

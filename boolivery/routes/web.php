@@ -24,11 +24,12 @@ Route::get('/info-company', 'GuestController@infoCompany')
     -> name('info-company'); 
 //rotta che porta all pagina delle domande frequenti
 Route::get('/faq', 'GuestController@faq') 
-    -> name('faq');     
+    -> name('faq'); 
+// rotta per creazione nuovo ordine
+Route::post('/storeOrder','PaymentController@storeOrder')
+    ->name('storeOrder');        
 //rotte per i pagamenti
-Route::get('/payment/{total}', 'PaymentController@payment')
-    -> name('payment');
-Route::post('/checkout', 'PaymentController@checkout')
+Route::post('/checkout/{id}', 'PaymentController@checkout')
     -> name('checkout');    
 //inizio delle rotte in cui serve essere loggati 
 Auth::routes();
@@ -60,9 +61,7 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
     -> name('createPlate');
  Route::post('/store-plate/{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
-// rotta per creazione nuovo ordine
-Route::post('/storeOrder','PaymentController@storeOrder')
-    ->name('storeOrder');
+
 
 
 
