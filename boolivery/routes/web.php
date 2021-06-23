@@ -59,6 +59,11 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
 Route::post('/storeOrder','PaymentController@storeOrder')
     ->name('storeOrder');
 
+//test per grafico
+Route::get('/testGrafico',function(){
+    return view('admin.test-chart');
+});
+
 
 
  
