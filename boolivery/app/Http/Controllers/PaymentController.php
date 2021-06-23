@@ -11,6 +11,7 @@ use Braintree;
 
 class PaymentController extends Controller
 {
+    // funzione privata che ritorna array di dati di braintree
     private function braintree(){
         $gateway = new Braintree\Gateway([
             'environment' => env('BT_ENVIRONMENT'),
@@ -21,10 +22,11 @@ class PaymentController extends Controller
 
         return $gateway;
     }
+    // funzione che prende i dati della carta e tramite id ordine passato come parametro
     public function checkout(Request $request, $id){
 
         $order = Order::findOrFail(Crypt::decrypt($id));
-        
+        // faccio partire i controlli di braintree
         $gateway = $this -> braintree();
         $amount = $request -> amount;
         $nonce = $request -> payment_method_nonce;
@@ -32,18 +34,22 @@ class PaymentController extends Controller
         $result = $gateway->transaction()->sale([
             'amount' => $amount,
             'paymentMethodNonce' => $nonce,
+            'customer' => [
+                'firstName' => $order -> name,
+                'lastName' => $order -> lastname,
+                'email' => $order -> email,
+            ],
             'options' => [
                 'submitForSettlement' => true
             ]
         ]);
-
+        // se è andato a buon fine cambio lo status dell'ordine da false a true e ritorno alla pagina checkout
         if ($result->success) {
             $transaction = $result->transaction;
             $order -> status = true;
             $order -> save();
-            // header("Location: " . $baseUrl . "transaction.php?id=" . $transaction->id);
-            // return back() -> with('success_message', 'Transazione riuscita, con id: ' . $transaction -> id);
-            return view('pages.checkout', compact('transaction'));
+            return view('pages.checkout', compact('transaction', 'order'));
+        // se non è andato a buon fine lo statu ordine rimane a false e ritorno in pagina checkout con un errore 
         } else {
             $errorString = "";
 
@@ -52,10 +58,9 @@ class PaymentController extends Controller
             }
 
             $error = $result -> message;
-            // $_SESSION["errors"] = $errorString;
-            // header("Location: " . $baseUrl . "index.php");
-            return back() -> withErrors('An error occured with the message:' . $result -> message);
-            // return view('pages.check-out', compact('error'));
+            
+            return view('pages.checkout', compact('error'));
+            // return back() -> withErrors('An error occured with the message:' . $result -> message);
         }
     }
     public function storeOrder(Request $request){
@@ -68,7 +73,6 @@ class PaymentController extends Controller
             'date_delivery'=> 'required|date|after:yesterday',
             'time_delivery'=> 'required|date_format:H:i',
             'total_price'=> 'required|integer',
-            'status'=> 'required|boolean',
             'plate_id'=>'required_without_all'
         ]);
         
@@ -99,9 +103,7 @@ class PaymentController extends Controller
         $order->save();
         $gateway = $this -> braintree();
         $token = $gateway->ClientToken()->generate();
-        // dd($order);
         
         return view('pages.payment', compact('token','order'));
-        // return redirect()->route('payment', compact('order'));
     }
 }
