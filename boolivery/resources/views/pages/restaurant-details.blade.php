@@ -43,7 +43,7 @@
                 <!-- tempi di consegna -->
                 <span>
                     <i class="far fa-clock"></i>
-                    Consegnamo entro 30 minuti: consegna prevista per le
+                    Consegna prevista tra 30 e 40 minuti. Primo orario utile:
                     @{{getTimeDelivery()}}
                 </span>
                 <!-- dettagli del pagamento -->
@@ -85,11 +85,6 @@
                                         </h3>
                                     <!-- bottoni per aggiungere o togliere un piatto -->
                                         <div>
-                                            <span>
-                                                <button v-on:click="removePlate({{$plate}})">
-                                                    <i class="fas fa-minus-square"></i>
-                                                </button>
-                                            </span>
                                             <span>
                                                 <button v-on:click="addPlate({{$plate}})">
                                                     <i class="fas fa-plus-circle"></i>
@@ -171,20 +166,8 @@
                                             };
                                             ?>" required>
                                         </div>
-                                        <div>
-                                            <label for="status">
-                                                Status
-                                            </label>
-                                            <select name="status" id="status">
-                                                <option value="0">
-                                                    Pagato
-                                                </option>
-                                                <option value="1">
-                                                    Da pagare
-                                                </option>
-                                            </select>
-                                        </div>
-                                        {{-- ERRORI --}}
+                                        
+                                        {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
                                         @if ($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>
@@ -202,7 +185,7 @@
 
                                             <label for="total_price">    
                                             </label>
-                                            <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total"  readonly>                                         
+                                            <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 10 ? total+5 : total"  readonly>                                        
                                             
                                         </div>
                                         <!-- OGGETTI NEL CARRELLO -->
@@ -210,15 +193,18 @@
                                             <div v-for="item in orderedItems">
                                                 <input  type="hidden" name="plate_id[]" id="plate_id[]" :value="item.id" readonly>
                                                 <span>@{{item.name}}</span>
+                                                <span v-on:click="removePlate(item)">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </span>
                                             </div>
                                         </div>
                                     </form>
-                                    
-                           
+
                                 </div> 
                                 
                                 <!-- calcolo del totale -->
                                 <div class="total-calculator">
+                                    <div>Totale(consegna esclusa): @{{total}}</div>
                                     <span>Spese di consegna: @{{getDeliveryCost()}}€</span>
                                     <!-- indicatore rosso verde sulla consegna gratuita -->
                                     <div :class="total < 10 ? 'pay-delivery' : 'free-delivery'">
@@ -271,8 +257,12 @@
             },
             getTimeDelivery: function() {
                 const now = new Date();
-                now.setMinutes(now.getMinutes() + this.getRandomNumberBetween(15, 45));
-                const time = now.getHours() + ":" + now.getMinutes();
+                now.setMinutes(now.getMinutes() + 30);
+                let time = now.getHours() + ":" + now.getMinutes();
+                if(now.getMinutes() < 10){
+                    time = now.getHours() + ":0" + now.getMinutes();
+                };
+                
                 return time;
             },
             getDeliveryCost: function() {
@@ -282,9 +272,11 @@
                 return 5;
             }
             },
-            getRandomNumberBetween: function(min,max){
-            return Math.floor(Math.random()*(max-min+1)+min);
-            }
+            // getRandomNumberBetween: function(min,max){
+            // return Math.floor(Math.random()*(max-min+1)+min);
+            // }
+
+
         },
         computed: {
               // funzione per creare href da inserire nel form che porta il totale carello nella pagina payment
