@@ -63,6 +63,11 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
     ->name('storePlate');
 
 
+//test per grafico
+Route::get('/testGrafico',function(){
+    return view('admin.test-chart');
+});
+
 
 
  
