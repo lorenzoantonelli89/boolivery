@@ -19,7 +19,6 @@ class PaymentController extends Controller
             'date_delivery'=> 'required|date|after:yesterday',
             'time_delivery'=> 'required|date_format:H:i',
             'total_price'=> 'required|integer',
-            'status'=> 'required|boolean',
             'plate_id'=>'required_without_all'
         ]);
         
