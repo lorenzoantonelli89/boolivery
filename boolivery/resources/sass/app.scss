@@ -12,6 +12,7 @@
 @import 'partials/restaurant-details';
 @import 'partials/info-company';
 @import 'partials/platesList';
+@import 'partials/faq';
 
 
 // regole style header e footer
@@ -74,9 +75,8 @@ footer {
       
         .footer-section-container {
             display: flex;
-              justify-content: space-between;
-              align-items: center;
-              height: 100%;
+            justify-content: space-between;
+            align-items: center;
             .footer-section {
                 height: 300px;
                 width: calc( 100% / 4 );
