@@ -107,7 +107,7 @@
               <!--<div class="position-carousel"></div>-->
               <div class="div-margin">
                 <div id="plates-info">
-                   <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
+                  <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
                     <div id="text-plates">
                       <h3><i>@{{platesPopular[counter].name}}</i></h3>
                       <p><i>@{{platesPopular[counter].description}}</i></p>
