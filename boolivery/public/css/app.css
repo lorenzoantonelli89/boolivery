@@ -1360,6 +1360,7 @@ body {
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .backend-container,
@@ -1372,9 +1373,14 @@ body {
   margin: 25px 0;
 }
 
-.backend-container img,
-.frontend-container img {
-  width: 150px;
+.backend-container .infotitolo,
+.frontend-container .infotitolo {
+  width: 800px;
+}
+
+.backend-container .infofotoprofilo,
+.frontend-container .infofotoprofilo {
+  width: 300px;
   margin: 30px;
   border-radius: 50%;
 }
@@ -1401,6 +1407,41 @@ body {
 
 .superlogo img {
   width: 100%;
+}
+
+@media screen and (max-width: 1213px) and (min-width: 941px) {
+  .images-container .infofotoprofilo {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 940px) {
+  .backend-container,
+  .frontend-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 25px 0;
+  }
+
+  .backend-container .infotitolo,
+  .frontend-container .infotitolo {
+    width: 100%;
+  }
+
+  .images-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .images-container .infofotoprofilo {
+    margin: 15px 0;
+  }
 }
 
 * {
