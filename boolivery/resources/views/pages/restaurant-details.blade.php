@@ -86,11 +86,6 @@
                                     <!-- bottoni per aggiungere o togliere un piatto -->
                                         <div>
                                             <span>
-                                                <button v-on:click="removePlate({{$plate}})">
-                                                    <i class="fas fa-minus-square"></i>
-                                                </button>
-                                            </span>
-                                            <span>
                                                 <button v-on:click="addPlate({{$plate}})">
                                                     <i class="fas fa-plus-circle"></i>
                                                 </button>
@@ -171,20 +166,8 @@
                                             };
                                             ?>" required>
                                         </div>
-                                        <div>
-                                            <label for="status">
-                                                Status
-                                            </label>
-                                            <select name="status" id="status">
-                                                <option value="0">
-                                                    Pagato
-                                                </option>
-                                                <option value="1">
-                                                    Da pagare
-                                                </option>
-                                            </select>
-                                        </div>
-                                        {{-- ERRORI --}}
+                                        
+                                        {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
                                         @if ($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>
@@ -210,11 +193,13 @@
                                             <div v-for="item in orderedItems">
                                                 <input  type="hidden" name="plate_id[]" id="plate_id[]" :value="item.id" readonly>
                                                 <span>@{{item.name}}</span>
+                                                <span v-on:click="removePlate(item)">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </span>
                                             </div>
                                         </div>
                                     </form>
-                                    
-                           
+
                                 </div> 
                                 
                                 <!-- calcolo del totale -->
