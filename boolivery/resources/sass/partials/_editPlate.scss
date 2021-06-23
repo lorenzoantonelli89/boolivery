@@ -1,0 +1,135 @@
+@import 'partials/variables';
+@import 'partials/common';
+
+
+.editPlate{
+
+    .editPlateContainer{
+        height: 100%;
+        width: 100%;
+        background-image: url("/storage/graphics/sfondo3.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:cover ;
+        padding: 15px 0;
+       
+    
+    }
+    
+    .backToPlateList{
+        background-color: #00c2b8;
+        text-align: center;
+        width: 100px;
+        border-radius: 7px;
+        text-decoration: none;
+        color: white;
+        margin-left:20px;
+        padding: 8px 20px; 
+    
+    }
+    .container{
+        width: 45%;
+        min-height: 780px;
+        text-align: center;
+/*         background-color: yellowgreen;
+ */        border-radius: 15px;
+        margin: 15px auto ;
+        border: 1px solid black;
+        background-image: url("/storage/graphics/mybgedit2.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:top ;
+        color: white;
+
+        h2{
+            margin: 27px 11px 60px 0;
+        }
+        
+        .form-group{
+            width: 75%;
+            min-height: 60px;
+            margin: auto;
+            margin-bottom: 35px;
+            text-align: left;
+            font-family: 'Pacifico', cursive;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+    
+             input{
+                border-radius: 7px;
+                outline: transparent;
+                padding:3px 8px;
+                margin-left:10px;
+                height: 25px;
+            }
+    
+            .radio{
+               width: 50%;
+               display: flex;
+               margin-top:5px;
+                
+                &>input{
+                    margin-right: 15px;
+                }
+    
+                &>label{
+                    font-size: 12px;
+                }
+            }
+            
+            .visibility{
+                width: 50%;
+                margin-bottom: 12px;
+    
+            }
+
+           
+        }
+        .insertImg{
+            @include flex(row,flex-start, center);
+            margin-bottom: 30px;
+            
+    
+            .protoImg{
+                height: 100px; 
+                object-fit:contain;
+                border: 2px solid rgb(87, 85, 85);
+                border-radius: 13px;
+            }
+            
+        }
+    
+        .price{
+            position:relative;
+    
+            &>input{
+                padding-left: 18px;
+            }
+        }
+    
+        .euro{
+            position:absolute;
+            top: 3px;
+            right: 190px;
+            font-family: 'Lato';
+            font-weight: bold;
+            font-size: 17px;
+            color: black;
+        }
+        
+        button{
+            background-color: #0febe0; 
+            color: white;
+            border-radius: 15px; 
+            padding: 10px 30px; 
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 21px;
+        }
+        
+    }
+    
+
+}    
+

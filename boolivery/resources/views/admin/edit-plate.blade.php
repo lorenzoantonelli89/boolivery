@@ -2,10 +2,11 @@
 
 @section('content')
 
-    <main>
-
-         <a href="{{route('plateList', $plate -> restaurant_id)}}">Torna ai piatti</a>
+    <main class="editPlate">
+      <div class="editPlateContainer">
+        <a class='backToPlateList' href="{{route('plateList', encrypt($plate -> restaurant_id))}}">Torna ai piatti</a>
 {{-- inizio form --}}
+       
          <div class="container">
 
             <h2>
@@ -29,26 +30,27 @@
                   <input type="text" class="form-control" name="description" value="{{$plate -> description}}" placeholder="Descrizione piatto">
                 </div>
 
-                <div class="form-group">
+                <div class="form-group insertImg">
                     <label for="image">Immagine</label>
                     <input type="file" class="form-control" name="image" value="image">
                     @if (($plate -> image != null) )
-                      <img style="height: 100px; width:180px; object-fit:contain" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate->image }}" alt="{{ $plate->plate_name }}">
+                      <img class="protoImg" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate->image }}" alt="{{ $plate->plate_name }}">
                     @endif
                 </div>
 
-                <div class="form-group">
+                <div class="form-group price">
                     <label  for="price">Prezzo</label>
-                    <input type="number"  name="price" step="0.01" value="{{$plate -> price}}" placeholder="Prezzo piatto">
+                    <input  type="number"  name="price" step="0.01" value="{{$plate -> price}}" placeholder="Prezzo piatto">
+                    <span class="euro">€</span>
                 </div>
 
                 <div class="form-group">
-                  <div class="my-3">Visibilità:</div>
-                  <div>
+                  <div class="visibility">Visibilità:</div>
+                  <div class="radio">
+                      
                       <label for="visible">Non visibile</label>
                       <input id="visible" type="radio" step="0.01" name="visible" value="0" >
-                  </div>
-                  <div>
+                  
                       <label for="visible">Visibile</label>
                       <input id="visible" type="radio" step="0.01" name="visible" value="1" >
                   </div>
@@ -66,11 +68,12 @@
                   </div>
                 @endif
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Modifica</button>
 
               </form>
         </div>
-
+      
+      </div>
     </main>
     
 @endsection

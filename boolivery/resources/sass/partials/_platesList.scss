@@ -12,21 +12,24 @@ h2, .speciality{
 
 }
 
-
 .coverRestRel{
     width: 100%;
     position: relative;
-    opacity: .9;
-    object-fit: cover;
 }
 
 .restaurantCover{
 
-    @include flex(row, space-between, flex-start);
     width: 100%;
-    height: 400px;
-    margin-bottom: 100px;
+    height: 500px;
 
+
+  .coverRestImg{
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+    object-fit: cover;
+
+ }
     .ms_button{
         background-color: #00c2b8;
         text-align: center;
@@ -52,8 +55,8 @@ h2, .speciality{
 
 .menuContainer{
         background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
-        padding-top: 90px;
-        margin-top: 14px;
+        height: 600px;
+
 
         .speciality{
             margin-bottom: 20px;
@@ -65,7 +68,7 @@ h2, .speciality{
     @include flex(row,flex-start, baseline);
     width: 90%;
     margin: auto;
-    min-height: 500px;
+    height: 500px;
     flex-wrap: wrap;
     overflow-y: auto;
     background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
@@ -81,7 +84,6 @@ h2, .speciality{
         .plateCard{
             position: relative;
             margin-bottom: 10px;
-
         }
 
 
@@ -90,12 +92,14 @@ h2, .speciality{
             height:220px;
             object-fit: contain;
             border-radius: 10px;
-
+            
 
             &:hover {
                 transform: scale(1.03);
                 transition: all 1s ease;
                 opacity: .75;
+
+               
               }
               &:hover + .editPlate{
                   display: block;
@@ -110,12 +114,13 @@ h2, .speciality{
             left: 50%;
             transform: translate(-50%, -50%);
             text-decoration: none;
-           display: none;
+            display: none;
 
             &:hover {
                 display: block;
                
             }
+
         }
 
         h6{
@@ -123,10 +128,5 @@ h2, .speciality{
         }
     
     }
-
-  
-    
-
-    
 
 }
