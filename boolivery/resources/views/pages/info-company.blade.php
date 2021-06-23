@@ -9,39 +9,37 @@
     <main>
         <div id="info-container">
             <div class="backend-container">
-
-            <h1>BACKEND</h1>
-            <span>Models, migrations, seeder, CRUD</span>
+            <img class="infotitolo" src="/storage/graphics/infotitoloback.png" alt="">
+            
             <div class="images-container">
                 <div class="info-foto-details">
 
-                    <img src="/storage/restaurant-profile/fiveguyslogo.png" alt="">
+                    <img class="infofotoprofilo" src="/storage/graphics/infostaffnicola.png" alt="">
                     <h2>Nicola Milani</h2>
                     <span>Cucina Codice</span>
                 </div>
                 <div class="info-foto-details">
 
-                <img src="/storage/restaurant-profile/fiveguyslogo.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/infostafflorenzo.png" alt="">
                 <h2>Lorenzo Antonelli</h2>
                     <span>Chef Leader</span>
 
                 </div>
                 <div class="info-foto-details">
-                <img src="/storage/restaurant-profile/fiveguyslogo.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/infostaffgiordano.png" alt="">
 
                 <h2>Giordano Vita</h2>
-                    <span>Mangia Metodi</span>
+                    <span>Degusta Metodi</span>
                 </div>
                 </div>
             </div>
 
             <div class="frontend-container">
-                <h1>FRONTEND</h1>
-                <span>Html, Css, Flex</span>
+            <img class="infotitolo" src="/storage/graphics/infotitolofront.png" alt="">
                 <div class="images-container">
                 <div class="info-foto-details">
 
-                <img src="/storage/restaurant-profile/fiveguyslogo.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/infostaffjacopo.png" alt="">
                 <h2>Jacopo Zandonà</h2>
                     <span>Boomer alla Griglia</span>
                 <h1></h1>
@@ -51,7 +49,7 @@
 
                 <div class="info-foto-details">
 
-                <img src="/storage/restaurant-profile/fiveguyslogo.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/infostaffsimone.png" alt="">
                 <h2>Simone Marzolla</h2>
                     <span>Display Menu: none</span>
                 <h1></h1>

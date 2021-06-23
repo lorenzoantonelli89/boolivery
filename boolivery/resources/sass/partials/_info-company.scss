@@ -5,8 +5,10 @@
 #info-container {
     width: 100%;
     background-color: $ourgreen;
+    // background: linear-gradient($ourgreen, rgb(8, 56, 8));
     @include flex (column, flex-start, center);
     margin-bottom: 25px;
+    margin-top: 25px;
 }
 
 
@@ -17,11 +19,16 @@
     width: 80%;
     margin: 25px 0;
 
-    img {
-        width: 150px;
+    .infotitolo {
+        width: 800px;
+    }
+
+    .infofotoprofilo {
+        width: 300px;
         margin: 30px;
         border-radius: 50%;
     }
+
 }
 
 .images-container {
@@ -41,6 +48,49 @@
     img {
     
         width: 100%;
+    }
+
+
+}
+
+@media screen and(max-width: 1213px) and (min-width: 941px) {
+
+    .images-container {
+       
+
+        .infofotoprofilo {
+            width: 250px;
+            
+        }
+
+    }
+
+}
+
+@media screen and(max-width: 940px) {
+
+    .backend-container,
+.frontend-container {
+    @include flex(column, center, center);
+    width: 100%;
+    margin: 25px 0;
+
+    .infotitolo {
+        width: 100%;
+    }
+}
+    
+    
+    .images-container {
+        width: 100%;
+        @include flex(column, center, center);
+
+        
+
+        .infofotoprofilo {
+            margin: 15px 0;
+            
+        }
     }
 
 
