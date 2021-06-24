@@ -27,12 +27,12 @@
 
                 <div class="form-group">
                   <label for="description">Descrizione</label>
-                  <input type="text" class="form-control" name="description" value="{{$plate -> description}}" placeholder="Descrizione piatto">
+                  <textarea  class="form-control descInp" name="description" value="{{$plate -> description}}" placeholder="Descrizione piatto">{{$plate -> description}}</textarea>
                 </div>
 
                 <div class="form-group insertImg">
                     <label for="image">Immagine</label>
-                    <input type="file" class="form-control" name="image" value="image">
+                    <input  class='insertFile' type="file" class="form-control" name="image" value="image">
                     @if (($plate -> image != null) )
                       <img class="protoImg" src="{{ asset('/storage/restaurant-plates')}}/{{ $plate->image }}" alt="{{ $plate->plate_name }}">
                     @endif
@@ -40,8 +40,11 @@
 
                 <div class="form-group price">
                     <label  for="price">Prezzo</label>
-                    <input  type="number"  name="price" step="0.01" value="{{$plate -> price}}" placeholder="Prezzo piatto">
-                    <span class="euro">€</span>
+                    <span>
+                      <input  type="number"  name="price" step="0.01" value="{{$plate -> price}}" placeholder="Prezzo piatto">
+                      <span class="euro">€</span>
+  
+                    </span>
                 </div>
 
                 <div class="form-group">

@@ -36,5 +36,8 @@ Route::get('/popular-plates', 'Api\PlateDetailController@getAllPlates')
 Route::get('/plates/{id}', 'Api\PlateDetailController@getPlate')
     -> name('plates-api');
 //rotta per avere ordini
-Route::get('/orders/{id}', 'Api\StatsController@getOrder')
+Route::post('/orderGraph/{id}', 'Api\StatsController@getOrderStats')
     -> name('order-api');
+//rotta per avere ordini relativi a determinato anno
+Route::post('/orderYear/{id}/{year}', 'Api\StatsController@getOrderYear')
+    ->name('getOrderYear');
