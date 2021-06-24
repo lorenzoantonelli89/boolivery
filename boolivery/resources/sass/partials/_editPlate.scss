@@ -1,0 +1,239 @@
+@import 'partials/variables';
+@import 'partials/common';
+
+
+.editPlate{
+
+    .editPlateContainer{
+        height: 100%;
+        width: 100%;
+        background-image: url("/storage/graphics/food-wood.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:cover ;
+        padding: 15px 0;
+    
+    }
+    
+    .backToPlateList{
+        background-color: #00c2b8;
+        text-align: center;
+        width: 100px;
+        border-radius: 7px;
+        text-decoration: none;
+        color: white;
+        margin-left:20px;
+        padding: 8px 20px; 
+    
+    }
+    .container{
+        width: 45%;
+        min-height: 780px;
+        text-align: center;
+        border-radius: 15px;
+        margin: 15px auto ;
+        border: 1px solid black;
+        background-image: url("/storage/graphics/blackboard.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:top ;
+        color: white;
+
+        h2{
+            margin: 27px 11px 60px 0;
+        }
+        
+        .form-group{
+            width: 75%;
+            min-height: 60px;
+            margin: auto;
+            margin-bottom: 35px;
+            text-align: left;
+            font-family: 'Pacifico', cursive;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+    
+             input{
+                border-radius: 7px;
+                outline: transparent;
+                padding:3px 8px;
+                margin-left:10px;
+                height: 25px;
+            }
+    
+            .radio{
+               width: 50%;
+               display: flex;
+               margin-top:5px;
+                
+                &>input{
+                    margin-right: 15px;
+                }
+    
+                &>label{
+                    font-size: 12px;
+                    white-space: nowrap;
+                }
+            }
+            
+            .visibility{
+                width: 50%;
+                margin-bottom: 12px;
+    
+            }
+
+            .descInp{
+                font-family: 'Lato', sans-serif;
+                border-radius: 10px;
+                padding: 7px;
+            }
+
+           
+        }
+        .insertImg{
+            @include flex(row,space-between, center);
+            margin-bottom: 30px;
+
+            .insertFile{
+                width: 86px;
+            }
+            
+            .protoImg{
+                height: 100px; 
+                object-fit:contain;
+                border: 2px solid rgb(87, 85, 85);
+                border-radius: 13px;
+            }
+            
+        }
+    
+        .price{
+    
+            &>span{
+                padding-left: 18px;
+                position:relative;
+
+                input{
+                    width: 100px;
+                    padding-left:20px;
+                }
+
+            }
+        }
+    
+        .euro{
+            position:absolute;
+            top: 7px;
+            right: 85px;
+            font-family: 'Lato';
+            font-weight: bold;
+            font-size: 17px;
+            color: black;
+        }
+        
+        button{
+            background-color: #0febe0; 
+            color: white;
+            border-radius: 15px; 
+            padding: 10px 30px; 
+            margin-bottom: 20px;
+            font-family: 'Pacifico', cursive;
+            font-size: 21px;
+        }
+        
+    }
+    
+}  
+
+
+
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+   
+    .editPlate{
+
+        .container{
+            width: 100%;
+            
+            .form-group{
+               
+                 input{
+                     width: 45%;
+                    border-radius: 7px;
+                    outline: transparent;
+                    padding:3px 8px;
+                    margin-left:10px;
+                    height: 25px;
+                }
+        
+                .radio{
+                    width: 210px;
+                    display: flex;
+                    margin-top: 5px;
+                    
+                    &>input{
+                        margin-right: 15px;
+                    }
+        
+                    &>label{
+                        font-size: 12px;
+                        white-space: nowrap;
+                    }
+                }
+                
+                .visibility{
+                    width: 50%;
+                    margin-bottom: 12px;
+        
+                }
+    
+                .descInp{
+                    font-family: 'Lato', sans-serif;
+                    border-radius: 10px;
+                    padding: 7px;
+                }
+               
+            }
+            .insertImg{
+                 @include flex(row,space-between, center);
+ 
+                &>input{
+                    width: 83px;
+                    margin-right: 20px;
+                }
+        
+                .protoImg{
+                    width: 20%;
+                    height: 20%;
+                    
+                }
+            }
+
+            .euro{
+                top: 12%;
+                right: 67%;
+                font-family: 'Lato';
+               
+            }
+        }
+    }  
+}
+
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width:481px) and (max-width: 768px) {
+
+    .editPlate{
+
+        .container{
+            width: 65%;
+            margin-top: 40px;
+        } 
+    }  
+}
+
+

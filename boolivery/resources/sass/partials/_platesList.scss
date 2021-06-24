@@ -12,21 +12,24 @@ h2, .speciality{
 
 }
 
-
 .coverRestRel{
     width: 100%;
     position: relative;
-    opacity: .9;
-    object-fit: cover;
 }
 
 .restaurantCover{
 
-    @include flex(row, space-between, flex-start);
     width: 100%;
-    height: 400px;
-    margin-bottom: 100px;
+    height: 500px;
 
+
+  .coverRestImg{
+    width: 100%;
+    height: 100%;
+    opacity: .9;
+    object-fit: fill;
+
+ }
     .ms_button{
         background-color: #00c2b8;
         text-align: center;
@@ -52,8 +55,8 @@ h2, .speciality{
 
 .menuContainer{
         background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
-        padding-top: 90px;
-        margin-top: 14px;
+        min-height: 600px;
+
 
         .speciality{
             margin-bottom: 20px;
@@ -62,14 +65,13 @@ h2, .speciality{
 
 
 .platesCards{
-    @include flex(row,flex-start, baseline);
+    @include flex(row,space-around, baseline);
     width: 90%;
     margin: auto;
     min-height: 500px;
     flex-wrap: wrap;
-    overflow-y: auto;
-    background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
-
+/*     overflow-y: auto;
+ */
     li{
         width: calc(90% / 5) ;
         min-height: 250px;
@@ -81,7 +83,6 @@ h2, .speciality{
         .plateCard{
             position: relative;
             margin-bottom: 10px;
-
         }
 
 
@@ -90,12 +91,14 @@ h2, .speciality{
             height:220px;
             object-fit: contain;
             border-radius: 10px;
-
+            
 
             &:hover {
                 transform: scale(1.03);
                 transition: all 1s ease;
                 opacity: .75;
+
+               
               }
               &:hover + .editPlate{
                   display: block;
@@ -110,12 +113,13 @@ h2, .speciality{
             left: 50%;
             transform: translate(-50%, -50%);
             text-decoration: none;
-           display: none;
+            display: none;
 
             &:hover {
                 display: block;
                
             }
+
         }
 
         h6{
@@ -124,9 +128,184 @@ h2, .speciality{
     
     }
 
-  
-    
-
-    
-
 }
+
+
+/* test @query */
+
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+   
+    
+
+    .titlePlateList{
+       margin-top: 70px;
+    }
+    
+    .restaurantCover{
+    
+        width: 100%;
+        height: 200px;
+    
+        .coverRestImg{
+            width: 100%;
+            height: 100%;
+            opacity: .9;
+            object-fit: fill;
+        }
+    }
+    
+    .menuContainer{
+            background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
+            min-height: 300px;
+    }
+    
+    .platesCards{
+       
+/*          overflow-y: none;
+ */     
+        li{
+            width: 100% ;
+            min-height: 250px;
+            margin-right: 0;
+            @include flex(column, center, center);
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 40px;
+    
+            .plateCard{
+                position: relative;
+                margin-bottom: 10px;
+            }
+    
+    
+            img {
+                width: 60%;
+                height:150px;
+                object-fit: cover;
+                border-radius: 10px;
+    
+                &:hover {
+                    transform: scale(1.03);
+                    transition: all 1s ease;
+                    opacity: .75;
+                  }
+                  &:hover + .editPlate{
+                      display: block;
+                  }
+                }
+    
+            .editPlate{
+                    img{
+
+                        width: 75px;
+                        object-fit: scale-down;
+                    }
+
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-decoration: none;
+                display: none;
+    
+                &:hover {
+                    display: block;
+                   
+                }
+    
+            }
+        }
+    }
+    
+}
+
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width:481px) and (max-width: /* 768px */ 914px) {
+
+     .titlePlateList{
+       margin-top: 70px;
+    }
+     
+    .restaurantCover{
+    
+       height: 350px;
+    
+        .coverRestImg{
+            width: 100%;
+            height: 100%;
+            opacity: .9;
+            object-fit: fill;
+        }
+        
+    }
+    
+    .menuContainer{
+        min-height: 300px;
+    } 
+    
+    .platesCards{
+       
+/*          overflow-y: none;
+ */     
+        li{
+            width:  50% ;
+             min-height: 250px;
+            margin-right: 0;
+            @include flex(column, center, center);
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 40px;
+    
+             .plateCard{
+                position: relative;
+                margin-bottom: 10px;
+            }
+     
+    
+            img {
+                width: 60%;
+                height:150px;
+                object-fit: cover;
+                
+                  &:hover {
+                    transform: scale(1.03);
+                    transition: all 1s ease;
+                    opacity: .75;
+    
+                   
+                  }
+                  &:hover + .editPlate{
+                      display: block;
+                    } 
+                } 
+    
+            .editPlate{
+
+                img{
+
+                    width: 75px;
+                    object-fit: scale-down;
+                }
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-decoration: none;
+                display: none;
+    
+                &:hover {
+                    display: block;
+                }
+    
+            }
+        }
+    }
+    
+}
+
+
