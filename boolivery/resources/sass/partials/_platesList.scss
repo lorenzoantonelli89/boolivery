@@ -65,13 +65,12 @@ h2, .speciality{
 
 
 .platesCards{
-    @include flex(row,flex-start, baseline);
+    @include flex(row,space-around, baseline);
     width: 90%;
     margin: auto;
     height: 500px;
     flex-wrap: wrap;
     overflow-y: auto;
-    background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
 
     li{
         width: calc(90% / 5) ;
