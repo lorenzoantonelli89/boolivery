@@ -54,12 +54,15 @@
                 </div>
 
                 <div class="restaurantfl-modify">
-                        <a href="{{route('plateList', encrypt($restaurant -> id))}}">
-                            <button class="abutton">VIEW</button>
-                        </a>
-                        <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
-                            <button class="abutton">EDIT</button>
-                        </a>
+                    <a href="{{route('plateList', encrypt($restaurant -> id))}}">
+                        <button class="abutton">VIEW</button>
+                    </a>
+                    <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
+                        <button class="abutton">EDIT</button>
+                    </a>
+                    <a href="{{route('showStats', encrypt($restaurant -> id))}}">
+                        <button class="abutton">VIEW STATISTIC</button>
+                    </a>
                 </div>
 
             </div>

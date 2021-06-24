@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Mail;
 
+use Braintree;
 use App\Plate;
 use App\Order;
-use Braintree;
+use App\Mail\OrderShipped;
 
 class PaymentController extends Controller
 {
@@ -48,6 +50,7 @@ class PaymentController extends Controller
             $transaction = $result->transaction;
             $order -> status = true;
             $order -> save();
+            Mail::to($order -> email)->send(new OrderShipped($order));
             return view('pages.checkout', compact('transaction', 'order'));
         // se non è andato a buon fine lo statu ordine rimane a false e ritorno in pagina checkout con un errore 
         } else {
