@@ -4,18 +4,18 @@
 
     <main>
        
-        <h2>
+        <h2 class="titlePlateList">
             Qui trovi tutti i piatti del ristorante {{$restaurant -> name}}
         </h2>
 
         {{-- immagine cover restaurant --}}
         <div class="restaurantCover">
-            <img class="coverRestImg" src="{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}" alt="{{ $restaurant -> image_cover }}">
-
             <a class="ms_button listRestButt" href="{{route('listRestaurant')}}">Torna ai ristoranti</a>
 
             <a class="ms_button createPlateButt" href="{{route('createPlate', encrypt($restaurant -> id))}}">Aggiungi un piatto</a>
             
+            <img class="coverRestImg" src="{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}" alt="{{ $restaurant -> image_cover }}">
+
         </div>
     
 
