@@ -119,4 +119,10 @@ class RestaurantController extends Controller
 
         return redirect()->route('listRestaurant');
     }
+
+    public function showStats($id){ //funzione per mostrare pagina statistiche
+
+        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
+        return view('admin.orderStats',compact('restaurant'));
+    }
 }
