@@ -349,36 +349,28 @@ main #home-container #section-2 .fas {
 }
 
 main #home-container .main-sec-3 {
-  height: 350px;
-  background-image: url("/storage/graphics/sectionRestaurant.png");
-  background-repeat: no-repeat;
+  padding: 100px 0;
+}
+
+main #home-container .main-sec-3 #business-adv {
   display: flex;
-  justify-content: flex-end;
-  margin-top: 50px;
-  margin-bottom: 50px;
 }
 
-main #home-container .main-sec-3 .business-adv {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  width: 580px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+main #home-container .main-sec-3 #business-adv .cards-adv {
+  background-color: orange;
+  width: calc(100% / 3);
+  height: 500px;
+  margin-right: 15px;
+  border-radius: 10px;
 }
 
-main #home-container .main-sec-3 .business-adv h1 {
-  margin-bottom: 15px;
+main #home-container .main-sec-3 #business-adv .cards-adv:last-child {
+  margin-right: 0px;
 }
 
-main #home-container .main-sec-3 span {
-  margin-bottom: 15px;
-}
-
-main #home-container .main-sec-3 .img-icon {
-  width: 100px;
-  margin-bottom: 15px;
+main #home-container .main-sec-3 #business-adv .cards-adv:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
 }
 
 main #home-container .fas {
@@ -1777,7 +1769,19 @@ body {
 }
 
 #faq-container {
-  padding: 80px 0;
+  padding-top: 30px;
+  padding-bottom: 100px;
+}
+
+#faq-container #absolute-trapezoid {
+  background-color: coral;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 310px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: -1;
 }
 
 #faq-container #back-h1 {
@@ -1824,7 +1828,7 @@ header #header-log {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 70px;
   margin: 10px 20px;
 }
 
@@ -1835,7 +1839,7 @@ header #header-log #logo img {
 
 header #header-log #login-a {
   vertical-align: middle;
-  line-height: 40px;
+  line-height: 30px;
 }
 
 header #header-log #login-a ul {
