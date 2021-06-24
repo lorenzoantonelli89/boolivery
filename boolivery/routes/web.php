@@ -62,13 +62,6 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
  Route::post('/store-plate/{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
 
-
-//test per grafico
-Route::get('/testGrafico',function(){
-    return view('admin.test-chart');
-});
-
-
-
- 
- 
+//rotta per visualizzazione grafico ordini relativo a ristorante
+Route::get('/orders-statistics/{id}', 'Admin\RestaurantController@showStats')
+    ->name('showStats');
