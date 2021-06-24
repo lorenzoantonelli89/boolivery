@@ -86,8 +86,9 @@
                                         <!-- bottoni per aggiungere o togliere un piatto -->
                                         <div>
                                             <span>
-                                                <button v-on:click="addPlate({{$plate}})">
-                                                    <i class="fas fa-plus-circle"></i>
+                                                <button id="{{$plate -> id}}" v-on:click="addCart({{$plate}})">
+                                                    {{-- <i class="fas fa-plus-circle"></i> --}}
+                                                    add cart
                                                 </button>
                                             </span>
                                         </div>
@@ -194,6 +195,9 @@
                                         <div v-for="item in orderedItems">
                                             <span>@{{item.name}} </span>
                                             <span>@{{item.counter}}</span>
+                                            <span v-on:click="addPlate(item)" >
+                                                <i class="fas fa-plus-circle"></i>
+                                            </span>
                                             <span v-on:click="removePlate(item)">
                                                 <i class="fas fa-trash-alt"></i>
                                             </span>
@@ -224,55 +228,45 @@
         el: '#restaurant-details-container',
         data: {
             orderedItems: [], // array di piatti ordinati
-            numberItems: [],
-            // counter: 0,
+            numberItems: [], //
             cart: [], // array di ID ordinati
             total:0, // prezzo totale
-            deliveryTime:0
+            deliveryTime:0,
+            btnAddCart: true,
         },
         methods: {
-            addPlate: function (elem){
-                // this.orderedItems.push(elem);
-                this.cart.push(elem.id);
-                this.total += parseInt(elem.price);
-                // console.log(this.orderedItems);
+            addCart: function (elem){
                 let obj = {
                     id: elem.id,
                     name: elem.name,
+                    price: elem.price,
                     counter: 1,
                 }
-                if(this.orderedItems.length == 0){
-                    this.numberItems.push(elem.id);
-                    this.orderedItems.push(obj);
-                }else{
-                    for(let i = 0; i < this.orderedItems.length; i++){
-                        let item = this.orderedItems[i];
-                        if(!this.numberItems.includes(elem.id)){
-                            this.numberItems.push(elem.id);
-                            this.orderedItems.push(obj);
-                        }
-                        else{
-                            obj.counter++;
-                        }
-                    }
-                }
-
-                // console.log(obj, this.numberItems, this.orderedItems);
+                this.orderedItems.push(obj);
+                this.cart.push(elem.id);
+                this.total += parseInt(elem.price);
+                let activeButton = document.getElementById(elem.id);
+                activeButton.style.display = 'none';
+            },
+            addPlate: function(elem){
+                this.cart.push(elem.id);
+                this.total += parseInt(elem.price);
+                elem.counter++;
             },
             removePlate: function(elem){
                 const index = this.cart.indexOf(elem.id);
+
                 if(index > -1){
                     this.cart.splice(index, 1);
-                    this.orderedItems.splice(index, 1);
                     this.total -= parseInt(elem.price);
                     elem.counter --;
                 }
                 if(elem.counter == 0){
-                    this.orderedItems.splice(0, 1);
+                    this.orderedItems.splice(index, 1);
+                    let activeButton = document.getElementById(elem.id);
+                    activeButton.style.display = 'block';
                 }
-                console.log(elem);
-                
-                // console.log(this.orderedItems);
+                console.log(this.orderedItems);
             },
             getTimeDelivery: function() {
                 const now = new Date();
