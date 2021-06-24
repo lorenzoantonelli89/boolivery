@@ -12,21 +12,45 @@ use App\Restaurant;
 
 class RestaurantHomeController extends Controller
 {
-    // funzione che manda al FE tramite chiamata axios in vue array di ristoranti
+    // funzione che manda al FE tramite chiamata axios in vue array di ristoranti filtrati per popolarità
     public function getRestaurants(){
 
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::where('popular', 1)->get();
 
         return response() ->json($restaurants);
     }
+    // funzione che manda al FE tramite chiamata axios in vue array di ristoranti con filtro checked
+    public function getRestaurantCategory($filterCategory){
 
-    // funzione che manda al FE tramite chiamata axios in vue array di tabella ponte categorie ristoranti
-    public function getRestaurantCategory(){
+        $filterCategoryStr = explode(',', $filterCategory);
+        $filterCategoryNum = [];
+        foreach ($filterCategoryStr as $item) {
+            $filterCategoryNum []= intval($item);
+        }
 
-        $categoryRestaurant = DB::table('categories') 
+        $temporary = [];
+        $restaurantsFiltered = [];
+
+        $filteredRestaurants = DB::table('categories') 
             ->join('category_restaurant', 'categories.id', '=',  'category_restaurant.category_id')
             ->join('restaurants', 'restaurants.id', '=',  'category_restaurant.restaurant_id')
+            ->whereIn('category_restaurant.category_id', $filterCategoryNum)
             ->get();
-        return response() ->json($categoryRestaurant);
+        
+        foreach ($filteredRestaurants as $restaurant) {
+            if(!in_array($restaurant -> id, $temporary)){
+                array_push($temporary, $restaurant -> id);
+                array_push($restaurantsFiltered, $restaurant);
+            }
+        }    
+        
+        return response() -> json($restaurantsFiltered, 200);
+    }
+    // funzione che manda al FE tramite chiamata axios in vue array di ristoranti con filtro per nome
+    public function getRestaurantName($filterName){
+
+        $restaurantsFiltered = Restaurant::where('name', 'LIKE', '%' . $filterName . '%') -> get();
+        
+        return response() -> json($restaurantsFiltered, 200);
     }
 }
