@@ -12,7 +12,7 @@ class PlateDetailController extends Controller
 {
     public function getAllPlates(){
 
-        $plates = Plate::all();
+        $plates = Plate::where('popular', 1)->get();;
         return response() ->json($plates);
     }
     public function getPlate($id){

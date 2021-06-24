@@ -20,7 +20,7 @@
                     <div class="research-request">
                       <span>Cerca il tuo ristorante preferito</span> 
                         <div class="input-adresse">
-                          <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchRestaurant">
+                          <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchRestaurant" v-on:keyup="filteredRestaurantsName">
                         </div>
                     </div>
                   </div>   
@@ -28,7 +28,7 @@
                       <ul id="category-container-list">
                           <li class="category-list" v-for="category in categories">
                               <label for="">@{{category.name}}</label>
-                              <input type="checkbox" :value="category.id"  v-model="categoryChecked">
+                              <input type="checkbox" :value="category.id"  v-model="categoryChecked" v-on:change="filteredRestaurantsCategory">
                           </li>
                       </ul>
                   </div>     
@@ -37,11 +37,11 @@
         </div>
 
         <!-- PRIMA SEZIONE, VISIONE DEI RISTORANTI -->
-        <div class="main-sec-1" v-if="(categoryChecked.length == 0 && searchRestaurant == '')">
+        <div class="main-sec-1" >
           <div class="div-margin">
             <div class="main-1-container">
               <ul>
-                <li v-for="elem in restaurantsPopular" v-on:click="getActiveRestaurant(elem)">
+                <li v-for="elem in currentRestaurants" v-on:click="getActiveRestaurant(elem)">
                   <a :href="getHref">
                     <div class="restaurants">
                       <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
@@ -55,7 +55,7 @@
             </div>
           </div>
         </div>
-        <div class="main-sec-1" v-else-if="searchRestaurant != ''">
+        {{-- <div class="main-sec-1" v-else-if="searchRestaurant != ''">
           <div class="div-margin">
             <div class="main-1-container">
               <ul>
@@ -90,7 +90,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> --}}
 
           <!-- SECONDA SEZIONE, VISIONE DEI PIATTI -->
           <div id="section-2">
@@ -104,11 +104,11 @@
               <!--<div class="position-carousel"></div>-->
               <div class="div-margin">
                 <div id="plates-info">
-                  <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
+                  {{-- <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
                     <div id="text-plates">
                       <h3><i>@{{platesPopular[counter].name}}</i></h3>
                       <p><i>@{{platesPopular[counter].description}}</i></p>
-                    </div>
+                    </div> --}}
                 </div>
               </div>
               <div id="next" class="chevron">
@@ -146,13 +146,12 @@
           el: '#home-container',
           data: {
               searchRestaurant: '',
-              restaurants: '',
-              restaurantsPopular: [],
+              restaurantsPopular: '',
               activeRestaurant: '',
               categories: '',
               categoryChecked: [],
-              categoryRestaurant: '',
-              platesPopular: [],
+              currentRestaurants: '',
+              platesPopular: '',
               counter: 0,
           },
           mounted() {
@@ -162,15 +161,9 @@
             // chiamata axio che ritorna array di tutti i ristoranti
             axios.get('/api/restaurants')
                 .then(res => {
-                    this.restaurants = res.data;
-                    console.log(this.restaurants);
-                    // filtro con cui creo array piatti popolari
-                    for(let i = 0; i < this.restaurants.length; i++){
-                      let elem = this.restaurants[i];
-                      if(elem.popular == 1){
-                        this.restaurantsPopular.push(elem);
-                      }
-                    }
+                    this.restaurantsPopular = res.data;
+                    this.currentRestaurants = this.restaurantsPopular;
+                    
                 })
                 .catch(error => {
                     console.log(error)
@@ -184,28 +177,48 @@
                     console.log(error)
                 })
             // chiamata axios e filtro che mi ritorna array piatti popolari 
-            axios.get('/api/all-plates')
+            axios.get('/api/popular-plates')
                 .then(res => {
-                    for(let i = 0; i < res.data.length; i++){
-                      let elem = res.data[i];
-                      if(elem.popular == 1){
-                        this.platesPopular.push(elem);
-                      }
-                    }
+                  this.platesPopular = res.data;
+                    console.log(this.platesPopular);
                 })
                 .catch(error => {
                     console.log(error)
                 })
-            // chiamata axios e filtro che mi ritorna array tabella pivot category_restaurant    
-            axios.get('/api/pivot')
-                .then(res => {
-                    this.categoryRestaurant = res.data;
-                })
-                .catch(error => {
-                    console.log(error)
-                })        
           },
           methods: {
+            // funzione per filtrare i ristoranti in base alla categoria
+            filteredRestaurantsCategory: function() {
+              
+              if(this.categoryChecked.length > 0){
+                axios.post('/api/restaurants-filteredCat/' + this.categoryChecked)
+                .then(res => {
+                    this.currentRestaurants = res.data;
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+              }else{
+                this.currentRestaurants = this.restaurantsPopular;
+              }
+
+            },
+             // funzione per filtrare i ristoranti in base al nome
+            filteredRestaurantsName: function() {
+
+              if(this.searchRestaurant != ''){
+                axios.post('/api/restaurants-filteredName/' + this.searchRestaurant)
+                .then(res => {
+                    this.currentRestaurants = res.data;
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+              }else{
+                this.currentRestaurants = this.restaurantsPopular;
+              }
+
+            },
             // funzione che valora il dato active restaurant al click del ristorante selezionato
             getActiveRestaurant: function(elem){
                 this.activeRestaurant = elem.id;
@@ -235,45 +248,6 @@
               // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
             getHref: function(){
                 return '/restaurant-details/' + this.activeRestaurant;
-            },
-            // funzione per filtrare i ristoranti in base al nome
-            // filteredRestaurantsName: function () {
-            //   return this.restaurants.filter(elem => {
-            //       return elem.name.toLowerCase().includes(this.searchRestaurant.toLowerCase());
-            //   });
-            // },
-            // funzione per filtrare i ristoranti in base al nome
-            filteredRestaurantsName: function() {
-              const filtered = [];
-              let name;
-
-              for(let i = 0; i < this.restaurants.length; i++){
-                  name = this.restaurants[i]['name'];
-                  if (name.toLowerCase().includes(this.searchRestaurant.toLowerCase())) {
-                      filtered.push(this.restaurants[i]);
-                  }
-              }
-              return filtered;
-            },
-            // funzione per filtrare i ristoranti in base alla categoria
-            filteredRestaurantsCategory: function() {
-              const filtered = [];
-              const restaurantFilter = [];
-              let categoryId;
-              let restaurantId;
-              let name;
-
-              for(let i = 0; i < this.categoryRestaurant.length; i++){
-                  restaurantId = this.categoryRestaurant[i]['restaurant_id'];
-                  categoryId = this.categoryRestaurant[i]['category_id'];
-                  name = this.categoryRestaurant[i]['name'];
-                if (this.categoryChecked.includes(categoryId) && !restaurantFilter.includes(restaurantId)) {
-                  
-                    filtered.push(this.categoryRestaurant[i]);
-                    restaurantFilter.push(restaurantId);
-                }
-              }
-              return filtered;
             },
           }
       });
