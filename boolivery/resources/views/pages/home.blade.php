@@ -120,11 +120,13 @@
           <!-- TERZA SEZIONE, SEZIONE PER I RISTORATORI -->
           <div class="main-sec-3">
             <div class="div-margin">
-              <div class="business-adv">
-                <img class="img-icon" src={{ asset('/storage/graphics/restaurant_icon.png') }} alt="">
-                <h1>Diventa partner Boolivery</h1>
-                <span>Aumenta le tue vendite fino al 30% grazie alle consegne a domicilio</span>
-                <a class="blink" href="#">LOGIN</a>     
+              <div id="business-adv">
+                <div class="cards-adv">
+                </div>  
+                <div class="cards-adv">
+                </div>  
+                <div class="cards-adv">
+                </div>  
               </div>
             </div>
           </div>

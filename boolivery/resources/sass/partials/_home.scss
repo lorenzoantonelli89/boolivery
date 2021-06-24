@@ -220,36 +220,24 @@ main {
       }
 
       //   SEZIONE DEDICATA AI RISTORATORI
-      .main-sec-3 {
-        height: 350px;
-        background-image: url("/storage/graphics/sectionRestaurant.png");
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: flex-end;  
-        margin-top: 50px;
-        margin-bottom: 50px;
-          
-          .business-adv {
-            height: 100%;
+      .main-sec-3 {  
+        padding: 100px 0;
+          #business-adv {
             display: flex;
-            justify-content: center;
-            width: 580px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .business-adv h1 {
-              margin-bottom: 15px;
-              }
-
-              span {
-              margin-bottom: 15px;
-              }
-
-              .img-icon {
-              width: 100px;
-              margin-bottom: 15px;
+            .cards-adv {
+              background-color: orange;
+              width: calc(100% / 3);
+              height: 500px;
+              margin-right: 15px;
+              border-radius: 10px;
+            }
+            .cards-adv:last-child{
+              margin-right: 0px;
+            }
+            .cards-adv:hover {
+              transform: scale(1.05);
+              transition: all 1s ease;
+            }
           }
         }
 
