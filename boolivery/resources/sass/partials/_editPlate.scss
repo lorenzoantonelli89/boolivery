@@ -7,12 +7,11 @@
     .editPlateContainer{
         height: 100%;
         width: 100%;
-        background-image: url("/storage/graphics/sfondo3.png");
+        background-image: url("/storage/graphics/food-wood.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position:cover ;
         padding: 15px 0;
-       
     
     }
     
@@ -31,11 +30,10 @@
         width: 45%;
         min-height: 780px;
         text-align: center;
-/*         background-color: yellowgreen;
- */        border-radius: 15px;
+        border-radius: 15px;
         margin: 15px auto ;
         border: 1px solid black;
-        background-image: url("/storage/graphics/mybgedit2.jpeg");
+        background-image: url("/storage/graphics/blackboard.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
         background-position:top ;
@@ -75,6 +73,7 @@
     
                 &>label{
                     font-size: 12px;
+                    white-space: nowrap;
                 }
             }
             
@@ -84,13 +83,22 @@
     
             }
 
+            .descInp{
+                font-family: 'Lato', sans-serif;
+                border-radius: 10px;
+                padding: 7px;
+            }
+
            
         }
         .insertImg{
-            @include flex(row,flex-start, center);
+            @include flex(row,space-between, center);
             margin-bottom: 30px;
+
+            .insertFile{
+                width: 86px;
+            }
             
-    
             .protoImg{
                 height: 100px; 
                 object-fit:contain;
@@ -101,17 +109,23 @@
         }
     
         .price{
-            position:relative;
     
-            &>input{
+            &>span{
                 padding-left: 18px;
+                position:relative;
+
+                input{
+                    width: 100px;
+                    padding-left:20px;
+                }
+
             }
         }
     
         .euro{
             position:absolute;
-            top: 3px;
-            right: 190px;
+            top: 7px;
+            right: 85px;
             font-family: 'Lato';
             font-weight: bold;
             font-size: 17px;
@@ -130,6 +144,96 @@
         
     }
     
+}  
 
-}    
+
+
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+   
+    .editPlate{
+
+        .container{
+            width: 100%;
+            
+            .form-group{
+               
+                 input{
+                     width: 45%;
+                    border-radius: 7px;
+                    outline: transparent;
+                    padding:3px 8px;
+                    margin-left:10px;
+                    height: 25px;
+                }
+        
+                .radio{
+                    width: 210px;
+                    display: flex;
+                    margin-top: 5px;
+                    
+                    &>input{
+                        margin-right: 15px;
+                    }
+        
+                    &>label{
+                        font-size: 12px;
+                        white-space: nowrap;
+                    }
+                }
+                
+                .visibility{
+                    width: 50%;
+                    margin-bottom: 12px;
+        
+                }
+    
+                .descInp{
+                    font-family: 'Lato', sans-serif;
+                    border-radius: 10px;
+                    padding: 7px;
+                }
+               
+            }
+            .insertImg{
+                 @include flex(row,space-between, center);
+ 
+                &>input{
+                    width: 83px;
+                    margin-right: 20px;
+                }
+        
+                .protoImg{
+                    width: 20%;
+                    height: 20%;
+                    
+                }
+            }
+
+            .euro{
+                top: 12%;
+                right: 67%;
+                font-family: 'Lato';
+               
+            }
+        }
+    }  
+}
+
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width:481px) and (max-width: 768px) {
+
+    .editPlate{
+
+        .container{
+            width: 65%;
+            margin-top: 40px;
+        } 
+    }  
+}
+
 
