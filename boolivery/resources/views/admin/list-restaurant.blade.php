@@ -30,6 +30,9 @@
                 <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
                     <button>EDIT</button>
                 </a>
+                <a href="{{route('showStats', encrypt($restaurant -> id))}}">
+                    <button>VEDI STATISTICHE</button>
+                </a>
             </div>  
         </li>
         @endforeach
