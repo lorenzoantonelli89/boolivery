@@ -1,0 +1,154 @@
+@import 'partials/variables';
+@import 'partials/common';
+
+
+/* @mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin buttonLink ($bg, $color, $topDown, $leftRight){
+    text-decoration: none;
+    background-color: $bg;
+    color: $color;
+    padding: $topDown $leftRight;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+@mixin centring {
+    width: 70%;
+    margin: 0 auto;
+}
+ */
+
+
+.createRestContainer{
+
+    @include centring;
+
+    .turnBackCont{
+        margin: 30px 0;
+
+        .turnBack{
+            @include buttonLink(#00c2b8, white,8px, 20px);
+        }
+    }
+
+
+    .formCreateRest{
+        width: 45%;
+        min-height: 780px;
+        text-align: center;
+        border-radius: 15px;
+        margin: 15px auto ;
+        background-image: url("/storage/graphics/TikTok.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:top ;
+        font-family: 'Pacifico', cursive;
+            
+        .createRestTitle{
+                padding-top: 2px;
+
+                h2{
+                    margin: 27px 11px 40px 0;
+                }
+            }
+
+        .form-group  {
+          
+            width: 75%;
+            min-height: 35px;
+            margin: auto;
+            margin-bottom: 35px;
+            text-align: left;
+            font-family: 'Pacifico', cursive;
+            font-size: 16px;
+            @include flex(row,space-between, baseline);               
+            input{
+                    width: 45%;
+                   border-radius: 7px;
+                   outline: transparent;
+                   padding:3px 8px;
+                   margin-left:10px;
+                   height: 25px;
+               }
+        }
+
+        .insert-img{
+            @include flex(row, space-between, center);
+          
+            & input{
+                white-space: break-spaces;
+            }
+
+                label{
+                    white-space: nowrap;
+                }
+        }
+        
+        p{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .categoryCheckboxes{
+            
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto ;
+            grid-row-gap: 10px;
+
+            input{
+                margin-left: 5px;
+            }
+
+            label{
+                font-size: 14px;
+            }
+        
+        }
+
+        button{
+            @include buttonLink(#0febe0, white,10px, 30px);
+            margin:30px 0;
+        }
+    }
+}
+
+
+
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+
+    .createRestContainer{
+
+       /*  @include centring; */
+       width: 100%;
+    
+        .formCreateRest{
+            width: 100%;
+        }
+    }
+
+}
+    
+/* test @Queries tablet-device*/
+@media screen and (min-width:481px) and (max-width: 768px) {
+    
+    .createRestContainer{
+
+        /*  @include centring; */
+        width: 100%;
+     
+         .formCreateRest{
+             width: 85%;
+         }
+     }
+ 
+ }
+

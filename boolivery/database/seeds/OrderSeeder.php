@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Order;
 use App\Plate;
+use App\restaurant;
 
 class OrderSeeder extends Seeder
 {
@@ -13,11 +14,12 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        factory(Order::class, 200) -> create()
+        factory(Order::class, 1000) -> create()
             -> each(function($order) {
-            $plates = Plate::inRandomOrder()
-                        -> limit(rand(1,3))
-                        -> get();
+            $restaurant = Restaurant::inRandomOrder()->first();
+            $plates = $restaurant -> plates()
+            ->limit(rand(1,7))
+            ->get();
             $order -> plates() -> attach($plates);
             $order -> save();
         });

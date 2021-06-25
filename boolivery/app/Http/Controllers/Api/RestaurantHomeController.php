@@ -28,22 +28,13 @@ class RestaurantHomeController extends Controller
             $filterCategoryNum []= intval($item);
         }
 
-        $temporary = [];
-        $restaurantsFiltered = [];
+        $restaurantsFiltered = Restaurant::whereHas('categories', function($query) use($filterCategoryNum)
+        {
+            $query -> whereIn('category_id', $filterCategoryNum);
+        },  "=", count($filterCategoryNum))
+                ->get();
+            
 
-        $filteredRestaurants = DB::table('categories') 
-            ->join('category_restaurant', 'categories.id', '=',  'category_restaurant.category_id')
-            ->join('restaurants', 'restaurants.id', '=',  'category_restaurant.restaurant_id')
-            ->whereIn('category_restaurant.category_id', $filterCategoryNum)
-            ->get();
-        
-        foreach ($filteredRestaurants as $restaurant) {
-            if(!in_array($restaurant -> id, $temporary)){
-                array_push($temporary, $restaurant -> id);
-                array_push($restaurantsFiltered, $restaurant);
-            }
-        }    
-        
         return response() -> json($restaurantsFiltered, 200);
     }
     // funzione che manda al FE tramite chiamata axios in vue array di ristoranti con filtro per nome
