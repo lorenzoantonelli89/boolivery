@@ -1602,11 +1602,11 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div img {
 div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover {
   transform: scale(1.03);
   transition: all 1s ease;
+  opacity: 0.75;
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover + .editPlate {
   display: block;
-  opacity: 0.75;
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div .editPlate {
@@ -2126,6 +2126,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.abutton {
+  padding: 7px;
+  font-size: 18px;
+  background-color: #28CCBC;
+  color: white;
 }
 
 #faq-container {
