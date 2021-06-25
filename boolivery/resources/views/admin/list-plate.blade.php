@@ -45,6 +45,20 @@
                             <h6>
                                 € {{ $plate -> price}}
                             </h6>
+                            {{-- sezione che mi mostra quanti ordini ha ciascun piatto --}}
+                            <h6>
+                                @php
+                                    $count = 0;
+                                    $orders = $plate->orders;
+                                    foreach($orders as $order){
+                                        $count++;
+                                    }
+                                @endphp
+                                Appare in {{$count}} ordini
+                            </h6>
+                            <a href="{{route('deletePlate',$plate->id)}}">
+                                <button>DELETE</button>
+                            </a>
                         </div>
                     </li>
                 @endforeach

@@ -120,6 +120,19 @@ class RestaurantController extends Controller
         return redirect()->route('listRestaurant');
     }
 
+    public function deleteRestaurant($id){ //funzione per cancellare ristorante
+
+        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
+        $restaurant->delete();
+        return redirect()->route('listRestaurant');
+    }
+
+    public function showOrders($id){
+
+        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
+        return view ('admin.orderList',compact('restaurant'));
+    }
+
     public function showStats($id){ //funzione per mostrare pagina statistiche
 
         $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
