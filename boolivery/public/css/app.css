@@ -129,100 +129,59 @@ main #home-container {
 
 main #home-container .myjumbotron {
   width: 100%;
-  background-image: url("/storage/graphics/jumbotron.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  display: flex;
   padding: 150px 0;
-  /*.logo-login {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-    flex-grow: 1;     
-    align-items: center;
-
-    .logo {
-      width: 150px;
-    }
-  } */
 }
 
-main #home-container .myjumbotron .welcome {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
+main #home-container .myjumbotron .content-jumbotron {
   height: 100%;
+  width: 70%;
+  margin: 0 auto;
 }
 
-main #home-container .myjumbotron .welcome .title-research h1 {
+main #home-container .myjumbotron .content-jumbotron h1 {
   margin-bottom: 30px;
   font-size: 45px;
 }
 
-main #home-container .myjumbotron .welcome .title-research .research-request {
-  flex-grow: 1;
+main #home-container .myjumbotron .content-jumbotron .research-request {
   height: 170px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 32px;
-  border-radius: 5px;
-  background-color: white;
 }
 
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse #guest-request {
+main #home-container .myjumbotron .content-jumbotron .research-request #guest-request {
   font-size: 25px;
   flex-grow: 1;
   height: 45px;
 }
 
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse #guest-request::-moz-placeholder {
+main #home-container .myjumbotron .content-jumbotron .research-request #guest-request::-moz-placeholder {
   padding-left: 8px;
   font-size: 16pt;
 }
 
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse #guest-request:-ms-input-placeholder {
+main #home-container .myjumbotron .content-jumbotron .research-request #guest-request:-ms-input-placeholder {
   padding-left: 8px;
   font-size: 16pt;
 }
 
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse #guest-request::placeholder {
+main #home-container .myjumbotron .content-jumbotron .research-request #guest-request::placeholder {
   padding-left: 8px;
   font-size: 16pt;
 }
 
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse #guest-request-click {
-  background-color: #ffe600;
-  height: 45px;
-  width: 100px;
-  margin-left: 15px;
-  border: none;
-  border-radius: 5px;
-}
-
-main #home-container .myjumbotron .welcome .title-research .research-request .input-adresse #guest-request-click #guest-request-click:hover {
-  background-color: #2caead;
-  color: white;
-}
-
-main #home-container .myjumbotron .welcome .categories #category-container-list {
+main #home-container .myjumbotron .content-jumbotron .categories #category-container-list {
   margin-top: 30px;
   list-style-type: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
 
-main #home-container .myjumbotron .welcome .categories #category-container-list .category-list {
+main #home-container .myjumbotron .content-jumbotron .categories #category-container-list .category-list {
   padding-right: 15px;
 }
 

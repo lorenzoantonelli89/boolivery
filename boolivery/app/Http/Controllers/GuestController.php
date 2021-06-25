@@ -30,5 +30,10 @@ class GuestController extends Controller
 
         return view('pages.contacts');
     }
+    // funzione che riporta alla pagina lavora con noi
+    public function workWhitUs(){
+
+        return view('pages.work');
+    }
     
 }
