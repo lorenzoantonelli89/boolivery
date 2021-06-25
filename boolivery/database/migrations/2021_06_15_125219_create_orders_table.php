@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('lastname');
-            $table->string('email');
+            $table->string('customer_email');
             $table->string('shipping_address');
             $table->date('date_delivery',0);
             $table->time('time_delivery',0);

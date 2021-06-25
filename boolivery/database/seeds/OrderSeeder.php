@@ -22,6 +22,17 @@ class OrderSeeder extends Seeder
             ->get();
             $order -> plates() -> attach($plates);
             $order -> save();
+            $total_price = 0;
+            foreach($plates as $plate){
+                $total_price += $plate->price;
+            };
+            if($total_price > 10){
+                $order->total_price = $total_price;
+                $order->save();
+            } else {
+                $order->total_price = $total_price +5;
+                $order->save();
+            }
         });
     }
 }

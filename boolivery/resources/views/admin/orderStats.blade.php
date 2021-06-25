@@ -1,26 +1,32 @@
 @extends('layouts.main-layout')
 
 @section('content')
-<div class="container" id="appChart">
-    {{-- titolo --}}
-    <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
-    {{-- scegli anno --}}
-    <div>
-        <label for="year-choice">Scegli l'anno da visualizzare</label>
-        <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
-            <option disabled value="">Seleziona un anno</option>
-            {{-- visualizza media per mese di tutti gli anni --}}
-            <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
-            {{-- visualizza ciascun anno --}}
-            <option v-for="year in years" :value="year">@{{year}}</option>
-        </select>
-    </div>
-    {{-- GRAFICO responsive --}}
-    <div style="width:50vw">
-        <canvas id="myChart" width="600" height="400"></canvas>
-    </div>
+<main>
+    <div class="container" id="appChart">
+        {{-- titolo --}}
+        <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
+        {{-- scegli anno --}}
+        <div>
+            <label for="year-choice">Scegli l'anno da visualizzare</label>
+            <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
+                <option disabled value="">Seleziona un anno</option>
+                {{-- visualizza media per mese di tutti gli anni --}}
+                <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
+                {{-- visualizza ciascun anno --}}
+                <option v-for="year in years" :value="year">@{{year}}</option>
+            </select>
+        </div>
+        {{-- GRAFICO responsive --}}
+        <div style="width:50vw">
+            <canvas id="myChart" width="600" height="400"></canvas>
+        </div>
+        {{-- bottone per andare a vedere dettagli ordine --}}
+        <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
+            <button style="background-color:red; padding: 10px; ">Vai a vedere lista ordini</button>
+        </a>
 
-</div>   
+    </div>
+</main>  
 
 <script>
 
@@ -100,16 +106,20 @@
                         for(x=0;x<12;x++){ //ciclo su ogni mese
                             this.sum = 0; // tot NOI
                             this.counter = 0; // count Orders
+                            let orderIds = []; // order_id univoci ricavati dalla tabella order_plate
                             for(i=0;i<data.length;i++){ // per ogni mese ciclo tutti gli ordini per estrarre dati di ordine del mese corrispondente
                                 const order = data[i];
                                 const date = order['date_delivery'];
                                 const month = new Date(date).getMonth();
-                                const price = parseInt(order['total_price']);
+                                const price = parseInt(order['price']);
                                 if(x == month){
                                     this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
-                                    this.counter = this.counter+1; //per ogni ordine corrispondente, incremento qty
+                                    if(orderIds.indexOf(order['order_id']) == -1){ //pusho order_id univoci
+                                        orderIds.push(order['order_id']);
+                                    }
                                 }
                             }
+                            this.counter = orderIds.length; // tot ordini dato dalla lunghezza dell'array di order_id univoci
                             this.totEuro.push(this.sum); //per ogni mese, pusho il valore degli €
                             this.tot.push(this.counter); //per ogni mese, pusho il valore delle qty
                         }
@@ -123,16 +133,20 @@
                         for(x=0;x<12;x++){
                             this.sum = 0; // tot NOI
                             this.counter = 0; // count Orders
+                            let orderIds = [];
                             for(i=0;i<data.length;i++){
                                 const order = data[i];
                                 const date = order['date_delivery'];
                                 const month = new Date(date).getMonth();
-                                const price = parseInt(order['total_price']);
+                                const price = parseInt(order['price']);
                                 if(x == month){
-                                    this.sum = this.sum + price;
-                                    this.counter = this.counter+1;
+                                    this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
+                                    if(orderIds.indexOf(order['order_id']) == -1){
+                                        orderIds.push(order['order_id']);
+                                    }
                                 }
                             }
+                            this.counter = orderIds.length;
                             this.totEuro.push(this.sum);
                             this.tot.push(this.counter);
                         }
@@ -150,26 +164,30 @@
                 for(x=0;x<12;x++){
                     this.sum = 0; // tot NOI
                     this.counter = 0; // count Orders
+                    let orderIds = [];
                     for(i=0;i<data.length;i++){
                         const order = data[i];
                         const date = order['date_delivery'];
                         const month = new Date(date).getMonth();
-                        const price = parseInt(order['total_price']);
+                        const price = parseInt(order['price']);
                         let year = new Date(date).getYear() + 1900;
                         if(unorderedYears.indexOf(year) == -1){
                             unorderedYears.push(year);
                         }
                         if(x == month){
-                            this.sum = this.sum + price;
-                            this.counter = this.counter+1;
+                            this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
+                            if(orderIds.indexOf(order['order_id']) == -1){
+                                orderIds.push(order['order_id']);
+                            }
                         }
                     }
+                    this.counter = orderIds.length;
                     this.totEuro.push(this.sum);
                     this.tot.push(this.counter);
                 }
                 this.years = unorderedYears.sort(function(a, b){return b-a}); // array ordinato ASC di anni disponibili.
                 this.chartCreate(); // dopo aver richiamato i dati, creo grafico del refresh
-                })
+            })
         }
     });
 
