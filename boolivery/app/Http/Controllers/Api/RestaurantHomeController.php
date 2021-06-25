@@ -22,6 +22,7 @@ class RestaurantHomeController extends Controller
     // funzione che manda al FE tramite chiamata axios in vue array di ristoranti con filtro checked
     public function getRestaurantCategory($filterCategory){
 
+        // filtercategory invece di arrivare come array arriva come stringa, con explode diventa array di stringhe e col foreach diventa array di numeri
         $filterCategoryStr = explode(',', $filterCategory);
         $filterCategoryNum = [];
         foreach ($filterCategoryStr as $item) {

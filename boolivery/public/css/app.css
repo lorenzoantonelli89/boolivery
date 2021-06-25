@@ -1,10 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.blink {
+@import url(https://fonts.googleapis.com/css?family=Nunito);.blink {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,10 +22,6 @@
 .div-margin {
   width: 70%;
   margin: 0 auto;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
 }
 
 .flex-col-center {
@@ -110,7 +100,6 @@ main {
 
 main #home-container {
   width: 100%;
-  /* Container in absolute */
 }
 
 main #home-container #scroll {
@@ -137,6 +126,9 @@ main #home-container #scroll.active {
 main #home-container .myjumbotron {
   width: 100%;
   height: 500px;
+  background-image: url("/storage/graphics/rider.png");
+  background-repeat: no-repeat;
+  background-position: 85% 40%;
   position: relative;
   background-color: #d0eb98;
 }
@@ -160,6 +152,14 @@ main #home-container .myjumbotron .content-jumbotron {
   padding-top: 100px;
   width: 70%;
   margin: 0 auto;
+  position: relative;
+}
+
+main #home-container .myjumbotron .content-jumbotron #slice-pizza {
+  width: 100px;
+  position: absolute;
+  top: 50px;
+  left: 45%;
 }
 
 main #home-container .myjumbotron .content-jumbotron h1 {
@@ -332,6 +332,7 @@ main #home-container #section-2 #top-rating-plates h1 .fa-star {
 main #home-container #section-2 .flexible-carusel {
   display: flex;
   flex-direction: row;
+  justify-content: inherit;
   align-items: center;
   color: salmon;
 }
@@ -341,7 +342,11 @@ main #home-container #section-2 .flexible-carusel #prev {
 }
 
 main #home-container #section-2 .flexible-carusel #plates-info {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
+  justify-content: inherit;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
@@ -381,6 +386,8 @@ main #home-container .main-sec-3 {
 }
 
 main #home-container .main-sec-3 #business-adv {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
 }
 
@@ -401,45 +408,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   transition: all 1s ease;
 }
 
-main #home-container #contacts {
-  position: fixed;
-  top: 50.5%;
-  right: 1%;
-}
-
-main #home-container #contacts #mail {
-  background-color: #ffc400;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-main #home-container #contacts #mail .fa-at {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 40px;
-}
-
-main #home-container #contacts #phone {
-  background-color: #1c8a00;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-main #home-container #contacts #phone .fa-phone {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  line-height: 40px;
-}
-
 /*@media screen and (min-width: 480px) and (max-width: 768px) {
   .myjumbotron {
     background-image: none;
@@ -449,12 +417,6 @@ main #home-container #contacts #phone .fa-phone {
     }
   }
 }*/
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 .blink {
   display: flex;
@@ -480,10 +442,6 @@ main #home-container #contacts #phone .fa-phone {
 .div-margin {
   width: 70%;
   margin: 0 auto;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
 }
 
 .flex-col-center {
@@ -1467,12 +1425,6 @@ body {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .blink {
   display: flex;
   align-items: center;
@@ -1497,10 +1449,6 @@ body {
 .div-margin {
   width: 70%;
   margin: 0 auto;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
 }
 
 .flex-col-center {
@@ -1828,12 +1776,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .blink {
   display: flex;
   align-items: center;
@@ -1858,10 +1800,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 .div-margin {
   width: 70%;
   margin: 0 auto;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
 }
 
 .flex-col-center {
@@ -2086,12 +2024,6 @@ body {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .blink {
   display: flex;
   align-items: center;
@@ -2116,10 +2048,6 @@ body {
 .div-margin {
   width: 70%;
   margin: 0 auto;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
 }
 
 .flex-col-center {
@@ -2280,7 +2208,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 40px;
 }
@@ -2324,6 +2252,16 @@ body {
   .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
     width: 100%;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
 }
 
 .none {
@@ -2421,44 +2359,35 @@ footer {
 }
 
 footer .footer-container {
-  width: 100%;
-}
-
-footer .footer-container .footer-section-container {
+  width: 70%;
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-footer .footer-container .footer-section-container .footer-section {
+footer .footer-container ul {
   height: 300px;
-  width: calc( 100% / 4 );
+  width: 20%;
+  list-style: none;
+  padding: 30px;
+  margin: 0 50px;
   background-color: #363947;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  margin-right: 10px;
+  border-radius: 10px;
 }
 
-footer .footer-container .footer-section-container .footer-section .footer-list {
-  height: 90%;
-  width: 90%;
+footer .footer-container ul li {
+  padding-bottom: 10px;
 }
 
-footer .footer-links {
-  height: 44px;
-  display: flex;
-  justify-content: space-between;
+footer .footer-container ul li h3 {
+  text-transform: uppercase;
+  color: salmon;
 }
 
-footer .footer-links .links {
-  color: white;
-  font-size: 24px;
-}
-
-footer .footer-links .weAre {
-  font-size: 18px;
-  color: white;
+footer .footer-container ul li a {
+  text-decoration: none;
+  color: #ffff;
 }
 
