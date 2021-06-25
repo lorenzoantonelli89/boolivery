@@ -96,18 +96,17 @@ h2, .speciality{
             &:hover {
                 transform: scale(1.03);
                 transition: all 1s ease;
-                opacity: .75;
 
                
               }
               &:hover + .editPlate{
                   display: block;
+                  opacity: .75;
+
               }
             }
 
         .editPlate{
-            font-size: 50px;
-            color: rgb(27, 26, 26);
             position: absolute;
             top: 50%;
             left: 50%;
