@@ -1,15 +1,12 @@
-// Body
-$body-bg: #f8fafc;
-
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
+$white: #ffff;
 $ourlogo: #28CCBC;
 $ourblue: #3490dc;
-$ourlightblue: #28ccbc;
 $ourgreen: #7faf48;
 $ourorange: #fc6a01;
 $ourgrey: #e8ebeb;
@@ -21,22 +18,26 @@ $mastercard: #eb001b;
 $amazonpay: #ff9900;
 $ourcoral: coral;
 
-
-// $teal: #4dc0b5;
-// $cyan: #6cb2eb;
-// $yellow: #ffed4a;
-// $indigo: #6574cd;
-// $purple: #9561e2;
-// $pink: #f66d9b;
-// $red: #e3342f;
-
 //My-Style
 @mixin flex($direction, $justify, $align) {
-
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
-
 }
+
+@mixin buttonLink ($bg, $color, $topDown, $leftRight){
+    text-decoration: none;
+    background-color: $bg;
+    color: $color;
+    padding: $topDown $leftRight;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+@mixin centring {
+    width: 70%;
+    margin: 0 auto;
+}
+
 

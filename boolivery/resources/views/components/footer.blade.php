@@ -18,7 +18,9 @@
                 <p>Investitori</p>
                 <p><a href="{{route('info-company')}}">Chi Siamo</a></p>
                 <p><a href="{{route('faq')}}">FAQ</a></p>
-                <p>Altro</p>
+                <p>
+                    <a href="{{route('work')}}">Lavora con noi</a>
+                </p>
                 <p>PressRoom</p>
             </div>
             </div>

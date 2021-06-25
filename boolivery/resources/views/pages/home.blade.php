@@ -9,27 +9,24 @@
       <div id="home-container">
         <!-- PARTE SUPERIODE DEL SITO -->
         <div class=myjumbotron>
-          <div class="div-margin">
-            <div class="welcome ">
-              <div class="title-research">                  
-                <h1>I piatti che ami, a domicilio</h1>
-                <div class="research-request" v-if="categoryChecked == 0">
-                  <span>Cerca il tuo ristorante preferito</span> 
-                    <div class="input-adresse" >
-                      <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchRestaurant" v-on:keyup="filteredRestaurantsName">
-                    </div>
-                </div>
-                </div>   
-                <div class="categories">
-                    <ul id="category-container-list" v-if="searchRestaurant == ''">
-                        <li class="category-list" v-for="category in categories">
-                            <label for="">@{{category.name}}</label>
-                            <input type="checkbox" :value="category.id"  v-model="categoryChecked" v-on:change="filteredRestaurantsCategory">
-                        </li>
-                    </ul>
-                </div>     
+            <div class="content-jumbotron">                  
+              <h1>
+                I piatti che ami, a domicilio
+              </h1>
+              <div class="research-request" v-if="categoryChecked == 0">
+                  <input id="guest-request" type="text" name="" value="" placeholder="Cerca il tuo ristorante preferito..." v-model="searchRestaurant" v-on:keyup="filteredRestaurantsName">
               </div>
-          </div>          
+              <div class="categories">
+                  <ul id="category-container-list" v-if="searchRestaurant == ''">
+                      <li class="category-list" v-for="category in categories">
+                          <label :for="category.name">
+                            @{{category.name}}
+                          </label>
+                          <input type="checkbox" :name="category.name" :value="category.id"  v-model="categoryChecked" v-on:change="filteredRestaurantsCategory">
+                      </li>
+                  </ul>
+              </div>     
+            </div>
         </div>
 
         <!-- PRIMA SEZIONE, VISIONE DEI RISTORANTI -->
