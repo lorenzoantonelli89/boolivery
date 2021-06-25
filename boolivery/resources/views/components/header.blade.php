@@ -1,4 +1,4 @@
-<header>
+<header id="header" :class="(scrollOn == true) ? 'box-shadow' : ''">
     <nav id="nav-header">
         <div id="logo">
             <a href="{{route('home')}}">
@@ -63,13 +63,25 @@
     document.addEventListener('DOMContentLoaded', function () {
 
     new Vue({
-        el: '#nav-header',
+        el: '#header',
         data: {
             dropDown: false,
+            scrollOn: false,
+        },
+        mounted(){
+            document.addEventListener('scroll', this.scrollUp);
         },
         methods: {
+            // funzione che apre e chiude il dropdown
             getDropDown: function(){
                 this.dropDown = !this.dropDown;
+            },
+            // funziona per gestire il cambio background header con lo scroll
+            scrollUp: function () {
+                this.scrollOn = true;
+                if(window.scrollY == 0){
+                    this.scrollOn = false;
+                }
             },
         },
     });

@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('content')
-    
+<main>
     <div class="container py-4">
         {{-- DA INSERIRE CODICE RILEVAZIONE ERRORI --}}
         <h1>Aggiungi nuovo Ristorante</h1>
@@ -70,5 +70,5 @@
             <button type="submit" class="btn btn-primary">Crea</button>
         </form>
     </div>
-
+</main>
 @endsection
