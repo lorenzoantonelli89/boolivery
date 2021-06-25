@@ -11,10 +11,18 @@
 @import 'partials/platesList';
 @import 'partials/editPlate';
 @import 'partials/createPlate';
-
 @import 'partials/faq';
 @import 'partials/list-restaurant';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//   FONT
+body {
+  font-family: 'Open Sans', sans-serif;;
+}
 // regole style header e footer
 .none{
   display: none;
@@ -92,60 +100,40 @@ header{
     }
   }
 }
-
-
 // FOOTER
-
 footer {
-    width: 100%;
-    // background-color: #fc6a01;
-    background-color: #729C98;
-    padding: 40px 0;
-    
-    .footer-container {
-        // @include flex(column, space-between, center);
-        width: 100%;  
-        
-      
-        .footer-section-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            .footer-section {
-                height: 300px;
-                width: calc( 100% / 4 );
-                background-color: #363947;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-                margin-right: 10px;
-                .footer-list {
-                    height: 90%;
-                    width: 90%;
-                }
-            }    
+  width: 100%;
+  background-color: #729C98;
+  padding: 40px 0;
+  
+  .footer-container {
+    @include centring;
+    @include flex(row, space-between, center);
+
+    ul{
+      height: 300px;
+      width: 20%;
+      list-style: none;
+      padding: 30px;
+      margin: 0 50px;
+      background-color: #363947;
+      border-radius: 10px;
+
+
+      li{
+        padding-bottom: 10px;
+
+        h3{
+          text-transform: uppercase;
+          color: salmon;
         }
+        a{
+          text-decoration: none;
+          color: $white;
+        }
+      }
     }
-  
-  //   ZONA BASSA DEL FOOTER
-  
-    .footer-links {
-        height: 44px;
-          display: flex;
-          justify-content: space-between;
-  
-          .links {
-              color:white;
-              font-size: 24px;
-            }
-
-            .weAre {
-              font-size: 18px;;
-              color: white;
-          }
-    }
-
+  }
 }
 
   

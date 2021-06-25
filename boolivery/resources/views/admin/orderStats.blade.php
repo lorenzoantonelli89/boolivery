@@ -1,27 +1,28 @@
 @extends('layouts.main-layout')
 
 @section('content')
-<div class="container" id="appChart">
-    {{-- titolo --}}
-    <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
-    {{-- scegli anno --}}
-    <div>
-        <label for="year-choice">Scegli l'anno da visualizzare</label>
-        <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
-            <option disabled value="">Seleziona un anno</option>
-            {{-- visualizza media per mese di tutti gli anni --}}
-            <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
-            {{-- visualizza ciascun anno --}}
-            <option v-for="year in years" :value="year">@{{year}}</option>
-        </select>
-    </div>
-    {{-- GRAFICO responsive --}}
-    <div style="width:50vw">
-        <canvas id="myChart" width="600" height="400"></canvas>
-    </div>
+<main>
+    <div class="container" id="appChart">
+        {{-- titolo --}}
+        <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
+        {{-- scegli anno --}}
+        <div>
+            <label for="year-choice">Scegli l'anno da visualizzare</label>
+            <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
+                <option disabled value="">Seleziona un anno</option>
+                {{-- visualizza media per mese di tutti gli anni --}}
+                <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
+                {{-- visualizza ciascun anno --}}
+                <option v-for="year in years" :value="year">@{{year}}</option>
+            </select>
+        </div>
+        {{-- GRAFICO responsive --}}
+        <div style="width:50vw">
+            <canvas id="myChart" width="600" height="400"></canvas>
+        </div>
 
-</div>   
-
+    </div>   
+</main>
 <script>
 
     new Vue({
