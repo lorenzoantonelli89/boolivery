@@ -25,6 +25,10 @@ class GuestController extends Controller
 
         return view('pages.faq');
     }
+    // funzione che riporta alla pagina dei contatti
+    public function contacts(){
 
+        return view('pages.contacts');
+    }
     
 }

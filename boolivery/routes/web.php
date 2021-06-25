@@ -25,6 +25,9 @@ Route::get('/info-company', 'GuestController@infoCompany')
 //rotta che porta all pagina delle domande frequenti
 Route::get('/faq', 'GuestController@faq') 
     -> name('faq'); 
+//rotta che porta all pagina delle domande frequenti
+Route::get('/contacts', 'GuestController@contacts') 
+    -> name('contacts');     
 // rotta per creazione nuovo ordine
 Route::post('/storeOrder','PaymentController@storeOrder')
     ->name('storeOrder');        
