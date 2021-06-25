@@ -1602,11 +1602,11 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div img {
 div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover {
   transform: scale(1.03);
   transition: all 1s ease;
-  opacity: 0.75;
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover + .editPlate {
   display: block;
+  opacity: 0.75;
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div .editPlate {
@@ -1904,7 +1904,6 @@ body {
   text-align: center;
   border-radius: 15px;
   margin: 15px auto;
-  border: 1px solid black;
   background-image: url("/storage/graphics/blackboard.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -2085,6 +2084,48 @@ body {
     width: 65%;
     margin-top: 40px;
   }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.blink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2caead;
+  padding: 5px;
+  height: 50px;
+  width: 150px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.my-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.div-margin {
+  width: 70%;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #faq-container {
