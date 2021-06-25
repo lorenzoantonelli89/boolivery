@@ -1,118 +1,167 @@
 @import 'partials/variables';
 
+
 main {
     width: 100%;
 
     #home-container{
       width: 100%;
+      #scroll{
+        background-color: rgba($ourlogo, $alpha: 0.5);
+        padding: 10px 13px;
+        border-radius: 5px;
+        position: fixed;
+        right: 75px;
+        top: 85vh;
+        z-index: 800;
+        display: none;
+        cursor: pointer;
+
+        i{
+            color: $white;
+            font-size: 20px;
+        }
+        &.active{
+            display: block;
+        }
+
+      }
       .myjumbotron {
         width: 100%;
+        height: 500px;
         // background-image: url("/storage/graphics/jumbotron.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        padding: 150px 0; 
+        // background-repeat: no-repeat;
+        // background-position: center;
+        // background-size: cover;
+        position: relative;
+        background-color: $jumbogreen;
 
-        
+        #triangle-topleft{
+          width: 100%;
+          height: 100px;
+          position: absolute;
+          top: 0;
+          background-color: $headercl;
+          clip-path: polygon(100% 0, 0 0, 0 100%);
+
+          &.active{
+            background-color: $jumbogreen;
+          }
+        }
         .content-jumbotron {
           height: 100%;
+          padding-top: 100px;
           @include centring; 
           
           h1 {
             margin-bottom: 30px;
             font-size: 45px;
+            color: $ourlogo;
           }
 
           .research-request {
-            height: 170px;
+            height: 90px;
             
             #guest-request {
-            font-size: 25px;
-            flex-grow: 1;
-            height: 45px;
-            }
-            #guest-request::placeholder {
+              width: 40%;  
+              height: 45px;
               padding-left: 8px;
-              font-size: 16pt;
+              border: 1px solid $ourlogo;
+              border-radius: 10px;
+              font-size: 25px;
+              &:focus{
+                outline: none;
+              }
+              &::placeholder{
+                padding-left: 8px;
+                font-size: 16pt;
+                color: $ourlogo;
+              }
+              &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: $ourlogo;
+              }
+
+              &::-ms-input-placeholder { /* Microsoft Edge */
+                color: $ourlogo;
+              }
             }
           }
-          .categories{
+          #category-container-list{
+            width: 60%;
+            list-style-type: none;
+            @include flex(row, flex-start, center);
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 300;
 
-            #category-container-list{
-              margin-top: 30px;
-              list-style-type: none;
-              @include flex(row, flex-start, center);
-              flex-wrap: wrap;
+            .category-list{
+              padding: 10px 20px;
+              margin-right: 20px;
+              margin-top: 20px;
+              background-color: $ourlogo;
+              border-radius: 5px;
 
-              .category-list{
-                padding-right: 15px;
+              label{
+                color: $white;
+                padding-right: 10px;
               }
             }
           }
         }   
       }
-
-        // SEZIONE RISTORANTI -> VISIONE RISTORANTI -> REGOLE DI STILE
-        /*@media screen and (min-width: 480px) and (max-width:768px) {
-          .main-sec-1 {
-            .main-1-contai-ner {
-              ul {
-                display: flex;
-
-                li {
-                  width: calc(90% / 2);
-                  margin: 0 auto;
+      .main-sec-1 {
+        position: relative;
+        padding: 150px 0;
+        
+        #triangle-sec-1{
+          width: 100%;
+          height: 1300px;
+          position: absolute;
+          top: 0;
+          background-color: $jumbogreen;
+          clip-path: polygon(100% 100%, 100% 0, 0 0);
+        }
+        ul {
+          @include centring;
+          position: relative;
+          z-index: 100;
+          display: flex;
+          flex-wrap: wrap;
+          li {
+            width: calc(90% / 3);
+            list-style: none;
+            margin: 0 auto;
+            a {
+              text-decoration: none;
+              color: white;
+              .restaurants {
+              border-radius: 10px;
+              margin-bottom: 20px;
+              box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+              img {
+                width: 100%;
+                border-radius: 10px;
                 }
-              }
-            }
-          }
-        }*/
-        .main-sec-1 {
-          padding: 150px 0;
-          .main-1-container {
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            ul {
-              width: 100%;
-              display: flex;
-              flex-wrap: wrap;
-              li {
-                width: calc(90% / 3);
-                list-style: none;
-                margin: 0 auto;
-                a {
-                  text-decoration: none;
-                  color: white;
-                  .restaurants {
-                  border-radius: 10px;
-                  margin-bottom: 20px;
-                  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
-                  img {
-                    width: 100%;
-                    border-radius: 10px;
-                    }
-                    #text {
-                      padding: 20px 0;
-                      h3 {
-                        color: #000;
-                        text-align: center;
-                      }
-                    }
+                #text {
+                  padding: 20px 0;
+                  h3 {
+                    color: salmon;
+                    text-align: center;
                   }
                 }
               }
-              .restaurants:hover {
-                transform: scale(1.03);
-                transition: all 1s ease;
-              }
             }
           }
+          .restaurants:hover {
+            transform: scale(1.03);
+            transition: all 1s ease;
+          }
         }
+      }
 
       // SECONDA SEZIONE -> VISIONE PIATTI -> REGOLE DI STILE
       #section-2 {
-        background-image: url("storage/graphics/back-carosel.jpg");
+        background-color: #ffeae4;
         width: 100%;
         padding: 70px 0;
         position: relative;
@@ -140,6 +189,7 @@ main {
           display: flex;
           flex-direction: row;
           align-items: center;
+          color: salmon;
           #prev {
             margin-left: 70px;
           }
@@ -178,6 +228,7 @@ main {
       //   SEZIONE DEDICATA AI RISTORATORI
       .main-sec-3 {  
         padding: 100px 0;
+        // background-color: $jumbogreen;
           #business-adv {
             display: flex;
             .cards-adv {
@@ -199,9 +250,9 @@ main {
 
 
         /* Container in absolute */
-        .fas {
-          color: white;
-        }
+        // .fas {
+        //   color: white;
+        // }
         #contacts {
           position: fixed;
           top: 50.5%;
