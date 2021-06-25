@@ -7,8 +7,7 @@
     background-color: $ourgreen;
     // background: linear-gradient($ourgreen, rgb(8, 56, 8));
     @include flex (column, flex-start, center);
-    margin-bottom: 25px;
-    margin-top: 25px;
+    padding: 25px 0;
 }
 
 
@@ -43,7 +42,7 @@
 
 
 .superlogo {
-    margin-bottom: 25px;
+    margin: 25px 0; 
     width: 100%;
     img {
     
