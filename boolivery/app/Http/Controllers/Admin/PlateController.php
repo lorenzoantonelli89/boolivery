@@ -101,5 +101,14 @@ class PlateController extends Controller
 
         return redirect() -> route('plateList', $id);
     }
+
+    // funzione per cancellare piatto con softdelete
+    public function deletePlate($id){
+
+        $plate = Plate::findOrFail($id);
+        $plate->delete();
+        //dd($plate->restaurant_id);
+        return redirect()->route('plateList',encrypt($plate -> restaurant->id));
+    }
     
 }
