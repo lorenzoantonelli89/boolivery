@@ -2326,6 +2326,25 @@ body {
   }
 }
 
+#appOrders.container {
+  width: 1140px;
+  margin: auto;
+}
+
+#appOrders.container div.paid {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: green;
+}
+
+#appOrders.container div.not-paid {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+}
+
 .none {
   display: none;
 }
