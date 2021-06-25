@@ -68,30 +68,15 @@
                     <a href="{{route('showStats', encrypt($restaurant -> id))}}">
                         view statistic
                     </a>
+                    <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
+                        view all Orders
+                    </a>
+                    <a href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
+                        delete
+                    </a>
                 </div>
             </div>
-            <div class="restaurantfl-foto">
-                
-                <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
-                
-            </div>
-            <div class="restaurantfl-modify">
-                <a href="{{route('plateList', encrypt($restaurant -> id))}}">
-                    view
-                </a>
-                <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
-                    edit
-                </a>
-                <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
-                    view all Orders
-                </a>
-                <a href="{{route('showStats', encrypt($restaurant -> id))}}">
-                    view statistic
-                </a>
-                <a href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
-                    delete
-                </a>
-            </div>
+            @endforeach 
         </div>
     </div>    
 </main>
