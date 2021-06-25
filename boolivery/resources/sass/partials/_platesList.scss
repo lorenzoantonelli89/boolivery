@@ -1,134 +1,100 @@
 @import 'partials/variables';
 @import 'partials/common';
 
-
-
-h2, .speciality{
+@mixin textTitle {
     font-family: 'Pacifico', cursive;
     text-align: center;
-    vertical-align: middle;
-    line-height: 72px;
     letter-spacing: 2px;
-
 }
 
-.coverRestRel{
-    width: 100%;
-    position: relative;
-}
+div#container-plate-list{
+    padding-top: 40px;
 
-.restaurantCover{
+    .container-link{
+        @include flex(row, space-around, center);
+        margin-bottom: 40px;
 
-    width: 100%;
-    height: 500px;
-
-
-  .coverRestImg{
-    width: 100%;
-    height: 100%;
-    opacity: .9;
-    object-fit: fill;
-
- }
-    .ms_button{
-        background-color: #00c2b8;
+        a{
+            @include buttonLink($ourlogo, $white, 10px, 20px);
+        }
+    }
+    .titlePlateList{
+        @include textTitle;
+        margin-bottom: 40px;
+    }
+    div.restaurantCover{
         text-align: center;
-        width: 100px;
-        border-radius: 7px;
-        text-decoration: none;
-        color: white;
-        margin: 30px 20px;
-        position: absolute;
-    }
+        margin-bottom: 40px;
 
-    .createPlateButt{
-        top: 56px;
-        right: 48px;
+        #coverRestImg{
+            border-radius: 10px;
+            opacity: .9;
+        }
     }
-
-    .listRestButt{
-        top: 56px;
-        left: 48px;
-    }
-    
-}
-
-.menuContainer{
-        background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
+    .menuContainer{
+        // background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
         min-height: 600px;
 
-
-        .speciality{
-            margin-bottom: 20px;
+        h2{
+            @include textTitle;
+            padding: 20px 0;
         }
-}
+        .platesCards{
+            @include flex(row, space-around, baseline);
+            width: 90%;
+            margin: auto;
+            flex-wrap: wrap;
+        
+            li{
+                width: 260px;
+                // min-height: 250px;
+                margin-right: 20px;
+                @include flex(column, center, center);
+                text-align: center;
 
+                .plateCard{
+                    margin-bottom: 10px;
 
-.platesCards{
-    @include flex(row,space-around, baseline);
-    width: 90%;
-    margin: auto;
-    min-height: 500px;
-    flex-wrap: wrap;
-/*     overflow-y: auto;
- */
-    li{
-        width: calc(90% / 5) ;
-        min-height: 250px;
-        margin-right: 20px;
-        @include flex(column, center, center);
-        text-align: center;
-        cursor: pointer;
+                    div{
+                        position: relative;
 
-        .plateCard{
-            position: relative;
-            margin-bottom: 10px;
-        }
+                        img {
+                            width: 100%;
+                            border-radius: 10px;
+                            position: relative;
+                            
+                            &:hover {
+                                transform: scale(1.03);
+                                transition: all 1s ease;
+                                opacity: .75;
+                            }
+                            &:hover + .editPlate{
+                                display: block;
+                            }
+                        }
+                        .editPlate{
+                            font-size: 50px;
+                            color: rgb(27, 26, 26);
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            text-decoration: none;
+                            display: none;
 
-
-        img {
-            width: 100%;
-            height:220px;
-            object-fit: contain;
-            border-radius: 10px;
-            
-
-            &:hover {
-                transform: scale(1.03);
-                transition: all 1s ease;
-
-               
-              }
-              &:hover + .editPlate{
-                  display: block;
-                  opacity: .75;
-
-              }
+                            &:hover {
+                                display: block;
+                            }
+                        }
+                    }
+                    p, h6{
+                        margin-top: 10px;
+                    }
+                }
             }
-
-        .editPlate{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-decoration: none;
-            display: none;
-
-            &:hover {
-                display: block;
-               
-            }
-
         }
-
-        h6{
-            margin-top: 10px;
-        }
-    
     }
-
 }
-
 
 /* test @query */
 
@@ -137,89 +103,162 @@ h2, .speciality{
 
 @media screen and (max-width: 480px) {
    
-    
+    div#container-plate-list{
+        padding-top: 40px;
 
-    .titlePlateList{
-       margin-top: 70px;
-    }
-    
-    .restaurantCover{
-    
-        width: 100%;
-        height: 200px;
-    
-        .coverRestImg{
-            width: 100%;
-            height: 100%;
-            opacity: .9;
-            object-fit: fill;
-        }
-    }
-    
-    .menuContainer{
-            background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
-            min-height: 300px;
-    }
-    
-    .platesCards{
-       
-/*          overflow-y: none;
- */     
-        li{
-            width: 100% ;
-            min-height: 250px;
-            margin-right: 0;
-            @include flex(column, center, center);
-            text-align: center;
-            cursor: pointer;
+        .container-link{
+            @include flex(row, space-around, center);
             margin-bottom: 40px;
-    
-            .plateCard{
-                position: relative;
-                margin-bottom: 10px;
-            }
-    
-    
-            img {
-                width: 60%;
-                height:150px;
-                object-fit: cover;
-                border-radius: 10px;
-    
-                &:hover {
-                    transform: scale(1.03);
-                    transition: all 1s ease;
-                    opacity: .75;
-                  }
-                  &:hover + .editPlate{
-                      display: block;
-                  }
-                }
-    
-            .editPlate{
-                    img{
 
-                        width: 75px;
-                        object-fit: scale-down;
-                    }
-
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-decoration: none;
-                display: none;
-    
-                &:hover {
-                    display: block;
-                   
-                }
-    
+            a{
+                @include buttonLink($ourlogo, $white, 10px, 20px);
             }
         }
-    }
-    
+        .titlePlateList{
+            margin-bottom: 70px;
+        }
+        div.restaurantCover{
+            text-align: center;
+            margin-bottom: 40px;
+
+            #coverRestImg{
+                border-radius: 10px;
+                opacity: .9;
+            }
+        }
+        .menuContainer{
+            // background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
+            min-height: 600px;
+
+            h2{
+                @include textTitle;
+                padding: 20px 0;
+            }
+            .platesCards{
+                @include flex(row, space-around, baseline);
+                width: 90%;
+                margin: auto;
+                flex-wrap: wrap;
+            
+                li{
+                    width: 260px;
+                    // min-height: 250px;
+                    margin-right: 20px;
+                    @include flex(column, center, center);
+                    text-align: center;
+
+                    .plateCard{
+                        margin-bottom: 10px;
+
+                        div{
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                border-radius: 10px;
+                                position: relative;
+                                
+                                &:hover {
+                                    transform: scale(1.03);
+                                    transition: all 1s ease;
+                                    opacity: .75;
+                                }
+                                &:hover + .editPlate{
+                                    display: block;
+                                }
+                            }
+                            .editPlate{
+                                font-size: 50px;
+                                color: rgb(27, 26, 26);
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                text-decoration: none;
+                                display: none;
+
+                                &:hover {
+                                    display: block;
+                                }
+                            }
+                        }
+                        p, h6{
+                            margin-top: 10px;
+        
+                        }
+                    }
+                }
+            }   
+        }    
+    }   
 }
+    
+
+   
+    
+    
+    
+    
+    
+//     .platesCards{
+       
+// /*          overflow-y: none;
+//  */     
+//         li{
+//             width: 100% ;
+//             min-height: 250px;
+//             margin-right: 0;
+//             @include flex(column, center, center);
+//             text-align: center;
+//             cursor: pointer;
+//             margin-bottom: 40px;
+    
+//             .plateCard{
+//                 position: relative;
+//                 margin-bottom: 10px;
+//             }
+    
+    
+//             img {
+//                 width: 60%;
+//                 height:150px;
+//                 object-fit: cover;
+//                 border-radius: 10px;
+    
+//                 &:hover {
+//                     transform: scale(1.03);
+//                     transition: all 1s ease;
+//                     opacity: .75;
+//                   }
+//                   &:hover + .editPlate{
+//                       display: block;
+//                   }
+//                 }
+    
+//             .editPlate{
+//                     img{
+
+//                         width: 75px;
+//                         object-fit: scale-down;
+//                     }
+
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 50%;
+//                 transform: translate(-50%, -50%);
+//                 text-decoration: none;
+//                 display: none;
+    
+//                 &:hover {
+//                     display: block;
+                   
+//                 }
+    
+//             }
+//         }
+//     }
+    
+// }
 
 
 /* test @Queries tablet-device*/

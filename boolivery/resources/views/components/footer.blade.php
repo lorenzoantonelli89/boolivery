@@ -16,16 +16,18 @@
             <div class="footer-section">
                 <div class="footer-list">
                 <p>Investitori</p>
-                <a href="{{route('info-company')}}">Chi Siamo</a>
-                <a href="{{route('faq')}}">faq</a>
-                <p>Altro</p>
+                <p><a href="{{route('info-company')}}">Chi Siamo</a></p>
+                <p><a href="{{route('faq')}}">FAQ</a></p>
+                <p>
+                    <a href="{{route('work')}}">Lavora con noi</a>
+                </p>
                 <p>PressRoom</p>
             </div>
             </div>
             <!-- sezione del footer -->
             <div class="footer-section">
             <div class="footer-list">
-            <p>Investitori</p>
+                <p>Investitori</p>
                 <p>Chi Siamo</p>
                 <p>Ristoranti</p>
                 <p>Altro</p>

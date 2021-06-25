@@ -20,19 +20,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // rotta per chiamata axios ristoranti
 Route::get('/restaurants', 'Api\RestaurantHomeController@getRestaurants')
     -> name('restaurants-api');
+// rotta per chiamata axios che ritoran ristoranti filtrati per categoria
+Route::post('/restaurants-filteredCat/{filterCategory}', 'Api\RestaurantHomeController@getRestaurantCategory')
+    -> name('restaurant-name');
+// rotta per chiamata axios che ritoran ristoranti filtrati per nome
+Route::post('/restaurants-filteredName/{filterName}', 'Api\RestaurantHomeController@getRestaurantName')
+    -> name('restaurant-category');        
 // rotta per chiamata axios categorie
 Route::get('/categories', 'Api\CategoryHomeController@getCategories')
     -> name('categories-api');
 //rotta per tornatu tutti i piatti 
-Route::get('/all-plates', 'Api\PlateDetailController@getAllPlates')   
-    -> name('all-plates-api'); 
+Route::get('/popular-plates', 'Api\PlateDetailController@getAllPlates')   
+    -> name('popular-plates'); 
 // rotta per chiamata axios piatti del ristorante selezionato
 Route::get('/plates/{id}', 'Api\PlateDetailController@getPlate')
     -> name('plates-api');
-// rotta per chiamata axios collegamento categoria/ristoranti
-Route::get('/pivot', 'Api\RestaurantHomeController@getRestaurantCategory')
-    -> name('pivot-api');
-
 //rotta per avere ordini
 Route::post('/orderGraph/{id}', 'Api\StatsController@getOrderStats')
     -> name('order-api');

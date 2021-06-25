@@ -3,98 +3,54 @@
 main {
     width: 100%;
 
-      #home-container{
+    #home-container{
+      width: 100%;
+      .myjumbotron {
         width: 100%;
-        .myjumbotron {
-          width: 100%;
-          background-image: url("/storage/graphics/jumbotron.png");
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: cover;
-          display: flex;
-          padding: 150px 0; 
+        // background-image: url("/storage/graphics/jumbotron.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 150px 0; 
 
-          /*.logo-login {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 15px;
-            flex-grow: 1;     
-            align-items: center;
         
-            .logo {
-              width: 150px;
-            }
-          } */
+        .content-jumbotron {
+          height: 100%;
+          @include centring; 
           
-          .welcome {
-            display: flex;
-            flex-direction: column;
-            width: 600px;
-            height: 100%; 
+          h1 {
+            margin-bottom: 30px;
+            font-size: 45px;
+          }
+
+          .research-request {
+            height: 170px;
             
-            .title-research {
-            
-              
-              h1 {
-                margin-bottom: 30px;
-                font-size: 45px;
-              }
+            #guest-request {
+            font-size: 25px;
+            flex-grow: 1;
+            height: 45px;
+            }
+            #guest-request::placeholder {
+              padding-left: 8px;
+              font-size: 16pt;
+            }
+          }
+          .categories{
 
-              .research-request {
-                flex-grow: 1;
-                height: 170px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding: 32px;
-                border-radius: 5px;
-                background-color: white;
+            #category-container-list{
+              margin-top: 30px;
+              list-style-type: none;
+              @include flex(row, flex-start, center);
+              flex-wrap: wrap;
 
-                .input-adresse {
-                  display: flex;
-                  width: 100%;
-                  justify-content: space-between;
-                        
-                  #guest-request {
-                  font-size: 25px;
-                  flex-grow: 1;
-                  height: 45px;
-                  }
-                  #guest-request::placeholder {
-                    padding-left: 8px;
-                    font-size: 16pt;
-                  }
-
-                  #guest-request-click {
-                    background-color: rgb(255, 230, 0);
-                    height: 45px;
-                    width: 100px;
-                    margin-left: 15px;
-                    border: none;
-                    border-radius: 5px;
-                    #guest-request-click:hover {
-                      background-color: #2caead;
-                      color: white;
-                    }
-                  }
-                }
+              .category-list{
+                padding-right: 15px;
               }
             }
-            .categories{
-
-              #category-container-list{
-                margin-top: 30px;
-                list-style-type: none;
-                @include flex(row, center, center);
-                flex-wrap: wrap;
-
-                .category-list{
-                  padding-right: 15px;
-                }
-              }
-            }
-          }   
-        }
+          }
+        }   
+      }
 
         // SEZIONE RISTORANTI -> VISIONE RISTORANTI -> REGOLE DI STILE
         /*@media screen and (min-width: 480px) and (max-width:768px) {
@@ -220,36 +176,24 @@ main {
       }
 
       //   SEZIONE DEDICATA AI RISTORATORI
-      .main-sec-3 {
-        height: 350px;
-        background-image: url("/storage/graphics/sectionRestaurant.png");
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: flex-end;  
-        margin-top: 50px;
-        margin-bottom: 50px;
-          
-          .business-adv {
-            height: 100%;
+      .main-sec-3 {  
+        padding: 100px 0;
+          #business-adv {
             display: flex;
-            justify-content: center;
-            width: 580px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .business-adv h1 {
-              margin-bottom: 15px;
-              }
-
-              span {
-              margin-bottom: 15px;
-              }
-
-              .img-icon {
-              width: 100px;
-              margin-bottom: 15px;
+            .cards-adv {
+              background-color: orange;
+              width: calc(100% / 3);
+              height: 500px;
+              margin-right: 15px;
+              border-radius: 10px;
+            }
+            .cards-adv:last-child{
+              margin-right: 0px;
+            }
+            .cards-adv:hover {
+              transform: scale(1.05);
+              transition: all 1s ease;
+            }
           }
         }
 

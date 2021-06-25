@@ -25,6 +25,12 @@ Route::get('/info-company', 'GuestController@infoCompany')
 //rotta che porta all pagina delle domande frequenti
 Route::get('/faq', 'GuestController@faq') 
     -> name('faq'); 
+//rotta che porta all pagina delle domande frequenti
+Route::get('/contacts', 'GuestController@contacts') 
+    -> name('contacts');  
+//rotta che porta all pagina delle domande frequenti
+Route::get('/work-with-us', 'GuestController@workWhitUs') 
+    -> name('work');         
 // rotta per creazione nuovo ordine
 Route::post('/storeOrder','PaymentController@storeOrder')
     ->name('storeOrder');        
@@ -61,7 +67,6 @@ Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestauran
     -> name('createPlate');
  Route::post('/store-plate/{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
-
 //rotta per visualizzazione grafico ordini relativo a ristorante
 Route::get('/orders-statistics/{id}', 'Admin\RestaurantController@showStats')
     ->name('showStats');

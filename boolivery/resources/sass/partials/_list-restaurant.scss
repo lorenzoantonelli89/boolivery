@@ -1,0 +1,96 @@
+#list-restaurant-container {
+    position: relative;
+    @include centring;
+    @include flex(column, center, center);
+    margin-bottom: 30px;
+
+    #restaurant-user-title{
+        text-transform: uppercase;
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+    a{
+        @include buttonLink($ourlogo, $white, 10px, 20px);
+    }    
+    .restaurant-from-list {
+        @include flex(column, space-between, flex-start);
+        margin-top: 35px;
+        max-width: 100%;
+
+        .restaurantfl-details {
+            border-radius: 10px;
+            @include flex(column, space-between, flex-start);
+            flex-grow: 1;
+            background-color: $ourgrey;
+            padding: 15px 15px;
+            margin-bottom: 30px;
+            > * {
+                margin: 5px 5px;
+            }
+            ul {
+                @include flex(row, flex-start, flex-start);
+                list-style-type: none; 
+
+            }
+            .fa-star {
+                color: $ourlogo;
+            }
+        }
+        .restaurantfl-foto {
+            @include flex(row, flex-start, flex-start);
+            
+            width: 100%;
+            
+            img {
+                border-radius: 10px;
+                width: 100%;
+            }
+        }
+        .restaurantfl-modify {
+            @include flex(row, space-between, center);
+            width: 60%;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+    }
+}
+
+@media screen and(max-width: 1264px) {
+    #list-restaurant-container {  
+
+        .restaurant-from-list {
+            
+            .restaurantfl-details {
+                @include flex(column, space-between, flex-start);
+                flex-grow: 1;
+                background-color: $ourgrey;
+                padding: 15px 0;
+                margin-bottom: 30px;
+                > * {
+                    margin: 5px 5px;
+                }
+
+                ul {
+                    @include flex(column, flex-start, flex-start);
+                    list-style-type: none; 
+
+                }
+
+                .fa-star {
+                    color: $ourlogo;
+                }
+            }
+
+            .restaurantfl-foto {
+                @include flex(row, flex-start, flex-start);
+                
+                width: 100%;
+                
+                img {
+                    
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
