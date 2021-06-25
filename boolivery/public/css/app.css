@@ -1340,8 +1340,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 25px;
-  margin-top: 25px;
+  padding: 25px 0;
 }
 
 .backend-container,
@@ -1382,7 +1381,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .superlogo {
-  margin-bottom: 25px;
+  margin: 25px 0;
   width: 100%;
 }
 
@@ -1558,8 +1557,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div .editPlate {
-  font-size: 50px;
-  color: #1b1a1a;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1826,14 +1823,13 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .editPlate .backToPlateList {
-  background-color: #00c2b8;
-  text-align: center;
-  width: 100px;
-  border-radius: 7px;
   text-decoration: none;
+  background-color: #00c2b8;
   color: white;
-  margin-left: 20px;
   padding: 8px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin-left: 20px;
 }
 
 .editPlate .container {
@@ -1849,7 +1845,12 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
-.editPlate .container h2 {
+.editPlate .container .editPlateTitle {
+  padding-top: 2px;
+  font-family: "Pacifico", cursive;
+}
+
+.editPlate .container .editPlateTitle h2 {
   margin: 27px 11px 60px 0;
 }
 
@@ -1940,13 +1941,13 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .editPlate .container button {
+  text-decoration: none;
   background-color: #0febe0;
   color: white;
-  border-radius: 15px;
   padding: 10px 30px;
-  margin-bottom: 20px;
-  font-family: "Pacifico", cursive;
-  font-size: 21px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 30px 0;
 }
 
 /* test @Queries mobile-device*/
@@ -2063,24 +2064,565 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
+/* @mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin buttonLink ($bg, $color, $topDown, $leftRight){
+    text-decoration: none;
+    background-color: $bg;
+    color: $color;
+    padding: $topDown $leftRight;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+@mixin centring {
+    width: 70%;
+    margin: 0 auto;
+}
+ */
+
+.createPlate .createPlateContainer {
+  height: 100%;
+  width: 100%;
+  background-image: url("/storage/graphics/CreatePlateMainBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: cover;
+  padding: 15px 0;
+}
+
+.createPlate .backToPlateList {
+  background-color: #00c2b8;
+  text-align: center;
+  width: 100px;
+  border-radius: 7px;
+  text-decoration: none;
+  color: white;
+  margin-left: 20px;
+  padding: 8px 20px;
+  text-transform: uppercase;
+}
+
+.createPlate .createPlateContainerForm {
+  width: 45%;
+  min-height: 780px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 15px auto;
+  background-image: url("/storage/graphics/createPlateBg.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: white;
+  font-family: "Pacifico", cursive;
+}
+
+.createPlate .createPlateContainerForm .createTitle {
+  padding-top: 2px;
+}
+
+.createPlate .createPlateContainerForm .createTitle h2 {
+  margin: 27px 11px 60px 0;
+}
+
+.createPlate .createPlateContainerForm .form-group {
+  width: 75%;
+  min-height: 60px;
+  margin: auto;
+  margin-bottom: 35px;
+  text-align: left;
+  font-family: "Pacifico", cursive;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.createPlate .createPlateContainerForm .form-group input {
+  border-radius: 7px;
+  outline: transparent;
+  padding: 3px 8px;
+  margin-left: 10px;
+  height: 25px;
+}
+
+.createPlate .createPlateContainerForm .form-group .radio {
+  width: 50%;
+  display: flex;
+  margin-top: 5px;
+}
+
+.createPlate .createPlateContainerForm .form-group .radio > input {
+  margin-right: 15px;
+}
+
+.createPlate .createPlateContainerForm .form-group .radio > label {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.createPlate .createPlateContainerForm .form-group .visibility {
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.createPlate .createPlateContainerForm .form-group .descInp {
+  font-family: "Lato", sans-serif;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.createPlate .createPlateContainerForm .insertImg {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.createPlate .createPlateContainerForm .insertImg .insertFile {
+  width: 86px;
+}
+
+.createPlate .createPlateContainerForm .insertImg .protoImg {
+  height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border: 2px solid #575555;
+  border-radius: 13px;
+}
+
+.createPlate .createPlateContainerForm .price > span {
+  padding-left: 18px;
+  position: relative;
+}
+
+.createPlate .createPlateContainerForm .price > span input {
+  width: 100px;
+  padding-left: 20px;
+}
+
+.createPlate .createPlateContainerForm .euro {
+  position: absolute;
+  top: 7px;
+  right: 85px;
+  font-family: "Lato";
+  font-weight: bold;
+  font-size: 17px;
+  color: black;
+}
+
+.createPlate .createPlateContainerForm button {
+  text-decoration: none;
+  background-color: #0febe0;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+  .createPlate .createPlateContainerForm {
+    width: 100%;
+  }
+
+  .createPlate .createPlateContainerForm .form-group input {
+    width: 45%;
+    border-radius: 7px;
+    outline: transparent;
+    padding: 3px 8px;
+    margin-left: 10px;
+    height: 25px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group .radio {
+    width: 210px;
+    display: flex;
+    margin-top: 5px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group .radio > input {
+    margin-right: 15px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group .radio > label {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .createPlate .createPlateContainerForm .form-group .visibility {
+    width: 50%;
+    margin-bottom: 12px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group .descInp {
+    font-family: "Lato", sans-serif;
+    border-radius: 10px;
+    padding: 7px;
+  }
+
+  .createPlate .createPlateContainerForm .insertImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .createPlate .createPlateContainerForm .insertImg > input {
+    width: 83px;
+    margin-right: 20px;
+  }
+
+  .createPlate .createPlateContainerForm .insertImg .protoImg {
+    width: 20%;
+    height: 20%;
+  }
+
+  .createPlate .createPlateContainerForm .euro {
+    top: 12%;
+    right: 67%;
+    font-family: "Lato";
+  }
+}
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .createPlate .createPlateContainerForm {
+    width: 65%;
+    margin-top: 40px;
+  }
+}
+
+.blink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2caead;
+  padding: 5px;
+  height: 50px;
+  width: 150px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.my-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.div-margin {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.abutton {
+  padding: 7px;
+  font-size: 18px;
+  background-color: #28CCBC;
+  color: white;
+}
+
+/* @mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin buttonLink ($bg, $color, $topDown, $leftRight){
+    text-decoration: none;
+    background-color: $bg;
+    color: $color;
+    padding: $topDown $leftRight;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+@mixin centring {
+    width: 70%;
+    margin: 0 auto;
+}
+ */
+
+.createRestContainer {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.createRestContainer .turnBackCont {
+  margin: 30px 0;
+}
+
+.createRestContainer .turnBackCont .turnBack {
+  text-decoration: none;
+  background-color: #00c2b8;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.createRestContainer .formCreateRest {
+  width: 45%;
+  min-height: 780px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 15px auto;
+  background-image: url("/storage/graphics/TikTok.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  font-family: "Pacifico", cursive;
+}
+
+.createRestContainer .formCreateRest .createRestTitle {
+  padding-top: 2px;
+}
+
+.createRestContainer .formCreateRest .createRestTitle h2 {
+  margin: 27px 11px 40px 0;
+}
+
+.createRestContainer .formCreateRest .form-group {
+  width: 75%;
+  min-height: 35px;
+  margin: auto;
+  margin-bottom: 35px;
+  text-align: left;
+  font-family: "Pacifico", cursive;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.createRestContainer .formCreateRest .form-group input {
+  width: 45%;
+  border-radius: 7px;
+  outline: transparent;
+  padding: 3px 8px;
+  margin-left: 10px;
+  height: 25px;
+}
+
+.createRestContainer .formCreateRest .insert-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.createRestContainer .formCreateRest .insert-img input {
+  white-space: break-spaces;
+}
+
+.createRestContainer .formCreateRest .insert-img label {
+  white-space: nowrap;
+}
+
+.createRestContainer .formCreateRest p {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.createRestContainer .formCreateRest .categoryCheckboxes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 10px;
+}
+
+.createRestContainer .formCreateRest .categoryCheckboxes input {
+  margin-left: 5px;
+}
+
+.createRestContainer .formCreateRest .categoryCheckboxes label {
+  font-size: 14px;
+}
+
+.createRestContainer .formCreateRest button {
+  text-decoration: none;
+  background-color: #0febe0;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+  .createRestContainer {
+    /*  @include centring; */
+    width: 100%;
+  }
+
+  .createRestContainer .formCreateRest {
+    width: 100%;
+  }
+}
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .createRestContainer {
+    /*  @include centring; */
+    width: 100%;
+  }
+
+  .createRestContainer .formCreateRest {
+    width: 85%;
+  }
+}
+
+.blink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2caead;
+  padding: 5px;
+  height: 50px;
+  width: 150px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.my-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.div-margin {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.abutton {
+  padding: 7px;
+  font-size: 18px;
+  background-color: #28CCBC;
+  color: white;
+}
+
+#work-container #section-1 {
+  padding-top: 100px;
+  position: relative;
+  /*#absolute-octagon {
+      background-image: url();
+      clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+      width: 400px;
+      height: 400px;
+      border: 2px solid white;
+      position: absolute;
+      top: 40%;
+      right: 8%;
+  }*/
+}
+
+#work-container #section-1 #absolute-trapezoid {
+  background-color: #28CCBC;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  height: 400px;
+  -webkit-clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 60%, 100% 0, 100% 100%, 0% 100%);
+  z-index: -1;
+}
+
+#work-container #section-1 #text-intro p {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#work-container #section-1 #text-intro #workwithus {
+  background-color: #006355;
+  width: 123px;
+}
+
+#work-container #section-1 #text-intro #workwithus p {
+  font-size: 30pt;
+}
+
+#work-container #section-1 #text-intro #workwithus p .colored {
+  color: #28CCBC;
+}
+
+#work-container #section-1 #text-dx {
+  float: right;
+  margin-top: 20px;
+}
+
+#work-container #section-1 #text-dx h1 {
+  margin-bottom: 20px;
+}
+
+#work-container #section-1 #text-dx a {
+  color: white;
+  text-decoration: none;
+}
+
+#work-container #section-1 #text-dx a #button {
+  background-color: #8c69ff;
+  border-radius: 5px;
+  width: 200px;
+  height: 40px;
+  padding: 0 15px;
+}
+
+#work-container #section-1 #text-dx a #button span {
+  vertical-align: middle;
+  line-height: 40px;
+}
+
 #faq-container {
   padding-top: 30px;
   padding-bottom: 100px;
 }
 
 #faq-container #absolute-trapezoid {
-  background-color: coral;
+  background-color: #a6ffdb;
   position: absolute;
   top: 0%;
   width: 100%;
-  height: 310px;
+  height: 500px;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
   z-index: -1;
 }
 
 #faq-container #back-h1 {
-  background-color: #ff7b00;
+  background-color: #009458;
   width: 140px;
   height: 80px;
   -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
@@ -2107,7 +2649,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 #faq-container #faq #quest li p:first-child:hover {
-  font-size: 20pt;
+  font-size: 15pt;
 }
 
 #faq-container #faq #quest li p:first-child {
