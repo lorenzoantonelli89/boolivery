@@ -8,10 +8,11 @@
 {{-- inizio form --}}
        
          <div class="container">
-
-            <h2>
-                Modifica Piatto:
-            </h2>
+            <div class="editPlateTitle">
+              <h2>
+                  Modifica Piatto:
+              </h2>
+            </div>
 
             <form method="POST" enctype="multipart/form-data" action="{{route('updatePlate', $plate -> id)}}">
 
