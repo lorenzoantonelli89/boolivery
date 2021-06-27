@@ -16,8 +16,19 @@
 <body>
     <div id="container-mail">
         <h1>
-            Gentile {{$order -> name}} {{$order -> lastname}} il suo ordine è in consegna, l'orario previsto è: {{$order -> time_delivery}}
+            Gentile {{$order -> name}} {{$order -> lastname}}!! 
         </h1>
+        <h3>
+        il suo ordine è in consegna
+        </h3>
+        <h4>l'orario previsto è: {{$order -> time_delivery}}</h4>
+        <br>
+        <p>
+        Boolivery SRL <br>
+        sede legale: via La Fame, 9 <br>
+        20146, Milano <br> 
+        </p>
+        
     </div>
 </body>
 </html>

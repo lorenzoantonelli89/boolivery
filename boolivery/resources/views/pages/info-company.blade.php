@@ -9,24 +9,24 @@
     <main>
         <div id="info-container">
             <div class="backend-container">
-            <img class="infotitolo" src="/storage/graphics/infotitoloback.png" alt="">
+            <h1>BACKEND</h1>
             
             <div class="images-container">
                 <div class="info-foto-details">
 
-                    <img class="infofotoprofilo" src="/storage/graphics/infostaffnicola.png" alt="">
+                    <img class="infofotoprofilo" src="/storage/graphics/chisiamomatteo.png" alt="">
                     <h2>Nicola Milani</h2>
                     <span>Cucina Codice</span>
                 </div>
                 <div class="info-foto-details">
 
-                <img class="infofotoprofilo" src="/storage/graphics/infostafflorenzo.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/chisiamolorenzo.png" alt="">
                 <h2>Lorenzo Antonelli</h2>
                     <span>Chef Leader</span>
 
                 </div>
                 <div class="info-foto-details">
-                <img class="infofotoprofilo" src="/storage/graphics/infostaffgiordano.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/chisiamovita.png" alt="">
 
                 <h2>Giordano Vita</h2>
                     <span>Degusta Metodi</span>
@@ -35,11 +35,11 @@
             </div>
 
             <div class="frontend-container">
-            <img class="infotitolo" src="/storage/graphics/infotitolofront.png" alt="">
+                <h1>FRONTEND</h1>
                 <div class="images-container">
                 <div class="info-foto-details">
 
-                <img class="infofotoprofilo" src="/storage/graphics/infostaffjacopo.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/chisiamojacopo.png" alt="">
                 <h2>Jacopo Zandonà</h2>
                     <span>Boomer alla Griglia</span>
                 <h1></h1>
@@ -49,7 +49,7 @@
 
                 <div class="info-foto-details">
 
-                <img class="infofotoprofilo" src="/storage/graphics/infostaffsimone.png" alt="">
+                <img class="infofotoprofilo" src="/storage/graphics/chisiamosimone.png" alt="">
                 <h2>Simone Marzolla</h2>
                     <span>Display Menu: none</span>
                 <h1></h1>
