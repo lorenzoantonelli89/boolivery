@@ -39,7 +39,7 @@ class PaymentController extends Controller
             'customer' => [
                 'firstName' => $order -> name,
                 'lastName' => $order -> lastname,
-                'email' => $order -> email,
+                'email' => $order -> customer_email,
             ],
             'options' => [
                 'submitForSettlement' => true
@@ -50,7 +50,7 @@ class PaymentController extends Controller
             $transaction = $result->transaction;
             $order -> status = true;
             $order -> save();
-            Mail::to($order -> email)->send(new OrderShipped($order));
+            Mail::to($order -> customer_email)->send(new OrderShipped($order));
             return view('pages.checkout', compact('transaction', 'order'));
         // se non è andato a buon fine lo statu ordine rimane a false e ritorno in pagina checkout con un errore 
         } else {
@@ -71,7 +71,7 @@ class PaymentController extends Controller
         $validated = $request -> validate([
             'name'=> 'required|min:3|max:255',
             'lastname'=> 'required|min:3|max:255',
-            'email'=>'required|email:rfc,dns',
+            'customer_email'=>'required|email:rfc,dns',
             'shipping_address'=> 'required|min:3|max:255',
             'date_delivery'=> 'required|date|after:yesterday',
             'time_delivery'=> 'required|date_format:H:i',

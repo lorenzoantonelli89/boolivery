@@ -2,13 +2,13 @@
 #login-container{
     height: 100vh;
     @include flex(column, flex-start, center);
-    background-color: orange;
+    background-color: $jumbogreen;
 
     #container-top{
         margin: 100px 0;
 
         span{
-            color: #fff;
+            color: salmon;
             font-size: 25px;
             text-transform: uppercase;
         }
@@ -17,7 +17,7 @@
         form{
             .container-email-password{
                 .label{
-                    color: #fff;
+                    color: salmon;
                     font-size: 18px;
                 }
                 .container-input{
@@ -25,8 +25,15 @@
 
                     .input-text{
                         width: 220px;
-                        height: 40px;
-                        padding: 0 8px;
+                        height: 45px;
+                        padding-left: 8px;
+                        border: 1px solid $ourlogo;
+                        border-radius: 10px;
+                        font-size: 25px;
+
+                        &:focus{
+                            outline: none;
+                        }
                     }
                 }
             }
@@ -34,22 +41,18 @@
                 margin-bottom: 10px;
 
                 .label{
-                    color: #fff;
+                    color: salmon;
                     font-size: 16px;
                 }
             }
             .container-button{
                 #submit{
-                    padding: 10px 20px;
+                    @include buttonLink($ourlogo, $white, 10px, 20px);
                     border: none;
-                    border-radius: 12px;
-                    background-color: lawngreen;
-                    color: #fff;
-                    font-size: 16px;
+                    cursor: pointer;
 
                     &:hover{
-                        background-color: purple;
-                        cursor: pointer;
+                        background-color: salmon;
                     }
                 }
             }

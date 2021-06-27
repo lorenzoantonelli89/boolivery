@@ -15,7 +15,6 @@
         <div id="triangle-topleft" :class="(scrollOn == true) ? 'active' : ''">
         </div>
         <div class="content-jumbotron"> 
-          <img id="slice-pizza" src="{{asset('/storage/graphics/pizzaslice.png')}}" alt=""> 
           <h1>
             I piatti che ami, a domicilio
           </h1>
@@ -38,7 +37,7 @@
       </div>
       <ul>
         <li v-for="elem in currentRestaurants" v-on:click="getActiveRestaurant(elem)">
-          <a :href="getHref">
+          <a :href="'/restaurant-details/' + elem.id">
             <div class="restaurants">
               <img :src="'/storage/restaurant-profile/' + elem.image_profile " alt="Copertina ristorante">
               <div id="text">
@@ -109,6 +108,15 @@
         this.autoSlide();
         document.addEventListener('scroll', this.scrollDown);
 
+        // chiamata axios che mi ritorna array piatti popolari 
+        axios.get('/api/popular-plates')
+            .then(res => {
+              this.platesPopular = res.data;
+                console.log(this.platesPopular);
+            })
+            .catch(error => {
+                console.log(error)
+            })
         // chiamata axio che ritorna array di tutte le categorie
         axios.get('/api/categories')
             .then(res => {
@@ -123,15 +131,6 @@
                 this.restaurantsPopular = res.data;
                 this.currentRestaurants = this.restaurantsPopular;
                 
-            })
-            .catch(error => {
-                console.log(error)
-            })
-        // chiamata axios che mi ritorna array piatti popolari 
-        axios.get('/api/popular-plates')
-            .then(res => {
-              this.platesPopular = res.data;
-                console.log(this.platesPopular);
             })
             .catch(error => {
                 console.log(error)
@@ -185,10 +184,6 @@
           }
 
         },
-        // funzione che valora il dato active restaurant al click del ristorante selezionato
-        getActiveRestaurant: function(elem){
-            this.activeRestaurant = elem.id;
-        },
         // slider che passa all'immagine successiva
         nextImg: function () {
 
@@ -211,10 +206,7 @@
         },
       },
       computed: {
-          // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
-        getHref: function(){
-            return '/restaurant-details/' + this.activeRestaurant;
-        },
+       
       }
   });
 </script>

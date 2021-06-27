@@ -31,7 +31,7 @@ main {
       height: 500px;
       background-image: url("/storage/graphics/rider.png");
       background-repeat: no-repeat;
-      background-position: 85% 40%;
+      background-position: 90% 40%;
       position: relative;
       background-color: $jumbogreen;
 
@@ -53,12 +53,6 @@ main {
         @include centring;
         position: relative;
         
-        #slice-pizza{
-          width: 100px;
-          position: absolute;
-          top: 50px;
-          left: 45%;
-        }
         h1 {
           margin-bottom: 30px;
           font-size: 45px;

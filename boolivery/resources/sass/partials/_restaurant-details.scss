@@ -1,6 +1,9 @@
 @import 'partials/variables';
 @import 'partials/common';
 
+#restaurant-details-container{
+    padding-top: 50px;
+}
 .restaurant-details-container {
     @include flex(column, flex-start, flex-start);
 }
@@ -8,10 +11,9 @@
 // ZONA SUPERIORE: descrizione ristorante e foto
 .restaurant-show-container {
     height: 370px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    @include centring;
     @include flex(row, space-between, flex-start );
-    
+    padding-bottom: 50px;
 
 
 // Indirizzo e descrizione
@@ -52,6 +54,12 @@
                 overflow: scroll;
                 height: 150px;
                 
+            }
+            .atHome{
+
+                a{
+                    @include buttonLink($ourlogo, $white, 10px, 20px);
+                }
             }
         }
 
@@ -139,7 +147,8 @@
                 height: 200px;
                 @include flex(row, space-around, center);
                 margin-top: 15px;
-                background-color: white;
+                background-color: $white;
+                border-radius: 10px;
                 
 
                 .plate-description {
@@ -172,6 +181,15 @@
                         color: $ourred;
                         font-size: 30px;
                         
+                    }
+
+                    .container-add-cart{
+
+                        button{
+                            @include buttonLink($ourlogo, $white, 5px, 10px);
+                            border: none;
+                            cursor: pointer;
+                        }
                     }
                 }
         
@@ -234,6 +252,7 @@
 
                    div {
                        width: 100%;
+                       text-align: center;
                        
                    }
                     
@@ -246,7 +265,15 @@
                    }
 
                    input {
-                       width: 100%;
+                        width: 75%;
+                        height: 30px;
+                        padding-left: 8px;
+                        border: 1px solid $ourlogo;
+                        border-radius: 5px;
+
+                        &:focus{
+                            outline: none;
+                        }
                    }
                 // INPUT DEL PREZZO TOTALE NASCOSTO
                    .total-price {
@@ -275,12 +302,10 @@
                 }
 
                 .shop-link {
-                    height: 50px;
-                    width: 100%;
-                    margin-top: 15px;
-                    background-color: $ouryellow;
-                    color: black;
+                    @include buttonLink($ouryellow, black, 10px, 20px);
                     @include flex(row, center, center);
+                    border: none;
+                    cursor: pointer;
                 
                     i {
                         width: 35px;
@@ -489,8 +514,6 @@
                           
                 .shop-link {
                      
-                    height: 50px;
-                    width: 370px;
                     background-color: $ouryellow;
                     color: black;
                     @include flex(row, center, center);

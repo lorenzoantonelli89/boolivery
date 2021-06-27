@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  background-color: orange;
+  background-color: #d0eb98;
 }
 
 #login-container #container-top {
@@ -51,13 +51,13 @@
 }
 
 #login-container #container-top span {
-  color: #fff;
+  color: salmon;
   font-size: 25px;
   text-transform: uppercase;
 }
 
 #login-container #container-form form .container-email-password .label {
-  color: #fff;
+  color: salmon;
   font-size: 18px;
 }
 
@@ -67,8 +67,15 @@
 
 #login-container #container-form form .container-email-password .container-input .input-text {
   width: 220px;
-  height: 40px;
-  padding: 0 8px;
+  height: 45px;
+  padding-left: 8px;
+  border: 1px solid #28CCBC;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+#login-container #container-form form .container-email-password .container-input .input-text:focus {
+  outline: none;
 }
 
 #login-container #container-form form .container-remember {
@@ -76,22 +83,88 @@
 }
 
 #login-container #container-form form .container-remember .label {
-  color: #fff;
+  color: salmon;
   font-size: 16px;
 }
 
 #login-container #container-form form .container-button #submit {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
   padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
   border: none;
-  border-radius: 12px;
-  background-color: lawngreen;
-  color: #fff;
-  font-size: 16px;
+  cursor: pointer;
 }
 
 #login-container #container-form form .container-button #submit:hover {
-  background-color: purple;
+  background-color: salmon;
+}
+
+#register-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #d0eb98;
+}
+
+#register-container #container-top {
+  margin: 100px 0;
+}
+
+#register-container #container-top span {
+  color: salmon;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+#register-container #container-form form .container-email-password-name .label {
+  color: salmon;
+  font-size: 18px;
+}
+
+#register-container #container-form form .container-email-password-name .container-input {
+  margin: 10px 0;
+}
+
+#register-container #container-form form .container-email-password-name .container-input .input-text {
+  width: 220px;
+  height: 45px;
+  padding-left: 8px;
+  border: 1px solid #28CCBC;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+#register-container #container-form form .container-email-password-name .container-input .input-text:focus {
+  outline: none;
+}
+
+#register-container #container-form form .container-remember {
+  margin-bottom: 10px;
+}
+
+#register-container #container-form form .container-remember .label {
+  color: salmon;
+  font-size: 16px;
+}
+
+#register-container #container-form form .container-button #submit {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
   cursor: pointer;
+}
+
+#register-container #container-form form .container-button #submit:hover {
+  background-color: salmon;
 }
 
 main {
@@ -128,7 +201,7 @@ main #home-container .myjumbotron {
   height: 500px;
   background-image: url("/storage/graphics/rider.png");
   background-repeat: no-repeat;
-  background-position: 85% 40%;
+  background-position: 90% 40%;
   position: relative;
   background-color: #d0eb98;
 }
@@ -153,13 +226,6 @@ main #home-container .myjumbotron .content-jumbotron {
   width: 70%;
   margin: 0 auto;
   position: relative;
-}
-
-main #home-container .myjumbotron .content-jumbotron #slice-pizza {
-  width: 100px;
-  position: absolute;
-  top: 50px;
-  left: 45%;
 }
 
 main #home-container .myjumbotron .content-jumbotron h1 {
@@ -457,6 +523,10 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   color: white;
 }
 
+#restaurant-details-container {
+  padding-top: 50px;
+}
+
 .restaurant-details-container {
   display: flex;
   flex-direction: column;
@@ -466,12 +536,13 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 .restaurant-show-container {
   height: 370px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  width: 70%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  padding-bottom: 50px;
 }
 
 .restaurant-show-container .restaurant-description {
@@ -510,6 +581,15 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   margin-right: 15px;
   overflow: scroll;
   height: 150px;
+}
+
+.restaurant-show-container .restaurant-details .atHome a {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
 }
 
 .restaurant-show-container .restaurant-foto-order {
@@ -595,7 +675,8 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   justify-content: space-around;
   align-items: center;
   margin-top: 15px;
-  background-color: white;
+  background-color: #ffff;
+  border-radius: 10px;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description {
@@ -629,6 +710,17 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-minus-square {
   color: #ff0000;
   font-size: 30px;
+}
+
+.plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .container-add-cart button {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
@@ -699,6 +791,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 .plates-choosing-view .momentary-total .mykart div {
   width: 100%;
+  text-align: center;
 }
 
 .plates-choosing-view .momentary-total .mykart label {
@@ -709,7 +802,15 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .plates-choosing-view .momentary-total .mykart input {
-  width: 100%;
+  width: 75%;
+  height: 30px;
+  padding-left: 8px;
+  border: 1px solid #28CCBC;
+  border-radius: 5px;
+}
+
+.plates-choosing-view .momentary-total .mykart input:focus {
+  outline: none;
 }
 
 .plates-choosing-view .momentary-total .mykart .total-price {
@@ -735,15 +836,18 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .plates-choosing-view .momentary-total .shop-link {
-  height: 50px;
-  width: 100%;
-  margin-top: 15px;
+  text-decoration: none;
   background-color: #f4e432;
   color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  border: none;
+  cursor: pointer;
 }
 
 .plates-choosing-view .momentary-total .shop-link i {
@@ -939,8 +1043,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 
   .plates-choosing-view .momentary-total .shop-link {
-    height: 50px;
-    width: 370px;
     background-color: #f4e432;
     color: black;
     display: flex;
