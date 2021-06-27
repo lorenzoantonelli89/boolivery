@@ -6,7 +6,7 @@
 @section('content')
 <main>
     <div id="restaurant-details-container">
-        <div class="restaurant-show-container div-margin">             
+        <div class="restaurant-show-container">             
             <div class="restaurant-description">                       
                 <img src="{{ asset('/storage/restaurant-profile/' . $restaurant -> image_profile) }}" alt="">
                     <!-- ZONA ALTO SX nome, indirizzo e descrizione -->
@@ -22,7 +22,7 @@
                     <!-- descrizione -->
                     <div class="restaurant-description-text">
                     
-                        <p >
+                        <p>
                             <i>{{$restaurant -> description}}</i>
                         </p>
 
@@ -30,7 +30,7 @@
                         
                     <div class="atHome">
                         <a href="{{route('home')}}">
-                            Torna alla lista principale
+                            Torna alla Home
                         </a>
                     </div>        
                 </div>
@@ -84,7 +84,7 @@
                                             {{$plate -> price}}&euro;
                                         </h3>
                                         <!-- bottoni per aggiungere o togliere un piatto -->
-                                        <div>
+                                        <div class="container-add-cart">
                                             <span>
                                                 <button id="{{$plate -> id}}" v-on:click="addCart({{$plate}})">
                                                     {{-- <i class="fas fa-plus-circle"></i> --}}
@@ -124,7 +124,7 @@
                                         <label for="email">
                                             Email
                                         </label>
-                                        <input type="email" id="email" name="email">
+                                        <input type="email" id="email" name="customer_email">
                                     </div>
                                     <!-- campo dell'indirizzo -->
                                     <div>
