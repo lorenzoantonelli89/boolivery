@@ -2,36 +2,58 @@
 
 @section('content')
 <main>
-    <div class="container" id="appChart">
-        {{-- titolo --}}
-        <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
-        {{-- scegli anno --}}
-        <div>
-            <label for="year-choice">Scegli l'anno da visualizzare</label>
-            <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
-                <option disabled value="">Seleziona un anno</option>
-                {{-- visualizza media per mese di tutti gli anni --}}
-                <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
-                {{-- visualizza ciascun anno --}}
-                <option v-for="year in years" :value="year">@{{year}}</option>
-            </select>
-        </div>
-        {{-- GRAFICO responsive --}}
-        <div style="width:50vw">
-            <canvas id="myChart" width="600" height="400"></canvas>
-        </div>
-        {{-- bottone per andare a vedere dettagli ordine --}}
-        <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
-            <button style="background-color:red; padding: 10px; ">Vai a vedere lista ordini</button>
-        </a>
-
+<div class="container" id="appOrders">
+    {{-- titolo --}}
+    <h1>Ordini ricevuti da {{$restaurant->id}}.{{$restaurant->name}}</h1>
+    {{-- scegli anno --}}
+    <div>
+        <label for="year-choice">Scegli l'anno da visualizzare</label>
+        <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
+            <option disabled value="">Seleziona un anno</option>
+            {{-- visualizza media per mese di tutti gli anni --}}
+            <option value="0">Tutti gli ordini</option> 
+            {{-- visualizza ciascun anno --}}
+            <option v-for="year in years" :value="year">@{{year}}</option>
+        </select>
     </div>
-</main>  
+    {{-- bottone per vedere statistiche ordini --}}
+    <a href="{{route('showStats', encrypt($restaurant -> id))}}">
+        <button style="background-color:red; padding: 10px; ">Vai a vedere grafico</button>
+    </a>
+    {{-- visualizzazione ordini --}}
+    <div>
+        <table>
+            <tr>
+                <th># ORDINE</th>
+                <th>CLIENTE</th>
+                <th>INDIRIZZO DI CONSEGNA</th>
+                <th>EMAIL</th>
+                <th>DATA E ORA DI CONSEGNA</th>
+                <th>PREZZO TOTALE €</th>
+                <th>STATUS ORDINE</th>
+                <th>PIATTI ORDINATI</th>
+            </tr>
+            <tr v-for="order in orders">
+                <td>@{{order.order_id}}</td>
+                <td>@{{order.order_name}} @{{order.order_lastname}}</td>
+                <td>@{{order.shipping_address}}</td>
+                <td>@{{order.customer_email}}</td>
+                <td>@{{order.date_delivery}} @@{{order.time_delivery}}</td>
+                <td>@{{order.total_price}} €</td>
+                <td><div :class="order.status == 1 ? 'paid' : 'not-paid'"></div></td>
+                <td>PIATTI ORDINATI</td>
+            </tr>
+        </table>
+        </ul>
+    </div>
 
+
+</div>   
+</main>
 <script>
 
     new Vue({
-        el: '#appChart',
+        el: '#appOrders',
         data: {
             sum: 0, // somma € singolo mese
             totEuro: [], // array di € da gennaio a dicembre 
@@ -40,62 +62,9 @@
             years: [], // array dinamico degli anni in cui ho ordini
             chosenYear:'', //anno selezionato
             activeChart:'', //grafico attivo da distruggere e ricostruire
+            orders:[]
         },
         methods: {
-            chartCreate: function(){ // funzione richiamata per montare il grafico
-                const ctx = document.getElementById('myChart');
-                let myChart = new Chart(ctx, {
-                    data: { //dati da passare al grafico
-                        labels: ['January', 'February','March', 'April', 'May','June','July','August','September','October','November','December'], //asse X
-                        datasets: [
-                            {
-                                type: 'line', //tipo di visulizzazione dati
-                                label: 'Tot ordini in €', //nome asse Y left
-                                backgroundColor: 'rgb(0, 194, 184)',
-                                borderColor: 'rgb(0, 194, 184)',
-                                yAxisID: 'id1',
-                                data: this.totEuro, // tot Vendite (€)
-                            },
-                            {
-                                type: 'bar', //tipo di visulizzazione dati
-                                label: 'Tot ordini', //nome asse Y right
-                                backgroundColor: 'rgb(252, 106, 1)',
-                                yAxisID: 'id2',
-                                data: this.tot // tot Orders
-                            }
-                        ]
-                    },
-                    options: {
-                        maintainAspectRatio: false, // responsiveness
-                        scales: {
-                            'id1':{ // stile asse Y left
-                                type: 'linear',
-                                position:'left',
-                                title: {
-                                    display: true,
-                                    text: 'Totale ordini in €',
-                                    color: 'rgb(0, 194, 184)',
-                                },
-                                ticks: { // funzione per associare € ai dati scritti sull'asse
-                                    callback: function(value,index,values){
-                                        return value + '€';
-                                    }
-                                }
-                            },
-                            'id2':  { // stile asse Y right
-                                type: 'linear',
-                                position: 'right',
-                                title: {
-                                    display: true,
-                                    text: 'Tot ordini',
-                                    color: 'rgb(252, 106, 1)',
-                                }
-                            }
-                        }
-                    }
-                });
-               this.activeChart = myChart; //stabilisco quale è il grafico che vedo , da distruggere e ricostruire
-            },
             showYear: function(){ // funzione per stabilire anno selezionato
                 this.totEuro= [];
                 this.tot= [];
@@ -116,6 +85,7 @@
                                     this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
                                     if(orderIds.indexOf(order['order_id']) == -1){ //pusho order_id univoci
                                         orderIds.push(order['order_id']);
+                                        this.orders.push(order);
                                     }
                                 }
                             }
@@ -123,8 +93,6 @@
                             this.totEuro.push(this.sum); //per ogni mese, pusho il valore degli €
                             this.tot.push(this.counter); //per ogni mese, pusho il valore delle qty
                         }
-                        this.activeChart.destroy(); //distruggo grafico
-                        this.chartCreate(); //ricreo grafico
                     })
                 } else{ // chiamata in caso sia selezionato un anno
                     axios.post('/api/orderYear/' + {{$restaurant->id}}  + '/' + this.chosenYear) //chiamata per anno selezionato
@@ -143,6 +111,7 @@
                                     this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
                                     if(orderIds.indexOf(order['order_id']) == -1){
                                         orderIds.push(order['order_id']);
+                                        this.orders.push(order);
                                     }
                                 }
                             }
@@ -150,8 +119,6 @@
                             this.totEuro.push(this.sum);
                             this.tot.push(this.counter);
                         }
-                        this.activeChart.destroy();//distruggo grafico
-                        this.chartCreate();//ricreo grafico
                     })
                 }
             }
@@ -178,6 +145,8 @@
                             this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
                             if(orderIds.indexOf(order['order_id']) == -1){
                                 orderIds.push(order['order_id']);
+                                this.orders.push(order);
+                                console.log(this.orders);
                             }
                         }
                     }
@@ -186,11 +155,9 @@
                     this.tot.push(this.counter);
                 }
                 this.years = unorderedYears.sort(function(a, b){return b-a}); // array ordinato ASC di anni disponibili.
-                this.chartCreate(); // dopo aver richiamato i dati, creo grafico del refresh
             })
         }
     });
 
 </script>
-
 @endsection

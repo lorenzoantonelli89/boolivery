@@ -1,0 +1,16 @@
+#appOrders.container{
+    width: 1140px;
+    margin: auto;
+    div.paid{
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: green;
+    }
+    div.not-paid{
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+    }
+}

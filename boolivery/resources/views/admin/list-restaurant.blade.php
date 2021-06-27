@@ -68,6 +68,12 @@
                     <a href="{{route('showStats', encrypt($restaurant -> id))}}">
                         view statistic
                     </a>
+                    <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
+                        view all Orders
+                    </a>
+                    <a href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
+                        delete
+                    </a>
                 </div>
             </div>
             @endforeach 

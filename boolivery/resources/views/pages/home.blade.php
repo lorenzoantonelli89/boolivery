@@ -14,7 +14,8 @@
     <div class=myjumbotron>
         <div id="triangle-topleft" :class="(scrollOn == true) ? 'active' : ''">
         </div>
-        <div class="content-jumbotron">  
+        <div class="content-jumbotron"> 
+          <img id="slice-pizza" src="{{asset('/storage/graphics/pizzaslice.png')}}" alt=""> 
           <h1>
             I piatti che ami, a domicilio
           </h1>
@@ -58,18 +59,16 @@
           <i class="fas fa-chevron-left" v-on:click='prevImg'></i>
         </div>
         <!--<div class="position-carousel"></div>-->
-        <div class="div-margin">
-          <div id="plates-info">
-            <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
-              <div id="text-plates">
-                <h3>
-                  <i>@{{platesPopular[counter].name}}</i>
-                </h3>
-                <p>
-                  <i>@{{platesPopular[counter].description}}</i>
-                </p>
-              </div>
-          </div>
+        <div id="plates-info">
+          <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
+            <div id="text-plates">
+              <h3>
+                <i>@{{platesPopular[counter].name}}</i>
+              </h3>
+              <p>
+                <i>@{{platesPopular[counter].description}}</i>
+              </p>
+            </div>
         </div>
         <div id="next" class="chevron">
           <i class="fas fa-chevron-right" v-on:click='nextImg'></i>          
@@ -78,15 +77,13 @@
     </div>
     <!-- TERZA SEZIONE, SEZIONE PER I RISTORATORI -->
     <div class="main-sec-3">
-      <div class="div-margin">
-        <div id="business-adv">
-          <div class="cards-adv">
-          </div>  
-          <div class="cards-adv">
-          </div>  
-          <div class="cards-adv">
-          </div>  
-        </div>
+      <div id="business-adv">
+        <div class="cards-adv">
+        </div>  
+        <div class="cards-adv">
+        </div>  
+        <div class="cards-adv">
+        </div>  
       </div>
     </div>
   </div>

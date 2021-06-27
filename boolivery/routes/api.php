@@ -22,10 +22,10 @@ Route::get('/restaurants', 'Api\RestaurantHomeController@getRestaurants')
     -> name('restaurants-api');
 // rotta per chiamata axios che ritoran ristoranti filtrati per categoria
 Route::post('/restaurants-filteredCat/{filterCategory}', 'Api\RestaurantHomeController@getRestaurantCategory')
-    -> name('restaurant-name');
+    -> name('restaurant-category');
 // rotta per chiamata axios che ritoran ristoranti filtrati per nome
 Route::post('/restaurants-filteredName/{filterName}', 'Api\RestaurantHomeController@getRestaurantName')
-    -> name('restaurant-category');        
+    -> name('restaurant-name');        
 // rotta per chiamata axios categorie
 Route::get('/categories', 'Api\CategoryHomeController@getCategories')
     -> name('categories-api');
