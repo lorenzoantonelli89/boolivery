@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <!-- Ottagono in position absolute -->
-                <!--<div id="absolute-octagon"></div>-->
+                <div id="absolute-octagon"></div>
             </div>
         </div>
     </main>
