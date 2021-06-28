@@ -19,6 +19,7 @@ class StatsController extends Controller
             ->join('restaurants','restaurant_id','=', 'restaurants.id')
             //->select('orders.date_delivery','restaurants.name','orders.total_price')
             ->where('restaurants.id' , $id)
+            ->orderBy('orders.date_delivery','desc')
             ->get();
 
         return response() -> json($orders);
@@ -33,6 +34,7 @@ class StatsController extends Controller
             //->select('orders.date_delivery','restaurants.name','orders.total_price')
             ->where('restaurants.id' , $id)
             ->whereYear('orders.date_delivery',$year)
+            ->orderBy('orders.date_delivery','desc')
             ->get();
 
         return response() -> json($orders);
