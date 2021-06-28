@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Order;
 use App\Plate;
-use App\restaurant;
+use App\Restaurant;
 
 class OrderSeeder extends Seeder
 {

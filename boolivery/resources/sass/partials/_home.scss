@@ -248,16 +248,27 @@ main {
   }
 }
 
-// GRAFICA JUMBOTRON
-
-// MEDIA QUERY JUMBOTRON -- > TABLET 
-/*@media screen and (min-width: 480px) and (max-width: 768px) {
-  .myjumbotron {
-    background-image: none;
-    background-color: blue;
-    .research-request {
-      width: 100%;
+//MEDIA QUERY SEZIONE 1 -> Rimozione immagine
+@media screen and (max-width: 1220px) {
+  main {
+    #home-container {
+      .myjumbotron {
+        background-image: none;
+        .content-jumbotron {
+          text-align: center;
+          .research-request {
+            #guest-request {
+              width: 100%;
+            }    
+          }
+          #category-container-list{
+            width: 100%;
+            list-style-type: none;
+            justify-content: center;
+          }
+        }
+      }
     }
-  }
-}*/
+  } 
+}
 

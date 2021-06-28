@@ -52,6 +52,11 @@
                             </p>
                         </li>
                         <li>
+                            <p>Vorrei provare l'esperienza di lavorare con voi</p>
+                            <p>Per verificare quali posizioni sono attualmente aperte, visiti la pagina <a href="{{ route('work') }}">Lavora con noi</a> premendo l'apposito pulsante <b>candidati ora</b>
+                            </p>
+                        </li>
+                        <li>
                             <p>Non voglio più usufruire del servizio da ristoratore?</p>
                             <p>Ci dispiace che lei non si sia trovato bene con il nostro servizio, ci contatti pure a <a href="mailto:support.booliveroo@mail.com">support.booliveroo@mail.com</a>
                             </p>
