@@ -111,11 +111,11 @@
                                 const order = data[i];
                                 const date = order['date_delivery'];
                                 const month = new Date(date).getMonth();
-                                const price = parseInt(order['price']);
                                 if(x == month){
-                                    this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
-                                    if(orderIds.indexOf(order['order_id']) == -1){ //pusho order_id univoci
-                                        orderIds.push(order['order_id']);
+                                    if(orderIds.indexOf(order['order_id']) == -1){
+                                        orderIds.push(order['order_id']); //pusho order_id univoci
+                                        const price = parseInt(order['total_price']); // prezzo per order_id
+                                        this.sum = this.sum + price; // incremento tot € mese
                                     }
                                 }
                             }
@@ -138,11 +138,11 @@
                                 const order = data[i];
                                 const date = order['date_delivery'];
                                 const month = new Date(date).getMonth();
-                                const price = parseInt(order['price']);
                                 if(x == month){
-                                    this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
                                     if(orderIds.indexOf(order['order_id']) == -1){
                                         orderIds.push(order['order_id']);
+                                        const price = parseInt(order['total_price']);
+                                        this.sum = this.sum + price;
                                     }
                                 }
                             }
@@ -169,15 +169,15 @@
                         const order = data[i];
                         const date = order['date_delivery'];
                         const month = new Date(date).getMonth();
-                        const price = parseInt(order['price']);
                         let year = new Date(date).getYear() + 1900;
                         if(unorderedYears.indexOf(year) == -1){
                             unorderedYears.push(year);
                         }
                         if(x == month){
-                            this.sum = this.sum + price; //per ogni ordine corrispondente, incremento €
                             if(orderIds.indexOf(order['order_id']) == -1){
                                 orderIds.push(order['order_id']);
+                                const price = parseInt(order['total_price']);
+                                this.sum = this.sum + price;
                             }
                         }
                     }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Order;
 use App\Plate;
-use App\restaurant;
+use App\Restaurant;
 
 class OrderSeeder extends Seeder
 {
@@ -26,7 +26,7 @@ class OrderSeeder extends Seeder
             foreach($plates as $plate){
                 $total_price += $plate->price;
             };
-            if($total_price > 10){
+            if($total_price > 20){
                 $order->total_price = $total_price;
                 $order->save();
             } else {
