@@ -86,7 +86,7 @@
                                         <!-- bottoni per aggiungere o togliere un piatto -->
                                         <div class="container-add-cart">
                                             <span>
-                                                <button id="{{$plate -> id}}" v-on:click="addCart({{$plate}})">
+                                                <button v-on:click="addPlate({{$plate}})">
                                                     {{-- <i class="fas fa-plus-circle"></i> --}}
                                                     add cart
                                                 </button>
@@ -192,13 +192,13 @@
                                     </div>
                                     <!-- OGGETTI NEL CARRELLO -->
                                     <div>
-                                        <div v-for="item in orderedItems">
+                                        <div v-for="item in showedItems">
                                             <span>@{{item.name}} </span>
                                             <span>@{{item.counter}}</span>
-                                            <span v-on:click="addPlate(item)" >
+                                            <span v-on:click="addQty(item)">
                                                 <i class="fas fa-plus-circle"></i>
                                             </span>
-                                            <span v-on:click="removePlate(item)">
+                                            <span v-on:click="removeQty(item)">
                                                 <i class="fas fa-trash-alt"></i>
                                             </span>
                                         </div>
@@ -227,46 +227,41 @@
     new Vue({
         el: '#restaurant-details-container',
         data: {
-            orderedItems: [], // array di piatti ordinati
-            numberItems: [], //
-            cart: [], // array di ID ordinati
+            cart:[], // array di ID piatti ordinati
+            showedItems:[], // array di obj da mostrare nel carrello
             total:0, // prezzo totale
-            deliveryTime:0,
-            btnAddCart: true,
         },
         methods: {
-            addCart: function (elem){
-                let obj = {
-                    id: elem.id,
-                    name: elem.name,
-                    price: elem.price,
-                    counter: 1,
+            addPlate: function(item){ // aggiungi piatto partendo da qty 0
+                if(this.cart.indexOf(item.id) == -1){
+                    let obj = {
+                        name: item.name,
+                        id: item.id,
+                        counter: 1,
+                        price: item.price,
+                    };
+                    this.cart.push(item.id);
+                    this.showedItems.push(obj);
+                    this.total += parseInt(item.price);
+                } else {
+                    this.addQty(item);
                 }
-                this.orderedItems.push(obj);
-                this.cart.push(elem.id);
-                this.total += parseInt(elem.price);
-                let activeButton = document.getElementById(elem.id);
-                activeButton.style.display = 'none';
             },
-            addPlate: function(elem){
-                this.cart.push(elem.id);
-                this.total += parseInt(elem.price);
-                elem.counter++;
+            addQty: function (item){  // aggiungi piatto partendo da qty 1
+                let objIndex = this.showedItems.findIndex((obj => obj.id == item.id));
+                this.showedItems[objIndex].counter = this.showedItems[objIndex].counter + 1;
+                this.cart.push(item.id);
+                this.total += parseInt(item.price);
             },
-            removePlate: function(elem){
-                const index = this.cart.indexOf(elem.id);
-
-                if(index > -1){
-                    this.cart.splice(index, 1);
-                    this.total -= parseInt(elem.price);
-                    elem.counter --;
+            removeQty: function (item){ // rimuovi piatto 
+                const index = this.cart.indexOf(item.id);
+                this.cart.splice(index,1); // rimuovi piatto da cart
+                this.total -= parseInt(item.price); // aggiorna il tot
+                let objIndex = this.showedItems.findIndex((obj => obj.id == item.id));
+                this.showedItems[objIndex].counter = this.showedItems[objIndex].counter - 1; // aggiorna qty
+                if(this.showedItems[objIndex].counter == 0){ // se qty è = 0, rimuovi piatto dal carrello visibile
+                    this.showedItems.splice(objIndex,1);
                 }
-                if(elem.counter == 0){
-                    this.orderedItems.splice(index, 1);
-                    let activeButton = document.getElementById(elem.id);
-                    activeButton.style.display = 'block';
-                }
-                console.log(this.orderedItems);
             },
             getTimeDelivery: function() {
                 const now = new Date();
@@ -275,7 +270,6 @@
                 if(now.getMinutes() < 10){
                     time = now.getHours() + ":0" + now.getMinutes();
                 };
-                
                 return time;
             },
             getDeliveryCost: function() {
@@ -285,11 +279,7 @@
                     return 5;
                 }
             },
-
         },
-        computed: {
-
-        }
     });
 
 </script>
