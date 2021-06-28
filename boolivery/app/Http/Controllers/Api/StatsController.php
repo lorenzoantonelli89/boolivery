@@ -19,7 +19,6 @@ class StatsController extends Controller
             ->join('restaurants','restaurant_id','=', 'restaurants.id')
             //->select('orders.date_delivery','restaurants.name','orders.total_price')
             ->where('restaurants.id' , $id)
-            ->where('orders.id','<', 29)
             ->get();
 
         return response() -> json($orders);

@@ -177,15 +177,15 @@
                                         {{-- <div>Totale(consegna esclusa): @{{total}}</div> --}}
                                         <span>Spese di consegna: @{{getDeliveryCost()}}€</span>
                                         <!-- indicatore rosso verde sulla consegna gratuita -->
-                                        <div :class="total < 10 ? 'pay-delivery' : 'free-delivery'">
-                                            <h6>La consegna è gratuita se spendi almeno 10€</h6>
+                                        <div :class="total < 20 ? 'pay-delivery' : 'free-delivery'">
+                                            <h6>La consegna è gratuita se spendi almeno 20€</h6>
                                         </div>
                                         <span>Il mio totale: @{{total + getDeliveryCost()}}€</span>
                                     </div>
                                     <div class="total-price">
                                         <label for="total_price">    
                                         </label>
-                                        <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 10 ? total+5 : total"  readonly>                                        
+                                        <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 20 ? total+5 : total"  readonly>                                        
                                     </div>
                                     <div>
                                         <input v-for="elem in cart"  type="hidden" name="plate_id[]" id="plate_id[]" :value="elem" readonly>
@@ -216,7 +216,7 @@
                     </div>
                 </div>    
                 <div class="delivery-promotion">
-                    <span>Spendi almeno 10,00€ per la <b>consegna gratuita </b>|| La mancia al Ryder non è obbligatoria ma è ben voluta &hearts; </span>
+                    <span>Spendi almeno 20,00€ per la <b>consegna gratuita </b>|| La mancia al Ryder non è obbligatoria ma è ben voluta &hearts; </span>
                 </div>
             </div>
         </div>
@@ -279,7 +279,7 @@
                 return time;
             },
             getDeliveryCost: function() {
-                if (this.total >= 10 || this.total == 0) {
+                if (this.total >= 20 || this.total == 0) {
                         return 0;
                 } else {           
                     return 5;
