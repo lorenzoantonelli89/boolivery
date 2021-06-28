@@ -2,7 +2,7 @@
     <nav id="nav-header">
         <div id="logo">
             <a href="{{route('home')}}">
-                <img src="{{ asset('storage/graphics/logo.png') }}">
+                <img src="{{ asset('storage/graphics/Logo.png') }}">
             </a>
         </div>
         <div id="container-list">

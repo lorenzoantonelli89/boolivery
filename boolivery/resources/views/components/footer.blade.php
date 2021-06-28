@@ -3,6 +3,11 @@
     <div class="footer-container ">
         <ul>
             <li>
+                <h3>
+                    Link Utili
+                </h3>
+            </li>
+            <li>
                 <a href="{{route('info-company')}}">
                     Chi siamo
                 </a>
@@ -15,6 +20,11 @@
             <li>
                 <a href="{{route('work')}}">
                     Lavora con noi
+                </a>
+            </li>
+            <li>
+                <a href="{{route('contacts')}}">
+                    Contatti
                 </a>
             </li>
         </ul>
@@ -53,7 +63,7 @@
         <ul>
             <li>
                 <h3>
-                    I teacher
+                    Teachers
                 </h3>
             </li>
             <li>
