@@ -26,7 +26,7 @@ class OrderSeeder extends Seeder
             foreach($plates as $plate){
                 $total_price += $plate->price;
             };
-            if($total_price > 10){
+            if($total_price > 20){
                 $order->total_price = $total_price;
                 $order->save();
             } else {
