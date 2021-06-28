@@ -655,6 +655,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  position: relative;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container {
@@ -702,16 +703,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   padding: 3px;
 }
 
-.plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-plus-circle {
-  color: #7faf48;
-  font-size: 30px;
-}
-
-.plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-minus-square {
-  color: #ff0000;
-  font-size: 30px;
-}
-
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .container-add-cart button {
   text-decoration: none;
   background-color: #28CCBC;
@@ -738,6 +729,9 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   border-radius: 10px;
   background-color: white;
   margin-top: 15px;
+  position: sticky;
+  right: 0;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -821,18 +815,74 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: none;
 }
 
+.plates-choosing-view .momentary-total .mykart .elemQnty {
+  width: 100%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 98%;
+  border-bottom: 1px solid #e8ebeb;
+  padding: 15px 0;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem .pluseminus {
+  text-align: center;
+  width: 150px;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem .myelem {
+  flex-grow: 1;
+  text-align: start;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem .singlecount {
+  width: 80px;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem i {
+  font-size: 18px;
+  padding: 1px;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem .fa-plus-circle {
+  color: #7faf48;
+}
+
+.plates-choosing-view .momentary-total .mykart .elemQnty .listitem .fa-minus-circle {
+  color: #ff0000;
+}
+
 .plates-choosing-view .momentary-total .total-calculator {
   display: flex;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: space-around;
+  align-items: center;
   height: 100px;
-  text-align: center;
+  text-align: flex-start;
 }
 
 .plates-choosing-view .momentary-total .total-calculator span {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.plates-choosing-view .momentary-total .total-calculator .amount {
+  width: 95%;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e8ebeb;
 }
 
 .plates-choosing-view .momentary-total .shop-link {
@@ -1009,16 +1059,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
     padding: 3px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-plus-circle {
-    color: #7faf48;
-    font-size: 30px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-minus-square {
-    color: #ff0000;
-    font-size: 30px;
   }
 
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
@@ -1297,16 +1337,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
     padding: 3px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-plus-circle {
-    color: #7faf48;
-    font-size: 30px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .fa-minus-square {
-    color: #ff0000;
-    font-size: 30px;
   }
 
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
