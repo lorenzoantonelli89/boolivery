@@ -116,16 +116,16 @@ footer {
   .footer-container {
     @include centring;
     @include flex(row, space-between, center);
-
+    
     ul{
       height: 300px;
-      width: 20%;
+      flex-basis: 300px;
       list-style: none;
-      padding: 30px;
-      margin: 0 50px;
+      padding: 20px;
+      margin-right: 25px;
       background-color: #363947;
       border-radius: 10px;
-
+      text-align: center;
 
       li{
         padding-bottom: 10px;
@@ -137,10 +137,72 @@ footer {
         a{
           text-decoration: none;
           color: $white;
+
+          &:hover {
+            color: $ouryellow;
+          }
         }
+      }
+    }
+    .whoWeAre {
+      @include flex(column, space-between, center);
+      border-radius: 10px;
+      background-color: #363947;
+      text-align: center;
+      height: 300px;
+      flex-basis: 300px;
+      img {
+        width: 200px;
+      }
+
+      span {
+        margin: 0 5px 5px 5px;
+        color: $ourgrey;
       }
     }
   }
 }
+
+@media screen and(max-width: 1048px) and (min-width: 727px) {
+  footer {
+
+    .footer-container {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      ul,
+      .whoWeAre {
+        flex-basis:calc(90% / 2);
+        
+        
+        margin: 0 15px 15px 0;
+        width: 0px;
+        
+      }
+
+    }
+  }
+
+  }
+
+  @media screen and(max-width: 726px) {
+    footer {
+  
+      .footer-container {
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        ul,
+        .whoWeAre {
+          flex-basis:90%;
+          
+          
+          margin: 0 0px 15px 0;
+          width: 0px;
+          
+        }
+  
+      }
+    }
+  
+    }
 
   
