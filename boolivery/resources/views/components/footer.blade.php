@@ -87,5 +87,14 @@
                 </a>
             </li>
         </ul>
+        <div class="whoWeAre">
+        <img src="{{ asset('storage/graphics/Logo.png') }}">
+        <span>
+        Boolivery SRL <br>
+        via La Fame, 9 <br>
+        20146, Milano <br>
+        </span>
+        
+        </div>
     </div>
 </footer>
