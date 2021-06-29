@@ -13,13 +13,14 @@
 @import 'partials/createPlate';
 @import 'partials/createRestaurant';
 @import 'partials/editRestaurant';
-
+@import 'partials/orderList&orderStats';
+@import 'partials/orderDetail';
 
 
 @import 'partials/work';
 @import 'partials/faq';
 @import 'partials/list-restaurant';
-@import 'partials/orderList';
+
 
 * {
   margin: 0;
