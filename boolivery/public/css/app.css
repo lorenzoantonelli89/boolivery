@@ -570,36 +570,23 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   border-radius: 5px;
 }
 
-.restaurant-show-container .restaurant-details ul {
+.restaurant-show-container .restaurant-details {
+  height: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-}
-
-.restaurant-show-container .restaurant-details ul a {
-  color: #3490dc;
-  text-decoration: none;
-}
-
-.restaurant-show-container .restaurant-details ul a:hover {
-  background-color: #7faf48;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .restaurant-show-container .restaurant-details .restaurant-description-text {
-  margin-right: 15px;
+  margin: 20px 25px 0 0;
   overflow: scroll;
-  height: 150px;
+  flex-grow: 1;
 }
 
-.restaurant-show-container .restaurant-details .atHome a {
-  text-decoration: none;
-  background-color: #28CCBC;
-  color: #ffff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  text-transform: uppercase;
+.restaurant-show-container .restaurant-details a:visited,
+.restaurant-show-container .restaurant-details a:link {
+  color: #ffa500;
 }
 
 .restaurant-show-container .restaurant-foto-order {
@@ -920,7 +907,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   margin: 15px;
 }
 
-@media screen and (max-width: 1741px) and (min-width: 1083px) {
+@media screen and (max-width: 1741px) and (min-width: 667px) {
   .restaurant-show-container {
     height: 100%;
     margin-top: 30px;
@@ -946,32 +933,13 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     border-radius: 5px;
   }
 
-  .restaurant-show-container .restaurant-details ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    list-style-type: none;
-  }
-
-  .restaurant-show-container .restaurant-details ul a {
-    color: #3490dc;
-    text-decoration: none;
-  }
-
-  .restaurant-show-container .restaurant-details ul a:hover {
-    background-color: #7faf48;
-  }
-
-  .restaurant-show-container .restaurant-details .restaurant-description-text {
-    margin-right: 15px;
-    overflow: scroll;
-    height: 250px;
+  .restaurant-show-container .restaurant-details {
+    text-align: center;
   }
 
   .restaurant-show-container .restaurant-foto-order {
     width: 100%;
-    height: 100px;
+    height: 350px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1190,7 +1158,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 }
 
-@media screen and (max-width: 1082px) {
+@media screen and (max-width: 666px) {
   .restaurant-show-container {
     height: 100%;
     margin-top: 30px;
@@ -1218,31 +1186,11 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     margin-bottom: 15px;
   }
 
-  .restaurant-show-container .restaurant-details ul {
+  .restaurant-show-container .restaurant-details {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    list-style-type: none;
-  }
-
-  .restaurant-show-container .restaurant-details ul a {
-    color: #3490dc;
-    text-decoration: none;
-  }
-
-  .restaurant-show-container .restaurant-details ul a:hover {
-    background-color: #7faf48;
-  }
-
-  .restaurant-show-container .restaurant-details .restaurant-description-text {
-    margin-right: 0px;
-    overflow: scroll;
-    flex-grow: 1;
-  }
-
-  .restaurant-show-container .restaurant-details .atHome {
-    margin-bottom: 30px;
   }
 
   .restaurant-show-container .restaurant-foto-order {
@@ -1317,7 +1265,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
     flex-grow: 1;
     margin-right: 0px;
-    height: 200px;
+    height: 350px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
