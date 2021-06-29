@@ -258,6 +258,13 @@
 </main>
 
 <script>
+    // window.onbeforeunload = function() {
+    //         alert('stai lasciando');
+    //         console.log('hello');
+    // };
+    // window.addEventListener('beforeunload', function(){
+    //     alert('stai lasciando');
+    // });
     new Vue({
         el: '#restaurant-details-container',
         data: {
@@ -321,7 +328,13 @@
                 } else {
                     alert('Seleziona almeno un piatto');
                 }
+            },
+            alertPage: function(){
+                if(this.cart.length == 0){
+                    alert('perdi i piatti');
+                }
             }
+            
         },
     });
 

@@ -142,7 +142,6 @@
         axios.get('/api/popular-plates')
             .then(res => {
               this.platesPopular = res.data;
-                console.log(this.platesPopular);
             })
             .catch(error => {
                 console.log(error)
@@ -160,7 +159,6 @@
             .then(res => {
                 this.restaurantsPopular = res.data;
                 this.currentRestaurants = this.restaurantsPopular;
-                
             })
             .catch(error => {
                 console.log(error)

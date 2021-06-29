@@ -9,20 +9,28 @@
             <form method="post" id="payment-form" action="{{route('checkout', encrypt($order -> id))}}">
                 @csrf
                 <section>
-                    <label for="amount">
-                        <span class="input-label">Amount</span>
-                        <div class="input-wrapper amount-wrapper">
-                            <input id="amount" name="amount" type="tel" min="1" placeholder="Amount" value="{{$order -> total_price}}">
-                        </div>
-                    </label>
-
-                    <div class="bt-drop-in-wrapper">
+                    <div id="container-amount">
+                        <label for="amount">
+                            <span class="input-label">Totale ordine</span>
+                            <div class="">
+                                <input id="amount" name="amount" type="hidden" min="1" placeholder="Amount" value="{{$order -> total_price}}">
+                                <span>
+                                    {{$order -> total_price}} €
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="container-dropin">
                         <div id="bt-dropin"></div>
                     </div>
                 </section>
 
                 <input id="nonce" name="payment_method_nonce" type="hidden" />
-                <button class="button" type="submit" v-on:click="dropinRequestPaymentMethod"><span>Test Transaction</span></button>
+                <div id="container-button">
+                    <button class="button" type="submit" v-on:click="dropinRequestPaymentMethod">
+                        Paga Ordine
+                    </button>
+                </div>
             </form>
         </div>
     </main>

@@ -1,0 +1,27 @@
+#container-payment{
+    @include centring;
+
+    #container-amount{
+        text-align: center;
+        margin-top: 50px;
+        color: salmon;
+    }
+
+    .container-dropin{
+        width: 40%;
+        margin: 0 auto;
+
+    }
+
+    #container-button{
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+
+        button{
+            @include buttonLink($ourlogo, $white, 10px, 20px);
+            border: none;
+            cursor: pointer;
+        }
+    }
+}
