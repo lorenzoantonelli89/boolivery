@@ -105,6 +105,7 @@
 }
 
 #register-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -113,7 +114,7 @@
 }
 
 #register-container #container-top {
-  margin: 100px 0 50px;
+  margin: 100px 0;
 }
 
 #register-container #container-top span {
@@ -132,7 +133,7 @@
 }
 
 #register-container #container-form form .container-email-password-name .container-input .input-text {
-  width: 440px;
+  width: 220px;
   height: 45px;
   padding-left: 8px;
   border: 1px solid #28CCBC;
@@ -2638,232 +2639,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
-#appOrders.container,
-#appChart.container {
-  padding: 30px 0;
-  max-width: 1140px;
-  margin: auto;
-}
-
-#appOrders.container h1,
-#appChart.container h1 {
-  text-align: center;
-}
-
-#appOrders.container nav,
-#appChart.container nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  flex-wrap: wrap;
-}
-
-#appOrders.container nav .back-button,
-#appChart.container nav .back-button {
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: #28CCBC;
-}
-
-#appOrders.container nav .back-button a,
-#appChart.container nav .back-button a {
-  color: white;
-  text-decoration: none;
-}
-
-#appOrders.container .chart,
-#appChart.container .chart {
-  width: 60vw;
-  margin: auto;
-}
-
-#appOrders.container .status,
-#appChart.container .status {
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#appOrders.container .status.paid,
-#appChart.container .status.paid {
-  background-color: green;
-}
-
-#appOrders.container .status.not-paid,
-#appChart.container .status.not-paid {
-  background-color: red;
-}
-
-#appOrders.container table,
-#appChart.container table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#appOrders.container table tr:nth-of-type(odd),
-#appChart.container table tr:nth-of-type(odd) {
-  background: #eee;
-}
-
-#appOrders.container table th,
-#appChart.container table th {
-  background: #333;
-  color: white;
-  font-weight: bold;
-}
-
-#appOrders.container table td,
-#appOrders.container table th,
-#appChart.container table td,
-#appChart.container table th {
-  padding: 6px;
-  border: 1px solid #ccc;
-}
-
-@media screen and (max-width: 1024px) {
-  #appChart.container .chart {
-    width: 80vw;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #appOrders.container {
-    /* Force table to not be like tables anymore */
-    /* Hide table headers (but not display: none;, for accessibility) */
-    /*
-    Label the data
-    */
-  }
-
-  #appOrders.container table,
-  #appOrders.container thead,
-  #appOrders.container tbody,
-  #appOrders.container th,
-  #appOrders.container td,
-  #appOrders.container tr {
-    display: block;
-  }
-
-  #appOrders.container thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  #appOrders.container tr {
-    border: 1px solid #ccc;
-  }
-
-  #appOrders.container td {
-    /* Behave  like a "row" */
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-  }
-
-  #appOrders.container td:nth-of-type(1):before {
-    content: "# ORDINE";
-    width: 50%;
-    display: inline-block;
-  }
-
-  #appOrders.container td:nth-of-type(2):before {
-    content: "EMAIL";
-    width: 50%;
-    display: inline-block;
-  }
-
-  #appOrders.container td:nth-of-type(3):before {
-    content: "DATA ORDINE";
-    width: 50%;
-    display: inline-block;
-  }
-
-  #appOrders.container td:nth-of-type(4):before {
-    content: "PREZZO TOTALE \20AC";
-    width: 50%;
-    display: inline-block;
-  }
-
-  #appOrders.container td:nth-of-type(5):before {
-    content: "STATUS ORDINE";
-    width: 50%;
-    display: inline-block;
-  }
-
-  #appOrders.container td:nth-of-type(6):before {
-    content: "LINK";
-    width: 50%;
-    display: inline-block;
-  }
-
-  #appChart.container .chart {
-    width: 100vw;
-  }
-}
-
-#order-detail .container {
-  width: 70%;
-  margin: auto;
-  padding: 30px 0;
-}
-
-#order-detail .container h1 {
-  margin-bottom: 10px;
-}
-
-#order-detail .container h2 {
-  margin: 20px 0;
-}
-
-#order-detail .container .order-block {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-#order-detail .container .order-block .back-button {
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: #28CCBC;
-}
-
-#order-detail .container .order-block .back-button a {
-  color: white;
-  text-decoration: none;
-}
-
-#order-detail .container ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#order-detail .container ul li {
-  list-style-type: none;
-  flex-basis: 25%;
-}
-
-#order-detail .container ul li img {
-  width: 8vw;
-  height: 8vw;
-  margin: 10px 0;
-  border-radius: 50%;
-  border: 2px solid #28CCBC;
-}
-
-#order-detail .container .recap {
-  font-size: larger;
-  text-decoration: underline;
-}
-
-@media screen and (max-width: 1024px) {
-  #order-detail .container ul li {
-    flex-basis: 50%;
-  }
-}
-
 #work-container #section-1 {
   padding: 200px 0;
   background-color: #28CCBC;
@@ -3248,6 +3023,131 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
     width: 100%;
+  }
+}
+
+#appOrders.container {
+  padding: 30px 0;
+  max-width: 1140px;
+  margin: auto;
+}
+
+#appOrders.container h1 {
+  text-align: center;
+}
+
+#appOrders.container nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+#appOrders.container .status {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#appOrders.container .status.paid {
+  background-color: green;
+}
+
+#appOrders.container .status.not-paid {
+  background-color: red;
+}
+
+#appOrders.container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#appOrders.container table tr:nth-of-type(odd) {
+  background: #eee;
+}
+
+#appOrders.container table th {
+  background: #333;
+  color: white;
+  font-weight: bold;
+}
+
+#appOrders.container table td,
+#appOrders.container table th {
+  padding: 6px;
+  border: 1px solid #ccc;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  #appOrders.container {
+    /* Force table to not be like tables anymore */
+    /* Hide table headers (but not display: none;, for accessibility) */
+    /*
+    Label the data
+    */
+  }
+
+  #appOrders.container table,
+  #appOrders.container thead,
+  #appOrders.container tbody,
+  #appOrders.container th,
+  #appOrders.container td,
+  #appOrders.container tr {
+    display: block;
+  }
+
+  #appOrders.container thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  #appOrders.container tr {
+    border: 1px solid #ccc;
+  }
+
+  #appOrders.container td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  #appOrders.container td:nth-of-type(1):before {
+    content: "# ORDINE";
+    width: 50%;
+    display: inline-block;
+  }
+
+  #appOrders.container td:nth-of-type(2):before {
+    content: "EMAIL";
+    width: 50%;
+    display: inline-block;
+  }
+
+  #appOrders.container td:nth-of-type(3):before {
+    content: "DATA ORDINE";
+    width: 50%;
+    display: inline-block;
+  }
+
+  #appOrders.container td:nth-of-type(4):before {
+    content: "PREZZO TOTALE \20AC";
+    width: 50%;
+    display: inline-block;
+  }
+
+  #appOrders.container td:nth-of-type(5):before {
+    content: "STATUS ORDINE";
+    width: 50%;
+    display: inline-block;
+  }
+
+  #appOrders.container td:nth-of-type(6):before {
+    content: "LINK";
+    width: 50%;
+    display: inline-block;
   }
 }
 
