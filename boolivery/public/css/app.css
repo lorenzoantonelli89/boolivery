@@ -460,11 +460,91 @@ main #home-container .main-sec-3 #business-adv {
 }
 
 main #home-container .main-sec-3 #business-adv .cards-adv {
-  background-color: orange;
-  width: calc(100% / 3);
-  height: 500px;
+  width: 100%;
   margin-right: 15px;
   border-radius: 10px;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .triangle-rect {
+  -webkit-clip-path: polygon(0 0, 100% 0, 59% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 59% 100%, 0 100%);
+  width: 100%;
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv #rider-img {
+  background-image: url("/storage/graphics/riders_open.jpg");
+  background-size: cover;
+  background-position-x: -50px;
+  background-repeat: no-repeat;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv #engineer-img {
+  background-image: url("/storage/graphics/engineer.jpg");
+  background-size: cover;
+  background-position-x: -50px;
+  background-repeat: no-repeat;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv #chef-img {
+  background-image: url("/storage/graphics/ristoratore.jpg");
+  background-size: cover;
+  background-position-x: -50px;
+  background-repeat: no-repeat;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv {
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv p {
+  margin-top: 10px;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a {
+  text-decoration: none;
+  color: white;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a .btn-to {
+  width: 150px;
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border-radius: 10px;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a .btn-to p {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a #btn-rider {
+  background-color: #f55f28;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a #btn-engineer {
+  background-color: darkblue;
+}
+
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a #btn-chef {
+  background-color: #707074;
+}
+
+main #home-container .main-sec-3 #business-adv #rider {
+  background-color: coral;
+}
+
+main #home-container .main-sec-3 #business-adv #engineer {
+  background-color: #3a3ad6;
+}
+
+main #home-container .main-sec-3 #business-adv #chef {
+  background-color: #c8c8d8;
 }
 
 main #home-container .main-sec-3 #business-adv .cards-adv:last-child {
@@ -493,6 +573,96 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     width: 100%;
     list-style-type: none;
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #home-container .main-sec-1 ul {
+    display: block;
+  }
+
+  main #home-container .main-sec-1 ul li {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 656px) {
+  main #home-container .main-sec-1 ul {
+    display: block;
+  }
+
+  main #home-container .main-sec-1 ul li {
+    padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  main #home-container #section-2 #top-rating-plates {
+    -webkit-clip-path: none;
+            clip-path: none;
+    width: 70%;
+    margin: 0 auto;
+    position: static;
+    margin-top: -20%;
+    margin-bottom: 30px;
+  }
+
+  main #home-container #section-2 .flexible-carusel #prev {
+    display: none;
+  }
+
+  main #home-container #section-2 .flexible-carusel #plates-info {
+    display: block;
+  }
+
+  main #home-container #section-2 .flexible-carusel #plates-info img {
+    -webkit-clip-path: none;
+            clip-path: none;
+    width: 100%;
+    border-top-right-radius: 10px;
+  }
+
+  main #home-container #section-2 .flexible-carusel #plates-info #text-plates {
+    text-align: center;
+    margin: 0;
+    padding: 5px 20px;
+  }
+
+  main #home-container #section-2 .flexible-carusel #next {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 585px) {
+  main #home-container #section-2 .flexible-carusel #plates-info img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main #home-container .main-sec-3 #business-adv {
+    display: block;
+  }
+
+  main #home-container .main-sec-3 #business-adv .cards-adv {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main #home-container .main-sec-3 #business-adv {
+    display: block;
+  }
+
+  main #home-container .main-sec-3 #business-adv .cards-adv {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  main #home-container .main-sec-3 #business-adv .cards-adv .triangle-rect {
+    display: none;
   }
 }
 

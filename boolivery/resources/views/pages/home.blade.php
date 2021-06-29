@@ -60,14 +60,14 @@
         <!--<div class="position-carousel"></div>-->
         <div id="plates-info">
           <img :src="'/storage/restaurant-plates/' + platesPopular[counter].image" alt="Immagine di portate">
-            <div id="text-plates">
-              <h3>
-                <i>@{{platesPopular[counter].name}}</i>
-              </h3>
-              <p>
-                <i>@{{platesPopular[counter].description}}</i>
-              </p>
-            </div>
+          <div id="text-plates">
+            <h3>
+              <i>@{{platesPopular[counter].name}}</i>
+            </h3>
+            <p>
+              <i>@{{platesPopular[counter].description}}</i>
+            </p>
+          </div>
         </div>
         <div id="next" class="chevron">
           <i class="fas fa-chevron-right" v-on:click='nextImg'></i>          
@@ -77,11 +77,41 @@
     <!-- TERZA SEZIONE, SEZIONE PER I RISTORATORI -->
     <div class="main-sec-3">
       <div id="business-adv">
-        <div class="cards-adv">
+        <div class="cards-adv" id="rider">
+          <div class="triangle-rect" id="rider-img"></div>
+          <div class="textAdv">
+            <h3>Diventa un rider</h3>
+            <p>Prendi in mano la tua bici o qualsiasi mezzo e consegna il cibo</p>
+            <a href="{{ route('work') }}">
+              <div class="btn-to" id="btn-rider">
+                <p>Rider</p>
+              </div>
+            </a>
+          </div>
         </div>  
-        <div class="cards-adv">
+        <div class="cards-adv" id="engineer">
+          <div class="triangle-rect" id="engineer-img"></div>
+          <div class="textAdv">
+            <h3>Lavora con i nostri ingegneri</h3>
+            <p>Entra a far parte del team che sta dietro al mondo di boolivery</p>
+            <a href="{{ route('work') }}">
+              <div class="btn-to" id="btn-engineer">
+                <p>Ingegnere</p>
+              </div>
+            </a>
+          </div>
         </div>  
-        <div class="cards-adv">
+        <div class="cards-adv" id="chef">
+          <div class="triangle-rect" id="chef-img"></div>
+          <div class="textAdv">
+            <h3>Aggiungi il tuo ristorante</h3>
+            <p>Entrare extra senza pagare i tuoi corrieri e senza vincoli contrattuali sul corriere</p>
+            <a href="{{ route('work') }}">
+              <div class="btn-to" id="btn-chef">
+                <p>Ristoratore</p>
+              </div>
+            </a>
+          </div>
         </div>  
       </div>
     </div>
