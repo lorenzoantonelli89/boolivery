@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Crypt;
 use App\Restaurant;
 use App\User;
 use App\Category;
+use App\Order;
 
 class RestaurantController extends Controller
 {
@@ -127,10 +128,23 @@ class RestaurantController extends Controller
         return redirect()->route('listRestaurant');
     }
 
-    public function showOrders($id){
+    public function showOrders($id){ //funzione per mostrare tutti gli ordini
 
         $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
         return view ('admin.orderList',compact('restaurant'));
+    }
+
+    public function showOrder($id){ //funzione per mostrare ordine
+
+        $order = Order::findOrFail($id);
+        $plates = $order->plates()->get();
+        $restaurant = Restaurant::findOrFail($plates[0]->restaurant_id);
+        $ownerId = $restaurant->user_id;
+        $user= Auth::user();
+        if($ownerId != $user->id){
+            return redirect()->route('listRestaurant');
+        }
+        return view('admin.orderPage',compact('order'));
     }
 
     public function showStats($id){ //funzione per mostrare pagina statistiche
