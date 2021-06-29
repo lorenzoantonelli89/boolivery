@@ -105,7 +105,6 @@
 }
 
 #register-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -114,7 +113,7 @@
 }
 
 #register-container #container-top {
-  margin: 100px 0;
+  margin: 100px 0 50px;
 }
 
 #register-container #container-top span {
@@ -133,7 +132,7 @@
 }
 
 #register-container #container-form form .container-email-password-name .container-input .input-text {
-  width: 220px;
+  width: 440px;
   height: 45px;
   padding-left: 8px;
   border: 1px solid #28CCBC;
@@ -2839,7 +2838,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 #order-detail .container ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 #order-detail .container ul li {
@@ -2848,7 +2846,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 #order-detail .container ul li img {
-  width: 40%;
+  width: 8vw;
+  height: 8vw;
   margin: 10px 0;
   border-radius: 50%;
   border: 2px solid #28CCBC;
