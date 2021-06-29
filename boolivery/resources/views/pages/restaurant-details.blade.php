@@ -101,12 +101,21 @@
                                     
                                     @csrf
                                     @method('POST')
-                                    
+                                    {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    @endif
                                     
                                     <!-- OGGETTI NEL CARRELLO -->
                                     <div :class="total < 20 ? 'pay-delivery' : 'free-delivery'">
-                                            <h6>La consegna è gratuita se spendi almeno 20€</h6>
-                                        </div>
+                                        <h6>La consegna è gratuita se spendi almeno 20€</h6>
+                                    </div>
                                     
                                     <div class="elemQnty" v-for="item in showedItems">
                                         <div class="listitem">
@@ -156,7 +165,7 @@
                                     
                                     {{-- submit --}}
                                     <div>
-                                            <i class="fas fa-shopping-cart" @click="changeFormVisibility"></i>
+                                            <i class="fas fa-shopping-cart" v-on:click="changeFormVisibility"></i>
                                             COMPLETA L'ORDINE
                                             
                               
@@ -168,28 +177,28 @@
                                         <label for="name">
                                             Nome
                                         </label>
-                                        <input type="text" id="name" name="name">
+                                        <input type="text" id="name" name="name" minlength="3" maxlength="255">
                                     </div>
                                     <!-- campo del cognome -->
                                     <div>
                                         <label for="lastname">
                                             Cognome
                                         </label>
-                                        <input type="text" id="lastname" name="lastname">
+                                        <input type="text" id="lastname" name="lastname" minlength="3" maxlength="255">
                                     </div>
                                     <!-- campo del telefono -->
                                     <div>
                                         <label for="email">
                                             Email
                                         </label>
-                                        <input type="email" id="email" name="customer_email">
+                                        <input type="email" id="email" name="customer_email" minlength="3" maxlength="255">
                                     </div>
                                     <!-- campo dell'indirizzo -->
                                     <div>
                                         <label for="shipping_address">  
                                             Indirizzo
                                         </label>
-                                        <input type="text" id="shipping_address" name="shipping_address">
+                                        <input type="text" id="shipping_address" name="shipping_address" minlength="3" maxlength="255">
                                     </div>
                                     <!-- campo della data -->
                                     <div>
@@ -219,16 +228,7 @@
                                         };
                                         ?>" required>
                                     </div>
-                                    {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
-                                    @if ($errors->any())
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            @foreach ($errors->all() as $error)
-                                                <li>{{ $error }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    @endif
+                                    
                                     <button type="submit" class="shop-link">
                                             <i class="fas fa-shopping-cart"></i>
                                             CONCLUDI ORDINE
@@ -305,8 +305,13 @@
                 }
             },
             changeFormVisibility: function() {
-                this.formView = (!this.formView);
-                console.log(this.formView);
+                if(this.cart.length>0){
+                    this.formView = (!this.formView);
+                    console.log(this.formView);
+                } else {
+                    alert('Seleziona almeno un piatto');
+                }
+                
                 // if(this.formView === 0) {
                 //     this.formView = 1;
                 // } else{
