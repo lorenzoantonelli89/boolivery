@@ -60,8 +60,15 @@
         <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
         <div class="restaurant-fooding-list">
             <div class="fooding-list">
+                
                 <!-- SEZIONE PER LA SCELTA DEI PIATTI -->
                 <div class="plates-choosing-view">
+                    <!-- CARRELLO FISSO -->
+                    <div class="cartFixed div-margin">
+                        <a href="#cartView">
+                        <h2><i class="fas fa-shopping-cart"></i> @{{total + getDeliveryCost()}}€ Go to Cart <i class="fas fa-caret-down"></i></h2>
+                        </a>
+                    </div>
                     <div class="choosing-and-total-container div-margin">
                         <div class="plate-selection-container ">
                             @foreach ($restaurant -> plates as $plate)
@@ -92,13 +99,15 @@
                                     <img id="imgchoice" src="{{asset('/storage/restaurant-plates/' . $plate -> image)}}" alt="">
                                 </div>
                             @endforeach
+                            <a name="cartView"></a>
                         </div>                    
                         <!-- TABELLA PER L'ORDINE E PER IL TOTALE -->
                         <div class="momentary-total">
                             <!-- ZONA DEL CARRELLO -->
+                            
                             <div class="mykart">
                                 <form action="{{route('storeOrder')}}" method="POST">
-                                    
+                                
                                     @csrf
                                     @method('POST')
                                     {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
@@ -140,6 +149,7 @@
                                     </div>
 
                                     <!-- calcolo del totale -->
+                                    
                                     <div class="total-calculator">
                                         {{-- <div>Totale(consegna esclusa): @{{total}}</div> --}}
                                         <div class="amount">
@@ -164,11 +174,11 @@
                                     </div>
                                     
                                     {{-- submit --}}
-                                    <div>
-                                            <i class="fas fa-shopping-cart" v-on:click="changeFormVisibility"></i>
+                                    <div class="goToKart" v-on:click="changeFormVisibility">
+                                        <p>
+                                        <i class="fas fa-caret-down"></i>
                                             COMPLETA L'ORDINE
-                                            
-                              
+                                        </p>
                                     </div>
 
                                     <!-- campo del nome -->
@@ -177,28 +187,28 @@
                                         <label for="name">
                                             Nome
                                         </label>
-                                        <input type="text" id="name" name="name" minlength="3" maxlength="255">
+                                        <input type="text" id="name" name="name" minlength="3" maxlength="255" required>
                                     </div>
                                     <!-- campo del cognome -->
                                     <div>
                                         <label for="lastname">
                                             Cognome
                                         </label>
-                                        <input type="text" id="lastname" name="lastname" minlength="3" maxlength="255">
+                                        <input type="text" id="lastname" name="lastname" minlength="3" maxlength="255" required>
                                     </div>
                                     <!-- campo del telefono -->
                                     <div>
                                         <label for="email">
                                             Email
                                         </label>
-                                        <input type="email" id="email" name="customer_email" minlength="3" maxlength="255">
+                                        <input type="email" id="email" name="customer_email" minlength="3" maxlength="255" required>
                                     </div>
                                     <!-- campo dell'indirizzo -->
                                     <div>
                                         <label for="shipping_address">  
                                             Indirizzo
                                         </label>
-                                        <input type="text" id="shipping_address" name="shipping_address" minlength="3" maxlength="255">
+                                        <input type="text" id="shipping_address" name="shipping_address" minlength="3" maxlength="255" required>
                                     </div>
                                     <!-- campo della data -->
                                     <div>
@@ -306,17 +316,11 @@
             },
             changeFormVisibility: function() {
                 if(this.cart.length>0){
-                    this.formView = (!this.formView);
+                    this.formView = true;
                     console.log(this.formView);
                 } else {
                     alert('Seleziona almeno un piatto');
                 }
-                
-                // if(this.formView === 0) {
-                //     this.formView = 1;
-                // } else{
-                //     this.formView = 0;
-                // }
             }
         },
     });

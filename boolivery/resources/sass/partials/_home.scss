@@ -222,7 +222,8 @@ main {
         font-size: 18pt;
       }
     }
-  //   SEZIONE DEDICATA AI RISTORATORI
+
+  //SEZIONE DEDICATA AI RISTORATORI
     .main-sec-3 {  
       padding: 100px 0;
       // background-color: $jumbogreen;
@@ -230,11 +231,75 @@ main {
         @include centring;
         display: flex;
         .cards-adv {
-          background-color: orange;
-          width: calc(100% / 3);
-          height: 500px;
+          width: 100%;
           margin-right: 15px;
           border-radius: 10px;
+          .triangle-rect {
+            clip-path: polygon(0 0, 100% 0, 59% 100%, 0 100%);
+            width: 100%;
+            min-height: 300px;
+            border-radius: 10px;
+          }
+          #rider-img {
+            background-image: url('/storage/graphics/riders_open.jpg');
+            background-size: cover;
+            background-position-x: -50px;
+            background-repeat: no-repeat;
+          }
+          #engineer-img {
+            background-image: url('/storage/graphics/engineer.jpg');
+            background-size: cover;
+            background-position-x: -50px;
+            background-repeat: no-repeat;
+          }
+          #chef-img {
+            background-image: url('/storage/graphics/ristoratore.jpg');
+            background-size: cover;
+            background-position-x: -50px;
+            background-repeat: no-repeat;
+          }
+          .textAdv {
+            padding: 20px;
+            color: white;
+            text-align: center;
+            p {
+              margin-top: 10px;
+            }
+            a {
+              text-decoration: none;
+              color: white;
+              .btn-to {
+                width: 150px;
+                height: 60px;
+                margin: 0 auto;
+                padding: 0 20px;
+                border-radius: 10px;
+                p {
+                  text-align: center;
+                  vertical-align: middle;
+                  line-height: 60px;
+                }
+              }
+              #btn-rider {
+                background-color: rgb(245, 95, 40);
+              }
+              #btn-engineer {
+                background-color: darkblue;
+              }
+              #btn-chef {
+                background-color: rgb(112, 112, 116);
+              }
+            }
+          }
+        }
+        #rider {
+          background-color: rgb(255, 127, 80);
+        }
+        #engineer {
+          background-color: rgb(58, 58, 214);
+        }
+        #chef {
+          background-color: rgb(200, 200, 216);
         }
         .cards-adv:last-child{
           margin-right: 0px;
@@ -248,7 +313,7 @@ main {
   }
 }
 
-//MEDIA QUERY SEZIONE 1 -> Rimozione immagine
+//MEDIA QUERY JUMBOTRON-> Rimozione immagine
 @media screen and (max-width: 1220px) {
   main {
     #home-container {
@@ -272,3 +337,128 @@ main {
   } 
 }
 
+//MEDIA QUERY SEZIONE 1 -> VISIONE RISTORANTI FILTRATI
+@media screen and (max-width: 768px) {
+  main {
+    #home-container {
+      .main-sec-1 {
+        ul {
+          display: block;
+          li {
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+      } 
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 1 -> VISIONE RISTORANTI FILTRATI | PADDING DAI FILTRI
+@media screen and (max-width: 656px) {
+  main {
+    #home-container {
+      .main-sec-1 {
+        ul {
+          display: block;
+          li {
+            padding-top: 100px;
+          }
+        }
+      } 
+    }
+  }
+}
+
+// MEDIA QUERY SEZIONE 2 -> VISIONE PIATTI TOP 
+@media screen and (max-width: 890px) {
+  main {
+    #home-container {
+      #section-2 {
+        #top-rating-plates {
+          clip-path: none;
+          width: 70%;
+          margin: 0 auto;
+          position: static;
+          margin-top: -20%;
+          margin-bottom: 30px;
+        }
+        .flexible-carusel {
+          #prev {
+            display: none;
+          }
+          #plates-info {
+            display: block;
+            img {
+              clip-path: none;
+              width: 100%;
+              border-top-right-radius: 10px;
+            }
+            #text-plates {
+              text-align: center;
+              margin: 0;
+              padding: 5px 20px;
+            }
+          }
+          #next {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// MEDIA QUERY SEZIONE 2 -> VISIONE PIATTI TOP -> STRETCH IMG
+@media screen and (max-width: 585px) {
+  main {
+    #home-container {
+      #section-2 {
+        .flexible-carusel {
+          #plates-info {
+            img {
+              height: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 3 --> POSIZIONI DI LAVORO IN BOOLIVERY
+@media screen and (max-width: 768px) {
+  main {
+    #home-container {
+      .main-sec-3 {
+        #business-adv {
+          display: block;
+          .cards-adv {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 3 --> POSIZIONI DI LAVORO IN BOOLIVERY
+@media screen and (max-width: 480px) {
+  main {
+    #home-container {
+      .main-sec-3 {
+        #business-adv {
+          display: block;
+          .cards-adv {
+            width: 100%;
+            margin-bottom: 20px;
+            .triangle-rect {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
