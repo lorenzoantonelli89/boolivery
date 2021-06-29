@@ -60,6 +60,9 @@ Route::get('deleteRestaurant/{id}','Admin\RestaurantController@deleteRestaurant'
 //rotta per mostrare ordini
 Route::get('my-orders/{id}','Admin\RestaurantController@showOrders')
     ->name('showOrders');
+//rotta per mostrare singolo ordine
+Route::get('showOrder/{id}','Admin\RestaurantController@showOrder')
+    ->name('showOrder');
 
 // rotta che porta alla lista dei piatti del ristorante cliccato 
  Route::get('/list-plate/{id}', 'Admin\PlateController@plateList')
