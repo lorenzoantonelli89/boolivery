@@ -11,7 +11,7 @@
     <div id="scroll" :class="(scrollToDown == true) ? 'active' : ''" v-on:click="scrollToUp">
       <i class="fas fa-chevron-up"></i>
     </div>
-    <div class=myjumbotron>
+    <div class= "myjumbotron">
         <div id="triangle-topleft" :class="(scrollOn == true) ? 'active' : ''">
         </div>
         <div class="content-jumbotron"> 

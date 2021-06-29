@@ -88,7 +88,7 @@
                                             <span>
                                                 <button v-on:click="addPlate({{$plate}})">
                                                     {{-- <i class="fas fa-plus-circle"></i> --}}
-                                                    add cart
+                                                    AGGIUNGI
                                                 </button>
                                             </span>
                                         </div>
@@ -105,7 +105,69 @@
                                     
                                     @csrf
                                     @method('POST')
+                                    
+                                    
+                                    <!-- OGGETTI NEL CARRELLO -->
+                                    <div :class="total < 20 ? 'pay-delivery' : 'free-delivery'">
+                                            <h6>La consegna è gratuita se spendi almeno 20€</h6>
+                                        </div>
+                                    
+                                    <div class="elemQnty" v-for="item in showedItems">
+                                        <div class="listitem">
+                                            <div class="pluseminus">
+                                                <span v-on:click="removeQty(item)">
+                                                    <i class="fas fa-minus-circle"></i>
+                                                </span>
+                                                <span>@{{item.counter}}</span>
+                                                <span v-on:click="addQty(item)">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </span>
+
+                                                </div>
+                                                <div class="myelem">
+                                                <span>@{{item.name}} </span> 
+                                                </div>    
+
+                                                <div class="singlecount">
+                                                    @{{item.price * item.counter}}€
+                                                </div>
+                                            </div>  
+                                    </div>
+
+                                    <!-- calcolo del totale -->
+                                    <div class="total-calculator">
+                                        {{-- <div>Totale(consegna esclusa): @{{total}}</div> --}}
+                                        <div class="amount">
+                                            <span>Spese di consegna: </span>
+                                            <span>@{{getDeliveryCost()}}€</span>
+                                        </div>
+                                        <div class="amount">
+                                            <span>Il mio totale: </span>
+                                            <span>@{{total + getDeliveryCost()}}€</span>
+                                        </div>
+                                        
+                                        <!-- indicatore rosso verde sulla consegna gratuita -->
+                                        
+                                    </div>
+                                    <div class="total-price">
+                                        <label for="total_price">    
+                                        </label>
+                                        <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 20 ? total+5 : total"  readonly>                                        
+                                    </div>
+                                    <div>
+                                        <input v-for="elem in cart"  type="hidden" name="plate_id[]" id="plate_id[]" :value="elem" readonly>
+                                    </div>
+                                    
+                                    {{-- submit --}}
+                                    <div>
+                                            <i class="fas fa-shopping-cart" @click="changeFormVisibility"></i>
+                                            COMPLETA L'ORDINE
+                                            
+                              
+                                    </div>
+
                                     <!-- campo del nome -->
+                                    <div v-if="formView"id="userDetails">
                                     <div>
                                         <label for="name">
                                             Nome
@@ -161,7 +223,6 @@
                                         };
                                         ?>" required>
                                     </div>
-                                    
                                     {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
                                     @if ($errors->any())
                                     <div class="alert alert-danger">
@@ -172,44 +233,11 @@
                                         </ul>
                                     </div>
                                     @endif
-                                    <!-- calcolo del totale -->
-                                    <div class="total-calculator">
-                                        {{-- <div>Totale(consegna esclusa): @{{total}}</div> --}}
-                                        <span>Spese di consegna: @{{getDeliveryCost()}}€</span>
-                                        <!-- indicatore rosso verde sulla consegna gratuita -->
-                                        <div :class="total < 20 ? 'pay-delivery' : 'free-delivery'">
-                                            <h6>La consegna è gratuita se spendi almeno 20€</h6>
-                                        </div>
-                                        <span>Il mio totale: @{{total + getDeliveryCost()}}€</span>
-                                    </div>
-                                    <div class="total-price">
-                                        <label for="total_price">    
-                                        </label>
-                                        <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 20 ? total+5 : total"  readonly>                                        
-                                    </div>
-                                    <div>
-                                        <input v-for="elem in cart"  type="hidden" name="plate_id[]" id="plate_id[]" :value="elem" readonly>
-                                    </div>
-                                    <!-- OGGETTI NEL CARRELLO -->
-                                    <div>
-                                        <div v-for="item in showedItems">
-                                            <span>@{{item.name}} </span>
-                                            <span>@{{item.counter}}</span>
-                                            <span v-on:click="addQty(item)">
-                                                <i class="fas fa-plus-circle"></i>
-                                            </span>
-                                            <span v-on:click="removeQty(item)">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    {{-- submit --}}
-                                    <div>
-                                        <button type="submit" class="shop-link">
+                                    <button type="submit" class="shop-link">
                                             <i class="fas fa-shopping-cart"></i>
                                             CONCLUDI ORDINE
-                                        </button>
-                                    </div>
+                                    </button>
+                                    </div> 
                                 </form>
                             </div> 
                         </div>
@@ -230,6 +258,7 @@
             cart:[], // array di ID piatti ordinati
             showedItems:[], // array di obj da mostrare nel carrello
             total:0, // prezzo totale
+            formView:false, //visualizzazione del form
         },
         methods: {
             addPlate: function(item){ // aggiungi piatto partendo da qty 0
@@ -279,6 +308,15 @@
                     return 5;
                 }
             },
+            changeFormVisibility: function() {
+                this.formView = (!this.formView);
+                console.log(this.formView);
+                // if(this.formView === 0) {
+                //     this.formView = 1;
+                // } else{
+                //     this.formView = 0;
+                // }
+            }
         },
     });
 
