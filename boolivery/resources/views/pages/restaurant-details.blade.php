@@ -16,9 +16,9 @@
                         {{$restaurant -> name}}
                     </h1>
                     <!-- indirizzo -->
-                    <h2>
+                    <h3>
                         {{$restaurant -> address}}
-                    </h2>
+                    </h3>
                     <!-- descrizione -->
                     <div class="restaurant-description-text">
                     
@@ -26,13 +26,9 @@
                             <i>{{$restaurant -> description}}</i>
                         </p>
 
-                    </div>
-                        
-                    <div class="atHome">
-                        <a href="{{route('home')}}">
-                            Torna alla Home
-                        </a>
-                    </div>        
+                    </div> 
+                    
+                    <a href="{{route('home')}}"><i class="fas fa-long-arrow-alt-left"></i> Torna ai ristoranti</a>
                 </div>
 
             </div>

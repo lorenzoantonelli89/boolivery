@@ -33,33 +33,22 @@
         }
 
         .restaurant-details {
-            
-            ul {
-                @include flex(row, space-between, center);
-            list-style-type: none;
-            
-            a {
-                color: $ourblue;
-                text-decoration: none;
+            height: 100%;
+            @include flex(column, flex-start, flex-start);
 
-                &:hover {
-                    background-color: $ourgreen;
-                }
-            }
-
-            }
 
             .restaurant-description-text {
-                margin-right: 15px;
+                
+                margin: 20px 25px 0 0;
                 overflow: scroll;
-                height: 150px;
+                flex-grow: 1
                 
             }
-            .atHome{
-
-                a{
-                    @include buttonLink($ourlogo, $white, 10px, 20px);
-                }
+            a:visited,
+            a:link
+            {
+                color: #ffa500;
+   
             }
         }
 
@@ -370,7 +359,7 @@
     margin: 15px;
 }
 
-@media screen and(max-width: 1741px) and (min-width: 1083px) {
+@media screen and(max-width: 1741px) and (min-width: 667px) {
 
     // ZONA SUPERIORE: descrizione ristorante e foto
 .restaurant-show-container {
@@ -398,27 +387,7 @@
 
         .restaurant-details {
             
-            ul {
-                @include flex(row, space-between, center);
-            list-style-type: none;
-            
-            a {
-                color: $ourblue;
-                text-decoration: none;
-
-                &:hover {
-                    background-color: $ourgreen;
-                }
-            }
-
-            }
-
-            .restaurant-description-text {
-                margin-right: 15px;
-                overflow: scroll;
-                height: 250px;
-                
-            }
+           text-align: center;
         }
 
         
@@ -426,7 +395,7 @@
     //PARTE DESTRA SUPERIORE foto e indicazioni sull'ordine 
     .restaurant-foto-order {
         width: 100%;
-        height: 100px;
+        height: 350px;
         @include flex(row, space-between, center);
                 
         img {
@@ -647,7 +616,7 @@
 
 }
 
-@media screen and(max-width: 1082px) {
+@media screen and(max-width: 666px) {
 
     // ZONA SUPERIORE: descrizione ristorante e foto
 .restaurant-show-container {
@@ -674,32 +643,8 @@
         }
 
         .restaurant-details {
+            @include flex(column, center, center);
             
-            ul {
-                @include flex(row, center, center);
-            list-style-type: none;
-            
-            a {
-                color: $ourblue;
-                text-decoration: none;
-
-                &:hover {
-                    background-color: $ourgreen;
-                }
-            }
-
-            }
-
-            .restaurant-description-text {
-                margin-right: 0px;
-                overflow: scroll;
-                flex-grow: 1;
-                
-            }
-
-            .atHome {
-                margin-bottom: 30px;
-            }
         }
 
         
@@ -775,7 +720,7 @@
             .plate-selection-view {
                 flex-grow: 1;
                 margin-right: 0px;
-                height: 200px;
+                height: 350px;
                 @include flex(row, space-around, center);
                 margin-top: 15px;
                 background-color: white;
