@@ -26,7 +26,7 @@
                   <label :for="category.name">
                     @{{category.name}}
                   </label>
-                  <input type="checkbox" :name="category.name" :value="category.id"  v-model="categoryChecked" v-on:change="filteredRestaurantsCategory">
+                  <input :id="category.name" type="checkbox" :name="category.name" :value="category.id"  v-model="categoryChecked" v-on:change="filteredRestaurantsCategory">
               </li>
           </ul>
         </div>

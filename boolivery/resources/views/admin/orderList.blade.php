@@ -20,9 +20,9 @@
             </div>
             {{-- bottone per vedere statistiche ordini --}}
             <div>
-                <a href="{{route('showStats', encrypt($restaurant -> id))}}">
-                    Clicca qui per vedere le statistiche
-                </a>
+                <div class="back-button">
+                    <a href="{{route('showStats', encrypt($restaurant -> id))}}">VISUALIZZA GRAFICI</a>
+                </div>
             </div>
         </nav>
         {{-- visualizzazione ordini --}}

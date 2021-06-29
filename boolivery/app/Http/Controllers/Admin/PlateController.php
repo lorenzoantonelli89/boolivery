@@ -99,7 +99,7 @@ class PlateController extends Controller
         }
         $plate -> save();
 
-        return redirect() -> route('plateList', $id);
+        return redirect() -> route('plateList',encrypt($restaurant->id));
     }
 
     // funzione per cancellare piatto con softdelete

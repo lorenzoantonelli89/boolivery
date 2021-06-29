@@ -1,10 +1,10 @@
 #register-container{
-    height: 100vh;
+    //height: 100vh;
     @include flex(column, flex-start, center);
     background-color: $jumbogreen;
 
     #container-top{
-        margin: 100px 0;
+        margin: 100px 0 50px;
 
         span{
             color: salmon;
@@ -23,7 +23,7 @@
                     margin: 10px 0;
 
                     .input-text{
-                        width: 220px;
+                        width: 440px;
                         height: 45px;
                         padding-left: 8px;
                         border: 1px solid $ourlogo;

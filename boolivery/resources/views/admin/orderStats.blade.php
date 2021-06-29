@@ -5,26 +5,30 @@
     <div class="container" id="appChart">
         {{-- titolo --}}
         <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
-        {{-- scegli anno --}}
-        <div>
-            <label for="year-choice">Scegli l'anno da visualizzare</label>
-            <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
-                <option disabled value="">Seleziona un anno</option>
-                {{-- visualizza media per mese di tutti gli anni --}}
-                <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
-                {{-- visualizza ciascun anno --}}
-                <option v-for="year in years" :value="year">@{{year}}</option>
-            </select>
-        </div>
+        {{-- navbar-menu --}}
+        <nav>
+            {{-- scegli anno --}}
+            <div>
+                <label for="year-choice">Scegli l'anno da visualizzare</label>
+                <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
+                    <option disabled value="">Seleziona un anno</option>
+                    {{-- visualizza media per mese di tutti gli anni --}}
+                    <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
+                    {{-- visualizza ciascun anno --}}
+                    <option v-for="year in years" :value="year">@{{year}}</option>
+                </select>
+            </div>
+            {{-- bottone per vedere statistiche ordini --}}
+            <div>
+                <div class="back-button">
+                    <a href="{{route('showOrders', encrypt($restaurant -> id))}}">VISUALIZZA LISTA ORDINI</a>
+                </div>
+            </div>
+        </nav>
         {{-- GRAFICO responsive --}}
-        <div style="width:50vw">
+        <div class="chart">
             <canvas id="myChart" width="600" height="400"></canvas>
         </div>
-        {{-- bottone per andare a vedere dettagli ordine --}}
-        <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
-            <button style="background-color:red; padding: 10px; ">Vai a vedere lista ordini</button>
-        </a>
-
     </div>
 </main>  
 

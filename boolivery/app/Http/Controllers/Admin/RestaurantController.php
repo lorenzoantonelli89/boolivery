@@ -144,7 +144,7 @@ class RestaurantController extends Controller
         if($ownerId != $user->id){
             return redirect()->route('listRestaurant');
         }
-        return view('admin.orderPage',compact('order'));
+        return view('admin.orderPage',compact('order','restaurant'));
     }
 
     public function showStats($id){ //funzione per mostrare pagina statistiche
