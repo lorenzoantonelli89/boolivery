@@ -50,6 +50,7 @@ class PlateController extends Controller
 
         $plate=Plate::findOrFail($id);
         $plate -> update($validated);
+        $restaurant = Restaurant::findOrFail($plate->restaurant_id);
         
         if($request->file('image') != null){
             $img=$request->file('image');
@@ -61,7 +62,7 @@ class PlateController extends Controller
             $plate -> save();
         }
 
-        return redirect() -> route('plateList',$plate ->restaurant ->id);
+        return redirect() -> route('plateList',encrypt($restaurant->id));
     }
 
     /* funzione che permette la creazione di un piatto */

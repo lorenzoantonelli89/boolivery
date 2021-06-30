@@ -5,19 +5,19 @@
     #list-restaurant-container {
         position: relative;
         @include centring;
-        @include flex(column, center, center);
-
-        #restaurant-user-title{
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            margin-top: 25px;
-            color: $white;
-        }
-        a{
+        a {
             @include buttonLink($ourlogo, $white, 10px, 20px);
-        }    
+        } 
+        #centered-list {
+            text-align: center;
+            #restaurant-user-title{
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                padding-top: 30px;
+                color: $white; 
+            }
+        }
         .restaurant-from-list {
-            @include flex(column, space-between, flex-start);
             margin-top: 35px;
             max-width: 100%;
             
@@ -48,20 +48,21 @@
                 }
             }
             .restaurantfl-foto {
-                @include flex(row, flex-start, flex-start);
-                
                 width: 100%;
                 
                 img {
                     border-radius: 10px;
                     width: 100%;
+                    height: 500px;
                 }
             }
             .restaurantfl-modify {
-                @include flex(row, space-between, center);
-                width: 90%;
-                margin: 0 auto;
-                margin-top: 40px;
+                @include flex(row, baseline, center);
+                flex-wrap: wrap;
+                margin: 40px 0;
+                a {
+                    margin: 5px auto;
+                }
             }
         }
     }
@@ -105,4 +106,34 @@
             }
         }
     }
+}
+
+//MEDIA QUERY -> RIDIMENSIONAMENTO IMMAGINI
+@media screen and (max-width: 930px) {
+    .bg-color {
+        #list-restaurant-container {
+            .restaurant-from-list {
+                .restaurantfl-foto {
+                    img {
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }  
+}
+
+//MEDIA QUERY -> RIDIMENSIONAMENTO IMMAGINI
+@media screen and (max-width: 480px) {
+    .bg-color {
+        #list-restaurant-container {
+            .restaurant-from-list {
+                .restaurantfl-foto {
+                    img {
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }  
 }

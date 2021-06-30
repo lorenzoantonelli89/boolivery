@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -40,22 +41,42 @@
 }
 
 #login-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: #d0eb98;
+  padding: 50px 0;
+}
+
+#login-container #absolute-trapezoid {
+  background-color: #E1EEB4;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: 9;
 }
 
 #login-container #container-top {
-  margin: 100px 0;
+  margin: 150px 0 30px;
+  z-index: 99;
 }
 
-#login-container #container-top span {
+#login-container #container-top h1 {
   color: salmon;
-  font-size: 25px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+#login-container #container-form {
+  z-index: 99;
+  border: 2px solid salmon;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #E1EEB4;
 }
 
 #login-container #container-form form .container-email-password .label {
@@ -68,12 +89,12 @@
 }
 
 #login-container #container-form form .container-email-password .container-input .input-text {
-  width: 220px;
+  width: 440px;
   height: 45px;
   padding-left: 8px;
   border: 1px solid #28CCBC;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 #login-container #container-form form .container-email-password .container-input .input-text:focus {
@@ -82,11 +103,17 @@
 
 #login-container #container-form form .container-remember {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #login-container #container-form form .container-remember .label {
   color: salmon;
   font-size: 16px;
+}
+
+#login-container #container-form form .container-button {
+  text-align: center;
 }
 
 #login-container #container-form form .container-button #submit {
@@ -98,10 +125,39 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  width: 90%;
+  font-size: 20px;
 }
 
 #login-container #container-form form .container-button #submit:hover {
   background-color: salmon;
+}
+
+#login-container #container-form form .go-to-register {
+  text-align: center;
+  color: salmon;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#login-container #container-form form .go-to-register a {
+  color: #28CCBC;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#login-container #container-form form .go-to-register a:hover {
+  color: #363947;
+}
+
+@media screen and (max-width: 768px) {
+  #login-container #container-form form .container-email-password .container-input {
+    width: 100%;
+  }
+
+  #login-container #container-form form .container-email-password .container-input .input-text {
+    width: 100%;
+  }
 }
 
 #register-container {
@@ -110,21 +166,49 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #d0eb98;
+  padding: 50px 0;
+}
+
+#register-container #absolute-trapezoid {
+  background-color: #E1EEB4;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: 9;
 }
 
 #register-container #container-top {
-  margin: 100px 0 50px;
+  margin: 150px 0 30px;
+  z-index: 99;
 }
 
-#register-container #container-top span {
+#register-container #container-top h1 {
   color: salmon;
-  font-size: 25px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+#register-container #container-form {
+  z-index: 99;
+  border: 2px solid salmon;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #E1EEB4;
+}
+
+#register-container #container-form form .container-email-password-name {
+  display: flex;
+  align-items: center;
 }
 
 #register-container #container-form form .container-email-password-name .label {
   color: salmon;
   font-size: 18px;
+  flex-basis: 30%;
+  margin-right: 20px;
 }
 
 #register-container #container-form form .container-email-password-name .container-input {
@@ -137,7 +221,7 @@
   padding-left: 8px;
   border: 1px solid #28CCBC;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 #register-container #container-form form .container-email-password-name .container-input .input-text:focus {
@@ -153,6 +237,10 @@
   font-size: 16px;
 }
 
+#register-container #container-form form .container-button {
+  text-align: center;
+}
+
 #register-container #container-form form .container-button #submit {
   text-decoration: none;
   background-color: #28CCBC;
@@ -162,10 +250,155 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  width: 90%;
+  font-size: 20px;
 }
 
 #register-container #container-form form .container-button #submit:hover {
   background-color: salmon;
+}
+
+#register-container #container-form form .container-button #submit:hover {
+  background-color: salmon;
+}
+
+#register-container #container-form form .go-to-login {
+  text-align: center;
+  color: salmon;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#register-container #container-form form .go-to-login a {
+  color: #28CCBC;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#register-container #container-form form .go-to-login a:hover {
+  color: #363947;
+}
+
+@media screen and (max-width: 768px) {
+  #register-container #container-form form .container-email-password-name {
+    flex-wrap: wrap;
+  }
+
+  #register-container #container-form form .container-email-password-name .container-input {
+    width: 100%;
+  }
+
+  #register-container #container-form form .container-email-password-name .container-input .input-text {
+    width: 100%;
+  }
+}
+
+#password-reset-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #d0eb98;
+  padding: 50px 0;
+}
+
+#password-reset-container #absolute-trapezoid {
+  background-color: #E1EEB4;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: 9;
+}
+
+#password-reset-container #container-top {
+  margin: 150px 0 30px;
+  z-index: 99;
+}
+
+#password-reset-container #container-top h1 {
+  color: salmon;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#password-reset-container #container-form {
+  z-index: 99;
+  border: 2px solid salmon;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #E1EEB4;
+}
+
+#password-reset-container #container-form form .container-email-password .label {
+  color: salmon;
+  font-size: 18px;
+}
+
+#password-reset-container #container-form form .container-email-password .container-input {
+  margin: 10px 0;
+}
+
+#password-reset-container #container-form form .container-email-password .container-input .input-text {
+  width: 440px;
+  height: 45px;
+  padding-left: 8px;
+  border: 1px solid #28CCBC;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+#password-reset-container #container-form form .container-email-password .container-input .input-text:focus {
+  outline: none;
+}
+
+#password-reset-container #container-form form .container-button {
+  text-align: center;
+}
+
+#password-reset-container #container-form form .container-button #submit {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  width: 70%;
+  font-size: 20px;
+}
+
+#password-reset-container #container-form form .container-button #submit:hover {
+  background-color: salmon;
+}
+
+#password-reset-container #container-form form .go-to-login {
+  color: salmon;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+#password-reset-container #container-form form .go-to-login a {
+  color: #28CCBC;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#password-reset-container #container-form form .go-to-login a:hover {
+  color: #363947;
+}
+
+@media screen and (max-width: 768px) {
+  #password-reset-container #container-form form .container-email-password .container-input {
+    width: 100%;
+  }
+
+  #password-reset-container #container-form form .container-email-password .container-input .input-text {
+    width: 100%;
+  }
 }
 
 main {
@@ -669,6 +902,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -840,7 +1074,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
@@ -1650,6 +1884,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -1755,6 +1990,7 @@ div#container-plate-list .menuContainer .platesCards li {
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard {
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -1764,6 +2000,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div {
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div img {
   width: 100%;
+  height: 260px;
   border-radius: 10px;
   position: relative;
 }
@@ -1999,6 +2236,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2035,13 +2273,36 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .editPlate .editPlateContainer {
-  height: 100%;
+  position: relative;
   width: 100%;
-  background-image: url("/storage/graphics/food-wood.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: cover;
+  min-height: 780px;
   padding: 15px 0;
+  background: linear-gradient(white, #275351);
+  z-index: 1;
+}
+
+.editPlate .polygon {
+  -webkit-clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background-color: #60b1ad;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -1;
+}
+
+.editPlate .polygonTwo {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+          clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+  background-color: #2c5e5b;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -2;
 }
 
 .editPlate .backToPlateList {
@@ -2054,38 +2315,38 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin-left: 20px;
 }
 
-.editPlate .container {
-  width: 45%;
-  min-height: 780px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 15px auto;
-  background-image: url("/storage/graphics/blackboard.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  color: white;
-}
-
-.editPlate .container .editPlateTitle {
+.editPlate .editPlateTitle {
   padding-top: 2px;
-  font-family: "Pacifico", cursive;
+  text-align: center;
 }
 
-.editPlate .container .editPlateTitle h2 {
+.editPlate .editPlateTitle h2 {
   margin: 27px 11px 60px 0;
 }
 
+.editPlate .container {
+  width: 45%;
+  min-height: 680px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 15px auto;
+  padding-top: 50px;
+  border: 8px solid black;
+  color: black;
+  z-index: 999;
+  background-color: #88d7da;
+}
+
 .editPlate .container .form-group {
-  width: 75%;
+  width: 70%;
   min-height: 60px;
   margin: auto;
   margin-bottom: 35px;
   text-align: left;
-  font-family: "Pacifico", cursive;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 .editPlate .container .form-group input {
@@ -2094,6 +2355,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 3px 8px;
   margin-left: 10px;
   height: 25px;
+  border: none;
 }
 
 .editPlate .container .form-group .radio {
@@ -2104,6 +2366,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .editPlate .container .form-group .radio > input {
   margin-right: 15px;
+  height: 17px;
 }
 
 .editPlate .container .form-group .radio > label {
@@ -2154,7 +2417,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .editPlate .container .euro {
   position: absolute;
-  top: 7px;
+  top: 3px;
   right: 85px;
   font-family: "Lato";
   font-weight: bold;
@@ -2170,6 +2433,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border-radius: 10px;
   text-transform: uppercase;
   margin: 30px 0;
+  border: none;
 }
 
 /* test @Queries mobile-device*/
@@ -2232,7 +2496,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   .editPlate .container .euro {
-    top: 12%;
+    top: 5%;
     right: 67%;
     font-family: "Lato";
   }
@@ -2251,6 +2515,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2286,36 +2551,13 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
-/* @mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-@mixin buttonLink ($bg, $color, $topDown, $leftRight){
-    text-decoration: none;
-    background-color: $bg;
-    color: $color;
-    padding: $topDown $leftRight;
-    border-radius: 10px;
-    text-transform: uppercase;
-}
-
-@mixin centring {
-    width: 70%;
-    margin: 0 auto;
-}
- */
-
 .createPlate .createPlateContainer {
-  height: 100%;
+  position: relative;
   width: 100%;
-  background-image: url("/storage/graphics/CreatePlateMainBg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: cover;
+  min-height: 780px;
   padding: 15px 0;
+  background: linear-gradient(#8cce11, #389b61);
+  z-index: 1;
 }
 
 .createPlate .backToPlateList {
@@ -2330,38 +2572,61 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-transform: uppercase;
 }
 
-.createPlate .createPlateContainerForm {
-  width: 45%;
-  min-height: 780px;
-  text-align: center;
-  border-radius: 15px;
-  margin: 15px auto;
-  background-image: url("/storage/graphics/createPlateBg.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-  color: white;
-  font-family: "Pacifico", cursive;
+.createPlate .polygon {
+  -webkit-clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background-color: #A6FFDB;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -1;
 }
 
-.createPlate .createPlateContainerForm .createTitle {
+.createPlate .polygonTwo {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+          clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+  background-color: #D0EB98;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -2;
+}
+
+.createPlate .createTitle {
   padding-top: 2px;
+  text-align: center;
 }
 
-.createPlate .createPlateContainerForm .createTitle h2 {
+.createPlate .createTitle h2 {
   margin: 27px 11px 60px 0;
 }
 
+.createPlate .createPlateContainerForm {
+  width: 45%;
+  min-height: 640px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 15px auto;
+  color: black;
+  border: 8px solid black;
+  background-color: #0a8a43a3;
+  padding-top: 50px;
+}
+
 .createPlate .createPlateContainerForm .form-group {
-  width: 75%;
+  width: 70%;
   min-height: 60px;
   margin: auto;
   margin-bottom: 35px;
   text-align: left;
-  font-family: "Pacifico", cursive;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
 }
 
 .createPlate .createPlateContainerForm .form-group input {
@@ -2370,6 +2635,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 3px 8px;
   margin-left: 10px;
   height: 25px;
+  border: none;
 }
 
 .createPlate .createPlateContainerForm .form-group .radio {
@@ -2380,6 +2646,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .createPlate .createPlateContainerForm .form-group .radio > input {
   margin-right: 15px;
+  height: 17px;
 }
 
 .createPlate .createPlateContainerForm .form-group .radio > label {
@@ -2430,7 +2697,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .createPlate .createPlateContainerForm .euro {
   position: absolute;
-  top: 7px;
+  top: 3px;
   right: 85px;
   font-family: "Lato";
   font-weight: bold;
@@ -2446,6 +2713,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border-radius: 10px;
   text-transform: uppercase;
   margin: 30px 0;
+  border: none;
 }
 
 /* test @Queries mobile-device*/
@@ -2508,7 +2776,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   .createPlate .createPlateContainerForm .euro {
-    top: 12%;
+    top: 5%;
     right: 67%;
     font-family: "Lato";
   }
@@ -2527,6 +2795,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2562,35 +2831,19 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
-/* @mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
-
-@mixin buttonLink ($bg, $color, $topDown, $leftRight){
-    text-decoration: none;
-    background-color: $bg;
-    color: $color;
-    padding: $topDown $leftRight;
-    border-radius: 10px;
-    text-transform: uppercase;
-}
-
-@mixin centring {
-    width: 70%;
-    margin: 0 auto;
-}
- */
-
 .createRestContainer {
   width: 70%;
   margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(#a5e9e5, #02504c);
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
 .createRestContainer .turnBackCont {
-  margin: 30px 0;
+  margin-left: 30px;
 }
 
 .createRestContainer .turnBackCont .turnBack {
@@ -2602,25 +2855,63 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-transform: uppercase;
 }
 
+.createRestContainer .createRestTitle {
+  padding-top: 2px;
+}
+
+.createRestContainer .createRestTitle h2 {
+  margin: 27px 11px 40px 0;
+  text-align: center;
+}
+
+.createRestContainer .polygon {
+  -webkit-clip-path: polygon(31% 0%, 72% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(31% 0%, 72% 0%, 100% 100%, 0% 100%);
+  background-color: #98b9b8;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -1;
+}
+
+.createRestContainer .polygonTwo {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+          clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+  background-color: #2c5e5b;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -3;
+}
+
+.createRestContainer .polygonThree {
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  background-color: #9cf3dd;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -2;
+}
+
 .createRestContainer .formCreateRest {
   width: 45%;
   min-height: 780px;
   text-align: center;
   border-radius: 15px;
-  margin: 15px auto;
+  margin: 0 auto;
   background-image: url("/storage/graphics/TikTok.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
-  font-family: "Pacifico", cursive;
-}
-
-.createRestContainer .formCreateRest .createRestTitle {
-  padding-top: 2px;
-}
-
-.createRestContainer .formCreateRest .createRestTitle h2 {
-  margin: 27px 11px 40px 0;
+  border: 8px solid black;
+  padding-top: 50px;
 }
 
 .createRestContainer .formCreateRest .form-group {
@@ -2629,8 +2920,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin: auto;
   margin-bottom: 35px;
   text-align: left;
-  font-family: "Pacifico", cursive;
   font-size: 16px;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -2644,6 +2935,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 3px 8px;
   margin-left: 10px;
   height: 25px;
+  border: none;
 }
 
 .createRestContainer .formCreateRest .insert-img {
@@ -2664,6 +2956,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 .createRestContainer .formCreateRest p {
   width: 100%;
   margin-bottom: 20px;
+  font-weight: bold;
 }
 
 .createRestContainer .formCreateRest .categoryCheckboxes {
@@ -2721,6 +3014,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2756,6 +3050,52 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.container .form-group {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .form-group input {
+  border: 1px solid #2caead;
+  border-radius: 5px;
+}
+
+.container .form-group input[type=file] {
+  border: none;
+  background-color: #2caead;
+}
+
+.container #category-picker {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container #category-picker p {
+  margin-right: 10px;
+}
+
+.container #category-picker .right-distance {
+  margin-right: 10px;
+}
+
+.container #btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container #btn .btn-primary {
+  margin: 20px 0;
+}
+
 #appOrders.container,
 #appChart.container {
   padding: 30px 0;
@@ -2770,10 +3110,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 #appOrders.container nav,
 #appChart.container nav {
-  display: flex;
-  justify-content: space-between;
   padding: 10px 0;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 #appOrders.container nav .back-button,
@@ -2781,6 +3119,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 5px 10px;
   border-radius: 10px;
   background-color: #28CCBC;
+  margin: 10px auto 0;
+  display: inline-block;
 }
 
 #appOrders.container nav .back-button a,
@@ -2791,8 +3131,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 #appOrders.container .chart,
 #appChart.container .chart {
-  width: 60vw;
-  margin: auto;
+  height: 500px;
 }
 
 #appOrders.container .status,
@@ -2840,9 +3179,17 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: 1px solid #ccc;
 }
 
+#appOrders.container .no-orders,
+#appChart.container .no-orders {
+  text-align: center;
+  margin-top: 10px;
+  color: #fc6a01;
+}
+
 @media screen and (max-width: 1024px) {
   #appChart.container .chart {
-    width: 80vw;
+    width: 70vw;
+    height: 350px;
   }
 }
 
@@ -2918,7 +3265,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   #appChart.container .chart {
-    width: 100vw;
+    width: 70vw;
+    height: 300px;
   }
 }
 
@@ -3271,17 +3619,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   position: relative;
   width: 70%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.bg-color #list-restaurant-container #restaurant-user-title {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  margin-top: 25px;
-  color: #ffff;
 }
 
 .bg-color #list-restaurant-container a {
@@ -3293,11 +3630,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-transform: uppercase;
 }
 
+.bg-color #list-restaurant-container #centered-list {
+  text-align: center;
+}
+
+.bg-color #list-restaurant-container #centered-list #restaurant-user-title {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  color: #ffff;
+}
+
 .bg-color #list-restaurant-container .restaurant-from-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-top: 35px;
   max-width: 100%;
 }
@@ -3339,26 +3683,26 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100%;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
   border-radius: 10px;
   width: 100%;
+  height: 500px;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: baseline;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify a {
+  margin: 5px auto;
 }
 
 @media screen and (max-width: 1264px) {
@@ -3399,6 +3743,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+    height: 200px;
   }
 }
 

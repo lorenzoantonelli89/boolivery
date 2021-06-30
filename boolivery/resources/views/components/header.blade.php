@@ -18,8 +18,8 @@
                     </a>
                 </li>
                 <li class="nav-list">
-                    <a href="{{route('contacts')}}">
-                        Contatti
+                    <a href="{{route('work')}}">
+                        Lavora con noi
                     </a>
                 </li>
                 <!-- Authentication Links -->

@@ -6,14 +6,17 @@
     <main class="createPlate">
         <div class="createPlateContainer">
           <a class='backToPlateList' href="{{route('plateList', encrypt(($restaurant  -> id)))}}">Torna ai piatti</a>
-  {{-- inizio form --}}
-         
+
+          <div class="polygon"></div>
+          <div class="polygonTwo"></div>
+
+          <div class="createTitle">
+              <h2>
+                  Aggiungi Piatto:
+              </h2>
+          </div>
+                
            <div class="createPlateContainerForm">
-                <div class="createTitle">
-                    <h2>
-                        Modifica Piatto:
-                    </h2>
-                </div>
 
               <form method="POST" enctype="multipart/form-data" action="{{route('storePlate', $restaurant->id)}}">
   

@@ -2,39 +2,18 @@
 @import 'partials/common';
 
 
-/* @mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-}
 
-@mixin buttonLink ($bg, $color, $topDown, $leftRight){
-    text-decoration: none;
-    background-color: $bg;
-    color: $color;
-    padding: $topDown $leftRight;
-    border-radius: 10px;
-    text-transform: uppercase;
-}
-
-@mixin centring {
-    width: 70%;
-    margin: 0 auto;
-}
- */
 
  .createPlate{
 
     
     .createPlateContainer{
-        height: 100%;
+        position: relative;
         width: 100%;
-        background-image: url("/storage/graphics/CreatePlateMainBg.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position:cover ;
+        min-height:780px ;
         padding: 15px 0;
+        background: linear-gradient(rgb(140, 206, 17), #389b61 );
+        z-index: 1;   
     
     }
     
@@ -50,37 +29,63 @@
         text-transform: uppercase;
     
     }
+
+    .polygon{
+        clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+        background-color: #A6FFDB;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -1;
+ 
+    }
+
+    .polygonTwo{
+
+        clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+        background-color: #D0EB98;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -2;
+    }
+
+    .createTitle{
+        padding-top: 2px;
+        text-align: center;
+
+        h2{
+            margin: 27px 11px 60px 0;
+        }
+    }
+
     .createPlateContainerForm{
         width: 45%;
-        min-height: 780px;
+        min-height: 640px;
         text-align: center;
         border-radius: 15px;
         margin: 15px auto ;
-        background-image: url("/storage/graphics/createPlateBg.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position:top ;
-        color: white;
-        font-family: 'Pacifico', cursive;
-
-        .createTitle{
-            padding-top: 2px;
-
-            h2{
-                margin: 27px 11px 60px 0;
-            }
-        }
+        color: black;
+        border: 8px solid rgb(0, 0, 0);
+        background-color:#0a8a43a3;
+        padding-top: 50px;
+        
         
         .form-group{
-            width: 75%;
+            width: 70%;
             min-height: 60px;
             margin: auto;
             margin-bottom: 35px;
             text-align: left;
-            font-family: 'Pacifico', cursive;
             font-size: 16px;
             display: flex;
             justify-content: space-between;
+            font-weight: bold;
+
     
              input{
                 border-radius: 7px;
@@ -88,6 +93,7 @@
                 padding:3px 8px;
                 margin-left:10px;
                 height: 25px;
+                border: none;
             }
     
             .radio{
@@ -97,6 +103,8 @@
                 
                 &>input{
                     margin-right: 15px;
+                    height: 17px;
+
                 }
     
                 &>label{
@@ -152,7 +160,7 @@
     
         .euro{
             position:absolute;
-            top: 7px;
+            top: 3px;
             right: 85px;
             font-family: 'Lato';
             font-weight: bold;
@@ -163,6 +171,7 @@
         button{
             @include buttonLink(#0febe0, white,10px, 30px);
             margin:30px 0;
+            border: none;
         }
         
     }
@@ -180,6 +189,7 @@
 
         .createPlateContainerForm{
             width: 100%;
+            
             
             .form-group{
                
@@ -237,7 +247,7 @@
             }
 
             .euro{
-                top: 12%;
+                top: 5%;
                 right: 67%;
                 font-family: 'Lato';
                

@@ -48,13 +48,15 @@
                             {{-- sezione che mi mostra quanti ordini ha ciascun piatto --}}
                             <h6>
                                 @php
-                                    $count = 0;
+                                    $count = [];
                                     $orders = $plate->orders;
                                     foreach($orders as $order){
-                                        $count++;
+                                        if(!in_array($order->id,$count)){
+                                            $count[] = $order->id;
+                                        }
                                     }
                                 @endphp
-                                Appare in {{$count}} ordini
+                                Appare in {{count($count)}} ordini
                             </h6>
                             <a href="{{route('deletePlate',$plate->id)}}">
                                 <button>DELETE</button>

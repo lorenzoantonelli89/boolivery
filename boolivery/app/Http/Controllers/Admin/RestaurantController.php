@@ -10,6 +10,7 @@ use App\Restaurant;
 use App\User;
 use App\Category;
 use App\Order;
+use App\Plate;
 
 class RestaurantController extends Controller
 {
@@ -131,7 +132,16 @@ class RestaurantController extends Controller
     public function showOrders($id){ //funzione per mostrare tutti gli ordini
 
         $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
-        return view ('admin.orderList',compact('restaurant'));
+        //funzione per passare un array vuoto di ordini, e mostrare relativo messaggio
+        $plates = $restaurant -> plates() ->get();
+        if(count($plates) == 0){
+            $orders = [];
+        } else {
+            foreach($plates as $plate){
+                $orders = $plate->orders()->get();
+            }
+        }
+        return view ('admin.orderList',compact('restaurant','orders'));
     }
 
     public function showOrder($id){ //funzione per mostrare ordine
@@ -150,6 +160,15 @@ class RestaurantController extends Controller
     public function showStats($id){ //funzione per mostrare pagina statistiche
 
         $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
-        return view('admin.orderStats',compact('restaurant'));
+        //funzione per passare un array vuoto di ordini, e mostrare relativo messaggio
+        $plates = $restaurant -> plates() ->get();
+        if(count($plates) == 0){
+            $orders = [];
+        } else {
+            foreach($plates as $plate){
+                $orders = $plate->orders()->get();
+            }
+        }
+        return view('admin.orderStats',compact('restaurant','orders'));
     }
 }
