@@ -2816,7 +2816,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 30px 0;
   max-width: 1140px;
   margin: auto;
-  height: calc(100vh - 440px);
 }
 
 #appOrders.container h1,
@@ -2847,8 +2846,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 #appOrders.container .chart,
 #appChart.container .chart {
-  width: 60vw;
-  margin: auto;
+  height: 500px;
 }
 
 #appOrders.container .status,
@@ -2898,7 +2896,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 @media screen and (max-width: 1024px) {
   #appChart.container .chart {
-    width: 80vw;
+    width: 70vw;
+    height: 350px;
   }
 }
 
@@ -2974,7 +2973,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   #appChart.container .chart {
-    width: 100vw;
+    width: 70vw;
+    height: 300px;
   }
 }
 
