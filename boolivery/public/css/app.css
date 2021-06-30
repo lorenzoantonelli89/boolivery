@@ -40,22 +40,42 @@
 }
 
 #login-container {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-color: #d0eb98;
+  padding: 50px 0;
+}
+
+#login-container #absolute-trapezoid {
+  background-color: #E1EEB4;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: 9;
 }
 
 #login-container #container-top {
-  margin: 100px 0;
+  margin: 150px 0 30px;
+  z-index: 99;
 }
 
-#login-container #container-top span {
+#login-container #container-top h1 {
   color: salmon;
-  font-size: 25px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+#login-container #container-form {
+  z-index: 99;
+  border: 2px solid salmon;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #E1EEB4;
 }
 
 #login-container #container-form form .container-email-password .label {
@@ -68,12 +88,12 @@
 }
 
 #login-container #container-form form .container-email-password .container-input .input-text {
-  width: 220px;
+  width: 440px;
   height: 45px;
   padding-left: 8px;
   border: 1px solid #28CCBC;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 #login-container #container-form form .container-email-password .container-input .input-text:focus {
@@ -82,11 +102,17 @@
 
 #login-container #container-form form .container-remember {
   margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 #login-container #container-form form .container-remember .label {
   color: salmon;
   font-size: 16px;
+}
+
+#login-container #container-form form .container-button {
+  text-align: center;
 }
 
 #login-container #container-form form .container-button #submit {
@@ -98,10 +124,39 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  width: 90%;
+  font-size: 20px;
 }
 
 #login-container #container-form form .container-button #submit:hover {
   background-color: salmon;
+}
+
+#login-container #container-form form .go-to-register {
+  text-align: center;
+  color: salmon;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#login-container #container-form form .go-to-register a {
+  color: #28CCBC;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#login-container #container-form form .go-to-register a:hover {
+  color: #363947;
+}
+
+@media screen and (max-width: 768px) {
+  #login-container #container-form form .container-email-password .container-input {
+    width: 100%;
+  }
+
+  #login-container #container-form form .container-email-password .container-input .input-text {
+    width: 100%;
+  }
 }
 
 #register-container {
@@ -110,21 +165,49 @@
   justify-content: flex-start;
   align-items: center;
   background-color: #d0eb98;
+  padding: 50px 0;
+}
+
+#register-container #absolute-trapezoid {
+  background-color: #E1EEB4;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: 9;
 }
 
 #register-container #container-top {
-  margin: 100px 0 50px;
+  margin: 150px 0 30px;
+  z-index: 99;
 }
 
-#register-container #container-top span {
+#register-container #container-top h1 {
   color: salmon;
-  font-size: 25px;
   text-transform: uppercase;
+  text-align: center;
+}
+
+#register-container #container-form {
+  z-index: 99;
+  border: 2px solid salmon;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #E1EEB4;
+}
+
+#register-container #container-form form .container-email-password-name {
+  display: flex;
+  align-items: center;
 }
 
 #register-container #container-form form .container-email-password-name .label {
   color: salmon;
   font-size: 18px;
+  flex-basis: 30%;
+  margin-right: 20px;
 }
 
 #register-container #container-form form .container-email-password-name .container-input {
@@ -137,7 +220,7 @@
   padding-left: 8px;
   border: 1px solid #28CCBC;
   border-radius: 10px;
-  font-size: 25px;
+  font-size: 18px;
 }
 
 #register-container #container-form form .container-email-password-name .container-input .input-text:focus {
@@ -153,6 +236,10 @@
   font-size: 16px;
 }
 
+#register-container #container-form form .container-button {
+  text-align: center;
+}
+
 #register-container #container-form form .container-button #submit {
   text-decoration: none;
   background-color: #28CCBC;
@@ -162,10 +249,47 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
+  width: 90%;
+  font-size: 20px;
 }
 
 #register-container #container-form form .container-button #submit:hover {
   background-color: salmon;
+}
+
+#register-container #container-form form .container-button #submit:hover {
+  background-color: salmon;
+}
+
+#register-container #container-form form .go-to-login {
+  text-align: center;
+  color: salmon;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+#register-container #container-form form .go-to-login a {
+  color: #28CCBC;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+#register-container #container-form form .go-to-login a:hover {
+  color: #363947;
+}
+
+@media screen and (max-width: 768px) {
+  #register-container #container-form form .container-email-password-name {
+    flex-wrap: wrap;
+  }
+
+  #register-container #container-form form .container-email-password-name .container-input {
+    width: 100%;
+  }
+
+  #register-container #container-form form .container-email-password-name .container-input .input-text {
+    width: 100%;
+  }
 }
 
 main {
@@ -2980,6 +3104,39 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   #order-detail .container ul li {
     flex-basis: 50%;
   }
+}
+
+#container-payment {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#container-payment #container-amount {
+  text-align: center;
+  margin-top: 50px;
+  color: salmon;
+}
+
+#container-payment .container-dropin {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#container-payment #container-button {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#container-payment #container-button button {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
 
 #work-container #section-1 {
