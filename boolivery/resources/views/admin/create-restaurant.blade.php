@@ -8,11 +8,16 @@
             <a class="turnBack" href="{{route('listRestaurant')}}">Torna ai Ristoranti</a>
         </div>
         {{-- DA INSERIRE CODICE RILEVAZIONE ERRORI --}}
+        <div class="polygon"></div>
+        <div class="polygonTwo"></div>
+        <div class="polygonThree"></div>
+        <div class="createRestTitle">
+            <h2>Aggiungi Ristorante</h2>
+        </div>
+        
         <div class="formCreateRest">
 
-            <div class="createRestTitle">
-                <h2>Aggiungi Ristorante</h2>
-            </div>
+
 
             <form method="POST" action="{{route('storeRestaurant')}}" enctype="multipart/form-data">
                 @csrf

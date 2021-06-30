@@ -27,7 +27,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Descrizione</label>
-                <input type="text" id="description" name="description" value="{{$restaurant->description}}" maxlength="1000">
+                <textarea type="text" id="description" name="description" value="{{$restaurant->description}}" maxlength="1000">{{$restaurant->description}}</textarea>
             </div>
             <div class="form-group">
                 <label for="image_profile">Foto Profilo</label>
