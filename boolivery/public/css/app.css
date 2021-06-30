@@ -2982,6 +2982,39 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 }
 
+#container-payment {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#container-payment #container-amount {
+  text-align: center;
+  margin-top: 50px;
+  color: salmon;
+}
+
+#container-payment .container-dropin {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#container-payment #container-button {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#container-payment #container-button button {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
 #work-container #section-1 {
   padding: 200px 0;
   background-color: #28CCBC;
