@@ -53,6 +53,7 @@ div#container-plate-list{
                 text-align: center;
 
                 .plateCard{
+                    width: 100%;
                     margin-bottom: 10px;
 
                     div{
@@ -60,6 +61,7 @@ div#container-plate-list{
 
                         img {
                             width: 100%;
+                            height: 260px;
                             border-radius: 10px;
                             position: relative;
                             

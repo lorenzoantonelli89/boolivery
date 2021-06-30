@@ -5,14 +5,36 @@
 .editPlate{
 
     .editPlateContainer{
-        height: 100%;
+        position: relative;
         width: 100%;
-        background-image: url("/storage/graphics/food-wood.jpg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position:cover ;
+        min-height:780px ;
         padding: 15px 0;
-    
+        background: linear-gradient(white, #275351 );
+        z-index: 1;
+    }
+
+    .polygon{
+        clip-path: polygon(55% 0%, 100% 0%, 100% 100%, 0% 100%);
+        background-color: #60b1ad;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -1;
+ 
+    }
+
+    .polygonTwo{
+
+        clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+        background-color: #2c5e5b;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -2;
     }
     
     .backToPlateList{
@@ -21,38 +43,40 @@
         margin-left:20px;
     
     }
+
+
+    .editPlateTitle{
+        padding-top: 2px;
+        text-align: center;
+        h2{
+            margin: 27px 11px 60px 0;
+        }
+        
+    }
+
     .container{
         width: 45%;
-        min-height: 780px;
+        min-height:680px;
         text-align: center;
         border-radius: 15px;
         margin: 15px auto ;
-        background-image: url("/storage/graphics/blackboard.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position:top ;
-        color: white;
+        padding-top: 50px;
+        border: 8px solid black;
+        color: black;
+        z-index: 999;
+        background-color: rgb(136, 215, 218);
 
-        .editPlateTitle{
-            padding-top: 2px;
-            font-family: 'Pacifico', cursive;
 
-            
-            h2{
-                margin: 27px 11px 60px 0;
-            }
-            
-        }
         .form-group{
-            width: 75%;
+            width: 70%;
             min-height: 60px;
             margin: auto;
             margin-bottom: 35px;
             text-align: left;
-            font-family: 'Pacifico', cursive;
             font-size: 16px;
             display: flex;
             justify-content: space-between;
+            font-weight: bold;
     
              input{
                 border-radius: 7px;
@@ -60,6 +84,8 @@
                 padding:3px 8px;
                 margin-left:10px;
                 height: 25px;
+                border: none;
+                
             }
     
             .radio{
@@ -69,6 +95,7 @@
                 
                 &>input{
                     margin-right: 15px;
+                    height: 17px;
                 }
     
                 &>label{
@@ -124,7 +151,7 @@
     
         .euro{
             position:absolute;
-            top: 7px;
+            top: 3px;
             right: 85px;
             font-family: 'Lato';
             font-weight: bold;
@@ -135,6 +162,7 @@
         button{
             @include buttonLink(#0febe0, white,10px, 30px);
             margin:30px 0;
+            border: none;
         }
         
     }
@@ -208,7 +236,7 @@
             }
 
             .euro{
-                top: 12%;
+                top: 5%;
                 right: 67%;
                 font-family: 'Lato';
                

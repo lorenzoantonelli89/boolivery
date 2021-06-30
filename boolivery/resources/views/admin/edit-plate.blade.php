@@ -6,13 +6,17 @@
       <div class="editPlateContainer">
         <a class='backToPlateList' href="{{route('plateList', encrypt($plate -> restaurant_id))}}">Torna ai piatti</a>
 {{-- inizio form --}}
-       
+          <div class="polygon"></div>
+          <div class="polygonTwo"></div>
+          
+
+
+          <div class="editPlateTitle">
+            <h2>
+                Modifica Piatto:
+            </h2>
+          </div>
          <div class="container">
-            <div class="editPlateTitle">
-              <h2>
-                  Modifica Piatto:
-              </h2>
-            </div>
 
             <form method="POST" enctype="multipart/form-data" action="{{route('updatePlate', $plate -> id)}}">
 
@@ -53,10 +57,10 @@
                   <div class="radio">
                       
                       <label for="visible">Non visibile</label>
-                      <input id="visible" type="radio" step="0.01" name="visible" value="0" >
+                      <input id="visible" type="radio" name="visible" value="0" >
                   
                       <label for="visible">Visibile</label>
-                      <input id="visible" type="radio" step="0.01" name="visible" value="1" >
+                      <input id="visible" type="radio" name="visible" value="1" >
                   </div>
               </div>
 

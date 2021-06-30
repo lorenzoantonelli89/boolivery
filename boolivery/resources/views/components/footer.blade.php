@@ -22,11 +22,11 @@
                     Lavora con noi
                 </a>
             </li>
-            <li>
+            <!--<li>
                 <a href="{{route('contacts')}}">
                     Contatti
                 </a>
-            </li>
+            </li>-->
         </ul>
         <ul>
             <li>

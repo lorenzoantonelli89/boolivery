@@ -6,23 +6,23 @@
         text-align: center;
     }
     nav{
-        display: flex;
-        justify-content: space-between;
         padding: 10px 0;
-        flex-wrap: wrap;
+        text-align: center;
         .back-button{
             padding: 5px 10px;
             border-radius: 10px;
             background-color:#28CCBC;
+            margin: 10px auto 0;
+            display: inline-block;
             a{
                 color: white;
                 text-decoration: none;
             }
         }
     }
+    
     .chart{
-        width: 60vw;
-        margin: auto;
+        height: 500px;
     }
     .status{
         border-radius: 50%;
@@ -53,12 +53,18 @@
             border: 1px solid #ccc; 
         }
     }
+    .no-orders{
+        text-align: center;
+        margin-top: 10px;
+        color: rgb(252, 106, 1);
+    }
 }
 
 @media screen and (max-width:1024px){
     #appChart.container{
         .chart{
-            width: 80vw;
+            width: 70vw;
+            height: 350px;
         }
     }
 }
@@ -94,7 +100,8 @@
     }
     #appChart.container{
         .chart{
-            width: 100vw;
+            width: 70vw;
+            height: 300px;
         }
     }
 

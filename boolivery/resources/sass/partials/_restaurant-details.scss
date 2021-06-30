@@ -133,7 +133,7 @@
             width: calc(100% - 340px);
             @include flex(row, flex-start, flex-start);
             flex-wrap: wrap;
-            overflow: scroll;
+            overflow-y: scroll;
             
             // cornice per i piatti
             .plate-selection-view {
