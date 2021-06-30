@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -901,6 +902,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -1882,6 +1884,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -1987,6 +1990,7 @@ div#container-plate-list .menuContainer .platesCards li {
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard {
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -1996,6 +2000,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div {
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div img {
   width: 100%;
+  height: 260px;
   border-radius: 10px;
   position: relative;
 }
@@ -2231,6 +2236,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2483,6 +2489,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2759,6 +2766,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2953,6 +2961,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2986,6 +2995,52 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   font-size: 18px;
   background-color: #28CCBC;
   color: white;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.container .form-group {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .form-group input {
+  border: 1px solid #2caead;
+  border-radius: 5px;
+}
+
+.container .form-group input[type=file] {
+  border: none;
+  background-color: #2caead;
+}
+
+.container #category-picker {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container #category-picker p {
+  margin-right: 10px;
+}
+
+.container #category-picker .right-distance {
+  margin-right: 10px;
+}
+
+.container #btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container #btn .btn-primary {
+  margin: 20px 0;
 }
 
 #appOrders.container,
@@ -3023,8 +3078,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 #appOrders.container .chart,
 #appChart.container .chart {
-  width: 60vw;
-  margin: auto;
+  height: 500px;
 }
 
 #appOrders.container .status,
@@ -3081,7 +3135,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 @media screen and (max-width: 1024px) {
   #appChart.container .chart {
-    width: 80vw;
+    width: 70vw;
+    height: 350px;
   }
 }
 
@@ -3157,7 +3212,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   #appChart.container .chart {
-    width: 100vw;
+    width: 70vw;
+    height: 300px;
   }
 }
 
@@ -3510,17 +3566,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   position: relative;
   width: 70%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.bg-color #list-restaurant-container #restaurant-user-title {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  margin-top: 25px;
-  color: #ffff;
 }
 
 .bg-color #list-restaurant-container a {
@@ -3532,11 +3577,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-transform: uppercase;
 }
 
+.bg-color #list-restaurant-container #centered-list {
+  text-align: center;
+}
+
+.bg-color #list-restaurant-container #centered-list #restaurant-user-title {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  color: #ffff;
+}
+
 .bg-color #list-restaurant-container .restaurant-from-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-top: 35px;
   max-width: 100%;
 }
@@ -3578,26 +3630,26 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100%;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
   border-radius: 10px;
   width: 100%;
+  height: 500px;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: baseline;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify a {
+  margin: 5px auto;
 }
 
 @media screen and (max-width: 1264px) {
@@ -3638,6 +3690,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+    height: 200px;
   }
 }
 

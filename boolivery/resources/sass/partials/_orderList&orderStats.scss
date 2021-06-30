@@ -22,8 +22,7 @@
     }
     
     .chart{
-        width: 60vw;
-        margin: auto;
+        height: 500px;
     }
     .status{
         border-radius: 50%;
@@ -64,7 +63,8 @@
 @media screen and (max-width:1024px){
     #appChart.container{
         .chart{
-            width: 80vw;
+            width: 70vw;
+            height: 350px;
         }
     }
 }
@@ -100,7 +100,8 @@
     }
     #appChart.container{
         .chart{
-            width: 100vw;
+            width: 70vw;
+            height: 300px;
         }
     }
 
