@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -669,6 +670,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -1650,6 +1652,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2001,6 +2004,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2253,6 +2257,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2529,6 +2534,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2723,6 +2729,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   background-color: #2caead;
   padding: 5px;
   height: 50px;
@@ -2756,6 +2763,52 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   font-size: 18px;
   background-color: #28CCBC;
   color: white;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 150px 0;
+}
+
+.container .form-group {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .form-group input {
+  border: 1px solid #2caead;
+  border-radius: 5px;
+}
+
+.container .form-group input[type=file] {
+  border: none;
+  background-color: #2caead;
+}
+
+.container #category-picker {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container #category-picker p {
+  margin-right: 10px;
+}
+
+.container #category-picker .right-distance {
+  margin-right: 10px;
+}
+
+.container #btn {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container #btn .btn-primary {
+  margin: 20px 0;
 }
 
 #appOrders.container,

@@ -1,5 +1,9 @@
 @extends('layouts.main-layout')
 
+@section('title')
+    Modifica ristorante
+@endsection
+
 @section('content')
     
     <div class="container py-4">
@@ -10,31 +14,31 @@
             @method('POST')
             {{-- restaurant --}}
             <div class="form-group">
-                <label for="name">Nome Ristorante</label>
+                <label for="name">Nome Ristorante:</label>
                 <input type="text" id="name" name="name" value="{{$restaurant->name}}" maxlength="255">
             </div>
             <div class="form-group">
-                <label for="address">Indirizzo Ristorante</label>
+                <label for="address">Indirizzo Ristorante:</label>
                 <input type="text" id="address" name="address" value="{{$restaurant->address}}" maxlength="255">
             </div>
             <div class="form-group">
-                <label for="phone">Num telefono</label>
+                <label for="phone">Num telefono:</label>
                 <input type="number" id="phone" name="phone" value="{{$restaurant->phone}}" maxlength="64">
             </div>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email:</label>
                 <input type="email" id="email" name="email" value="{{$restaurant->email}}">
             </div>
             <div class="form-group">
-                <label for="description">Descrizione</label>
-                <input type="text" id="description" name="description" value="{{$restaurant->description}}" maxlength="1000">
+                <label for="description">Descrizione:</label>
+                <textarea type="text" id="description" name="description" rows="1" cols="20" placeholder="Inserisci la descrizione del ristorante" value="{{$restaurant->description}}" maxlength="1000"></textarea>
             </div>
             <div class="form-group">
-                <label for="image_profile">Foto Profilo</label>
+                <label for="image_profile">Foto Profilo:</label>
                 <input type="file" id="image_profile" name="image_profile">
             </div>
             <div class="form-group">
-                <label for="image_cover">Foto Copertina</label>
+                <label for="image_cover">Foto Copertina:</label>
                 <input type="file" id="image_cover" name="image_cover">
             </div>
             {{-- <div class="form-group">
@@ -53,11 +57,11 @@
                 </select>
             </div> --}}
             {{-- categorie --}}
-            <div class="form-group">
-                <p>Scegli categorie</p>
+            <div class="form-group" id="category-picker">
+                <p>Scegli categorie:</p>
                 @foreach ($categories as $category)
                 <div>
-                    <div>
+                    <div class="right-distance">
                         <label for="category_id[]">{{$category->name}}</label>
                         <input type="checkbox" name="category_id[]" id="category_id[]" value="{{$category->id}}"
                         @foreach ($restaurant->categories as $catRes)
@@ -81,7 +85,9 @@
                 </div>
             @endif
                
-            <button type="submit" class="btn btn-primary">Update</button>
+            <div id="btn">
+                <button type="submit" class="btn btn-primary blink">Update</button>
+            </div>
             </form>
     </div>
 
