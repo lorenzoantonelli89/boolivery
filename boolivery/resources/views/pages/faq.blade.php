@@ -13,8 +13,8 @@
                 <div id="faq">
                     <ul id="quest">
                         <li>
-                            <p>Cos'è Booliveroo?</p>
-                            <p>Booliveroo è un'azienda che s'impegna a consegnare cibo del tuo ristorante preferito a casa tua.<br>
+                            <p>Cos'è Boolivery?</p>
+                            <p>Boolivery è un'azienda che s'impegna a consegnare cibo del tuo ristorante preferito a casa tua.<br>
                             Abbiamo migliaia di ristoranti affiliati e altrettanto personale addetto alla consegna, così da coprire nel minor tempo il maggior numero di ordini.
                             </p>
                         </li>
@@ -47,7 +47,7 @@
                             </p>
                         </li>
                         <li>
-                            <p>E' disponibile l'applicazione di Booliveroo?</p>
+                            <p>E' disponibile l'applicazione di Boolivery?</p>
                             <p>Al momento non disponiamo di nessuna applicazione, ma ci stiamo lavorando.
                             </p>
                         </li>
@@ -58,12 +58,14 @@
                         </li>
                         <li>
                             <p>Non voglio più usufruire del servizio da ristoratore?</p>
-                            <p>Ci dispiace che lei non si sia trovato bene con il nostro servizio, ci contatti pure a <a href="mailto:support.booliveroo@mail.com">support.booliveroo@mail.com</a>
+                            <p>Ci dispiace che lei non si sia trovato bene con il nostro servizio, ci contatti pure a <a href="mailto:support.boolivery@mail.com">support.boolivery@mail.com</a>
+                            Come oggetto della mail inserisca -> Disdetta ristorante.<br>
+                            Procederemo all'eliminazione del ristorante entro 48h.
                             </p>
                         </li>
                     </ul>
                 </div>
-                <p>Hai altre domande particolari? <a href="mailto:support.boliveroo@mail.com">Contattaci</a></p>
+                <p>Hai altre domande particolari? <a href="mailto:support.boolivery@mail.com">Contattaci</a></p>
             </div>
         </div>
     </main>

@@ -1755,6 +1755,7 @@ div#container-plate-list .menuContainer .platesCards li {
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard {
+  width: 100%;
   margin-bottom: 10px;
 }
 
@@ -1764,6 +1765,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div {
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div img {
   width: 100%;
+  height: 260px;
   border-radius: 10px;
   position: relative;
 }
@@ -2761,6 +2763,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 30px 0;
   max-width: 1140px;
   margin: auto;
+  height: calc(100vh - 440px);
 }
 
 #appOrders.container h1,
@@ -2980,6 +2983,39 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   #order-detail .container ul li {
     flex-basis: 50%;
   }
+}
+
+#container-payment {
+  width: 70%;
+  margin: 0 auto;
+}
+
+#container-payment #container-amount {
+  text-align: center;
+  margin-top: 50px;
+  color: salmon;
+}
+
+#container-payment .container-dropin {
+  width: 40%;
+  margin: 0 auto;
+}
+
+#container-payment #container-button {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#container-payment #container-button button {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
 
 #work-container #section-1 {
@@ -3238,17 +3274,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   position: relative;
   width: 70%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.bg-color #list-restaurant-container #restaurant-user-title {
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  margin-top: 25px;
-  color: #ffff;
 }
 
 .bg-color #list-restaurant-container a {
@@ -3260,11 +3285,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-transform: uppercase;
 }
 
+.bg-color #list-restaurant-container #centered-list {
+  text-align: center;
+}
+
+.bg-color #list-restaurant-container #centered-list #restaurant-user-title {
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  padding-top: 30px;
+  color: #ffff;
+}
+
 .bg-color #list-restaurant-container .restaurant-from-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-top: 35px;
   max-width: 100%;
 }
@@ -3306,26 +3338,26 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100%;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
   border-radius: 10px;
   width: 100%;
+  height: 500px;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: baseline;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify a {
+  margin: 5px auto;
 }
 
 @media screen and (max-width: 1264px) {
@@ -3366,6 +3398,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+    height: 200px;
   }
 }
 
