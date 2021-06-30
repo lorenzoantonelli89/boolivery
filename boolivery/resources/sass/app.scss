@@ -52,7 +52,7 @@ body {
 }
 // HEADER
 header{
-  height: 100px;
+  height: 75px;
   width: 100%;
   padding: 10px 20px;
   background-color: $headercl;
@@ -60,24 +60,39 @@ header{
   top: 0;
   left: 0;
   z-index: 900;
+  
     
   nav#nav-header{
+    
     height: 100%;
     @include flex(row, space-between, center);
-
+    @include centring;
     #logo img {
       width: 50px;
     }
     #container-list {
-      
+      @include flex(row, flex-start, center);
       ul {
         @include flex(row, center, center);
         list-style: none;
 
         li.nav-list {
           margin-left: 50px;
+          padding: 2px 10px;
+          font-size: 18px;
+
+          &:hover {
+            background-color: white;
+            color: $ourlogo;
+            border-radius: 3px;
+          }
+
           a {
-            @include buttonLink($ourlogo, $white, 10px, 20px);
+            text-decoration: none;
+            color: $ourlogo;
+            &:visited {
+              color: $ourlogo;
+            }
           }
         }
         #liDropdown{
@@ -106,6 +121,9 @@ header{
           }
         }
       }
+    }
+    .hamburger {
+      display: none;
     }
   }
 }
@@ -166,6 +184,91 @@ footer {
 }
 
 @media screen and(max-width: 1048px) and (min-width: 727px) {
+
+  header {
+    nav#nav-header {
+
+      #container-list {
+        display: none;
+      }
+      .hamburger {
+        display: block;
+        position: relative;
+        
+        i {
+          font-size: 50px;
+          color: $ourlogo;
+        }
+
+        .menuHamburger {
+          position: absolute;
+          width: 250px;
+          background-color: white;
+          right: 0;
+          border-radius: 15px;
+          border: 1px solid orange;
+
+
+          ul {
+            @include flex(column, flex-start, flex-start);
+            list-style: none;
+    
+            li.nav-list {
+              @include flex(row, flex-start, flex-start);
+              margin-left: 0px;
+              margin: 25px 5px;
+              padding: 2px 5px;
+              font-size: 25px;
+
+              i {
+                font-size: 25px;
+              }
+    
+              &:hover {
+                background-color: $ourorange;
+                border-radius: 3px;
+              }
+    
+              a {
+                text-decoration: none;
+                color: black;
+                &:visited {
+                  color: black;
+                }
+              }
+            }
+            #liDropdown{
+              position: relative;
+    
+              #drop-container{
+                width: 100%;
+                height: 80px;
+                padding-top: 20px;
+                text-align: center;
+                background-color: $ourlogo;
+                position: absolute;
+                top: 20px;
+                left: 0;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+    
+                div{
+                  margin-bottom: 10px;
+                }
+                #logout, #dashboard{
+                  padding: 0;
+                  border-radius: 0;
+                  background-color: inherit;
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+  
   footer {
 
     .footer-container {
@@ -187,6 +290,91 @@ footer {
   }
 
   @media screen and(max-width: 726px) {
+    
+    header {
+      nav#nav-header {
+  
+        #container-list {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+          position: relative;
+          
+          i {
+            font-size: 50px;
+            color: $ourlogo;
+          }
+  
+          .menuHamburger {
+            position: absolute;
+            width: 250px;
+            background-color: white;
+            right: 0;
+            border-radius: 15px;
+            border: 1px solid orange;
+  
+  
+            ul {
+              @include flex(column, flex-start, flex-start);
+              list-style: none;
+      
+              li.nav-list {
+                @include flex(row, flex-start, flex-start);
+                margin-left: 0px;
+                margin: 25px 5px;
+                padding: 2px 5px;
+                font-size: 25px;
+  
+                i {
+                  font-size: 25px;
+                }
+      
+                &:hover {
+                  background-color: $ourorange;
+                  border-radius: 3px;
+                }
+      
+                a {
+                  text-decoration: none;
+                  color: black;
+                  &:visited {
+                    color: black;
+                  }
+                }
+              }
+              #liDropdown{
+                position: relative;
+      
+                #drop-container{
+                  width: 100%;
+                  height: 80px;
+                  padding-top: 20px;
+                  text-align: center;
+                  background-color: $ourlogo;
+                  position: absolute;
+                  top: 20px;
+                  left: 0;
+                  border-bottom-left-radius: 10px;
+                  border-bottom-right-radius: 10px;
+      
+                  div{
+                    margin-bottom: 10px;
+                  }
+                  #logout, #dashboard{
+                    padding: 0;
+                    border-radius: 0;
+                    background-color: inherit;
+                  }
+                }
+              }
+            }
+  
+          }
+        }
+      }
+    }
+
     footer {
   
       .footer-container {
