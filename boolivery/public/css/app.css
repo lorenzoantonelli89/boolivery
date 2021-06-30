@@ -3363,6 +3363,39 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
 }
 
+#container-checkout {
+  width: 80%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#container-checkout .container-text {
+  width: 50%;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #d0eb98;
+  color: #ffff;
+  border: 1px solid salmon;
+  border-radius: 10px;
+}
+
+#container-checkout .container-text p {
+  text-transform: uppercase;
+  line-height: 40px;
+}
+
+#container-checkout img {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 3.3s;
+}
+
+#container-checkout .animation {
+  top: 0;
+  left: 80%;
+}
+
 #work-container #section-1 {
   padding: 200px 0;
   background-color: #28CCBC;
