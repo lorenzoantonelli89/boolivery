@@ -28,7 +28,7 @@
                         </li>
                     @endif
                 @else
-                    <li id="liDropdown" class="nav-list" v-on:click="getDropDown" >
+                    <li id="liDropdown" class="nav-list" v-on:click="getDropDown" :class="(dropDown == true) ? 'back-groundcl' : ''">
                         <a href="#" role="button"  v-pre>
                             {{ Auth::user()->name }}
                         </a>
