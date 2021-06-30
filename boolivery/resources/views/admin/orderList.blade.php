@@ -5,53 +5,60 @@
     <div class="container" id="appOrders">
         {{-- titolo --}}
         <h1>Ordini ricevuti da {{$restaurant->name}}</h1>
-        {{-- navbar menu --}}
-        <nav>
-            {{-- scegli l'anno --}}
-            <div>
-                <label for="year-choice">Scegli l'anno da visualizzare</label>
-                <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
-                    <option disabled value="">Seleziona un anno</option>
-                    {{-- visualizza media per mese di tutti gli anni --}}
-                    <option value="0">Tutti gli ordini</option> 
-                    {{-- visualizza ciascun anno --}}
-                    <option v-for="year in years" :value="year">@{{year}}</option>
-                </select>
-            </div>
-            {{-- bottone per vedere statistiche ordini --}}
-            <div>
+        {{-- se ci non ci sono ordini, mostra messaggio --}}
+        @if (count($orders)<1)
+            <div class="no-orders"><strong>NON CI SONO ORDINI DA VISUALIZZARE</strong></div>
+            <nav>
+                <div class="back-button">
+                    <a href="{{route('listRestaurant')}}">TORNA AI RISTORANTI</a>
+                </div>
+            </nav>
+        @else
+            {{-- navbar menu --}}
+            <nav>
+                {{-- scegli l'anno --}}
+                <div>
+                    <label for="year-choice">Scegli l'anno da visualizzare</label>
+                    <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
+                        <option disabled value="">Seleziona un anno</option>
+                        {{-- visualizza media per mese di tutti gli anni --}}
+                        <option value="0">Tutti gli ordini</option> 
+                        {{-- visualizza ciascun anno --}}
+                        <option v-for="year in years" :value="year">@{{year}}</option>
+                    </select>
+                </div>
+                {{-- bottone per vedere statistiche ordini --}}
                 <div class="back-button">
                     <a href="{{route('showStats', encrypt($restaurant -> id))}}">VISUALIZZA GRAFICI</a>
                 </div>
-            </div>
-        </nav>
-        {{-- visualizzazione ordini --}}
-        <div>
-            <table>
-                <thead>
-                <tr>
-                    <th># ORDINE</th>
-                    <th>EMAIL</th>
-                    <th>DATA ORDINE</th>
-                    <th>PREZZO TOTALE €</th>
-                    <th>STATUS ORDINE</th>
-                    <th>LINK</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr v-for="order in orders">
-                    <td>@{{order.order_id}}</td>
-                    <td>@{{order.customer_email}}</td>
-                    <td>@{{order.date_delivery}}</td>
-                    <td>@{{order.total_price}} €</td>
-                    <td><span :class="order.status == 1 ? 'status paid' : 'status not-paid'"></span></td>
-                    <td><a :href="'/showOrder/'+ order.order_id">Dettaglio ordine</a></td>
-                </tr>
-                </tbody>
-            </table>
-            </ul>
-        </div>
-
+            </nav>
+            {{-- visualizzazione ordini --}}
+            <div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th># ORDINE</th>
+                        <th>EMAIL</th>
+                        <th>DATA ORDINE</th>
+                        <th>PREZZO TOTALE €</th>
+                        <th>STATUS ORDINE</th>
+                        <th>LINK</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="order in orders">
+                        <td>@{{order.order_id}}</td>
+                        <td>@{{order.customer_email}}</td>
+                        <td>@{{order.date_delivery}}</td>
+                        <td>@{{order.total_price}} €</td>
+                        <td><span :class="order.status == 1 ? 'status paid' : 'status not-paid'"></span></td>
+                        <td><a :href="'/showOrder/'+ order.order_id">Dettaglio ordine</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </ul>
+            </div>  
+        @endif
     </div>
 </main>
 <script>

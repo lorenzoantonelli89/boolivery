@@ -4,31 +4,41 @@
 <main>
     <div class="container" id="appChart">
         {{-- titolo --}}
-        <h1>Statistiche di {{$restaurant->id}}.{{$restaurant->name}}</h1>
-        {{-- navbar-menu --}}
-        <nav>
-            {{-- scegli anno --}}
-            <div>
-                <label for="year-choice">Scegli l'anno da visualizzare</label>
-                <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
-                    <option disabled value="">Seleziona un anno</option>
-                    {{-- visualizza media per mese di tutti gli anni --}}
-                    <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
-                    {{-- visualizza ciascun anno --}}
-                    <option v-for="year in years" :value="year">@{{year}}</option>
-                </select>
-            </div>
-            {{-- bottone per vedere statistiche ordini --}}
-            <div>
+        <h1>Statistiche del ristorante {{$restaurant->name}}</h1>
+        @if (count($orders)<1)
+            <div class="no-orders"><strong>NON CI SONO STATISTICHE DA VISUALIZZARE</strong></div>
+            <nav>
                 <div class="back-button">
-                    <a href="{{route('showOrders', encrypt($restaurant -> id))}}">VISUALIZZA LISTA ORDINI</a>
+                    <a href="{{route('listRestaurant')}}">TORNA AI RISTORANTI</a>
                 </div>
-            </div>
-        </nav>
-        {{-- GRAFICO responsive --}}
-        <div class="chart">
-            <canvas id="myChart" width="600" height="400"></canvas>
-        </div>
+            </nav>
+        @else
+           {{-- navbar-menu --}}
+            <nav>
+                {{-- scegli anno --}}
+                <div>
+                    <label for="year-choice">Scegli l'anno da visualizzare</label>
+                    <select name="year-choice" id="year-choice" v-model="chosenYear" v-on:change="showYear">
+                        <option disabled value="">Seleziona un anno</option>
+                        {{-- visualizza media per mese di tutti gli anni --}}
+                        <option value="0">From @{{years[years.length-1]}} to @{{years[0]}}</option> 
+                        {{-- visualizza ciascun anno --}}
+                        <option v-for="year in years" :value="year">@{{year}}</option>
+                    </select>
+                </div>
+                {{-- bottone per vedere statistiche ordini --}}
+                <div>
+                    <div class="back-button">
+                        <a href="{{route('showOrders', encrypt($restaurant -> id))}}">VISUALIZZA LISTA ORDINI</a>
+                    </div>
+                </div>
+            </nav>
+            {{-- GRAFICO responsive --}}
+            <div class="chart">
+                <canvas id="myChart" width="600" height="400"></canvas>
+            </div> 
+        @endif
+        
     </div>
 </main>  
 
