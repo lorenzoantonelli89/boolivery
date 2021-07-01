@@ -131,6 +131,10 @@
 }
 
 #login-container #container-form form .container-button #submit:hover {
+  background-color: coral;
+}
+
+#login-container #container-form form .container-button #submit:hover {
   background-color: salmon;
 }
 
@@ -257,6 +261,10 @@
 }
 
 #register-container #container-form form .container-button #submit:hover {
+  background-color: coral;
+}
+
+#register-container #container-form form .container-button #submit:hover {
   background-color: salmon;
 }
 
@@ -372,6 +380,10 @@
   cursor: pointer;
   width: 70%;
   font-size: 20px;
+}
+
+#password-reset-container #container-form form .container-button #submit:hover {
+  background-color: coral;
 }
 
 #password-reset-container #container-form form .container-button #submit:hover {
@@ -616,6 +628,7 @@ main #home-container .main-sec-1 ul li a .restaurants {
 main #home-container .main-sec-1 ul li a .restaurants img {
   width: 100%;
   border-radius: 10px;
+  height: 20vw;
 }
 
 main #home-container .main-sec-1 ul li a .restaurants #text {
@@ -863,6 +876,10 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   main #home-container .main-sec-1 ul li {
     width: 100%;
     margin: 0 auto;
+  }
+
+  main #home-container .main-sec-1 ul li .restaurants img {
+    height: 400px !important;
   }
 }
 
@@ -1202,6 +1219,10 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   cursor: pointer;
 }
 
+.plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .container-add-cart button:hover {
+  background-color: coral;
+}
+
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
   width: 100px;
   height: 100px;
@@ -1285,7 +1306,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .plates-choosing-view .momentary-total .mykart input {
-  width: 75%;
+  width: 90%;
   height: 30px;
   padding-left: 8px;
   border: 1px solid #28CCBC;
@@ -1351,11 +1372,11 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .plates-choosing-view .momentary-total .mykart .goToKart {
-  width: 300px;
   background-color: #7f93c5;
   height: 50px;
   cursor: pointer;
   margin: auto;
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1392,7 +1413,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .plates-choosing-view .momentary-total .total-calculator .amount {
-  width: 95%;
   padding-bottom: 15px;
   display: flex;
   flex-direction: row;
@@ -1416,6 +1436,10 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   border: none;
   cursor: pointer;
   margin-top: 15px;
+}
+
+.plates-choosing-view .momentary-total .shop-link:hover {
+  background-color: coral;
 }
 
 .plates-choosing-view .momentary-total .shop-link i {
@@ -1707,6 +1731,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
   .plates-choosing-view .cartFixed > * {
     margin-right: 5px;
+    z-index: 999;
   }
 
   .plates-choosing-view .choosing-and-total-container {
@@ -2026,6 +2051,10 @@ div#container-plate-list .container-link a {
   cursor: pointer;
 }
 
+div#container-plate-list .container-link a:hover {
+  background-color: coral;
+}
+
 div#container-plate-list .titlePlateList {
   font-family: "Pacifico", cursive;
   text-align: center;
@@ -2143,6 +2172,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     border-radius: 10px;
     text-transform: uppercase;
     cursor: pointer;
+  }
+
+  div#container-plate-list .container-link a:hover {
+    background-color: coral;
   }
 
   div#container-plate-list .titlePlateList {
@@ -2406,6 +2439,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
 }
 
+.editPlate div .backToPlateList:hover {
+  background-color: coral;
+}
+
 .editPlate .editPlateTitle {
   padding-top: 2px;
   text-align: center;
@@ -2531,6 +2568,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
   margin: 30px 0;
   border: none;
+}
+
+.editPlate .container button:hover {
+  background-color: coral;
 }
 
 /* test @Queries mobile-device*/
@@ -2821,6 +2862,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: none;
 }
 
+.createPlate .createPlateContainerForm button:hover {
+  background-color: coral;
+}
+
 /* test @Queries mobile-device*/
 
 @media screen and (max-width: 480px) {
@@ -2961,6 +3006,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
 }
 
+.createRestContainer .turnBackCont .turnBack:hover {
+  background-color: coral;
+}
+
 .createRestContainer .createRestTitle {
   padding-top: 2px;
 }
@@ -3099,6 +3148,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: none;
 }
 
+.createRestContainer .formCreateRest button:hover {
+  background-color: coral;
+}
+
 /* test @Queries mobile-device*/
 
 @media screen and (max-width: 480px) {
@@ -3188,6 +3241,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border-radius: 10px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+.containerEditRestaurant .turnBackCont .turnBack:hover {
+  background-color: coral;
 }
 
 .containerEditRestaurant .createRestTitle {
@@ -3340,6 +3397,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
   margin: 30px 0;
   border: none;
+}
+
+.containerEditRestaurant .formEditRestaurant button:hover {
+  background-color: coral;
 }
 
 /* test @Queries mobile-device*/
@@ -3627,6 +3688,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
   border: none;
   cursor: pointer;
+}
+
+#container-payment #container-button button:hover {
+  background-color: coral;
 }
 
 #container-checkout {
@@ -3930,6 +3995,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   cursor: pointer;
 }
 
+.bg-color #list-restaurant-container a:hover {
+  background-color: coral;
+}
+
 .bg-color #list-restaurant-container #centered-list {
   text-align: center;
 }
@@ -3960,6 +4029,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details > * {
   margin: 5px 5px;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details {
+  width: 100%;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex {

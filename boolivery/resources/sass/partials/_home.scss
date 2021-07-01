@@ -167,6 +167,7 @@ main {
             img {
               width: 100%;
               border-radius: 10px;
+              height: 20vw;
               }
               #text {
                 padding: 20px 0;
@@ -385,6 +386,11 @@ main {
           li {
             width: 100%;
             margin: 0 auto;
+            .restaurants{
+              img{
+                height: 400px !important;
+              }
+            }
           }
         }
       } 

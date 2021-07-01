@@ -277,7 +277,7 @@
                    }
 
                    input {
-                        width: 75%;
+                        width: 90%;
                         height: 30px;
                         padding-left: 8px;
                         border: 1px solid $ourlogo;
@@ -293,10 +293,10 @@
                         
                         margin: 5px, 0;
                     
-                    #totalPrice {
-                        display: none;
+                        #totalPrice {
+                            display: none;
+                        }
                     }
-                   }
 
 
                 // QUANTITA SELEZIONATE E LISTA ORDINI
@@ -344,11 +344,12 @@
                 } 
                 .goToKart {
                     //border-radius: 15px;
-                    width:300px;
+                    //width:300px;
                     background-color: #7f93c5;
                     height: 50px;
                     cursor: pointer;
                     margin: auto;
+                    padding: 10px;
                     @include flex(row, center, center);
                     .display{
                         display: none;
@@ -383,7 +384,7 @@
                     }
 
                     .amount {
-                        width: 95%;
+                        //width: 95%;
                         padding-bottom: 15px;
                         @include flex(row, space-between, center);
                         border-bottom: 1px solid $ourgrey;
@@ -693,6 +694,7 @@
 
         &>* {
             margin-right: 5px;
+            z-index: 999;
         }
     }
     
