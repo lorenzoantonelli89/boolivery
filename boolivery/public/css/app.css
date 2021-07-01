@@ -61,7 +61,7 @@
 }
 
 #login-container #container-top {
-  margin: 150px 0 30px;
+  margin: 75px 0 30px;
   z-index: 99;
 }
 
@@ -182,7 +182,7 @@
 }
 
 #register-container #container-top {
-  margin: 150px 0 30px;
+  margin: 75px 0 30px;
   z-index: 99;
 }
 
@@ -316,7 +316,7 @@
 }
 
 #password-reset-container #container-top {
-  margin: 150px 0 30px;
+  margin: 75px 0 30px;
   z-index: 99;
 }
 
@@ -435,7 +435,6 @@ main #home-container #scroll.active {
 
 main #home-container .myjumbotron {
   width: 100%;
-  height: 500px;
   background-image: url("/storage/graphics/rider.png");
   background-repeat: no-repeat;
   background-position: 90% 40%;
@@ -541,9 +540,21 @@ main #home-container .myjumbotron .content-jumbotron #category-container-list .c
   padding-right: 10px;
 }
 
+main #home-container .myjumbotron .content-jumbotron #category-container-list .category-list label:hover {
+  cursor: pointer;
+}
+
+main #home-container .myjumbotron .content-jumbotron #category-container-list .category-list input:hover {
+  cursor: pointer;
+}
+
+main #home-container .myjumbotron .content-jumbotron #category-container-list .category-list:hover {
+  cursor: pointer;
+}
+
 main #home-container .main-sec-1 {
   position: relative;
-  padding: 150px 0;
+  padding: 100px 0;
 }
 
 main #home-container .main-sec-1 #triangle-sec-1 {
@@ -554,13 +565,33 @@ main #home-container .main-sec-1 #triangle-sec-1 {
   background-color: #d0eb98;
   -webkit-clip-path: polygon(100% 100%, 100% 0, 0 0);
           clip-path: polygon(100% 100%, 100% 0, 0 0);
+  z-index: -1;
+}
+
+main #home-container .main-sec-1 #title-sec-1 {
+  background-color: #28CCBC;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+main #home-container .main-sec-1 #title-sec-1 h1 {
+  font-family: "Pacifico", cursive;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  letter-spacing: 2px;
+}
+
+main #home-container .main-sec-1 #title-sec-1 h1 .fa-star {
+  color: #ffd000;
 }
 
 main #home-container .main-sec-1 ul {
   width: 70%;
   margin: 0 auto;
-  position: relative;
-  z-index: 100;
   display: flex;
   flex-wrap: wrap;
 }
@@ -676,6 +707,14 @@ main #home-container #section-2 .flexible-carusel #plates-info h3 {
   text-decoration: underline;
 }
 
+main #home-container #section-2 .flexible-carusel #plates-info .restaurant-route a {
+  color: #28CCBC;
+}
+
+main #home-container #section-2 .flexible-carusel #plates-info .restaurant-route a:hover {
+  color: coral;
+}
+
 main #home-container #section-2 .flexible-carusel #next {
   margin-right: 70px;
 }
@@ -758,6 +797,11 @@ main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a .btn-to p {
   line-height: 60px;
 }
 
+main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a .btn-to:hover {
+  transform: scale(1.1);
+  transition: all 1s;
+}
+
 main #home-container .main-sec-3 #business-adv .cards-adv .textAdv a #btn-rider {
   background-color: #f55f28;
 }
@@ -822,16 +866,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 }
 
-@media screen and (max-width: 656px) {
-  main #home-container .main-sec-1 ul {
-    display: block;
-  }
-
-  main #home-container .main-sec-1 ul li {
-    padding-top: 100px;
-  }
-}
-
 @media screen and (max-width: 890px) {
   main #home-container #section-2 #top-rating-plates {
     -webkit-clip-path: none;
@@ -872,6 +906,17 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 @media screen and (max-width: 585px) {
   main #home-container #section-2 .flexible-carusel #plates-info img {
     height: 300px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  main #home-container .main-sec-3 #business-adv {
+    display: block;
+  }
+
+  main #home-container .main-sec-3 #business-adv .cards-adv {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -3372,13 +3417,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: 1px solid #ccc;
 }
 
-#appOrders.container .no-orders,
-#appChart.container .no-orders {
-  text-align: center;
-  margin-top: 10px;
-  color: #fc6a01;
-}
-
 @media screen and (max-width: 1024px) {
   #appChart.container .chart {
     width: 70vw;
@@ -3838,7 +3876,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .bg-color {
-  background-color: #d0eb98;
+  background-color: #c9c9c9;
   padding-bottom: 50px;
 }
 
@@ -3890,8 +3928,56 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin: 5px 5px;
 }
 
-.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details h2 {
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex h2 {
   color: salmon;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex #btn-mod-del {
+  display: flex;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex #btn-mod-del #icon-modify {
+  background: #3d8bff;
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  text-align: center;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex #btn-mod-del #icon-modify a {
+  background: none;
+  padding: 0;
+  vertical-align: middle;
+  line-height: 25px;
+  font-size: 10pt;
+  color: white;
+  font-weight: bold;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex #btn-mod-del #icon-delete {
+  background: red;
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex #btn-mod-del #icon-delete a {
+  background: none;
+  padding: 0;
+  vertical-align: middle;
+  line-height: 25px;
+  font-size: 10pt;
+  color: white;
+  font-weight: bold;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul {
@@ -3904,32 +3990,47 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul li {
   color: #000;
+  margin: 10px 0;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul li .fa-star {
   color: #28CCBC;
 }
 
-.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto {
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul li i {
+  margin-left: 5px;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul li span {
+  margin-left: 5px;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul li:first-child i {
+  margin-left: 0;
+}
+
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-foto {
   width: 100%;
 }
 
-.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-foto img {
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-foto img {
   border-radius: 10px;
   width: 100%;
   height: 500px;
 }
 
-.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify {
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-modify {
   display: flex;
   flex-direction: row;
   justify-content: baseline;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
   margin: 40px 0;
 }
 
-.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-modify a {
+.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-modify a {
   margin: 5px auto;
 }
 
@@ -4010,6 +4111,12 @@ body {
 
 #app main {
   margin-top: 75px;
+}
+
+.no-orders {
+  text-align: center;
+  margin-top: 10px;
+  color: #fc6a01;
 }
 
 header {
@@ -4128,8 +4235,8 @@ footer .footer-container {
 }
 
 footer .footer-container ul {
+  width: 300px;
   height: 300px;
-  flex-basis: 300px;
   list-style: none;
   padding: 20px;
   margin-right: 25px;
@@ -4164,8 +4271,8 @@ footer .footer-container .whoWeAre {
   border-radius: 10px;
   background-color: #363947;
   text-align: center;
+  width: 300px;
   height: 300px;
-  flex-basis: 300px;
 }
 
 footer .footer-container .whoWeAre img {
@@ -4272,13 +4379,13 @@ footer .footer-container .whoWeAre span {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   footer .footer-container ul,
   footer .footer-container .whoWeAre {
-    flex-basis: calc(90% / 2);
-    margin: 0 15px 15px 0;
-    width: 0px;
+    width: 30vw;
+    margin: 15px 0;
   }
 }
 
@@ -4377,13 +4484,13 @@ footer .footer-container .whoWeAre span {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   footer .footer-container ul,
   footer .footer-container .whoWeAre {
-    flex-basis: 90%;
+    width: 300px;
     margin: 0 0px 15px 0;
-    width: 0px;
   }
 }
 

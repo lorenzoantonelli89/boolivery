@@ -35,6 +35,9 @@
     <div class="main-sec-1" >
       <div id="triangle-sec-1">
       </div>
+      <div id="title-sec-1">
+        <h1><i><sup><i class="fas fa-star"></i></sup>I nostri ristoranti</i></h1>
+      </div>
       <ul>
         <li v-for="elem in currentRestaurants" v-on:click="getActiveRestaurant(elem)">
           <a :href="'/restaurant-details/' + elem.id">
@@ -67,10 +70,13 @@
             <p>
               <i>@{{platesPopular[counter].description}}</i>
             </p>
+            <p class="restaurant-route">
+              <a :href="'/restaurant-details/' + platesPopular[counter].restaurant_id">Vai al ristorante</a>
+            </p>
           </div>
         </div>
         <div id="next" class="chevron">
-          <i class="fas fa-chevron-right" v-on:click='nextImg'></i>          
+          <i class="fas fa-chevron-right" v-on:click='nextImg'></i>         
         </div>            
       </div>
     </div>

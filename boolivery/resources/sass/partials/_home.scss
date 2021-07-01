@@ -24,11 +24,10 @@ main {
       &.active{
           display: block;
       }
-
     }
+    
     .myjumbotron {
       width: 100%;
-      height: 500px;
       background-image: url("/storage/graphics/rider.png");
       background-repeat: no-repeat;
       background-position: 90% 40%;
@@ -105,13 +104,23 @@ main {
               color: $white;
               padding-right: 10px;
             }
+            label:hover{
+              cursor: pointer;
+            }
+            input:hover {
+              cursor: pointer;
+            }
+          }
+          .category-list:hover {
+            cursor: pointer;
           }
         }
       }   
     }
+
     .main-sec-1 {
       position: relative;
-      padding: 150px 0;
+      padding: 100px 0;
       
       #triangle-sec-1{
         width: 100%;
@@ -120,11 +129,28 @@ main {
         top: 0;
         background-color: $jumbogreen;
         clip-path: polygon(100% 100%, 100% 0, 0 0);
+        z-index: -1;
+      }
+      #title-sec-1 {
+        background-color: $ourlogo;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 30px;
+        text-align: center;
+        h1 {
+          font-family: 'Pacifico', cursive;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          vertical-align: middle;
+          line-height: 90px;
+          letter-spacing: 2px;
+          .fa-star {
+            color: rgb(255, 208, 0);
+          }
+        }
       }
       ul {
         @include centring;
-        position: relative;
-        z-index: 100;
         display: flex;
         flex-wrap: wrap;
         li {
@@ -213,6 +239,14 @@ main {
           h3 {
             text-decoration: underline;
           }
+          .restaurant-route{
+            a{
+              color: $ourlogo;
+              &:hover{
+                color: $ourcoral;
+              }
+            }
+          }
         }
         #next {
           margin-right: 70px;
@@ -279,6 +313,10 @@ main {
                   vertical-align: middle;
                   line-height: 60px;
                 }
+              }
+              .btn-to:hover {
+                transform: scale(1.1);
+                transition: all 1s;
               }
               #btn-rider {
                 background-color: rgb(245, 95, 40);
@@ -354,22 +392,6 @@ main {
   }
 }
 
-//MEDIA QUERY SEZIONE 1 -> VISIONE RISTORANTI FILTRATI | PADDING DAI FILTRI
-@media screen and (max-width: 656px) {
-  main {
-    #home-container {
-      .main-sec-1 {
-        ul {
-          display: block;
-          li {
-            padding-top: 100px;
-          }
-        }
-      } 
-    }
-  }
-}
-
 // MEDIA QUERY SEZIONE 2 -> VISIONE PIATTI TOP 
 @media screen and (max-width: 890px) {
   main {
@@ -419,6 +441,23 @@ main {
             img {
               height: 300px;
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 3 --> POSIZIONI DI LAVORO IN BOOLIVERY
+@media screen and (max-width: 1220px) {
+  main {
+    #home-container {
+      .main-sec-3 {
+        #business-adv {
+          display: block;
+          .cards-adv {
+            width: 100%;
+            margin-bottom: 20px;
           }
         }
       }

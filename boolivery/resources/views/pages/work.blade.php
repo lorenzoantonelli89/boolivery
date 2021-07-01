@@ -32,7 +32,7 @@
                             <h1>Ottieni un posto ora.<br>
                                 Valuta posizioni tra rider, engineer o ristoratore</h1>
                             <!-- Al click fa apparire il messaggio "Non ci sono posizioni aperte" -->
-                            <button onclick="document.getElementById('error').innerHTML='Non ci sono pozioni aperte';">Canditati ora</button>
+                            <button onclick="document.getElementById('error').innerHTML='Non ci sono posizioni aperte';">Canditati ora</button>
                             <span id="error"></span>
                             <p><a href="{{ route('faq') }}">Perchè lavorare con noi</a></p>
                             <div id="work-by-img">
