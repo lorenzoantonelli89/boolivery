@@ -36,6 +36,7 @@ $headercl: #C1E8E5;
     padding: $topDown $leftRight;
     border-radius: 10px;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
 @mixin centring {

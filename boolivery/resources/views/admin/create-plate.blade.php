@@ -5,7 +5,10 @@
 
     <main class="createPlate">
         <div class="createPlateContainer">
-          <a class='backToPlateList' href="{{route('plateList', encrypt(($restaurant  -> id)))}}">Torna ai piatti</a>
+
+          <div>
+            <a class='backToPlateList' href="{{route('plateList', encrypt(($restaurant  -> id)))}}">Torna ai piatti</a>
+          </div>
 
           <div class="polygon"></div>
           <div class="polygonTwo"></div>
@@ -76,7 +79,7 @@
                     </div>
                   @endif
   
-                  <button type="submit" class="btn btn-primary">Modifica</button>
+                  <button type="submit" class="btn btn-primary">Crea</button>
   
                 </form>
           </div>

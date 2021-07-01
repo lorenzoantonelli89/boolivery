@@ -4,7 +4,10 @@
 
     <main class="editPlate">
       <div class="editPlateContainer">
-        <a class='backToPlateList' href="{{route('plateList', encrypt($plate -> restaurant_id))}}">Torna ai piatti</a>
+
+        <div>
+          <a class='backToPlateList' href="{{route('plateList', encrypt($plate -> restaurant_id))}}">Torna ai piatti</a>
+        </div>
 {{-- inizio form --}}
           <div class="polygon"></div>
           <div class="polygonTwo"></div>

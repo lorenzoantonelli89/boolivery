@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Descrizione</label>
-                    <input type="text" id="description" name="description"  maxlength="1000" placeholder="Descrizione">
+                    <textarea type="text" id="description" name="description"  maxlength="1000" placeholder="Descrizione"></textarea>
                 </div>
                 <div class="form-group insert-img">
                     <label for="image_profile">Carica una foto profilo</label>
@@ -51,14 +51,7 @@
                     <label for="image_cover">Carica una foto copertina</label>
                     <input type="file" id="image_cover" name="image_cover">
                 </div>
-                {{-- <div class="form-group">
-                    <label for="popular">Vuoi sponsorizzare il ristorante?</label>
-                    <select name="popular" id="popular">
-                        <option value="0">Si'</option>
-                        <option value="1">No</option>
-                    </select>
-                </div> --}}
-                {{-- categorie --}}
+                
                 <p>Scegli almeno 1 categoria</p>
                 <div class="categoryCheckboxes">
                     @foreach ($categories as $category)

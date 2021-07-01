@@ -123,6 +123,7 @@
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   border: none;
   cursor: pointer;
   width: 90%;
@@ -248,6 +249,7 @@
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   border: none;
   cursor: pointer;
   width: 90%;
@@ -365,6 +367,7 @@
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   border: none;
   cursor: pointer;
   width: 70%;
@@ -1119,6 +1122,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   padding: 5px 10px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   border: none;
   cursor: pointer;
 }
@@ -1327,6 +1331,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1939,6 +1944,7 @@ div#container-plate-list .container-link a {
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 div#container-plate-list .titlePlateList {
@@ -2057,6 +2063,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     padding: 10px 20px;
     border-radius: 10px;
     text-transform: uppercase;
+    cursor: pointer;
   }
 
   div#container-plate-list .titlePlateList {
@@ -2279,6 +2286,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 15px 0;
   background: linear-gradient(white, #275351);
   z-index: 1;
+  padding-top: 30px;
 }
 
 .editPlate .polygon {
@@ -2305,14 +2313,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   z-index: -2;
 }
 
-.editPlate .backToPlateList {
+.editPlate div {
+  text-align: center;
+}
+
+.editPlate div .backToPlateList {
   text-decoration: none;
   background-color: #00c2b8;
   color: white;
   padding: 8px 20px;
   border-radius: 10px;
   text-transform: uppercase;
-  margin-left: 20px;
+  cursor: pointer;
 }
 
 .editPlate .editPlateTitle {
@@ -2321,7 +2333,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .editPlate .editPlateTitle h2 {
-  margin: 27px 11px 60px 0;
+  margin: 27px 11px 40px 0;
 }
 
 .editPlate .container {
@@ -2358,6 +2370,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: none;
 }
 
+.editPlate .container .form-group textarea {
+  border: none;
+}
+
 .editPlate .container .form-group .radio {
   width: 50%;
   display: flex;
@@ -2375,8 +2391,9 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .editPlate .container .form-group .visibility {
-  width: 50%;
+  /*  width: 50%; */
   margin-bottom: 12px;
+  text-align: left;
 }
 
 .editPlate .container .form-group .descInp {
@@ -2427,11 +2444,12 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .editPlate .container button {
   text-decoration: none;
-  background-color: #0febe0;
+  background-color: #00c2b8;
   color: white;
   padding: 10px 30px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   margin: 30px 0;
   border: none;
 }
@@ -2558,16 +2576,20 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 15px 0;
   background: linear-gradient(#8cce11, #389b61);
   z-index: 1;
+  padding-top: 30px;
 }
 
-.createPlate .backToPlateList {
+.createPlate div {
+  text-align: center;
+}
+
+.createPlate div .backToPlateList {
   background-color: #00c2b8;
   text-align: center;
   width: 100px;
   border-radius: 7px;
   text-decoration: none;
   color: white;
-  margin-left: 20px;
   padding: 8px 20px;
   text-transform: uppercase;
 }
@@ -2602,7 +2624,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .createPlate .createTitle h2 {
-  margin: 27px 11px 60px 0;
+  margin: 27px 11px 40px 0;
 }
 
 .createPlate .createPlateContainerForm {
@@ -2638,6 +2660,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: none;
 }
 
+.createPlate .createPlateContainerForm .form-group textarea {
+  border: none;
+}
+
 .createPlate .createPlateContainerForm .form-group .radio {
   width: 50%;
   display: flex;
@@ -2655,7 +2681,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .createPlate .createPlateContainerForm .form-group .visibility {
-  width: 50%;
   margin-bottom: 12px;
 }
 
@@ -2707,11 +2732,12 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .createPlate .createPlateContainerForm button {
   text-decoration: none;
-  background-color: #0febe0;
+  background-color: #00c2b8;
   color: white;
   padding: 10px 30px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   margin: 30px 0;
   border: none;
 }
@@ -2843,7 +2869,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .createRestContainer .turnBackCont {
-  margin-left: 30px;
+  text-align: center;
 }
 
 .createRestContainer .turnBackCont .turnBack {
@@ -2853,6 +2879,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 8px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .createRestContainer .createRestTitle {
@@ -2906,10 +2933,11 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-align: center;
   border-radius: 15px;
   margin: 0 auto;
-  background-image: url("/storage/graphics/TikTok.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+  /*  background-image: url("/storage/graphics/TikTok.jpeg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position:top ; */
+  background-color: #7fb8d0e0;
   border: 8px solid black;
   padding-top: 50px;
 }
@@ -2928,7 +2956,8 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   align-items: baseline;
 }
 
-.createRestContainer .formCreateRest .form-group input {
+.createRestContainer .formCreateRest .form-group input,
+.createRestContainer .formCreateRest .form-group textarea {
   width: 45%;
   border-radius: 7px;
   outline: transparent;
@@ -2936,6 +2965,11 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin-left: 10px;
   height: 25px;
   border: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.createRestContainer .formCreateRest .form-group textarea {
+  height: auto;
 }
 
 .createRestContainer .formCreateRest .insert-img {
@@ -2976,12 +3010,14 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .createRestContainer .formCreateRest button {
   text-decoration: none;
-  background-color: #0febe0;
+  background-color: #00c2b8;
   color: white;
   padding: 10px 30px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   margin: 30px 0;
+  border: none;
 }
 
 /* test @Queries mobile-device*/
@@ -3050,50 +3086,207 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   color: white;
 }
 
-.container {
+.containerEditRestaurant {
   width: 70%;
   margin: 0 auto;
-  padding: 150px 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(#6098b9, #EE2644);
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 
-.container .form-group {
-  margin: 10px 0;
-  display: flex;
-  flex-direction: column;
+.containerEditRestaurant .turnBackCont {
+  text-align: center;
 }
 
-.container .form-group input {
-  border: 1px solid #2caead;
-  border-radius: 5px;
+.containerEditRestaurant .turnBackCont .turnBack {
+  text-decoration: none;
+  background-color: #00c2b8;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.container .form-group input[type=file] {
-  border: none;
-  background-color: #2caead;
+.containerEditRestaurant .createRestTitle {
+  padding-top: 2px;
 }
 
-.container #category-picker {
+.containerEditRestaurant .createRestTitle h2 {
+  margin: 27px 11px 40px 0;
+  text-align: center;
+}
+
+.containerEditRestaurant .polygon {
+  -webkit-clip-path: polygon(31% 0%, 72% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(31% 0%, 72% 0%, 100% 100%, 0% 100%);
+  background-color: #9fc4d6f2;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -1;
+}
+
+.containerEditRestaurant .polygonTwo {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+          clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+  background-color: #425e7b;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -3;
+}
+
+.containerEditRestaurant .polygonThree {
+  -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+          clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  background-color: #05e42061;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  right: 60px;
+  z-index: -2;
+}
+
+.containerEditRestaurant .formEditRestaurant {
+  width: 45%;
+  min-height: 780px;
+  text-align: center;
+  border-radius: 15px;
+  margin: 0 auto;
+  /*  background-image: url("/storage/graphics/TikTok.jpeg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position:top ; */
+  background-color: #449aad;
+  border: 8px solid black;
+  padding-top: 50px;
+}
+
+.containerEditRestaurant .formEditRestaurant .form-group {
+  width: 75%;
+  min-height: 35px;
+  margin: auto;
+  margin-bottom: 35px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
 }
 
-.container #category-picker p {
-  margin-right: 10px;
+.containerEditRestaurant .formEditRestaurant .form-group input,
+.containerEditRestaurant .formEditRestaurant .form-group textarea {
+  width: 45%;
+  border-radius: 7px;
+  outline: transparent;
+  padding: 3px 8px;
+  margin-left: 10px;
+  height: 25px;
+  border: none;
+  font-family: "Open Sans", sans-serif;
 }
 
-.container #category-picker .right-distance {
-  margin-right: 10px;
+.containerEditRestaurant .formEditRestaurant .form-group textarea {
+  height: auto;
+  overflow: auto;
 }
 
-.container #btn {
-  width: 100%;
+.containerEditRestaurant .formEditRestaurant .insert-img {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.container #btn .btn-primary {
-  margin: 20px 0;
+.containerEditRestaurant .formEditRestaurant .insert-img input {
+  white-space: break-spaces;
+}
+
+.containerEditRestaurant .formEditRestaurant .insert-img label {
+  white-space: nowrap;
+}
+
+.containerEditRestaurant .formEditRestaurant .insert-img img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 13px;
+  border: 2px solid #575555;
+}
+
+.containerEditRestaurant .formEditRestaurant p {
+  width: 100%;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.containerEditRestaurant .formEditRestaurant .categoryCheckboxes {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-row-gap: 10px;
+}
+
+.containerEditRestaurant .formEditRestaurant .categoryCheckboxes div {
+  text-align: left;
+}
+
+.containerEditRestaurant .formEditRestaurant .categoryCheckboxes input {
+  margin-left: 5px;
+}
+
+.containerEditRestaurant .formEditRestaurant .categoryCheckboxes label {
+  font-size: 14px;
+}
+
+.containerEditRestaurant .formEditRestaurant button {
+  text-decoration: none;
+  background-color: #00c2b8;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 30px 0;
+  border: none;
+}
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+  .containerEditRestaurant {
+    /*  @include centring; */
+    width: 100%;
+  }
+
+  .containerEditRestaurant .formEditRestaurant {
+    width: 100%;
+  }
+}
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .containerEditRestaurant {
+    /*  @include centring; */
+    width: 100%;
+  }
+
+  .containerEditRestaurant .formEditRestaurant {
+    width: 85%;
+  }
 }
 
 #appOrders.container,
@@ -3359,6 +3552,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
   border: none;
   cursor: pointer;
 }
@@ -3661,6 +3855,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   padding: 10px 20px;
   border-radius: 10px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .bg-color #list-restaurant-container #centered-list {
