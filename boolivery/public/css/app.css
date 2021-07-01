@@ -948,13 +948,22 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 #restaurant-details-container {
   padding-top: 50px;
-}
-
-.restaurant-details-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: #E1EEB4;
+}
+
+#restaurant-details-container #absolute-trapezoid {
+  background-color: #d0eb98;
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  z-index: 9;
 }
 
 .restaurant-show-container {
@@ -966,6 +975,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   justify-content: space-between;
   align-items: flex-start;
   padding-bottom: 50px;
+  z-index: 99;
 }
 
 .restaurant-show-container .restaurant-description {
@@ -978,7 +988,8 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .restaurant-show-container .restaurant-description img {
-  height: 100%;
+  height: 300px;
+  width: 300px;
   margin-right: 15px;
   border-radius: 5px;
 }
@@ -993,7 +1004,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 .restaurant-show-container .restaurant-details .restaurant-description-text {
   margin: 20px 25px 0 0;
-  overflow: scroll;
+  overflow-y: auto;
   flex-grow: 1;
 }
 
@@ -1008,12 +1019,13 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .restaurant-show-container .restaurant-foto-order img {
   border-radius: 15px;
-  width: 100%;
+  width: 370px;
+  height: 150px;
 }
 
 .restaurant-show-container .restaurant-foto-order .fa-clock {
@@ -1052,6 +1064,24 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   color: #ff9900;
 }
 
+.restaurant-fooding-list {
+  background-color: #e8ebeb;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+}
+
+.restaurant-fooding-list #absolute-trapezoid-gray {
+  background-color: #b4bad6;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+  height: 250px;
+  -webkit-clip-path: polygon(0 78%, 100% 50%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 78%, 100% 50%, 100% 100%, 0% 100%);
+  z-index: 99;
+}
+
 .plates-choosing-view {
   min-height: 400px;
   width: 100%;
@@ -1072,7 +1102,8 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
-  padding: 50px 0;
+  padding: 25px 0;
+  z-index: 899;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container {
@@ -1082,7 +1113,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  overflow-y: scroll;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
@@ -1104,7 +1134,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  margin-left: 5px;
+  padding: 15px;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description span {
@@ -1133,6 +1163,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
   width: 100px;
+  height: 100px;
   margin-right: 5px;
   border-radius: 5px;
 }
@@ -1148,7 +1179,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   margin-top: 15px;
   position: sticky;
   right: 0;
-  top: 0;
+  top: 150px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1279,19 +1310,20 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 .plates-choosing-view .momentary-total .mykart .goToKart {
-  border-radius: 15px;
-  width: 370px;
-  background-color: #7faf48;
+  width: 300px;
+  background-color: #7f93c5;
   height: 50px;
+  cursor: pointer;
+  margin: auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #7faf48;
+  background-color: #7f93c5;
 }
 
-.plates-choosing-view .momentary-total .mykart .goToKart :hover {
-  scale: 1.1;
+.plates-choosing-view .momentary-total .mykart .goToKart .display {
+  display: none;
 }
 
 .plates-choosing-view .momentary-total .mykart .goToKart p {
@@ -1351,15 +1383,15 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 .delivery-promotion {
   text-align: center;
-  margin: 15px;
+  padding: 15px;
+  width: 100%;
 }
 
-@media screen and (max-width: 1741px) and (min-width: 1287px) {
+@media screen and (max-width: 1741px) {
   .plates-choosing-view {
     min-height: 400px;
     width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 25px 0;
     background-color: #e8ebeb;
   }
 
@@ -1377,7 +1409,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
-    overflow: scroll;
   }
 
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
@@ -1615,10 +1646,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 
   .plates-choosing-view {
-    min-height: 400px;
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
     background-color: #e8ebeb;
   }
 
@@ -1632,7 +1659,8 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    z-index: 99;
+    z-index: 999;
+    width: 100%;
   }
 
   .plates-choosing-view .cartFixed > * {
@@ -1781,6 +1809,12 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
   .delivery-promotion span {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
+    flex-direction: column-reverse;
   }
 }
 
