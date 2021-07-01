@@ -23,9 +23,23 @@
                 <div class="restaurant-from-list">
                     <div class="restaurantfl-details">
                         <div id="details">
-                            <h2>
-                                {{$restaurant->name}}
-                            </h2>
+                            <div id="h2-btn-flex">
+                                <h2>
+                                    {{$restaurant->name}}
+                                </h2>
+                                <div id="btn-mod-del">
+                                    <div id="icon-modify">
+                                        <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
+                                            ✎
+                                        </a>
+                                    </div>
+                                    <div id="icon-delete">
+                                        <a href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
+                                            X
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                             <div>
                                 Tipo di ristorante:
                                 @foreach ($restaurant->categories as $category)
@@ -38,20 +52,20 @@
                             <ul>
                                 <li>
                                     <i class="fas fa-map-marker-alt"></i> 
-                                    Indirizzo: {{$restaurant->address}} ||
+                                    <span>Indirizzo: {{$restaurant->address}} |</span>
                                 </li>
                                 <li>
                                     <i class="fas fa-phone"></i> 
-                                    Telefono: {{$restaurant->phone}} || 
+                                    <span>Telefono: {{$restaurant->phone}} |</span> 
                                 </li>
                                 <li>
                                     <i class="fas fa-at"></i> 
-                                    E-mail: {{$restaurant->email}} 
+                                    <span>E-mail: {{$restaurant->email}}</span> 
                                 </li>
                                 @if ($restaurant -> popular === 1)
                                 <li>
-                                    || <i class="fas fa-star"></i> 
-                                    <b>Consigliato da Boolivery</b>     
+                                    | <i class="fas fa-star"></i> 
+                                    <span><b>Consigliato da Boolivery</b></span>     
                                 </li>
                                 @endif
                             </ul>
@@ -60,29 +74,24 @@
                                         
                             </p> 
                         </div>
-                    </div>
-                    <div class="restaurantfl-foto">
+                        <div class="restaurantfl-foto">
                         
-                        <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
-                        
+                            <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
+                            
+                        </div>
+                        <div class="restaurantfl-modify">
+                            <a href="{{route('plateList', encrypt($restaurant -> id))}}">
+                                Menu
+                            </a>
+                            <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
+                                Lista Ordini
+                            </a>
+                            <a href="{{route('showStats', encrypt($restaurant -> id))}}">
+                                Statistiche
+                            </a>
+                        </div>
                     </div>
-                    <div class="restaurantfl-modify">
-                        <a href="{{route('plateList', encrypt($restaurant -> id))}}">
-                            Menu
-                        </a>
-                        <a href="{{route('editRestaurant', encrypt($restaurant -> id))}}">
-                            Modifica
-                        </a>
-                        <a href="{{route('showOrders', encrypt($restaurant -> id))}}">
-                            Lista Ordini
-                        </a>
-                        <a href="{{route('showStats', encrypt($restaurant -> id))}}">
-                            Statistiche
-                        </a>
-                        <a href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
-                            Cancella
-                        </a>
-                    </div>
+                    
                 </div>
             @endforeach
             @endif
