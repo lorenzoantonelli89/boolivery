@@ -37,6 +37,9 @@ $headercl: #C1E8E5;
     border-radius: 10px;
     text-transform: uppercase;
     cursor: pointer;
+    &:hover{
+        background-color: coral;
+    }
 }
 
 @mixin centring {
