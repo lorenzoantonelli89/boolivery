@@ -152,8 +152,8 @@ footer {
     @include flex(row, space-between, center);
     
     ul{
+      width: 300px;
       height: 300px;
-      flex-basis: 300px;
       list-style: none;
       padding: 20px;
       margin-right: 25px;
@@ -183,8 +183,8 @@ footer {
       border-radius: 10px;
       background-color: #363947;
       text-align: center;
+      width: 300px;
       height: 300px;
-      flex-basis: 300px;
       img {
         width: 200px;
       }
@@ -288,13 +288,17 @@ footer {
     .footer-container {
       @include flex(row, flex-start, center);
       flex-wrap: wrap;
+      justify-content: space-between
+      ;
+
+
       ul,
       .whoWeAre {
-        flex-basis:calc(90% / 2);
+        width: 30vw;
         
         
-        margin: 0 15px 15px 0;
-        width: 0px;
+        margin:15px 0;
+        //width: 0px;
         
       }
 
@@ -394,13 +398,14 @@ footer {
       .footer-container {
         @include flex(row, flex-start, center);
         flex-wrap: wrap;
+        justify-content: center;
         ul,
         .whoWeAre {
-          //flex-basis:90%;
+          width: 300px;
           
           
           margin: 0 0px 15px 0;
-          width: 0px;
+          //width: 0px;
           
         }
   
