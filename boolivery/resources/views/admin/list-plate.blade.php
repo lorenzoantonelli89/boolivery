@@ -20,52 +20,56 @@
         <div class="restaurantCover">
             <img id="coverRestImg" src="{{ asset('/storage/restaurant-cover')}}/{{ $restaurant -> image_cover }}" alt="{{ $restaurant -> image_cover }}">
         </div>
-        <div class="menuContainer">
-            <h2>
-                Le nostre specialità:
-            </h2>
-            {{-- lista piatti del ristorante --}}
-            <ul class="platesCards">
-                @foreach ($restaurant -> plates as $plate)
-                    <li>   
-                        <div class="plateCard">
-                            <div>
-                                <img  src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate -> name }}">
-                                <a class="editPlate" href="{{route('editPlate', encrypt($plate -> id))}}">
-                                    <i class="fas fa-pencil-alt"></i>
-                                    {{-- <img src="{{ asset('/storage/graphics/matita2.png')}}" alt="{{ $plate -> name }}"> --}}
+        @if (count($restaurant->plates) < 1)
+            <div class="no-orders"><strong>NON CI SONO PIATTI DA VISUALIZZARE</strong></div>
+        @else
+            <div class="menuContainer">
+                <h2>
+                    Le nostre specialità:
+                </h2>
+                {{-- lista piatti del ristorante --}}
+                <ul class="platesCards">
+                    @foreach ($restaurant -> plates as $plate)
+                        <li>   
+                            <div class="plateCard">
+                                <div>
+                                    <img  src="{{ asset('/storage/restaurant-plates')}}/{{ $plate -> image }}" alt="{{ $plate -> name }}">
+                                    <a class="editPlate" href="{{route('editPlate', encrypt($plate -> id))}}">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        {{-- <img src="{{ asset('/storage/graphics/matita2.png')}}" alt="{{ $plate -> name }}"> --}}
+                                    </a>
+                                </div>
+                                <h4>
+                                    {{ $plate -> name}}
+                                </h4>
+                                <p>
+                                    {{ $plate -> description}}
+                                </p>
+                                <h6>
+                                    € {{ $plate -> price}}
+                                </h6>
+                                {{-- sezione che mi mostra quanti ordini ha ciascun piatto --}}
+                                <h6>
+                                    @php
+                                        $count = [];
+                                        $orders = $plate->orders;
+                                        foreach($orders as $order){
+                                            if(!in_array($order->id,$count)){
+                                                $count[] = $order->id;
+                                            }
+                                        }
+                                    @endphp
+                                    Appare in {{count($count)}} ordini
+                                </h6>
+                                <a href="{{route('deletePlate',$plate->id)}}">
+                                    <button>DELETE</button>
                                 </a>
                             </div>
-                            <h4>
-                                {{ $plate -> name}}
-                            </h4>
-                            <p>
-                                {{ $plate -> description}}
-                            </p>
-                            <h6>
-                                € {{ $plate -> price}}
-                            </h6>
-                            {{-- sezione che mi mostra quanti ordini ha ciascun piatto --}}
-                            <h6>
-                                @php
-                                    $count = [];
-                                    $orders = $plate->orders;
-                                    foreach($orders as $order){
-                                        if(!in_array($order->id,$count)){
-                                            $count[] = $order->id;
-                                        }
-                                    }
-                                @endphp
-                                Appare in {{count($count)}} ordini
-                            </h6>
-                            <a href="{{route('deletePlate',$plate->id)}}">
-                                <button>DELETE</button>
-                            </a>
-                        </div>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
     </div>
 </main>
 @endsection
