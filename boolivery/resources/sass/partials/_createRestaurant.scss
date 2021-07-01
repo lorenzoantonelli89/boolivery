@@ -15,7 +15,7 @@
     padding-bottom: 50px;
 
     .turnBackCont{
-        margin-left: 30px;
+        text-align: center;
 
         .turnBack{
             @include buttonLink(#00c2b8, white,8px, 20px);
@@ -76,10 +76,11 @@
         text-align: center;
         border-radius: 15px;
         margin: 0 auto ;
-        background-image: url("/storage/graphics/TikTok.jpeg");
+       /*  background-image: url("/storage/graphics/TikTok.jpeg");
         background-size: cover;
         background-repeat: no-repeat;
-        background-position:top ;
+        background-position:top ; */
+        background-color: #7fb8d0e0;
         border: 8px solid black; 
         padding-top: 50px;           
       
@@ -93,14 +94,19 @@
             font-size: 16px;
             font-weight: bold;
             @include flex(row,space-between, baseline);               
-            input{
+            input, textarea{
                     width: 45%;
                    border-radius: 7px;
                    outline: transparent;
                    padding:3px 8px;
                    margin-left:10px;
                    height: 25px;
-                   border: none
+                   border: none;
+                   font-family: "Open Sans", sans-serif;
+               }
+
+               textarea{
+                   height: auto;
                }
         }
 
@@ -127,7 +133,8 @@
             display: grid;
             grid-template-columns: auto auto ;
             grid-row-gap: 10px;
-
+            
+           
             input{
                 margin-left: 5px;
             }
@@ -139,8 +146,9 @@
         }
 
         button{
-            @include buttonLink(#0febe0, white,10px, 30px);
+            @include buttonLink(#00c2b8, white,10px, 30px);
             margin:30px 0;
+            border: none;
         }
     }
 }

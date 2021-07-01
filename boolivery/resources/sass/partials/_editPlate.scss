@@ -11,6 +11,7 @@
         padding: 15px 0;
         background: linear-gradient(white, #275351 );
         z-index: 1;
+        padding-top: 30px;
     }
 
     .polygon{
@@ -37,11 +38,13 @@
         z-index: -2;
     }
     
-    .backToPlateList{
-        @include buttonLink(#00c2b8, white,8px, 20px);
-
-        margin-left:20px;
-    
+    div{
+        text-align: center;
+        
+        .backToPlateList{
+            @include buttonLink(#00c2b8, white,8px, 20px);
+        
+        }
     }
 
 
@@ -49,7 +52,7 @@
         padding-top: 2px;
         text-align: center;
         h2{
-            margin: 27px 11px 60px 0;
+            margin: 27px 11px 40px 0;
         }
         
     }
@@ -87,6 +90,10 @@
                 border: none;
                 
             }
+
+            textarea{
+                border: none;
+            }
     
             .radio{
                width: 50%;
@@ -105,8 +112,9 @@
             }
             
             .visibility{
-                width: 50%;
+               /*  width: 50%; */
                 margin-bottom: 12px;
+                text-align: left;
     
             }
 
@@ -160,7 +168,7 @@
         }
         
         button{
-            @include buttonLink(#0febe0, white,10px, 30px);
+            @include buttonLink(#00c2b8, white,10px, 30px);
             margin:30px 0;
             border: none;
         }
