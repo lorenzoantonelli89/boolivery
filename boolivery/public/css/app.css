@@ -673,6 +673,14 @@ main #home-container #section-2 .flexible-carusel #plates-info h3 {
   text-decoration: underline;
 }
 
+main #home-container #section-2 .flexible-carusel #plates-info .restaurant-route a {
+  color: #28CCBC;
+}
+
+main #home-container #section-2 .flexible-carusel #plates-info .restaurant-route a:hover {
+  color: coral;
+}
+
 main #home-container #section-2 .flexible-carusel #next {
   margin-right: 70px;
 }
@@ -3179,13 +3187,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: 1px solid #ccc;
 }
 
-#appOrders.container .no-orders,
-#appChart.container .no-orders {
-  text-align: center;
-  margin-top: 10px;
-  color: #fc6a01;
-}
-
 @media screen and (max-width: 1024px) {
   #appChart.container .chart {
     width: 70vw;
@@ -3817,6 +3818,12 @@ body {
   margin-top: 75px;
 }
 
+.no-orders {
+  text-align: center;
+  margin-top: 10px;
+  color: #fc6a01;
+}
+
 header {
   height: 75px;
   width: 100%;
@@ -4186,7 +4193,6 @@ footer .footer-container .whoWeAre span {
 
   footer .footer-container ul,
   footer .footer-container .whoWeAre {
-    flex-basis: 90%;
     margin: 0 0px 15px 0;
     width: 0px;
   }

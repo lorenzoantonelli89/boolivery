@@ -213,6 +213,14 @@ main {
           h3 {
             text-decoration: underline;
           }
+          .restaurant-route{
+            a{
+              color: $ourlogo;
+              &:hover{
+                color: $ourcoral;
+              }
+            }
+          }
         }
         #next {
           margin-right: 70px;

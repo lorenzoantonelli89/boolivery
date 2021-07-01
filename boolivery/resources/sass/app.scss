@@ -51,6 +51,12 @@ body {
   }
 }
 
+.no-orders{
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(252, 106, 1);
+}
+
 
 // HEADER
 header{
@@ -390,7 +396,7 @@ footer {
         flex-wrap: wrap;
         ul,
         .whoWeAre {
-          flex-basis:90%;
+          //flex-basis:90%;
           
           
           margin: 0 0px 15px 0;

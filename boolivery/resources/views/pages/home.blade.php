@@ -67,10 +67,13 @@
             <p>
               <i>@{{platesPopular[counter].description}}</i>
             </p>
+            <p class="restaurant-route">
+              <a :href="'/restaurant-details/' + platesPopular[counter].restaurant_id">Vai al ristorante</a>
+            </p>
           </div>
         </div>
         <div id="next" class="chevron">
-          <i class="fas fa-chevron-right" v-on:click='nextImg'></i>          
+          <i class="fas fa-chevron-right" v-on:click='nextImg'></i>         
         </div>            
       </div>
     </div>
