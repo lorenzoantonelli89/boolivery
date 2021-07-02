@@ -20,6 +20,11 @@
                     <h3>
                         {{$restaurant -> address}}
                     </h3>
+                    <div>
+                        @foreach ($restaurant->categories as $category)
+                            <span><i class="fas fa-utensils"></i><i>{{$category->name}}</i></span>
+                        @endforeach
+                    </div>
                     <!-- descrizione -->
                     <div class="restaurant-description-text">
                     
@@ -70,32 +75,34 @@
                 <div class="choosing-and-total-container div-margin">
                     <div class="plate-selection-container ">
                         @foreach ($restaurant -> plates as $plate)
-                            <div class="plate-selection-view">
-                                <!-- descrizione del piatto -->
-                                <div class="plate-description">
-                                    <h3>
-                                        <b>{{$plate -> name}}</b>
-                                    </h3>
-                                    
+                        @if ($plate -> visible == true)
+                        <div class="plate-selection-view">
+                            <!-- descrizione del piatto -->
+                            <div class="plate-description">
+                                <h3>
+                                    <b>{{$plate -> name}}</b>
+                                </h3>
+                                
+                                <span>
+                                    {{$plate -> description}}
+                                </span>
+                                
+                                <h3>
+                                    {{$plate -> price}}&euro;
+                                </h3>
+                                <!-- bottoni per aggiungere o togliere un piatto -->
+                                <div class="container-add-cart">
                                     <span>
-                                        {{$plate -> description}}
+                                        <button v-on:click="addPlate({{$plate}})">
+                                            {{-- <i class="fas fa-plus-circle"></i> --}}
+                                            AGGIUNGI
+                                        </button>
                                     </span>
-                                    
-                                    <h3>
-                                        {{$plate -> price}}&euro;
-                                    </h3>
-                                    <!-- bottoni per aggiungere o togliere un piatto -->
-                                    <div class="container-add-cart">
-                                        <span>
-                                            <button v-on:click="addPlate({{$plate}})">
-                                                {{-- <i class="fas fa-plus-circle"></i> --}}
-                                                AGGIUNGI
-                                            </button>
-                                        </span>
-                                    </div>
                                 </div>
-                                <img id="imgchoice" src="{{asset('/storage/restaurant-plates/' . $plate -> image)}}" alt="">
                             </div>
+                            <img id="imgchoice" src="{{asset('/storage/restaurant-plates/' . $plate -> image)}}" alt="">
+                        </div>
+                        @endif
                         @endforeach
                         <a name="cartView"></a>
                     </div>                    

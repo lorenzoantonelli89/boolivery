@@ -1,19 +1,27 @@
 @extends('layouts.main-layout')
 
+@section('title')
+    Lista Ordini {{$restaurant->name}}
+@endsection
+
 @section('content')
 <main>
     <div class="container" id="appOrders">
         {{-- titolo --}}
         <h1>Ordini ricevuti da {{$restaurant->name}}</h1>
         {{-- se ci non ci sono ordini, mostra messaggio --}}
-        @if (count($orders)<1)
+        @if (count($orders) < 1)
             <div class="no-orders"><strong>NON CI SONO ORDINI DA VISUALIZZARE</strong></div>
             <nav>
                 <div class="back-button">
-                    <a href="{{route('listRestaurant')}}">TORNA AI RISTORANTI</a>
+                    <a href="{{route('listRestaurant')}}"><i class="fas fa-long-arrow-alt-left"></i>TORNA ALLA DASHBOARD</a>
                 </div>
             </nav>
         @else
+            {{-- torna alla dashboard --}}
+            <div class="back-to-dashboard">
+                <a href="{{route('listRestaurant')}}"><i class="fas fa-long-arrow-alt-left"></i> Torna alla dashboard</a>
+            </div>
             {{-- navbar menu --}}
             <nav>
                 {{-- scegli l'anno --}}

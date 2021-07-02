@@ -1070,6 +1070,11 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   color: #ffa500;
 }
 
+.restaurant-show-container .restaurant-details a:visited:hover,
+.restaurant-show-container .restaurant-details a:link:hover {
+  color: #fc6a01;
+}
+
 .restaurant-show-container .restaurant-foto-order {
   width: 370px;
   height: 100%;
@@ -1652,7 +1657,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 
   .restaurant-show-container .restaurant-description img {
-    height: 50%;
     margin-right: 0px;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -3432,13 +3436,28 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 #appOrders.container,
 #appChart.container {
   padding: 30px 0;
-  max-width: 1140px;
+  max-width: 70%;
   margin: auto;
+  position: relative;
 }
 
 #appOrders.container h1,
 #appChart.container h1 {
   text-align: center;
+}
+
+#appOrders.container .back-to-dashboard a,
+#appChart.container .back-to-dashboard a {
+  color: orange;
+  text-decoration: none;
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+#appOrders.container .back-to-dashboard a:hover,
+#appChart.container .back-to-dashboard a:hover {
+  color: #fc6a01;
 }
 
 #appOrders.container nav,
@@ -3447,13 +3466,28 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   text-align: center;
 }
 
+#appOrders.container nav .select-back,
+#appChart.container nav .select-back {
+  display: flex;
+  justify-content: space-between;
+}
+
 #appOrders.container nav .back-button,
 #appChart.container nav .back-button {
-  padding: 5px 10px;
-  border-radius: 10px;
+  text-decoration: none;
   background-color: #28CCBC;
+  color: #ffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
   margin: 10px auto 0;
   display: inline-block;
+}
+
+#appOrders.container nav .back-button:hover,
+#appChart.container nav .back-button:hover {
+  background-color: coral;
 }
 
 #appOrders.container nav .back-button a,
