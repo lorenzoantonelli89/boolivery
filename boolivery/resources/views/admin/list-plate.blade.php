@@ -4,6 +4,9 @@
 @endsection
 @section('content')
 <main>
+    <div id="back-color">
+        <div id="polygon-1"></div>
+    <div id="polygon-2"></div>
     <div id="container-plate-list">
         <div class="container-link">
             <a href="{{route('listRestaurant')}}">
@@ -42,9 +45,11 @@
                                 <h4>
                                     {{ $plate -> name}}
                                 </h4>
-                                <p>
-                                    {{ $plate -> description}}
-                                </p>
+                                <div id="desc">
+                                    <p>
+                                        {{ $plate -> description}}
+                                    </p>
+                                </div>
                                 <h6>
                                     € {{ $plate -> price}}
                                 </h6>
@@ -81,6 +86,7 @@
                 </ul>
             </div>
         @endif
+    </div>
     </div>
 </main>
 @endsection
