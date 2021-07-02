@@ -3633,7 +3633,20 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 #order-detail .container {
   width: 70%;
   margin: auto;
-  padding: 30px 0;
+  padding: 50px 0 30px;
+  position: relative;
+}
+
+#order-detail .container .back-to-dashboard a {
+  color: orange;
+  text-decoration: none;
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+#order-detail .container .back-to-dashboard a:hover {
+  color: #fc6a01;
 }
 
 #order-detail .container h1 {
@@ -3641,37 +3654,52 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 #order-detail .container h2 {
-  margin: 20px 0;
+  padding: 20px 0;
+  text-align: center;
 }
 
 #order-detail .container .order-block {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-top: 2px dashed black;
+  border-bottom: 2px dashed black;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+
+#order-detail .container .order-block .order-details {
+  width: 40%;
+  padding-left: 20px;
+}
+
+#order-detail .container .order-block .order-details > div {
+  margin-bottom: 5px;
+}
+
+#order-detail .container .order-block .ordered-plates ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  width: 100%;
 }
 
-#order-detail .container .order-block .back-button {
-  padding: 5px 10px;
-  border-radius: 10px;
-  background-color: #28CCBC;
-}
-
-#order-detail .container .order-block .back-button a {
-  color: white;
-  text-decoration: none;
-}
-
-#order-detail .container ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-#order-detail .container ul li {
+#order-detail .container .order-block .ordered-plates ul li {
   list-style-type: none;
-  flex-basis: 25%;
+  flex-basis: calc(50% - 20px);
+  background-color: #C1E8E5;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
 }
 
-#order-detail .container ul li img {
+#order-detail .container .order-block .ordered-plates ul li .icon {
+  text-align: left;
+  color: #28CCBC;
+  font-size: 40px;
+}
+
+#order-detail .container .order-block .ordered-plates ul li img {
   width: 8vw;
   height: 8vw;
   margin: 10px 0;
@@ -3679,14 +3707,48 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   border: 2px solid #28CCBC;
 }
 
-#order-detail .container .recap {
+#order-detail .container .order-block .ordered-plates ul li:hover {
+  transform: scale(1.1);
+}
+
+#order-detail .container .order-block .ordered-plates .recap {
   font-size: larger;
   text-decoration: underline;
 }
 
 @media screen and (max-width: 1024px) {
-  #order-detail .container ul li {
-    flex-basis: 50%;
+  #order-detail .container .order-block {
+    flex-wrap: wrap;
+  }
+
+  #order-detail .container .order-block .order-details {
+    width: 100%;
+  }
+
+  #order-detail .container .order-block .ordered-plates {
+    padding-left: 20px;
+  }
+
+  #order-detail .container .order-block .ordered-plates h2 {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #order-detail .container .order-block .ordered-plates {
+    padding-left: 20px;
+  }
+
+  #order-detail .container .order-block .ordered-plates h2 {
+    text-align: left;
+  }
+
+  #order-detail .container .order-block .ordered-plates ul {
+    flex-wrap: wrap;
+  }
+
+  #order-detail .container .order-block .ordered-plates ul li {
+    flex-basis: 90%;
   }
 }
 
@@ -4087,6 +4149,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details {
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex {
@@ -4189,7 +4252,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
-  margin: 40px 0;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-modify a {
