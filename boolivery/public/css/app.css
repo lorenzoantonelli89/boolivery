@@ -2546,10 +2546,13 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   margin-left: 10px;
   height: 25px;
   border: none;
+  width: 47%;
 }
 
 .editPlate .container .form-group textarea {
   border: none;
+  min-height: 40px;
+  width: 47%;
 }
 
 .editPlate .container .form-group .radio {
@@ -2590,6 +2593,18 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
 .editPlate .container .insertImg .insertFile {
   width: 86px;
+}
+
+.editPlate .container .insertImg div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.editPlate .container .insertImg div input {
+  margin-left: 0;
+  margin-top: 7px;
 }
 
 .editPlate .container .insertImg .protoImg {
@@ -2641,6 +2656,20 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 @media screen and (max-width: 480px) {
   .editPlate .container {
     width: 100%;
+    /* .insertImg{
+         @include flex(row,space-between, center);
+
+        &>input{
+            width: 83px;
+            margin-right: 20px;
+        }
+
+        .protoImg{
+            width: 20%;
+            height: 20%;
+
+        }
+    } */
   }
 
   .editPlate .container .form-group input {
@@ -2652,14 +2681,20 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
     height: 25px;
   }
 
+  .editPlate .container .form-group textarea {
+    min-height: 40px;
+    width: 44%;
+  }
+
   .editPlate .container .form-group .radio {
-    width: 210px;
+    width: 100%;
     display: flex;
-    margin-top: 5px;
+    margin: 5px 15px 0 25px;
   }
 
   .editPlate .container .form-group .radio > input {
     margin-right: 15px;
+    min-width: 13px;
   }
 
   .editPlate .container .form-group .radio > label {
@@ -2678,23 +2713,6 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
     padding: 7px;
   }
 
-  .editPlate .container .insertImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .editPlate .container .insertImg > input {
-    width: 83px;
-    margin-right: 20px;
-  }
-
-  .editPlate .container .insertImg .protoImg {
-    width: 20%;
-    height: 20%;
-  }
-
   .editPlate .container .euro {
     top: 5%;
     right: 67%;
@@ -2704,10 +2722,33 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1040px) {
   .editPlate .container {
-    width: 65%;
+    width: 75%;
     margin-top: 40px;
+  }
+
+  .editPlate .container .form-group input {
+    width: 45%;
+    border-radius: 7px;
+    outline: transparent;
+    padding: 3px 8px;
+    margin-left: 10px;
+    height: 25px;
+  }
+
+  .editPlate .container .form-group textarea {
+    min-height: 40px;
+    width: 44%;
+  }
+
+  .editPlate .container .radio {
+    width: 100%;
+    margin: 5px 15px 0 8px;
+  }
+
+  .editPlate .container .radio input {
+    min-width: 13px;
   }
 }
 
@@ -2840,10 +2881,13 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   margin-left: 10px;
   height: 25px;
   border: none;
+  width: 47%;
 }
 
 .createPlate .createPlateContainerForm .form-group textarea {
   border: none;
+  min-height: 40px;
+  width: 47%;
 }
 
 .createPlate .createPlateContainerForm .form-group .radio {
@@ -2944,14 +2988,20 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
     height: 25px;
   }
 
+  .createPlate .createPlateContainerForm .form-group textarea {
+    min-height: 40px;
+    width: 45%;
+  }
+
   .createPlate .createPlateContainerForm .form-group .radio {
-    width: 210px;
+    width: 100%;
     display: flex;
-    margin-top: 5px;
+    margin: 5px 15px 0 8px;
   }
 
   .createPlate .createPlateContainerForm .form-group .radio > input {
     margin-right: 15px;
+    min-width: 13px;
   }
 
   .createPlate .createPlateContainerForm .form-group .radio > label {
@@ -2996,10 +3046,33 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1040px) {
   .createPlate .createPlateContainerForm {
-    width: 65%;
+    width: 75%;
     margin-top: 40px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group input {
+    width: 45%;
+    border-radius: 7px;
+    outline: transparent;
+    padding: 3px 8px;
+    margin-left: 10px;
+    height: 25px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group textarea {
+    min-height: 40px;
+    width: 45%;
+  }
+
+  .createPlate .createPlateContainerForm .radio {
+    width: 100%;
+    margin: 5px 15px 0 35px;
+  }
+
+  .createPlate .createPlateContainerForm .radio input {
+    min-width: 13px;
   }
 }
 
@@ -3190,8 +3263,18 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   grid-row-gap: 10px;
 }
 
+.createRestContainer .formCreateRest .categoryCheckboxes .checkboxesContainer {
+  text-align: left;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .createRestContainer .formCreateRest .categoryCheckboxes input {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .createRestContainer .formCreateRest .categoryCheckboxes label {
@@ -3225,11 +3308,46 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   .createRestContainer .formCreateRest {
     width: 100%;
   }
+
+  .createRestContainer .formCreateRest .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 5px 10px 0;
+    min-width: 150px;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img label {
+    white-space: nowrap;
+    font-size: smaller;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
+  }
 }
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) {
   .createRestContainer {
     /*  @include centring; */
     width: 100%;
@@ -3237,6 +3355,40 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
   .createRestContainer .formCreateRest {
     width: 85%;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 5px 10px 0;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img label {
+    white-space: nowrap;
+    font-size: smaller;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
   }
 }
 
@@ -3437,12 +3589,18 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   grid-row-gap: 10px;
 }
 
-.containerEditRestaurant .formEditRestaurant .categoryCheckboxes div {
+.containerEditRestaurant .formEditRestaurant .categoryCheckboxes .checkboxesContainer {
   text-align: left;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .containerEditRestaurant .formEditRestaurant .categoryCheckboxes input {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .containerEditRestaurant .formEditRestaurant .categoryCheckboxes label {
@@ -3476,11 +3634,44 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   .containerEditRestaurant .formEditRestaurant {
     width: 100%;
   }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 5px 10px 0;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img label {
+    white-space: nowrap;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
+  }
 }
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) {
   .containerEditRestaurant {
     /*  @include centring; */
     width: 100%;
@@ -3488,6 +3679,39 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
   .containerEditRestaurant .formEditRestaurant {
     width: 85%;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 0 10px 25px;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img label {
+    white-space: nowrap;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
   }
 }
 
