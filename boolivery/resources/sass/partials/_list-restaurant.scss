@@ -50,6 +50,7 @@
                 padding: 15px;
                 #details {
                     margin-bottom: 20px;
+                    width: 100%;
                     #h2-btn-flex {
                         display: flex;
                         justify-content: space-between;
@@ -132,7 +133,6 @@
                     flex-wrap: wrap;
                     width: 100%;
                     justify-content: space-around;
-                    margin: 40px 0;
                     a {
                         margin: 5px auto;
                     }
