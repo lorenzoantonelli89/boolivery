@@ -88,11 +88,16 @@
                 margin-left:10px;
                 height: 25px;
                 border: none;
+                width: 47%;
+
                 
             }
 
             textarea{
                 border: none;
+                min-height: 40px;
+                width: 47%;
+            
             }
     
             .radio{
@@ -132,6 +137,16 @@
 
             .insertFile{
                 width: 86px;
+            }
+
+            div{
+                @include flex(column,center, center);
+
+                input{
+                    margin-left: 0;
+                    margin-top: 7px;
+                }
+  
             }
             
             .protoImg{
@@ -199,14 +214,21 @@
                     margin-left:10px;
                     height: 25px;
                 }
+
+                textarea{
+                    min-height: 40px;
+                    width: 44%;
+                }
         
                 .radio{
-                    width: 210px;
+                    width: 100%;
                     display: flex;
-                    margin-top: 5px;
+                    margin: 5px 15px 0 25px;
                     
                     &>input{
                         margin-right: 15px;
+                        min-width: 13px;
+
                     }
         
                     &>label{
@@ -218,6 +240,7 @@
                 .visibility{
                     width: 50%;
                     margin-bottom: 12px;
+
         
                 }
     
@@ -228,7 +251,7 @@
                 }
                
             }
-            .insertImg{
+            /* .insertImg{
                  @include flex(row,space-between, center);
  
                 &>input{
@@ -241,7 +264,7 @@
                     height: 20%;
                     
                 }
-            }
+            } */
 
             .euro{
                 top: 5%;
@@ -256,13 +279,41 @@
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width:481px) and (max-width: 768px) {
+@media screen and (min-width:481px) and (max-width: 1040px) {
 
     .editPlate{
 
         .container{
-            width: 65%;
+            width: 75%;
             margin-top: 40px;
+
+
+            .form-group{
+               
+                input{
+                   width: 45%;
+                   border-radius: 7px;
+                   outline: transparent;
+                   padding:3px 8px;
+                   margin-left:10px;
+                   height: 25px;
+               }
+
+               textarea{
+                   min-height: 40px;
+                   width: 44%;
+               }
+            }
+
+            .radio{
+                width: 100%;
+                margin: 5px 15px 0 8px;
+
+                input{
+                    min-width: 13px;
+                }
+
+            }
         } 
     }  
 }

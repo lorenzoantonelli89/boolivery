@@ -98,10 +98,15 @@
                 margin-left:10px;
                 height: 25px;
                 border: none;
+                width: 47%;
+
             }
 
             textarea{
                 border: none;
+                min-height: 40px;
+                width: 47%;
+            
             }
     
             .radio{
@@ -209,14 +214,21 @@
                     margin-left:10px;
                     height: 25px;
                 }
+
+                textarea{
+                    min-height: 40px;
+                    width: 45%;
+                }
         
                 .radio{
-                    width: 210px;
+                    width: 100%;
                     display: flex;
-                    margin-top: 5px;
+                    margin: 5px 15px 0 8px;
                     
                     &>input{
                         margin-right: 15px;
+                        min-width: 13px;
+
                     }
         
                     &>label{
@@ -267,14 +279,41 @@
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width:481px) and (max-width: 768px) {
+@media screen and (min-width:481px) and (max-width: 1040px) {
 
     .createPlate{
 
         .createPlateContainerForm{
-            width: 65%;
+            width: 75%;
             margin-top: 40px;
 
+            .form-group{
+               
+                input{
+                   width: 45%;
+                   border-radius: 7px;
+                   outline: transparent;
+                   padding:3px 8px;
+                   margin-left:10px;
+                   height: 25px;
+               }
+
+               textarea{
+                   min-height: 40px;
+                   width: 45%;
+               }
+            }
+
+            .radio{
+                width: 100%;
+                margin: 5px 15px 0 35px;
+
+                input{
+                    min-width: 13px;
+
+                }
+
+            }
 
         } 
     }  
