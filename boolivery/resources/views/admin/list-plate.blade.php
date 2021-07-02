@@ -59,11 +59,22 @@
                                             }
                                         }
                                     @endphp
-                                    Appare in {{count($count)}} ordini
+                                    <span>Acquistato {{count($orders)}}</span>
+                                    @if (count($orders) == 1)
+                                        <span>volta in {{count($count)}} ordine</span>
+                                    @else
+                                        <span>volte in {{count($count)}} ordini</span>
+                                    @endif
                                 </h6>
-                                <a href="{{route('deletePlate',$plate->id)}}">
-                                    <button>DELETE</button>
-                                </a>
+                                @if ($plate->visible == 1)
+                                    <a href="{{route('deletePlate',$plate->id)}}">
+                                        <button>Togli il piatto dal menu</button>
+                                    </a>
+                                @else
+                                    <a href="{{route('deletePlate',$plate->id)}}">
+                                        <button>Rimetti il piatto nel menu</button>
+                                    </a>
+                                @endif
                             </div>
                         </li>
                     @endforeach

@@ -107,7 +107,14 @@ class PlateController extends Controller
     public function deletePlate($id){
 
         $plate = Plate::findOrFail($id);
-        $plate->delete();
+        if($plate->visible == 1){
+            $plate->visible = 0;
+            $plate->save();
+        } else {
+            $plate->visible = 1;
+            $plate->save();
+        }
+        
         //dd($plate->restaurant_id);
         return redirect()->route('plateList',encrypt($plate -> restaurant->id));
     }
