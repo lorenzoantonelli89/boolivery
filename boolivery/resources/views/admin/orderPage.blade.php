@@ -1,5 +1,9 @@
 @extends('layouts.main-layout')
 
+@section('title')
+    Ordine #{{$order->id}}
+@endsection
+
 @section('content')
     <main id="order-detail">
         <div class="container">

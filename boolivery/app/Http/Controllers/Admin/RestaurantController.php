@@ -128,47 +128,4 @@ class RestaurantController extends Controller
         $restaurant->delete();
         return redirect()->route('listRestaurant');
     }
-
-    public function showOrders($id){ //funzione per mostrare tutti gli ordini
-
-        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
-        //funzione per passare un array vuoto di ordini, e mostrare relativo messaggio
-        $plates = $restaurant -> plates() ->get();
-        if(count($plates) == 0){
-            $orders = [];
-        } else {
-            foreach($plates as $plate){
-                $orders = $plate->orders()->get();
-            }
-        }
-        return view ('admin.orderList',compact('restaurant','orders'));
-    }
-
-    public function showOrder($id){ //funzione per mostrare ordine
-
-        $order = Order::findOrFail($id);
-        $plates = $order->plates()->get();
-        $restaurant = Restaurant::findOrFail($plates[0]->restaurant_id);
-        $ownerId = $restaurant->user_id;
-        $user= Auth::user();
-        if($ownerId != $user->id){
-            return redirect()->route('listRestaurant');
-        }
-        return view('admin.orderPage',compact('order','restaurant'));
-    }
-
-    public function showStats($id){ //funzione per mostrare pagina statistiche
-
-        $restaurant = Restaurant::findOrFail(Crypt::decrypt($id));
-        //funzione per passare un array vuoto di ordini, e mostrare relativo messaggio
-        $plates = $restaurant -> plates() ->get();
-        if(count($plates) == 0){
-            $orders = [];
-        } else {
-            foreach($plates as $plate){
-                $orders = $plate->orders()->get();
-            }
-        }
-        return view('admin.orderStats',compact('restaurant','orders'));
-    }
 }
