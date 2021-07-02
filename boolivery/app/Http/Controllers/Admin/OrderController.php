@@ -51,6 +51,7 @@ class OrderController extends Controller
         $restaurant = Restaurant::findOrFail($plates[0]->restaurant_id);
         $ownerId = $restaurant->user_id;
         $user= Auth::user();
+        // controllo per non fare inserire ID ordine altrui
         if($ownerId != $user->id){
             return redirect()->route('listRestaurant');
         }

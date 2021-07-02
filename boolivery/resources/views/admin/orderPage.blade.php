@@ -11,6 +11,18 @@
             <div class="back-to-dashboard">
                 <a href="{{route('showOrders', encrypt($restaurant -> id))}}"><i class="fas fa-long-arrow-alt-left"></i> Torna agli ordini</a>
             </div>
+            {{-- ordine precedente / successivo --}}
+            <nav>
+                <div>
+                    <div>PRECEDENTE</div>
+                </div>
+                    <div>
+                        <a :href="orderLink" v-on:click="nextOrder({{$order->id}})">SUCCESSIVO</a>
+                    </div>
+                    {{-- <div v-on:click="nextOrder({{$order->id}})">
+                        popoo
+                    </div> --}}
+            </nav>
             <div class="order-block">
                 <div class="order-details">
                     {{-- titolo --}}
@@ -91,5 +103,45 @@
             </div>
         </div>
     </main>
+    <script>
+
+        new Vue({
+            el: '#order-detail',
+            data: {
+                orders:[],
+                orderIds:[],
+                nextOrderIndex: '',
+                orderLink: '',
+                last: false,
+            },
+            methods: {
+                nextOrder: function(value){
+                    let orderIndex = parseInt(this.orderIds.indexOf(value));
+                    this.nextOrderIndex = orderIndex +1;
+                    let nextOrder = this.orderIds[orderIndex + 1];
+                    this.orderLink = '/showOrder/' + nextOrder;
+                    if(this.nextOrderIndex == this.orderIds.length){
+                        this.last = true;
+                    }
+                }
+            },
+            mounted(){ //funzione mounted che mi richiama dati per avere andamento generale
+                axios.post('/api/orderGraph/' + {{$restaurant->id}})
+                .then(res => {
+                    const data = res.data;
+                    let orderIds = [];
+                    for(i=0;i<data.length;i++){
+                        const order = data[i];
+                        if(orderIds.indexOf(order['order_id']) == -1){
+                            orderIds.push(order['order_id']);
+                            this.orders.push(order);
+                        }
+                    }
+                    this.orderIds = orderIds;
+                })
+            }
+        });
+    
+    </script>
 @endsection
 

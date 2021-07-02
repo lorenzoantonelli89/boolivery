@@ -3637,6 +3637,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   position: relative;
 }
 
+#order-detail .container .prev-display {
+  display: none;
+}
+
 #order-detail .container .back-to-dashboard a {
   color: orange;
   text-decoration: none;
@@ -3646,6 +3650,21 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 #order-detail .container .back-to-dashboard a:hover {
+  color: #fc6a01;
+}
+
+#order-detail .container nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+#order-detail .container nav a {
+  color: orange;
+  text-decoration: none;
+}
+
+#order-detail .container nav a:hover {
   color: #fc6a01;
 }
 

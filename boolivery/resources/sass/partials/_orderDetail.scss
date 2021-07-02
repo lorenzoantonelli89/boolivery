@@ -4,6 +4,9 @@
         margin: auto;
         padding: 50px 0 30px;
         position: relative;
+        .prev-display{
+            display:none;
+        }
         .back-to-dashboard{
             a{
                 color: orange;
@@ -11,6 +14,18 @@
                 position: absolute;
                 top: 15px;
                 right: 0;
+                &:hover{
+                    color: rgb(252, 106, 1);
+                }
+            }
+        }
+        nav{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            a{
+                color: orange;
+                text-decoration: none;
                 &:hover{
                     color: rgb(252, 106, 1);
                 }
