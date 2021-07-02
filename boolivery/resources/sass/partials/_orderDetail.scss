@@ -4,9 +4,6 @@
         margin: auto;
         padding: 50px 0 30px;
         position: relative;
-        .prev-display{
-            display:none;
-        }
         .back-to-dashboard{
             a{
                 color: orange;
@@ -49,17 +46,19 @@
             align-items: center;
             //justify-content: space-between;
             .order-details{
-                width: 40%;
+                width: 50vw;
                 padding-left: 20px;
                 >div{
                     margin-bottom: 5px;
                 }
             }
             .ordered-plates{
+                width: 50vw;
                 ul{
                     display: flex;
                     flex-wrap: wrap;
                     width: 100%;
+                    justify-content: center;
                     //justify-content: space-between;
                     li{
                         list-style-type: none;
@@ -105,6 +104,7 @@
                 }
                 .ordered-plates{
                     padding-left: 20px;
+                    width: 100%;
                     h2{
                         text-align: left;
                     }
