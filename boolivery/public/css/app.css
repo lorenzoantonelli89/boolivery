@@ -2033,6 +2033,36 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   color: white;
 }
 
+#back-color {
+  background-color: #f5a88c;
+  position: relative;
+  z-index: 1;
+}
+
+#back-color #polygon-1 {
+  position: absolute;
+  z-index: -1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+  background-color: #498a8a;
+  top: 1%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#back-color #polygon-2 {
+  -webkit-clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+          clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+  background-color: #28CCBC;
+  position: absolute;
+  z-index: -2;
+  top: 1%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
 div#container-plate-list {
   padding-top: 40px;
 }
@@ -2060,10 +2090,11 @@ div#container-plate-list .container-link a:hover {
 }
 
 div#container-plate-list .titlePlateList {
-  font-family: "Pacifico", cursive;
+  font-family: "Nunito", sans-serif;
   text-align: center;
   letter-spacing: 2px;
   margin-bottom: 40px;
+  color: white;
 }
 
 div#container-plate-list div.restaurantCover {
@@ -2081,10 +2112,11 @@ div#container-plate-list .menuContainer {
 }
 
 div#container-plate-list .menuContainer h2 {
-  font-family: "Pacifico", cursive;
+  font-family: "Nunito", sans-serif;
   text-align: center;
   letter-spacing: 2px;
   padding: 20px 0;
+  color: white;
 }
 
 div#container-plate-list .menuContainer .platesCards {
@@ -2098,8 +2130,7 @@ div#container-plate-list .menuContainer .platesCards {
 }
 
 div#container-plate-list .menuContainer .platesCards li {
-  width: 260px;
-  margin-right: 20px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2108,8 +2139,10 @@ div#container-plate-list .menuContainer .platesCards li {
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard {
+  background-color: white;
   width: 100%;
   margin-bottom: 10px;
+  border-radius: 10px;
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div {
@@ -2119,14 +2152,9 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div {
 div#container-plate-list .menuContainer .platesCards li .plateCard div img {
   width: 100%;
   height: 260px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   position: relative;
-}
-
-div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover {
-  transform: scale(1.03);
-  transition: all 1s ease;
-  opacity: 0.75;
 }
 
 div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover + .editPlate {
@@ -2149,6 +2177,35 @@ div#container-plate-list .menuContainer .platesCards li .plateCard div .editPlat
 div#container-plate-list .menuContainer .platesCards li .plateCard p,
 div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin-top: 10px;
+}
+
+div#container-plate-list .menuContainer .platesCards li .plateCard #desc {
+  height: 60px;
+  overflow: auto;
+  display: flex;
+  justify-content: baseline;
+  padding: 0 5px;
+}
+
+div#container-plate-list .menuContainer .platesCards li:hover {
+  transform: scale(1.05);
+  transition: all 1s ease;
+}
+
+div#container-plate-list .menuContainer .platesCards li a button {
+  text-decoration: none;
+  background-color: #28CCBC;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 10px 0;
+  border: none;
+}
+
+div#container-plate-list .menuContainer .platesCards li a button:hover {
+  background-color: coral;
 }
 
 /* test @query */
@@ -2192,6 +2249,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   div#container-plate-list div.restaurantCover #coverRestImg {
+    display: none;
     border-radius: 10px;
     opacity: 0.9;
   }
@@ -2201,7 +2259,7 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   div#container-plate-list .menuContainer h2 {
-    font-family: "Pacifico", cursive;
+    font-family: "Nunito", sans-serif;
     text-align: center;
     letter-spacing: 2px;
     padding: 20px 0;
@@ -2219,7 +2277,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   div#container-plate-list .menuContainer .platesCards li {
     width: 260px;
-    margin-right: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2228,7 +2285,9 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   }
 
   div#container-plate-list .menuContainer .platesCards li .plateCard {
-    margin-bottom: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
   }
 
   div#container-plate-list .menuContainer .platesCards li .plateCard div {
@@ -2237,14 +2296,9 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   div#container-plate-list .menuContainer .platesCards li .plateCard div img {
     width: 100%;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     position: relative;
-  }
-
-  div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover {
-    transform: scale(1.03);
-    transition: all 1s ease;
-    opacity: 0.75;
   }
 
   div#container-plate-list .menuContainer .platesCards li .plateCard div img:hover + .editPlate {
@@ -2269,6 +2323,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   div#container-plate-list .menuContainer .platesCards li .plateCard p,
   div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     margin-top: 10px;
+  }
+
+  div#container-plate-list .menuContainer .platesCards li .plateCard a {
+    margin: 10px 0;
   }
 }
 
@@ -2488,10 +2546,13 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin-left: 10px;
   height: 25px;
   border: none;
+  width: 47%;
 }
 
 .editPlate .container .form-group textarea {
   border: none;
+  min-height: 40px;
+  width: 47%;
 }
 
 .editPlate .container .form-group .radio {
@@ -2532,6 +2593,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 .editPlate .container .insertImg .insertFile {
   width: 86px;
+}
+
+.editPlate .container .insertImg div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.editPlate .container .insertImg div input {
+  margin-left: 0;
+  margin-top: 7px;
 }
 
 .editPlate .container .insertImg .protoImg {
@@ -2583,6 +2656,20 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 @media screen and (max-width: 480px) {
   .editPlate .container {
     width: 100%;
+    /* .insertImg{
+         @include flex(row,space-between, center);
+
+        &>input{
+            width: 83px;
+            margin-right: 20px;
+        }
+
+        .protoImg{
+            width: 20%;
+            height: 20%;
+
+        }
+    } */
   }
 
   .editPlate .container .form-group input {
@@ -2594,14 +2681,20 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     height: 25px;
   }
 
+  .editPlate .container .form-group textarea {
+    min-height: 40px;
+    width: 44%;
+  }
+
   .editPlate .container .form-group .radio {
-    width: 210px;
+    width: 100%;
     display: flex;
-    margin-top: 5px;
+    margin: 5px 15px 0 25px;
   }
 
   .editPlate .container .form-group .radio > input {
     margin-right: 15px;
+    min-width: 13px;
   }
 
   .editPlate .container .form-group .radio > label {
@@ -2620,23 +2713,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     padding: 7px;
   }
 
-  .editPlate .container .insertImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .editPlate .container .insertImg > input {
-    width: 83px;
-    margin-right: 20px;
-  }
-
-  .editPlate .container .insertImg .protoImg {
-    width: 20%;
-    height: 20%;
-  }
-
   .editPlate .container .euro {
     top: 5%;
     right: 67%;
@@ -2646,10 +2722,33 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1040px) {
   .editPlate .container {
-    width: 65%;
+    width: 75%;
     margin-top: 40px;
+  }
+
+  .editPlate .container .form-group input {
+    width: 45%;
+    border-radius: 7px;
+    outline: transparent;
+    padding: 3px 8px;
+    margin-left: 10px;
+    height: 25px;
+  }
+
+  .editPlate .container .form-group textarea {
+    min-height: 40px;
+    width: 44%;
+  }
+
+  .editPlate .container .radio {
+    width: 100%;
+    margin: 5px 15px 0 8px;
+  }
+
+  .editPlate .container .radio input {
+    min-width: 13px;
   }
 }
 
@@ -2782,10 +2881,13 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   margin-left: 10px;
   height: 25px;
   border: none;
+  width: 47%;
 }
 
 .createPlate .createPlateContainerForm .form-group textarea {
   border: none;
+  min-height: 40px;
+  width: 47%;
 }
 
 .createPlate .createPlateContainerForm .form-group .radio {
@@ -2886,14 +2988,20 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     height: 25px;
   }
 
+  .createPlate .createPlateContainerForm .form-group textarea {
+    min-height: 40px;
+    width: 45%;
+  }
+
   .createPlate .createPlateContainerForm .form-group .radio {
-    width: 210px;
+    width: 100%;
     display: flex;
-    margin-top: 5px;
+    margin: 5px 15px 0 8px;
   }
 
   .createPlate .createPlateContainerForm .form-group .radio > input {
     margin-right: 15px;
+    min-width: 13px;
   }
 
   .createPlate .createPlateContainerForm .form-group .radio > label {
@@ -2938,10 +3046,33 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1040px) {
   .createPlate .createPlateContainerForm {
-    width: 65%;
+    width: 75%;
     margin-top: 40px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group input {
+    width: 45%;
+    border-radius: 7px;
+    outline: transparent;
+    padding: 3px 8px;
+    margin-left: 10px;
+    height: 25px;
+  }
+
+  .createPlate .createPlateContainerForm .form-group textarea {
+    min-height: 40px;
+    width: 45%;
+  }
+
+  .createPlate .createPlateContainerForm .radio {
+    width: 100%;
+    margin: 5px 15px 0 35px;
+  }
+
+  .createPlate .createPlateContainerForm .radio input {
+    min-width: 13px;
   }
 }
 
@@ -3132,8 +3263,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   grid-row-gap: 10px;
 }
 
+.createRestContainer .formCreateRest .categoryCheckboxes .checkboxesContainer {
+  text-align: left;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .createRestContainer .formCreateRest .categoryCheckboxes input {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .createRestContainer .formCreateRest .categoryCheckboxes label {
@@ -3167,11 +3308,46 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   .createRestContainer .formCreateRest {
     width: 100%;
   }
+
+  .createRestContainer .formCreateRest .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 5px 10px 0;
+    min-width: 150px;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img label {
+    white-space: nowrap;
+    font-size: smaller;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
+  }
 }
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) {
   .createRestContainer {
     /*  @include centring; */
     width: 100%;
@@ -3179,6 +3355,40 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   .createRestContainer .formCreateRest {
     width: 85%;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 5px 10px 0;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img label {
+    white-space: nowrap;
+    font-size: smaller;
+  }
+
+  .createRestContainer .formCreateRest .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
   }
 }
 
@@ -3379,12 +3589,18 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   grid-row-gap: 10px;
 }
 
-.containerEditRestaurant .formEditRestaurant .categoryCheckboxes div {
+.containerEditRestaurant .formEditRestaurant .categoryCheckboxes .checkboxesContainer {
   text-align: left;
+  width: 30%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .containerEditRestaurant .formEditRestaurant .categoryCheckboxes input {
-  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .containerEditRestaurant .formEditRestaurant .categoryCheckboxes label {
@@ -3418,11 +3634,44 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   .containerEditRestaurant .formEditRestaurant {
     width: 100%;
   }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 5px 10px 0;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img label {
+    white-space: nowrap;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
+  }
 }
 
 /* test @Queries tablet-device*/
 
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 1024px) {
   .containerEditRestaurant {
     /*  @include centring; */
     width: 100%;
@@ -3430,6 +3679,39 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 
   .containerEditRestaurant .formEditRestaurant {
     width: 85%;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img input {
+    white-space: break-spaces;
+    margin: 10px 0 10px 25px;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img label {
+    white-space: nowrap;
+  }
+
+  .containerEditRestaurant .formEditRestaurant .imgSectionCont .insert-img img {
+    width: 100px;
+    height: 100px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 13px;
+    border: 2px solid #575555;
   }
 }
 

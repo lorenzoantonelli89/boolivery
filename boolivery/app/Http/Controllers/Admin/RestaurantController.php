@@ -29,7 +29,8 @@ class RestaurantController extends Controller
     public function createRestaurant(){ //pag.creazione ristorante
 
         $categories = Category::all();
-        return view('admin.create-restaurant',compact('categories'));
+        $user= Auth::user();
+        return view('admin.create-restaurant',compact('categories', 'user'));
     }
 
     public function storeRestaurant(Request $request){ // pag.salvataggio ristorante
@@ -39,7 +40,7 @@ class RestaurantController extends Controller
            'address'=>'required|min:3|max:255',
            'phone'=>'required|min:6|max:64',
            'email'=>'required|email:rfc,dns',
-           'description'=>'nullable|max: 1000',
+           'description'=>'required|max: 1000',
            'image_cover' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            'image_profile' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
            'category_id' => 'required_without_all',
@@ -85,7 +86,7 @@ class RestaurantController extends Controller
             'address'=>'required|min:3|max:255',
             'phone'=>'required|min:6|max:64',
             'email'=>'required|email:rfc,dns',
-            'description'=>'nullable|max: 1000',
+            'description'=>'required|max: 1000',
             'image_cover' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'image_profile' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id'=>'required_without_all',
