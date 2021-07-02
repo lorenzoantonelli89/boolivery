@@ -3975,12 +3975,37 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .bg-color {
-  background-color: #c9c9c9;
+  background-color: #f5a88c;
   padding-bottom: 50px;
+  position: relative;
+  z-index: 999;
+}
+
+.bg-color #polygon-1 {
+  position: absolute;
+  z-index: -1;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+  background-color: #498a8a;
+  top: 1%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.bg-color #polygon-2 {
+  -webkit-clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+          clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+  background-color: #28CCBC;
+  position: absolute;
+  z-index: -2;
+  top: 1%;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .bg-color #list-restaurant-container {
-  position: relative;
   width: 70%;
   margin: 0 auto;
 }
@@ -4023,16 +4048,11 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
   align-items: flex-start;
   flex-grow: 1;
   background-color: #ffff;
-  padding: 15px 15px;
-  margin-bottom: 30px;
-}
-
-.bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details > * {
-  margin: 5px 5px;
+  padding: 15px;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details {
-  width: 100%;
+  margin-bottom: 20px;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details #details #h2-btn-flex {
@@ -4121,9 +4141,10 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-foto img {
-  border-radius: 10px;
   width: 100%;
-  height: 500px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details .restaurantfl-modify {
@@ -4148,13 +4169,6 @@ div#container-plate-list .menuContainer .platesCards li .plateCard h6 {
     justify-content: space-between;
     align-items: flex-start;
     flex-grow: 1;
-    background-color: #e8ebeb;
-    padding: 15px 0;
-    margin-bottom: 30px;
-  }
-
-  .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details > * {
-    margin: 5px 5px;
   }
 
   .bg-color #list-restaurant-container .restaurant-from-list .restaurantfl-details ul {
