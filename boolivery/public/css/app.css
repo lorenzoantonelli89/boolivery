@@ -3919,10 +3919,6 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   position: relative;
 }
 
-#order-detail .container .prev-display {
-  display: none;
-}
-
 #order-detail .container .back-to-dashboard a {
   color: orange;
   text-decoration: none;
@@ -3970,7 +3966,7 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 }
 
 #order-detail .container .order-block .order-details {
-  width: 40%;
+  width: 50vw;
   padding-left: 20px;
 }
 
@@ -3978,10 +3974,15 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
   margin-bottom: 5px;
 }
 
+#order-detail .container .order-block .ordered-plates {
+  width: 50vw;
+}
+
 #order-detail .container .order-block .ordered-plates ul {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
 
 #order-detail .container .order-block .ordered-plates ul li {
@@ -4028,6 +4029,7 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
   #order-detail .container .order-block .ordered-plates {
     padding-left: 20px;
+    width: 100%;
   }
 
   #order-detail .container .order-block .ordered-plates h2 {

@@ -14,14 +14,14 @@
             {{-- ordine precedente / successivo --}}
             <nav>
                 <div>
-                    <div>PRECEDENTE</div>
-                </div>
-                    <div>
-                        <a :href="orderLink" v-on:click="nextOrder({{$order->id}})">SUCCESSIVO</a>
+                    <div v-if="actualIndex != 0">
+                        <a :href="orderLink" v-on:click="previousOrder({{$order->id}})">PRECEDENTE</a>
                     </div>
-                    {{-- <div v-on:click="nextOrder({{$order->id}})">
-                        popoo
-                    </div> --}}
+                </div>
+                
+                <div v-if="orderIds.length > actualIndex + 1">
+                    <a :href="orderLink" v-on:click="nextOrder({{$order->id}})">SUCCESSIVO</a>
+                </div>
             </nav>
             <div class="order-block">
                 <div class="order-details">
@@ -110,20 +110,22 @@
             data: {
                 orders:[],
                 orderIds:[],
-                nextOrderIndex: '',
                 orderLink: '',
-                last: false,
+                actualIndex: 0 ,
             },
             methods: {
                 nextOrder: function(value){
                     let orderIndex = parseInt(this.orderIds.indexOf(value));
-                    this.nextOrderIndex = orderIndex +1;
-                    let nextOrder = this.orderIds[orderIndex + 1];
+                    let nextOrderIndex = orderIndex + 1;
+                    let nextOrder = this.orderIds[nextOrderIndex];
                     this.orderLink = '/showOrder/' + nextOrder;
-                    if(this.nextOrderIndex == this.orderIds.length){
-                        this.last = true;
-                    }
-                }
+                },
+                previousOrder: function(value){
+                    let orderIndex = parseInt(this.orderIds.indexOf(value));
+                    let previousOrderIndex = orderIndex - 1;
+                    let previousOrder = this.orderIds[previousOrderIndex];
+                    this.orderLink = '/showOrder/' + previousOrder;
+                },
             },
             mounted(){ //funzione mounted che mi richiama dati per avere andamento generale
                 axios.post('/api/orderGraph/' + {{$restaurant->id}})
@@ -137,7 +139,9 @@
                             this.orders.push(order);
                         }
                     }
+
                     this.orderIds = orderIds;
+                    this.actualIndex = parseInt(this.orderIds.indexOf({{$order->id}}));
                 })
             }
         });
