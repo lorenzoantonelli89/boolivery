@@ -4,6 +4,9 @@
 @endsection
 @section('content')
 <main>
+    <div id="back-color">
+        <div id="polygon-1"></div>
+    <div id="polygon-2"></div>
     <div id="container-plate-list">
         <div class="container-link">
             <a href="{{route('listRestaurant')}}">
@@ -42,9 +45,11 @@
                                 <h4>
                                     {{ $plate -> name}}
                                 </h4>
-                                <p>
-                                    {{ $plate -> description}}
-                                </p>
+                                <div id="desc">
+                                    <p>
+                                        {{ $plate -> description}}
+                                    </p>
+                                </div>
                                 <h6>
                                     € {{ $plate -> price}}
                                 </h6>
@@ -59,17 +64,29 @@
                                             }
                                         }
                                     @endphp
-                                    Appare in {{count($count)}} ordini
+                                    <span>Acquistato {{count($orders)}}</span>
+                                    @if (count($orders) == 1)
+                                        <span>volta in {{count($count)}} ordine</span>
+                                    @else
+                                        <span>volte in {{count($count)}} ordini</span>
+                                    @endif
                                 </h6>
-                                <a href="{{route('deletePlate',$plate->id)}}">
-                                    <button>DELETE</button>
-                                </a>
+                                @if ($plate->visible == 1)
+                                    <a href="{{route('deletePlate',$plate->id)}}">
+                                        <button>Togli il piatto dal menu</button>
+                                    </a>
+                                @else
+                                    <a href="{{route('deletePlate',$plate->id)}}">
+                                        <button>Rimetti il piatto nel menu</button>
+                                    </a>
+                                @endif
                             </div>
                         </li>
                     @endforeach
                 </ul>
             </div>
         @endif
+    </div>
     </div>
 </main>
 @endsection

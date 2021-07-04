@@ -56,7 +56,9 @@
             a:link
             {
                 color: #ffa500;
-   
+                &:hover{
+                    color: rgb(252, 106, 1);
+                }
             }
         }
 
@@ -619,7 +621,6 @@
             text-align: center;
             img {
                 
-                height: 50%;
                 margin-right: 0px;
                 border-radius: 5px;
                 margin-bottom: 15px;
@@ -649,7 +650,6 @@
             text-align: center;
             color: orange;
             margin-bottom: 10px;
-            
         }
 
         .restairamt-foto-order span:last-child {

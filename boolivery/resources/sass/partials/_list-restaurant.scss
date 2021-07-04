@@ -1,9 +1,29 @@
 .bg-color{
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(245, 168, 140);
     padding-bottom: 50px;
-
+    position: relative;
+    z-index: 1;
+    #polygon-1 {
+        position: absolute;
+        z-index: -1;
+        clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+        background-color: rgb(73, 138, 138);
+        top: 1%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    #polygon-2 {
+        clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+        background-color: $ourlogo;
+        position: absolute;
+        z-index: -2;
+        top: 1%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
     #list-restaurant-container {
-        position: relative;
         @include centring;
         a {
             @include buttonLink($ourlogo, $white, 10px, 20px);
@@ -27,12 +47,9 @@
                 @include flex(column, space-between, flex-start);
                 flex-grow: 1;
                 background-color: $white;
-                padding: 15px 15px;
-                margin-bottom: 30px;
-                > * {
-                    margin: 5px 5px;
-                }
+                padding: 15px;
                 #details {
+                    margin-bottom: 20px;
                     width: 100%;
                     #h2-btn-flex {
                         display: flex;
@@ -105,11 +122,10 @@
                 }
                 .restaurantfl-foto {
                     width: 100%;
-                    
                     img {
-                        border-radius: 10px;
                         width: 100%;
-                        height: 500px;
+                        border-radius: 10px;
+                        object-fit: cover;
                     }
                 }
                 .restaurantfl-modify {
@@ -117,7 +133,6 @@
                     flex-wrap: wrap;
                     width: 100%;
                     justify-content: space-around;
-                    margin: 40px 0;
                     a {
                         margin: 5px auto;
                     }
@@ -134,13 +149,6 @@
                 .restaurantfl-details {
                     @include flex(column, space-between, flex-start);
                     flex-grow: 1;
-                    background-color: $ourgrey;
-                    padding: 15px 0;
-                    margin-bottom: 30px;
-                    > * {
-                        margin: 5px 5px;
-                    }
-
                     ul {
                         @include flex(column, flex-start, flex-start);
                         list-style-type: none; 

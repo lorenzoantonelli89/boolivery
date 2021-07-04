@@ -143,11 +143,15 @@
             grid-template-columns: auto auto ;
             grid-row-gap: 10px;
             
-           div{
-               text-align: left;
+           .checkboxesContainer{
+            text-align: left;
+            width: 30%;
+            margin: auto;
+            @include flex(row, flex-start, center);
+        
            }
             input{
-                margin-left: 5px;
+                margin-right: 5px;
             }
     
             label{
@@ -183,13 +187,45 @@
 
     .formEditRestaurant{
         width: 100%;
+
+    .imgSectionCont{
+        @include flex(row, space-between, center);
+
+        
+        .insert-img{
+            width: 50%;
+            @include flex(column, center, center);
+
+          
+            & input{
+                white-space: break-spaces;
+                margin:10px 5px 10px 0;
+            }
+    
+                label{
+                    white-space: nowrap;
+                }
+
+                img{
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 13px;
+                    border: 2px solid rgb(87, 85, 85);
+
+                }
+        }
     }
+       
+        
+    }
+
 }
 
 }
 
 /* test @Queries tablet-device*/
-@media screen and (min-width:481px) and (max-width: 768px) {
+@media screen and (min-width:481px) and (max-width: 1024px) {
 
 .containerEditRestaurant{
 
@@ -198,6 +234,36 @@
  
      .formEditRestaurant{
          width: 85%;
+
+
+         .imgSectionCont{
+            @include flex(row, space-between, center);
+    
+            
+            .insert-img{
+                width: 50%;
+                @include flex(column, center, center);
+    
+              
+                & input{
+                    white-space: break-spaces;
+                    margin:10px 0 10px 25px;
+                }
+        
+                    label{
+                        white-space: nowrap;
+                    }
+    
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        border-radius: 13px;
+                        border: 2px solid rgb(87, 85, 85);
+    
+                    }
+            }
+        }
      }
  }
 

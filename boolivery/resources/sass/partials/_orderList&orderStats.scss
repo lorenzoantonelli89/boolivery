@@ -1,17 +1,32 @@
 #appOrders.container, #appChart.container{
     padding: 30px 0;
-    max-width: 1140px;
+    max-width: 70%;
     margin: auto;
+    position: relative;
     h1{
         text-align: center;
+    }
+    .back-to-dashboard{
+        a{
+            color: orange;
+            text-decoration: none;
+            position: absolute;
+            top: 15px;
+            right: 0;
+            &:hover{
+                color: rgb(252, 106, 1);
+            }
+        }
     }
     nav{
         padding: 10px 0;
         text-align: center;
+        .select-back{
+            display: flex;
+            justify-content: space-between;
+        }
         .back-button{
-            padding: 5px 10px;
-            border-radius: 10px;
-            background-color:#28CCBC;
+            @include buttonLink($ourlogo, $white, 10px, 20px);
             margin: 10px auto 0;
             display: inline-block;
             a{

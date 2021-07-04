@@ -53,16 +53,19 @@ Route::get('/editRestaurant/{id}','Admin\RestaurantController@editRestaurant')
 // rotta che che fa update del ristorante e ritorna poi alla pagina della lista ristoranti
 Route::post('/updateRestaurant/{id}','Admin\RestaurantController@updateRestaurant')
     -> name('updateRestaurant');
-
 //rotta per cancellare ristorante
 Route::get('deleteRestaurant/{id}','Admin\RestaurantController@deleteRestaurant')
     ->name('deleteRestaurant');
+
 //rotta per mostrare ordini
-Route::get('my-orders/{id}','Admin\RestaurantController@showOrders')
+Route::get('my-orders/{id}','Admin\OrderController@showOrders')
     ->name('showOrders');
 //rotta per mostrare singolo ordine
-Route::get('showOrder/{id}','Admin\RestaurantController@showOrder')
+Route::get('showOrder/{id}','Admin\OrderController@showOrder')
     ->name('showOrder');
+//rotta per visualizzazione grafico ordini relativo a ristorante
+Route::get('/orders-statistics/{id}', 'Admin\OrderController@showStats')
+    ->name('showStats');
 
 // rotta che porta alla lista dei piatti del ristorante cliccato 
  Route::get('/list-plate/{id}', 'Admin\PlateController@plateList')
@@ -78,11 +81,6 @@ Route::get('showOrder/{id}','Admin\RestaurantController@showOrder')
     -> name('createPlate');
  Route::post('/store-plate/{id}', 'Admin\PlateController@storePlate')
     ->name('storePlate');
-
-//rotta per cancellare piatto
+//rotta per cancellare piatto, rendendolo not visible
 Route::get('deletePlate/{id}','Admin\PlateController@deletePlate')
 ->name('deletePlate');
-
-//rotta per visualizzazione grafico ordini relativo a ristorante
-Route::get('/orders-statistics/{id}', 'Admin\RestaurantController@showStats')
-    ->name('showStats');

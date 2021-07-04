@@ -3,8 +3,10 @@
     Dashboard di {{$user->name}} {{$user->lastname}}
 @endsection
 @section('content')    
-<main>
-    <div class="bg-color">
+<main class="bg-color">
+    <div>
+        <div id="polygon-1"></div>
+        <div id="polygon-2"></div>
         <div id="list-restaurant-container">
             <div id="centered-list">
                 <h1 id="restaurant-user-title">
