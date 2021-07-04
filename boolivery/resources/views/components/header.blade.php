@@ -30,7 +30,7 @@
                 @else
                     <li id="liDropdown" class="nav-list" v-on:click="getDropDown" :class="(dropDown == true) ? 'back-groundcl' : ''">
                         <a href="#" role="button"  v-pre>
-                            {{ Auth::user()->name }}
+                            <h5>Ciao </h5> {{ Auth::user()->name }} <i class="fas fa-caret-down"></i>
                         </a>
 
                         <div id="drop-container" :class="(dropDown == false) ? 'none' : 'active'">
@@ -52,6 +52,34 @@
                 @endguest
             </ul>
         </div>
+        <!-- ZONA NASCOSTA, SI ATTIVA QUANDO RIMPICCIOLISCO LA PAGINA -->
+        @guest
+            
+            @if (Route::has('register'))  
+            @endif
+        @else
+            <li id="liDropdown" class="nav-list hideList" v-on:click="getDropDown" :class="(dropDown == true) ? 'back-groundcl' : ''">
+                <a href="#" role="button"  v-pre>
+                    <h5>Ciao </h5> {{ Auth::user()->name }} <i class="fas fa-caret-down"></i>
+                </a>
+
+                <div id="drop-container" :class="(dropDown == false) ? 'none' : 'active'">
+                    <div>
+                        <a id="dashboard" href="{{route('listRestaurant')}}">
+                            Dashboard
+                        </a>
+                    </div>
+                    <a id="logout" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+        @endguest 
         <div class="hamburger" v-on:click="activeMenu()">
             <i class="fas fa-bars"></i>
             <div v-if="active === true" class="menuHamburger">
@@ -76,28 +104,24 @@
                                 <a href="{{ route('register') }}"><i class="fas fa-user-plus"></i> {{ __('Registrati') }}</a>
                             </li>
                         @endif
-                    @else
-                        <li id="liDropdown" class="nav-list" v-on:click="getDropDown" >
-                            <a href="#" role="button"  v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
+                    @else         
 
-                            <div id="drop-container" :class="(dropDown == false) ? 'none' : 'active'">
-                                <div>
-                                    <a id="dashboard" href="{{route('listRestaurant')}}">
-                                        Dashboard
-                                    </a>
-                                </div>
-                                <a id="logout" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+                        <li class="nav-list">
+                            <a id="dashboard" href="{{route('listRestaurant')}}">
+                            <i class="fas fa-chart-line"></i> Dashboard
+                            </a>
+                        </li>     
+                        <li  class="nav-list">
+                            <a id="logout" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
+                                <i class="fas fa-user-times"></i> {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" class="nav-list" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
+                        
                     @endguest
                 </ul>
             </div>
@@ -105,8 +129,9 @@
     </nav>
 </header>
 <script>
+    
     document.addEventListener('DOMContentLoaded', function () {
-
+    
     new Vue({
         el: '#header',
         data: {
@@ -116,7 +141,9 @@
         },
         mounted(){
             document.addEventListener('scroll', this.scrollUp);
+                       
         },
+        
         methods: {
             // funzione che apre e chiude il dropdown
             getDropDown: function(){

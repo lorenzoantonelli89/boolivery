@@ -109,7 +109,11 @@ header{
         }
         #liDropdown{
           position: relative;
-
+          h5 {
+            display: inline;
+            color: black;
+            margin-right: 5px;
+          }
           #drop-container{
             width: 100%;
             height: 80px;
@@ -136,6 +140,10 @@ header{
         }
       }
     }
+    .hideList {
+      display: none;
+    }
+    // MENU HAMBURGER
     .hamburger {
       display: none;
     }
@@ -205,6 +213,70 @@ footer {
       #container-list {
         display: none;
       }
+
+      .hideList {
+        display: relative;
+        @include flex(row, flex-start, flex-start);
+        padding: 2px 20px;
+        font-size: 18px;
+
+        &:hover {
+          background-color: white;
+          color: $ourlogo;
+          border-radius: 3px;
+        }
+        a {
+          text-decoration: none;
+          color: $ourlogo;
+          &:visited {
+            color: $ourlogo;
+          }
+
+          h5 {
+            display: inline;
+            color: black;
+            margin-right: 5px;
+          }
+        }
+
+
+      }
+
+      #liDropdown{
+        position: relative;
+        h5 {
+          display: inline;
+          color: black;
+          margin-right: 5px;
+        }
+        #drop-container{
+          width: 100%;
+          height: 80px;
+          padding-top: 10px;
+          text-align: center;
+          background-color: $white;
+          position: absolute;
+          top: 25px;
+          left: 0;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          box-shadow: rgb(0 0 0 / 12%) 0 1px 3px;
+
+          div{
+            margin-bottom: 10px;
+          }
+          #logout, #dashboard{
+            padding: 0;
+            border-radius: 0;
+            background-color: inherit;
+          }
+        }
+        
+      }
+        
+          
+      
+
       .hamburger {
         display: block;
         position: relative;
@@ -233,7 +305,7 @@ footer {
               margin: 25px 5px;
               padding: 2px 5px;
               font-size: 25px;
-
+              width: 100%;
               i {
                 font-size: 25px;
               }
@@ -326,7 +398,7 @@ footer {
   
           .menuHamburger {
             position: absolute;
-            width: 250px;
+            width: 230px;
             background-color: white;
             right: 0;
             border-radius: 15px;
@@ -336,28 +408,33 @@ footer {
             ul {
               @include flex(column, flex-start, flex-start);
               list-style: none;
+              width: 100%;
+              
       
               li.nav-list {
                 @include flex(row, flex-start, flex-start);
                 margin-left: 0px;
-                margin: 25px 5px;
-                padding: 2px 5px;
+                margin: 25px 0px;
+                padding: 2px 0px;
                 font-size: 25px;
+                width: 100%;
   
                 i {
                   font-size: 25px;
+                  margin-left: 15px;
                 }
       
                 &:hover {
                   background-color: $ourorange;
-                  border-radius: 3px;
                 }
       
                 a {
                   text-decoration: none;
                   color: black;
+                  width: 100%;
                   &:visited {
                     color: black;
+
                   }
                 }
               }
