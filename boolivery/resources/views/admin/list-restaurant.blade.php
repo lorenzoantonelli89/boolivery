@@ -36,9 +36,10 @@
                                         </a>
                                     </div>
                                     <div id="icon-delete">
-                                        <a href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
+                                        <a id="btnDelete" onclick="return confirm('ATTENZIONE! Sei sicuro di voler cancellare questo ristorante?')" href="{{route('deleteRestaurant', encrypt($restaurant -> id))}}">
                                             X
                                         </a>
+                                        <!-- <a href="#" title="delete" class="delete" >Delete</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -100,4 +101,36 @@
         </div>
     </div>    
 </main>
+
+<script>
+    //     document.getElementById("btnDelete").addEventListener("click", displayDate);
+    //     var deleteLinks = document.querySelectorAll('.delete');
+
+    //     for (var i = 0; i < deleteLinks.length; i++) {
+    //     deleteLinks[i].addEventListener('click', function(event) {
+    //         event.preventDefault();
+
+    //         var choice = confirm(this.getAttribute('data-confirm'));
+
+    //         if (choice) {
+    //             window.location.href = this.getAttribute('href');
+    //         }
+    //     });
+    // }
+
+    // document.getElementById("btnDelete").addEventListener("click", getAllert());
+
+    // function getAllert() {
+    //     console.log("click");
+    //     if (alerted != 'yes') {
+    //  alert("My alert.");
+    //  localStorage.setItem('alerted','yes');
+    // }
+    // var alerted = getCookie('alerted') || '';
+    //                 if (alerted != 'yes') {
+    //                 alert("You are using Internet Explorer to view this webpage.  Your experience may be subpar while using Internet Explorer; we recommend using an alternative internet browser, such as Chrome or Firefox, to view our website.");
+    //                 createCookie('alerted','yes',365);//cookies expires after 365 days
+    //                 }
+    // }
+</script>
 @endsection
