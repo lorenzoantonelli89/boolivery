@@ -1,4 +1,4 @@
-<header id="header" :class="(scrollOn == true) ? 'box-shadow' : ''" >
+<header id="header" :class="(scrollOn == true) ? 'box-shadow' : ''" v-on:mouseleave="active = false">
     <nav id="nav-header">
         <div id="logo">
             <a href="{{route('home')}}">
@@ -28,7 +28,7 @@
                         </li>
                     @endif
                 @else
-                    <li id="liDropdown" class="nav-list" v-on:click="getDropDown" :class="(dropDown == true) ? 'back-groundcl' : ''">
+                    <li v-on:mouseleave="dropDown = false" id="liDropdown" class="nav-list" v-on:click="getDropDown" :class="(dropDown == true) ? 'back-groundcl' : ''">
                         <a href="#" role="button"  v-pre>
                             <h5>Ciao </h5> {{ Auth::user()->name }} <i class="fas fa-caret-down"></i>
                         </a>
@@ -82,7 +82,7 @@
         @endguest 
         <div class="hamburger" v-on:click="activeMenu()">
             <i class="fas fa-bars"></i>
-            <div v-if="active === true" class="menuHamburger">
+            <div v-if="active === true" class="menuHamburger" v-on:mouseleave="active = false">
                 <ul>
                     <li class="nav-list">
                         <a href="{{route('info-company')}}">

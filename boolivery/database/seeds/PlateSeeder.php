@@ -296,7 +296,7 @@ class PlateSeeder extends Seeder
                 'restaurant_id' => 7,
                 'name' => 'Vicaria',
                 'description' => 'Pomodoro, fior di latte, salsiccia fresca(in cottura), olio EVO e basilico.',
-                'image' => '',
+                'image' => 'vicaria.png',
                 'price' => 9,00,
                 'visible' => '1',
                 'popular' => 0,
