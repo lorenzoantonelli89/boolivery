@@ -4422,6 +4422,24 @@ footer .footer-container .whoWeAre span {
   color: #e8ebeb;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px darkgray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
 @media screen and (max-width: 1048px) and (min-width: 727px) {
   header nav#nav-header #container-list {
     display: none;
