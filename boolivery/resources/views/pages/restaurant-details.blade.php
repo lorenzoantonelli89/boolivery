@@ -48,11 +48,11 @@
                 <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
                 <!-- tempi di consegna -->
                 <div>
-                    <p>
+                    <p class="delivery-hour">
                         <i class="far fa-clock"></i>
                         Consegna prevista tra 30 e 40 minuti.
                     </p>
-                    <p>
+                    <p class="delivery-hour">
                         Primo orario utile:
                         <strong>@{{getTimeDelivery()}}</strong>
                     </p>
@@ -107,14 +107,15 @@
                             </div>
                             @endif
                         @endforeach
-                        {{-- punto a cui torno con il click --}}
-                        <a name="cartView"></a>
                     </div>                  
                     <!-- TABELLA PER L'ORDINE E PER IL TOTALE -->
                     <div class="momentary-total">
+                        {{-- punto a cui torno con il click --}}
+                        <a name="cartView"></a>
                         <!-- ZONA DEL CARRELLO -->
                         <div class="mykart">
-                            <form action="{{route('storeOrder')}}" method="POST" onsubmit="setFormSubmitting()">
+                            {{-- form ORDINE --}}
+                            <form class="order-form" action="{{route('storeOrder')}}" method="POST" onsubmit="setFormSubmitting()">
                                 @csrf
                                 @method('POST')
                                 {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
@@ -127,10 +128,11 @@
                                     </ul>
                                 </div>
                                 @endif
-                                <!-- OGGETTI NEL CARRELLO -->
+                                <!-- Banner free shipping -->
                                 <div :class="total < 20 ? 'pay-delivery' : 'free-delivery'">
                                     <h6>La consegna è gratuita se spendi almeno 20€</h6>
                                 </div>
+                                {{-- piatti selezionati + add/remove items --}}
                                 <div class="elemQnty" v-for="item in showedItems">
                                     <div class="listitem">
                                         <div class="pluseminus">
@@ -141,20 +143,17 @@
                                             <span v-on:click="addQty(item)">
                                                 <i class="fas fa-plus-circle"></i>
                                             </span>
-
-                                            </div>
-                                            <div class="myelem">
+                                        </div>
+                                        <div class="myelem">
                                             <span>@{{item.name}} </span> 
-                                            </div>    
-
-                                            <div class="singlecount">
-                                                @{{item.price * item.counter}}€
-                                            </div>
-                                        </div>  
+                                        </div>    
+                                        <div class="singlecount">
+                                            @{{item.price * item.counter}}€
+                                        </div>
+                                    </div>  
                                 </div>
                                 <!-- calcolo del totale -->
                                 <div class="total-calculator">
-                                    {{-- <div>Totale(consegna esclusa): @{{total}}</div> --}}
                                     <div class="amount">
                                         <span>Spese di consegna: </span>
                                         <span>@{{getDeliveryCost()}}€</span>
@@ -163,19 +162,8 @@
                                         <span>Il mio totale: </span>
                                         <span>@{{total + getDeliveryCost()}}€</span>
                                     </div>
-                                    
-                                    <!-- indicatore rosso verde sulla consegna gratuita -->
-                                    
                                 </div>
-                                <div class="total-price">
-                                    <label for="total_price">    
-                                    </label>
-                                    <input id="totalPrice" type="text" id="total_price" name="total_price" :value="total < 20 ? total+5 : total"  readonly>                                        
-                                </div>
-                                <div>
-                                    <input v-for="elem in cart"  type="hidden" name="plate_id[]" id="plate_id[]" :value="elem" readonly>
-                                </div>
-                                {{-- submit --}}
+                                {{-- TASTO mostra form compilazione --}}
                                 <div class="goToKart" v-on:click="changeFormVisibility">
                                     <p>
                                         <i :class="show == true ? 'fas fa-caret-up display' : 'fas fa-caret-up'"></i>
@@ -183,68 +171,77 @@
                                         COMPLETA L'ORDINE
                                     </p>
                                 </div>
-                                <!-- campo del nome -->
+                                <!-- Form compilazione -->
                                 <div v-if="formView"id="userDetails">
-                                <div>
-                                    <label for="name">
-                                        Nome
-                                    </label>
-                                    <input type="text" id="name" name="name" minlength="3" maxlength="255" required>
-                                </div>
-                                <!-- campo del cognome -->
-                                <div>
-                                    <label for="lastname">
-                                        Cognome
-                                    </label>
-                                    <input type="text" id="lastname" name="lastname" minlength="3" maxlength="255" required>
-                                </div>
-                                <!-- campo del telefono -->
-                                <div>
-                                    <label for="email">
-                                        Email
-                                    </label>
-                                    <input type="email" id="email" name="customer_email" minlength="3" maxlength="255" required>
-                                </div>
-                                <!-- campo dell'indirizzo -->
-                                <div>
-                                    <label for="shipping_address">  
-                                        Indirizzo
-                                    </label>
-                                    <input type="text" id="shipping_address" name="shipping_address" minlength="3" maxlength="255" required>
-                                </div>
-                                <!-- campo della data -->
-                                <div>
-                                    <label for="date_delivery">
-                                        Data
-                                    </label>
-                                    <input type="date" id="date_delivery" name="date_delivery"
-                                    min="<?php
-                                    echo date('Y-m-d');
-                                    ?>" value="<?php
-                                    echo date('Y-m-d');
-                                    ?>" required>
-                                </div>
-                                <div>
-                                    <label for="time_delivery">
-                                        Orario (attesa minima: <i>30minuti</i>)
-                                    </label>
-                                    <input type="time" id="time_delivery" name="time_delivery"
-                                    min="08:00" max="23:00" value= "<?php
-                                    date_default_timezone_set("Europe/Rome");
-                                    if(date('H:i')>'08:00' && date('H:i')<'23:00'){
-                                        $now = date("H:i");
-                                        $firstAvailable = date('H:i', strtotime('+30 minutes', strtotime($now)));
-                                        echo $firstAvailable;
-                                    } else {
-                                        echo '08:00';
-                                    };
-                                    ?>" required>
-                                </div>
-                                {{-- concludi ordina --}}
-                                <button type="submit" class="shop-link">
-                                        <i class="fas fa-shopping-cart"></i>
-                                        CONCLUDI ORDINE
-                                </button>
+            
+                                    <div>
+                                        <label for="name">
+                                            Nome
+                                        </label>
+                                        <input type="text" id="name" name="name" minlength="3" maxlength="255" required>
+                                    </div>
+                                    <!-- campo del cognome -->
+                                    <div>
+                                        <label for="lastname">
+                                            Cognome
+                                        </label>
+                                        <input type="text" id="lastname" name="lastname" minlength="3" maxlength="255" required>
+                                    </div>
+                                    <!-- campo del telefono -->
+                                    <div>
+                                        <label for="email">
+                                            Email
+                                        </label>
+                                        <input type="email" id="email" name="customer_email" minlength="3" maxlength="255" required>
+                                    </div>
+                                    <!-- campo dell'indirizzo -->
+                                    <div>
+                                        <label for="shipping_address">  
+                                            Indirizzo
+                                        </label>
+                                        <input type="text" id="shipping_address" name="shipping_address" minlength="3" maxlength="255" required>
+                                    </div>
+                                    <!-- campo della data -->
+                                    <div>
+                                        <label for="date_delivery">
+                                            Data
+                                        </label>
+                                        <input type="date" id="date_delivery" name="date_delivery"
+                                        min="<?php
+                                        echo date('Y-m-d');
+                                        ?>" value="<?php
+                                        echo date('Y-m-d');
+                                        ?>" required>
+                                    </div>
+                                    <div>
+                                        <label for="time_delivery">
+                                            Orario (attesa minima: <i>30minuti</i>)
+                                        </label>
+                                        <input type="time" id="time_delivery" name="time_delivery"
+                                        min="08:00" max="23:00" value= "<?php
+                                        date_default_timezone_set("Europe/Rome");
+                                        if(date('H:i')>'08:00' && date('H:i')<'23:00'){
+                                            $now = date("H:i");
+                                            $firstAvailable = date('H:i', strtotime('+30 minutes', strtotime($now)));
+                                            echo $firstAvailable;
+                                        } else {
+                                            echo '08:00';
+                                        };
+                                        ?>" required>
+                                    </div>
+                                    {{-- input nascosto che indica il tot prezzo --}}
+                                    <div class="total-price">
+                                        <input type="hidden" id="total_price" type="text" id="total_price" name="total_price" :value="total < 20 ? total+5 : total"  readonly>                                        
+                                    </div>
+                                    {{-- input nascosto che raccoglie array di piatti ordinati --}}
+                                    <div>
+                                        <input v-for="elem in cart" type="hidden" name="plate_id[]" id="plate_id[]" :value="elem" readonly>
+                                    </div>
+                                    {{-- concludi ordina --}}
+                                    <button type="submit" class="shop-link">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            CONCLUDI ORDINE
+                                    </button>
                                 </div> 
                             </form>
                         </div> 

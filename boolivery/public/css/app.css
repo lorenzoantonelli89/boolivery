@@ -963,46 +963,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 }
 
-.blink {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background-color: #2caead;
-  padding: 5px;
-  height: 50px;
-  width: 150px;
-  text-decoration: none;
-  color: white;
-  border-radius: 5px;
-}
-
-.my-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-}
-
-.div-margin {
-  width: 70%;
-  margin: 0 auto;
-}
-
-.flex-col-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.abutton {
-  padding: 7px;
-  font-size: 18px;
-  background-color: #28CCBC;
-  color: white;
-}
-
 #restaurant-details-container {
   padding-top: 50px;
   display: flex;
@@ -1037,6 +997,10 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   align-items: flex-start;
   padding-bottom: 50px;
   z-index: 99;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
 }
 
 #restaurant-details-container .restaurant-show-container .restaurant-description {
@@ -1044,7 +1008,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   height: 100%;
 }
 
@@ -1052,7 +1016,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   height: 300px;
   width: 300px;
   margin-right: 15px;
-  border-radius: 5px;
 }
 
 #restaurant-details-container .restaurant-show-container .restaurant-description .restaurant-details {
@@ -1144,10 +1107,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   min-height: 400px;
   width: 100%;
   background-color: #e8ebeb;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container {
@@ -1161,17 +1120,18 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container {
-  width: calc(100% - 340px);
+  width: calc(100% - 370px);
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
+  padding-right: 40px;
 }
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
-  width: 400px;
-  height: 200px;
+  width: calc((100% - 40px) / 2);
+  height: 250px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -1182,7 +1142,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description {
-  height: 100%;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -1193,10 +1152,8 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .text {
   font-size: 12px;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
-  padding: 3px;
+  height: 100px;
+  overflow-y: auto;
 }
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description .container-add-cart button {
@@ -1222,15 +1179,11 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   border-radius: 5px;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view:nth-child(2n+1) {
-  margin-right: 5%;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total {
   width: 370px;
   border-radius: 10px;
   background-color: white;
-  margin-top: 15px;
+  margin: 15px 0 0 30px;
   position: sticky;
   right: 0;
   top: 150px;
@@ -1240,157 +1193,65 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   align-items: center;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link {
-  height: 50px;
-  width: 370px;
-  background-color: #f4e432;
-  color: black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link i {
-  width: 35px;
-  color: #3490dc;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .free-delivery {
-  width: 370px;
-  height: 50px;
-  color: #7faf48;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .pay-delivery {
-  width: 370px;
-  height: 50px;
-  color: #ff0000;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
   margin: 15px;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart div {
-  width: 100%;
-  text-align: center;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart label {
-  display: block;
-  cursor: pointer;
-  font-size: 16px;
-  margin: 3px 0 1px 0;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart input {
-  width: 90%;
-  height: 30px;
-  padding-left: 8px;
-  border: 1px solid #28CCBC;
-  border-radius: 5px;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart input:focus {
-  outline: none;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .total-price {
-  margin: 5px, 0;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .total-price #totalPrice {
-  display: none;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty {
-  width: 100%;
-  align-self: flex-start;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 98%;
-  border-bottom: 1px solid #e8ebeb;
-  padding: 15px 0;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem .pluseminus {
-  text-align: center;
-  width: 150px;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem .myelem {
-  flex-grow: 1;
-  text-align: start;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem .singlecount {
-  width: 80px;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem i {
-  font-size: 18px;
-  padding: 1px;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem .fa-plus-circle {
-  color: #7faf48;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .elemQnty .listitem .fa-minus-circle {
-  color: #ff0000;
-}
-
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .goToKart {
-  background-color: #7f93c5;
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .free-delivery {
+  width: 370px;
   height: 50px;
-  cursor: pointer;
-  margin: auto;
-  padding: 10px;
+  color: #7faf48;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #7f93c5;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .goToKart .display {
-  display: none;
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .pay-delivery {
+  width: 370px;
+  height: 50px;
+  color: #ff0000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .goToKart p {
-  color: white;
-  font-size: 20px;
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .elemQnty .listitem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #e8ebeb;
+  padding: 15px 20px;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .goToKart p i {
-  font-size: 25px;
-  margin-right: 5px;
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .elemQnty .listitem .pluseminus {
+  text-align: center;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .total-calculator {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .elemQnty .listitem .myelem {
+  flex-grow: 1;
+  text-align: center;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .elemQnty .listitem i {
+  font-size: 18px;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .elemQnty .listitem .fa-plus-circle {
+  color: #7faf48;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .elemQnty .listitem .fa-minus-circle {
+  color: #ff0000;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .total-calculator {
   display: flex;
   display: flex;
   flex-direction: column;
@@ -1400,20 +1261,66 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   text-align: flex-start;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .total-calculator span {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .total-calculator span {
   font-size: 18px;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .total-calculator .amount {
-  padding-bottom: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .total-calculator .amount {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
   border-bottom: 1px solid #e8ebeb;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .goToKart {
+  background-color: #7f93c5;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .goToKart .display {
+  display: none;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .goToKart p {
+  color: white;
+  font-size: 20px;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .goToKart p i {
+  font-size: 25px;
+  margin-right: 5px;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails > div {
+  text-align: center;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails > div label {
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails > div input {
+  width: 90%;
+  height: 30px;
+  padding-left: 8px;
+  border: 1px solid #28CCBC;
+  border-radius: 5px;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails > div input:focus {
+  outline: none;
+}
+
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails .shop-link {
   text-decoration: none;
   background-color: #f4e432;
   color: black;
@@ -1421,20 +1328,19 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   border-radius: 10px;
   text-transform: uppercase;
   cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  background-color: #f4e432;
+  color: black;
+  border: 1px solid #3490dc;
   margin-top: 15px;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link:hover {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails .shop-link:hover {
   background-color: coral;
 }
 
-#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link i {
+#restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart #userDetails .shop-link i {
   width: 35px;
   color: #3490dc;
 }
@@ -1445,179 +1351,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   width: 100%;
 }
 
-@media screen and (max-width: 1741px) {
-  .plates-choosing-view {
-    min-height: 400px;
-    width: 100%;
-    padding: 25px 0;
-    background-color: #e8ebeb;
-  }
-
-  .plates-choosing-view .choosing-and-total-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container {
-    width: calc(100% - 340px);
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
-    width: 80%;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 15px;
-    background-color: white;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description {
-    height: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-left: 5px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description text {
-    font-size: 16px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
-    padding: 3px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
-    width: 130px;
-    margin-right: 5px;
-    border-radius: 5px;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view:nth-child(2n+1) {
-    margin-right: 5%;
-  }
-
-  .plates-choosing-view .momentary-total {
-    width: 370px;
-    border-radius: 10px;
-    background-color: white;
-    margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .plates-choosing-view .momentary-total .shop-link {
-    background-color: #f4e432;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .plates-choosing-view .momentary-total .shop-link i {
-    width: 35px;
-    color: #3490dc;
-  }
-
-  .plates-choosing-view .momentary-total .free-delivery {
-    width: 370px;
-    height: 50px;
-    color: #7faf48;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .plates-choosing-view .momentary-total .pay-delivery {
-    width: 370px;
-    height: 50px;
-    color: #ff0000;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .plates-choosing-view .momentary-total .mykart {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    margin: 15px;
-  }
-
-  .plates-choosing-view .momentary-total .mykart div {
-    width: 100%;
-  }
-
-  .plates-choosing-view .momentary-total .mykart label {
-    display: block;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 3px 0 1px 0;
-  }
-
-  .plates-choosing-view .momentary-total .mykart input {
-    width: 100%;
-  }
-
-  .plates-choosing-view .momentary-total .mykart .total-price {
-    margin: 5px, 0;
-  }
-
-  .plates-choosing-view .momentary-total .mykart .total-price #totalPrice {
-    display: none;
-  }
-
-  .plates-choosing-view .momentary-total .total-calculator {
-    display: flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: space-around;
-    height: 100px;
-    text-align: center;
-  }
-
-  .plates-choosing-view .momentary-total .total-calculator span {
-    font-size: 20px;
-  }
-
-  .plates-choosing-view .momentary-total .shop-link {
-    height: 50px;
-    width: 100%;
-    margin-top: 15px;
-    background-color: #f4e432;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .plates-choosing-view .momentary-total .shop-link i {
-    width: 35px;
-    color: #3490dc;
-  }
-}
-
-@media screen and (max-width: 1286px) {
+@media screen and (max-width: 1300px) {
   #restaurant-details-container .cartFixed {
     display: block;
     height: 45px;
@@ -1640,7 +1374,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   #restaurant-details-container .restaurant-show-container {
     height: 100%;
     margin-top: 30px;
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1658,8 +1391,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   }
 
   #restaurant-details-container .restaurant-show-container .restaurant-description img {
-    margin-right: 0px;
-    border-radius: 5px;
     margin-bottom: 15px;
   }
 
@@ -1679,39 +1410,8 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     align-items: center;
   }
 
-  #restaurant-details-container .restaurant-show-container .restaurant-foto-order span {
-    text-align: center;
-    color: orange;
-    margin-bottom: 10px;
-  }
-
-  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .restairamt-foto-order span:last-child {
-    color: brown;
-  }
-
-  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .fa-clock {
-    margin-right: 10px;
-    color: black;
-  }
-
-  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .types-of-payment {
-    height: 50px;
-    width: 250px;
-    border: 1px solid #e8ebeb;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .types-of-payment i {
-    font-size: 35px;
-    margin-right: 5px;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view {
-    background-color: #e8ebeb;
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .delivery-hour {
+    display: inline-block;
   }
 
   #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container {
@@ -1723,6 +1423,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
   #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container {
     width: 100%;
+    padding-right: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1731,136 +1432,44 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
   #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
     width: 100%;
-    margin-right: 0px;
-    height: auto;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
     margin-top: 15px;
-    background-color: white;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description {
-    height: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-left: 5px;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description > * {
-    margin: 5px 0;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description text {
-    font-size: 16px;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
-    padding: 3px;
   }
 
   #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
     width: 130px;
-    margin-right: 5px;
-    border-radius: 5px;
+    height: 130px;
   }
 
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view:nth-child(2n+1) {
-    margin-right: 0%;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total {
+  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total {
     width: 100%;
-    border-radius: 10px;
-    background-color: white;
+    margin: auto;
     margin-top: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    text-align: center;
   }
 
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .goToKart {
     width: 100%;
-    margin: 15px;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart div {
-    width: 100%;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart label {
-    display: block;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 3px 0 1px 0;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart input {
-    width: 96%;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .total-price {
-    margin: 5px, 0;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .mykart .total-price #totalPrice {
-    display: none;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .total-calculator {
-    display: flex;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: space-around;
-    height: 100px;
-    text-align: center;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .total-calculator span {
-    font-size: 20px;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link {
-    height: 50px;
-    width: 350px;
-    margin-top: 15px;
-    background-color: #f4e432;
-    color: black;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .momentary-total .shop-link i {
-    width: 35px;
-    color: #3490dc;
-  }
-
-  #restaurant-details-container .delivery-promotion span {
-    font-size: 12px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  #restaurant-details-container .restaurant-show-container .restaurant-foto-order img {
-    width: 70vw;
+  #restaurant-details-container .restaurant-show-container .restaurant-description img {
+    width: 50vw;
   }
 
-  #restaurant-details-container .restaurant-show-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
-    flex-direction: column-reverse;
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order img {
+    width: 60vw;
+  }
+
+  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total {
+    width: 100%;
+  }
+
+  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart {
+    width: 100%;
+  }
+
+  #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .momentary-total .mykart .order-form {
+    width: 100%;
   }
 }
 
