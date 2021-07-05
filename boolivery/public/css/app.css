@@ -768,7 +768,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv #rider-img {
 }
 
 main #home-container .main-sec-3 #business-adv .cards-adv #engineer-img {
-  background-image: url("/storage/graphics/engineer.jpg");
+  background-image: url("/storage/graphics/engineer2.png");
   background-size: cover;
   background-position-x: -50px;
   background-repeat: no-repeat;
@@ -4414,10 +4414,11 @@ footer .footer-container .whoWeAre {
 
 footer .footer-container .whoWeAre img {
   width: 200px;
+  margin-top: 15px;
 }
 
 footer .footer-container .whoWeAre span {
-  margin: 0 5px 5px 5px;
+  margin: 0 5px 15px 5px;
   color: #e8ebeb;
 }
 
@@ -4451,20 +4452,8 @@ footer .footer-container .whoWeAre span {
     color: #28CCBC;
   }
 
-  header nav#nav-header .hideList a h5 {
-    display: inline;
-    color: black;
-    margin-right: 5px;
-  }
-
   header nav#nav-header #liDropdown {
     position: relative;
-  }
-
-  header nav#nav-header #liDropdown h5 {
-    display: inline;
-    color: black;
-    margin-right: 5px;
   }
 
   header nav#nav-header #liDropdown #drop-container {
@@ -4694,7 +4683,6 @@ footer .footer-container .whoWeAre span {
     justify-content: center;
   }
 
-  footer .footer-container ul,
   footer .footer-container .whoWeAre {
     width: 300px;
     margin: 0 0px 15px 0;
