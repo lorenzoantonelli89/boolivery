@@ -1454,6 +1454,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 @media screen and (max-width: 768px) {
   #restaurant-details-container .restaurant-show-container .restaurant-description img {
     width: 50vw;
+    height: 50vw;
   }
 
   #restaurant-details-container .restaurant-show-container .restaurant-foto-order img {
