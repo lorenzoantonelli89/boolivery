@@ -1,7 +1,7 @@
 @extends('layouts.main-layout')
 
 @section('title')
-    Password reset
+    Registrazione
 @endsection
 
 @section('content')
