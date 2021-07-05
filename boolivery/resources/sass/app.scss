@@ -134,6 +134,9 @@ header{
               padding: 0;
               border-radius: 0;
               background-color: inherit;
+              &:hover{
+                background-color: orange;
+              }
             }
           }
           

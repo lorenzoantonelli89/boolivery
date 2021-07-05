@@ -4751,6 +4751,11 @@ header nav#nav-header #container-list ul #liDropdown #drop-container #dashboard 
   background-color: inherit;
 }
 
+header nav#nav-header #container-list ul #liDropdown #drop-container #logout:hover,
+header nav#nav-header #container-list ul #liDropdown #drop-container #dashboard:hover {
+  background-color: orange;
+}
+
 header nav#nav-header .hideList {
   display: none;
 }
