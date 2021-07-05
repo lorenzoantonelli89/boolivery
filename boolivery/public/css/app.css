@@ -4817,10 +4817,11 @@ footer .footer-container .whoWeAre {
 
 footer .footer-container .whoWeAre img {
   width: 200px;
+  margin-top: 15px;
 }
 
 footer .footer-container .whoWeAre span {
-  margin: 0 5px 5px 5px;
+  margin: 0 5px 15px 5px;
   color: #e8ebeb;
 }
 
@@ -5097,7 +5098,6 @@ footer .footer-container .whoWeAre span {
     justify-content: center;
   }
 
-  footer .footer-container ul,
   footer .footer-container .whoWeAre {
     width: 300px;
     margin: 0 0px 15px 0;

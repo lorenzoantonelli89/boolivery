@@ -195,10 +195,11 @@ footer {
       height: 300px;
       img {
         width: 200px;
+        margin-top: 15px;
       }
 
       span {
-        margin: 0 5px 5px 5px;
+        margin: 0 5px 15px 5px;
         color: $ourgrey;
       }
     }
@@ -476,11 +477,9 @@ footer {
         @include flex(row, flex-start, center);
         flex-wrap: wrap;
         justify-content: center;
-        ul,
+        
         .whoWeAre {
           width: 300px;
-          
-          
           margin: 0 0px 15px 0;
           //width: 0px;
           
