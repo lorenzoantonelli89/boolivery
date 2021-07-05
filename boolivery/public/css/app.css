@@ -4855,20 +4855,8 @@ footer .footer-container .whoWeAre span {
     color: #28CCBC;
   }
 
-  header nav#nav-header .hideList a h5 {
-    display: inline;
-    color: black;
-    margin-right: 5px;
-  }
-
   header nav#nav-header #liDropdown {
     position: relative;
-  }
-
-  header nav#nav-header #liDropdown h5 {
-    display: inline;
-    color: black;
-    margin-right: 5px;
   }
 
   header nav#nav-header #liDropdown #drop-container {

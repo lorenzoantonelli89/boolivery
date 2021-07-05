@@ -30,7 +30,7 @@
                 @else
                     <li id="liDropdown" class="nav-list" v-on:click="getDropDown" :class="(dropDown == true) ? 'back-groundcl' : ''">
                         <a href="#" role="button"  v-pre>
-                            <h5>Ciao </h5> {{ Auth::user()->name }} <i class="fas fa-caret-down"></i>
+                            Ciao {{ Auth::user()->name }} <i class="fas fa-caret-down"></i>
                         </a>
 
                         <div id="drop-container" :class="(dropDown == false) ? 'none' : 'active'">
@@ -141,6 +141,13 @@
         },
         mounted(){
             document.addEventListener('scroll', this.scrollUp);
+            
+            document.addEventListener('click', function(){
+                if(this.active == true){
+                    this.active = false;
+                }
+                console.log('hello');
+            });
                        
         },
         
@@ -159,11 +166,7 @@
             activeMenu: function() {
                 this.active = !this.active;
             },
-            disactiveMenu: function() {
-                if (this.active == true) {
-                    this.active = !this.active;
-                }
-            }
+            
         },
     });
 });
