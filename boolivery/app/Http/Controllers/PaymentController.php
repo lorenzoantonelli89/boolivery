@@ -52,7 +52,7 @@ class PaymentController extends Controller
             $order -> save();
             Mail::to($order -> customer_email)->send(new OrderShipped($order));
             return view('pages.checkout', compact('transaction', 'order'));
-        // se non è andato a buon fine lo statu ordine rimane a false e ritorno in pagina checkout con un errore 
+        // se non è andato a buon fine lo status ordine rimane a false e ritorno in pagina checkout con un errore 
         } else {
             $errorString = "";
 
@@ -110,3 +110,4 @@ class PaymentController extends Controller
         return view('pages.payment', compact('token','order'));
     }
 }
+
