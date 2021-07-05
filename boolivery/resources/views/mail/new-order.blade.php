@@ -8,7 +8,7 @@
     <style>
         body{
             background-color: #6cb1ea;
-            
+            font-family: 'Open Sans', sans-serif;
         }
         
     </style>

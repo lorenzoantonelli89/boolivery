@@ -1023,6 +1023,10 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   z-index: 9;
 }
 
+#restaurant-details-container .cartFixed {
+  display: none;
+}
+
 .restaurant-show-container {
   height: 370px;
   width: 70%;
@@ -1154,10 +1158,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   align-items: center;
 }
 
-.plates-choosing-view .cartFixed {
-  display: none;
-}
-
 .plates-choosing-view .choosing-and-total-container {
   display: flex;
   flex-direction: row;
@@ -1201,11 +1201,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description span {
   font-size: 12px;
-}
-
-.plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description button {
-  background-color: white;
-  border: none;
 }
 
 .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
@@ -1507,11 +1502,6 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     font-size: 16px;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description button {
-    background-color: white;
-    border: none;
-  }
-
   .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
     padding: 3px;
   }
@@ -1636,90 +1626,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
 }
 
 @media screen and (max-width: 1286px) {
-  .restaurant-show-container {
-    height: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .restaurant-show-container .restaurant-description {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 25px;
-    text-align: center;
-  }
-
-  .restaurant-show-container .restaurant-description img {
-    margin-right: 0px;
-    border-radius: 5px;
-    margin-bottom: 15px;
-  }
-
-  .restaurant-show-container .restaurant-details {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .restaurant-show-container .restaurant-foto-order {
-    width: 100%;
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .restaurant-show-container .restaurant-foto-order img {
-    display: none;
-    border-radius: 15px;
-    width: 100%;
-  }
-
-  .restaurant-show-container .restaurant-foto-order span {
-    text-align: center;
-    color: orange;
-    margin-bottom: 10px;
-  }
-
-  .restaurant-show-container .restaurant-foto-order .restairamt-foto-order span:last-child {
-    color: brown;
-  }
-
-  .restaurant-show-container .restaurant-foto-order .fa-clock {
-    margin-right: 10px;
-    color: black;
-  }
-
-  .restaurant-show-container .restaurant-foto-order .types-of-payment {
-    height: 50px;
-    width: 250px;
-    border: 1px solid #e8ebeb;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .restaurant-show-container .restaurant-foto-order .types-of-payment i {
-    font-size: 35px;
-    margin-right: 5px;
-  }
-
-  .plates-choosing-view {
-    background-color: #e8ebeb;
-  }
-
-  .plates-choosing-view .cartFixed {
+  #restaurant-details-container .cartFixed {
     display: block;
     height: 45px;
     position: fixed;
@@ -1733,19 +1640,102 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     width: 100%;
   }
 
-  .plates-choosing-view .cartFixed > * {
+  #restaurant-details-container .cartFixed > * {
     margin-right: 5px;
     z-index: 999;
   }
 
-  .plates-choosing-view .choosing-and-total-container {
+  #restaurant-details-container .restaurant-show-container {
+    height: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container {
+  #restaurant-details-container .restaurant-show-container .restaurant-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-description img {
+    margin-right: 0px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order img {
+    display: none;
+    border-radius: 15px;
+    width: 100%;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order span {
+    text-align: center;
+    color: orange;
+    margin-bottom: 10px;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .restairamt-foto-order span:last-child {
+    color: brown;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .fa-clock {
+    margin-right: 10px;
+    color: black;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .types-of-payment {
+    height: 50px;
+    width: 250px;
+    border: 1px solid #e8ebeb;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  #restaurant-details-container .restaurant-show-container .restaurant-foto-order .types-of-payment i {
+    font-size: 35px;
+    margin-right: 5px;
+  }
+
+  #restaurant-details-container .plates-choosing-view {
+    background-color: #e8ebeb;
+  }
+
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -1753,7 +1743,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     align-items: center;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view {
     width: 100%;
     margin-right: 0px;
     height: auto;
@@ -1766,7 +1756,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     background-color: white;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description {
     height: 100%;
     flex-grow: 1;
     display: flex;
@@ -1776,34 +1766,29 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     margin-left: 5px;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description > * {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description > * {
     margin: 5px 0;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description span {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description span {
     font-size: 16px;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description button {
-    background-color: white;
-    border: none;
-  }
-
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view .plate-description i {
     padding: 3px;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view img {
     width: 130px;
     margin-right: 5px;
     border-radius: 5px;
   }
 
-  .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view:nth-child(2n+1) {
+  #restaurant-details-container .plates-choosing-view .choosing-and-total-container .plate-selection-container .plate-selection-view:nth-child(2n+1) {
     margin-right: 0%;
   }
 
-  .plates-choosing-view .momentary-total {
+  #restaurant-details-container .plates-choosing-view .momentary-total {
     width: 100%;
     border-radius: 10px;
     background-color: white;
@@ -1815,7 +1800,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     text-align: center;
   }
 
-  .plates-choosing-view .momentary-total .mykart {
+  #restaurant-details-container .plates-choosing-view .momentary-total .mykart {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1824,30 +1809,30 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     margin: 15px;
   }
 
-  .plates-choosing-view .momentary-total .mykart div {
+  #restaurant-details-container .plates-choosing-view .momentary-total .mykart div {
     width: 100%;
   }
 
-  .plates-choosing-view .momentary-total .mykart label {
+  #restaurant-details-container .plates-choosing-view .momentary-total .mykart label {
     display: block;
     cursor: pointer;
     font-size: 16px;
     margin: 3px 0 1px 0;
   }
 
-  .plates-choosing-view .momentary-total .mykart input {
+  #restaurant-details-container .plates-choosing-view .momentary-total .mykart input {
     width: 96%;
   }
 
-  .plates-choosing-view .momentary-total .mykart .total-price {
+  #restaurant-details-container .plates-choosing-view .momentary-total .mykart .total-price {
     margin: 5px, 0;
   }
 
-  .plates-choosing-view .momentary-total .mykart .total-price #totalPrice {
+  #restaurant-details-container .plates-choosing-view .momentary-total .mykart .total-price #totalPrice {
     display: none;
   }
 
-  .plates-choosing-view .momentary-total .total-calculator {
+  #restaurant-details-container .plates-choosing-view .momentary-total .total-calculator {
     display: flex;
     display: flex;
     flex-direction: column;
@@ -1857,11 +1842,11 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     text-align: center;
   }
 
-  .plates-choosing-view .momentary-total .total-calculator span {
+  #restaurant-details-container .plates-choosing-view .momentary-total .total-calculator span {
     font-size: 20px;
   }
 
-  .plates-choosing-view .momentary-total .shop-link {
+  #restaurant-details-container .plates-choosing-view .momentary-total .shop-link {
     height: 50px;
     width: 350px;
     margin-top: 15px;
@@ -1873,12 +1858,12 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     align-items: center;
   }
 
-  .plates-choosing-view .momentary-total .shop-link i {
+  #restaurant-details-container .plates-choosing-view .momentary-total .shop-link i {
     width: 35px;
     color: #3490dc;
   }
 
-  .delivery-promotion span {
+  #restaurant-details-container .delivery-promotion span {
     font-size: 12px;
   }
 }
@@ -4101,6 +4086,13 @@ div#container-plate-list .menuContainer .platesCards li a button:hover {
 
 #container-payment #container-button button:hover {
   background-color: coral;
+}
+
+@media screen and (max-width: 992px) {
+  #container-payment .container-dropin {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 #container-checkout {

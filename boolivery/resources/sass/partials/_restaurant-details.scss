@@ -14,6 +14,10 @@
         clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
         z-index: 9;
     }
+    //CARRELLO FISSO SUPERIORE
+    .cartFixed {
+        display: none;
+    }
 }
 
 // ZONA SUPERIORE: descrizione ristorante e foto
@@ -141,10 +145,6 @@
     
     @include flex(column, flex-start, center );
 
-    //CARRELLO FISSO SUPERIORE
-    .cartFixed {
-        display: none;
-    }
     
     // Contenitore dei piatti e del carrello
 
@@ -182,10 +182,10 @@
                         font-size: 12px;
                     }
 
-                    button {
-                        background-color: white;
-                        border: none;
-                    }
+                    // button {
+                    //     background-color: white;
+                    //     border: none;
+                    // }
 
                     i {
                         padding: 3px;
@@ -466,10 +466,10 @@
                         font-size: 16px;
                     }
 
-                    button {
-                        background-color: white;
-                        border: none;
-                    }
+                    // button {
+                    //     background-color: white;
+                    //     border: none;
+                    // }
 
                     i {
                         padding: 3px;
@@ -603,6 +603,25 @@
 }
 
 @media screen and(max-width: 1286px) {
+#restaurant-details-container{
+
+
+
+    .cartFixed {
+        display:block;
+        height: 45px;
+        position: fixed;
+        top: 100px;   
+        background-color: $ouryellow;
+        @include flex(row, center, center);
+        z-index: 999;
+        width: 100%;
+
+        >* {
+            margin-right: 5px;
+            z-index: 999;
+        }
+    }
 
     // ZONA SUPERIORE: descrizione ristorante e foto
     .restaurant-show-container {
@@ -681,24 +700,7 @@
 // ZONA INFERIORE: visione dei piatti e carrello
 .plates-choosing-view {
     background-color: $ourgrey;
-
-    .cartFixed {
-        display:block;
-        height: 45px;
-        position: fixed;
-        top: 100px;   
-        background-color: $ouryellow;
-        @include flex(row, center, center);
-        z-index: 999;
-        width: 100%;
-
-        &>* {
-            margin-right: 5px;
-            z-index: 999;
-        }
-    }
-    
-    
+       
     // Contenitore dei piatti e del carrello
 
     .choosing-and-total-container {
@@ -742,10 +744,10 @@
                         font-size: 16px;
                     }
 
-                    button {
-                        background-color: white;
-                        border: none;
-                    }
+                    // button {
+                    //     background-color: white;
+                    //     border: none;
+                    // }
 
                     i {
                         padding: 3px;
@@ -852,6 +854,7 @@
             font-size: 12px;
         }
     }
+}
 }
 
 

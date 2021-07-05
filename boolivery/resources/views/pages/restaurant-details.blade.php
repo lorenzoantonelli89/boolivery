@@ -7,6 +7,12 @@
 <main>
     <div id="restaurant-details-container">
         <div id="absolute-trapezoid"></div>
+        <!-- CARRELLO FISSO -->
+        <div class="cartFixed div-margin">
+            <a href="#cartView">
+            <h2><i class="fas fa-shopping-cart"></i> @{{total + getDeliveryCost()}}€ Go to Cart <i class="fas fa-caret-down"></i></h2>
+            </a>
+        </div>
         <div class="restaurant-show-container">             
             <div class="restaurant-description">                       
                 <img src="{{ asset('/storage/restaurant-profile/' . $restaurant -> image_profile) }}" alt="">
@@ -66,12 +72,6 @@
         <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
         <div class="restaurant-fooding-list">
             <div class="plates-choosing-view">
-                <!-- CARRELLO FISSO -->
-                <div class="cartFixed div-margin">
-                    <a href="#cartView">
-                    <h2><i class="fas fa-shopping-cart"></i> @{{total + getDeliveryCost()}}€ Go to Cart <i class="fas fa-caret-down"></i></h2>
-                    </a>
-                </div>
                 <div class="choosing-and-total-container div-margin">
                     <div class="plate-selection-container ">
                         @foreach ($restaurant -> plates as $plate)
@@ -110,7 +110,7 @@
                     <div class="momentary-total">
                         <!-- ZONA DEL CARRELLO -->
                         <div class="mykart">
-                            <form action="{{route('storeOrder')}}" method="POST">
+                            <form action="{{route('storeOrder')}}" method="POST" onsubmit="setFormSubmitting()">
                             
                                 @csrf
                                 @method('POST')
@@ -271,6 +271,14 @@
     // window.addEventListener('beforeunload', function(){
     //     alert('stai lasciando');
     // });
+    var formSubmitting = false;
+    var setFormSubmitting = function() { formSubmitting = true; };
+    window.onbeforeunload = function(){
+        if(!formSubmitting){
+            return 'Sei sicuro di voler abbandonare la pagina? I dati non sono stati salvati.';
+        }
+    };
+    
     new Vue({
         el: '#restaurant-details-container',
         data: {
@@ -340,8 +348,7 @@
                 if(this.cart.length == 0){
                     alert('perdi i piatti');
                 }
-            }
-            
+            } 
         },
     });
 
