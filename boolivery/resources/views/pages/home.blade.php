@@ -80,7 +80,7 @@
         </div>            
       </div>
     </div>
-    <!-- TERZA SEZIONE, SEZIONE PER I RISTORATORI -->
+    <!-- TERZA SEZIONE, TRIPLA SCELTA -->
     <div class="main-sec-3">
       <div id="business-adv">
         <div class="cards-adv" id="rider">
@@ -112,7 +112,7 @@
           <div class="textAdv">
             <h3>Aggiungi il tuo ristorante</h3>
             <p>Entrare extra senza pagare i tuoi corrieri e senza vincoli contrattuali sul corriere</p>
-            <a href="{{ route('work') }}">
+            <a href="{{ route('register') }}">
               <div class="btn-to" id="btn-chef">
                 <p>Ristoratore</p>
               </div>
