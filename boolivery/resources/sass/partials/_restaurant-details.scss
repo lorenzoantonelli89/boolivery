@@ -1,10 +1,8 @@
-@import 'partials/variables';
-@import 'partials/common';
-
 #restaurant-details-container{
     padding-top: 50px;
     @include flex(column, flex-start, flex-start);
     background-color: #E1EEB4;
+    // poligono superiore
     #absolute-trapezoid {
         background-color: $jumbogreen;
         position: absolute;
@@ -14,853 +12,387 @@
         clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
         z-index: 9;
     }
-}
-
-// ZONA SUPERIORE: descrizione ristorante e foto
-.restaurant-show-container {
-    height: 370px;
-    @include centring;
-    @include flex(row, space-between, flex-start );
-    padding-bottom: 50px;
-    z-index:99;
-
-// Indirizzo e descrizione
+    //CARRELLO FISSO per RESPONSIVE
+    .cartFixed {
+        display: none;
+    }
+    // ZONA SUPERIORE: descrizione ristorante e foto
+    .restaurant-show-container {
+        height: 370px;
+        @include centring;
+        @include flex(row, space-between, flex-start );
+        padding-bottom: 50px;
+        z-index:99;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 30px;
+        // PARTE SINISTRA Indirizzo e descrizione
         .restaurant-description {
             width: calc(100% - 370px);
-            @include flex(row, flex-start, center);
+            @include flex(row, flex-start, flex-start);
             height: 100%;
-            
-
             img {
                 height: 300px;
                 width: 300px;
                 margin-right: 15px;
-                border-radius: 5px;
+                //border-radius: 5px;
             }
-        
+            .restaurant-details {
+                height: 100%;
+                @include flex(column, flex-start, flex-start);
+                .restaurant-description-text {
+                    margin: 20px 25px 0 0;
+                    overflow-y: auto;
+                    flex-grow: 1
+                }
+                a {
+                    color: #ffa500;
+                    &:hover{
+                        color: rgb(252, 106, 1);
+                    }
+                }
+            }
         }
-
-        .restaurant-details {
+        //PARTE DESTRA foto e indicazioni sull'ordine 
+        .restaurant-foto-order {
+            width: 370px;
             height: 100%;
-            @include flex(column, flex-start, flex-start);
-
-
-            .restaurant-description-text {
-                
-                margin: 20px 25px 0 0;
-                overflow-y: auto;
-                flex-grow: 1
-                
+            @include flex(column, space-around, flex-start);
+            img {
+                border-radius: 15px;
+                width: 370px;
+                height: 150px;
             }
-            a:visited,
-            a:link
-            {
-                color: #ffa500;
-                &:hover{
-                    color: rgb(252, 106, 1);
+            .types-of-payment {
+                height: 50px;
+                width: 100%;
+                @include flex(row, center, center);
+                i {
+                    font-size: 35px;
+                    margin-right: 15px;
+                }
+                .fa-cc-paypal {
+                    color: $paypal;
+                }
+                .fa-cc-visa {
+                    color: $visa;
+                }
+                .fa-cc-mastercard {
+                    color: $mastercard;
+                }
+                .fa-amazon-pay {
+                    color: $amazonpay;
                 }
             }
-        }
-
-        
-
-//PARTE DESTRA SUPERIORE foto e indicazioni sull'ordine 
-    .restaurant-foto-order {
-        width: 370px;
-        height: 100%;
-        @include flex(column, space-around, flex-start);
-                
-        img {
-            border-radius: 15px;
-            width: 370px;
-            height: 150px;
-        }
-
-        .fa-clock
-         {
-            margin-right: 10px;
-            color: black;
-        }
-
-        .types-of-payment {
-            height: 50px;
-            width: 100%;
-            border: 1px solid $ourgrey;
-            @include flex(row, center, center);
-            
-            i {
-                
-                font-size: 35px;
-                margin-right: 15px;
-                
-            }
-
-            .fa-cc-paypal {
-                color: $paypal;
-            }
-
-            .fa-cc-visa {
-                color: $visa;
-            }
-
-            .fa-cc-mastercard {
-                color: $mastercard;
-            }
-
-            .fa-amazon-pay {
-                color: $amazonpay;
-            }
-        }
-
-          
-    }
-}
-
-
-
-// ZONA INFERIORE: visione dei piatti e carrello
-.restaurant-fooding-list{
-    background-color: $ourgrey;
-    width: 100%;
-    position: relative;
-    z-index:9;
-    #absolute-trapezoid-gray {
-        background-color: #b4bad6;
-        position: absolute;
-        bottom: 0%;
-        width: 100%;
-        height: 250px;
-        clip-path: polygon(0 78%, 100% 50%, 100% 100%, 0% 100%);
-        z-index: 99;
-    }
-}
-.plates-choosing-view {
-    min-height: 400px;
-    width: 100%;
-    background-color: $ourgrey;
-    
-    @include flex(column, flex-start, center );
-
-    //CARRELLO FISSO SUPERIORE
-    .cartFixed {
-        display: none;
-    }
-    
-    // Contenitore dei piatti e del carrello
-
-    .choosing-and-total-container {
-
-        @include flex(row, space-between, flex-start);
-        position: relative;
-        padding: 25px 0;
-        z-index: 899;
-        // contenitore dei piatti
-        .plate-selection-container {
-            
-            width: calc(100% - 340px);
-            @include flex(row, flex-start, flex-start);
-            flex-wrap: wrap;
-            
-            // cornice per i piatti
-            .plate-selection-view {
-        
-                width: 400px;
-                height: 200px;
-                @include flex(row, space-around, center);
-                margin-top: 15px;
-                background-color: $white;
-                border-radius: 10px;
-                
-
-                .plate-description {
-                    height: 100%;
-                    flex-grow: 1;
-                    @include flex(column, space-around, flex-start);
-                    padding: 15px;
-
-                    span {
-                        font-size: 12px;
-                    }
-
-                    button {
-                        background-color: white;
-                        border: none;
-                    }
-
-                    i {
-                        padding: 3px;
-                    }
-
-                    
-
-                    .container-add-cart{
-
-                        button{
-                            @include buttonLink($ourlogo, $white, 5px, 10px);
-                            border: none;
-                            cursor: pointer;
-                        }
-                    }
-                }
-        
-                img {
-                    width: 100px;
-                    height: 100px;
-                    margin-right: 5px;
-                    border-radius: 5px;
-                }
-                
-            }
-
-            .plate-selection-view:nth-child(2n + 1) {
-                margin-right: 5%;
-            }
-        
         }
     }
-        .momentary-total {
-
-            width: 370px;
-            border-radius: 10px;
-            background-color: white;
-            margin-top: 15px;
-            position: sticky;
-            right: 0;
-            top: 150px;
-            @include flex(column, flex-start, center);
-                          
-                .shop-link {
-                     
-                    height: 50px;
-                    width: 370px;
-                    background-color: $ouryellow;
-                    color: black;
-                    @include flex(row, center, center);
-                
-                    i {
-                        width: 35px;
-                        color: $ourblue; 
-                
-                    }
-                }
-
-                .free-delivery {
-                    width: 370px;
-                    height: 50px;
-                    color: $ourgreen;
-                    @include flex(row, center, center);
-                
-                }
-                
-                .pay-delivery {
-                    width: 370px;
-                    height: 50px;
-                    color: $ourred;
-                    @include flex(row, center, center);
-                }
-                .mykart {
-                    @include flex(column, flex-start, center); 
-                    width: 100%;
-                   
-                   margin: 15px;
-
-                   div {
-                       width: 100%;
-                       text-align: center;
-                       
-                   }
-                    
-                   label {
-                       display: block;
-                       cursor: pointer;
-                       font-size: 16px;
-                       margin: 3px 0 1px 0;
-                       
-                   }
-
-                   input {
-                        width: 90%;
-                        height: 30px;
-                        padding-left: 8px;
-                        border: 1px solid $ourlogo;
-                        border-radius: 5px;
-
-                        &:focus{
-                            outline: none;
-                        }
-                   }
-                // INPUT DEL PREZZO TOTALE NASCOSTO
-                   .total-price {
-
-                        
-                        margin: 5px, 0;
-                    
-                        #totalPrice {
-                            display: none;
-                        }
-                    }
-
-
-                // QUANTITA SELEZIONATE E LISTA ORDINI
-                   .elemQnty {
-                    width: 100%;  
-                    align-self: flex-start;
-                    @include flex(column, space-around, center);
-                    
-                    .listitem {
-                        @include flex(row, space-between, flex-start);
-                        width: 98%;
-                        border-bottom: 1px solid $ourgrey;
-                        padding: 15px 0;
-
-                        .pluseminus {
-                            text-align: center;
-                            width: 150px;
-                        }
-
-                        .myelem {
-                            flex-grow: 1;
-                            text-align: start;
-                        }
-
-                        
-                        .singlecount {
-                            
-                            width: 80px;
-                        }
-                        
-                        i {
-                            font-size: 18px;  
-                            padding: 1px;
-                        }
-    
-                        .fa-plus-circle {
-                            color: $ourgreen;
-                        }
-    
-                        .fa-minus-circle {
-                            color: $ourred;
-                        }
-                    }
-   
-                } 
-                .goToKart {
-                    //border-radius: 15px;
-                    //width:300px;
-                    background-color: #7f93c5;
-                    height: 50px;
-                    cursor: pointer;
-                    margin: auto;
-                    padding: 10px;
-                    @include flex(row, center, center);
-                    .display{
-                        display: none;
-                    }
-
-                    p {  
-                        color: white;
-                        font-size: 20px;
-
-                        i {
-                            font-size: 25px;
-                            margin-right: 5px;
-                        }
-
-                    }
-                    background-color: #7f93c5;
-
-                }
-                //  FINE PARTE NASCOSTA
-                }
-
-                .total-calculator {
-                    display: flex;
-                    @include flex(column, space-around, center);
-                    height: 100px;
-                    
-                    
-                    text-align: flex-start;
-                    
-                    span {    
-                        font-size: 18px;
-                    }
-
-                    .amount {
-                        //width: 95%;
-                        padding-bottom: 15px;
-                        @include flex(row, space-between, center);
-                        border-bottom: 1px solid $ourgrey;
-                    }
-                }
-                
-
-
-                .shop-link {
-                    @include buttonLink($ouryellow, black, 10px, 20px);
-                    @include flex(row, center, center);
-                    border: none;
-                    cursor: pointer;
-                    margin-top: 15px;
-                    i {
-                        width: 35px;
-                        color: $ourblue; 
-                
-                    }
-                }  
-
-        }
-
-    }
-
-    
-
-// AVVISO A FONDO PAGINA
-.delivery-promotion {
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-}
-
-@media screen and(max-width: 1741px) {
-
-
 
     // ZONA INFERIORE: visione dei piatti e carrello
-.plates-choosing-view {
-    min-height: 400px;
-    width: 100%;
-    padding: 25px 0;
-    background-color: $ourgrey;
-
-    //CARRELLO FISSO SUPERIORE
-    
-    // Contenitore dei piatti e del carrello
-
-    .choosing-and-total-container {
-
-        @include flex(row, space-between, flex-start);
-
-        // contenitore dei piatti
-        .plate-selection-container {
-            
-            width: calc(100% - 340px);
-            @include flex(row, flex-start, flex-start);
-            flex-wrap: wrap;
-            // cornice per i piatti
-            .plate-selection-view {
-                
-                width: 80%;
-                height: 200px;
-                @include flex(row, space-around, center);
-                margin-top: 15px;
-                background-color: white;
-                
-
-                .plate-description {
-                    height: 100%;
-                    flex-grow: 1;
-                    @include flex(column, space-around, flex-start);
-                    margin-left: 5px;
-
-                    span {
-                        font-size: 16px;
-                    }
-
-                    button {
-                        background-color: white;
-                        border: none;
-                    }
-
-                    i {
-                        padding: 3px;
-                    }
-
-                    
-                }
-        
-                img {
-                    width: 130px;
-                    margin-right: 5px;
-                    border-radius: 5px;
-                }
-                
-            }
-
-            .plate-selection-view:nth-child(2n + 1) {
-                margin-right: 5%;
-            }
-        
+    .restaurant-fooding-list{
+        background-color: $ourgrey;
+        width: 100%;
+        position: relative;
+        z-index:9;
+        // poligono inferiore
+        #absolute-trapezoid-gray {
+            background-color: #b4bad6;
+            position: absolute;
+            bottom: 0%;
+            width: 100%;
+            height: 250px;
+            clip-path: polygon(0 78%, 100% 50%, 100% 100%, 0% 100%);
+            z-index: 99;
         }
-    }
-        .momentary-total {
-
-            width: 370px;
-            border-radius: 10px;
-            background-color: white;
-            margin-top: 15px;
-            @include flex(column, flex-start, center);
-                          
-                .shop-link {
-                     
-                    background-color: $ouryellow;
-                    color: black;
-                    @include flex(row, center, center);
-                
-                    i {
-                        width: 35px;
-                        color: $ourblue; 
-                
+        .plates-choosing-view {
+            min-height: 400px;
+            width: 100%;
+            background-color: $ourgrey;
+            // Contenitore dei piatti e del carrello
+            .choosing-and-total-container {
+                @include flex(row, space-between, flex-start);
+                position: relative;
+                padding: 25px 0;
+                z-index: 899;
+                // contenitore dei piatti
+                .plate-selection-container {
+                    width: calc(100% - 370px);
+                    @include flex(row, space-between, flex-start);
+                    flex-wrap: wrap;
+                    padding-right: 40px;
+                    // CARD piatto
+                    .plate-selection-view {
+                        width: calc((100% - 40px) / 2);
+                        height: 250px;
+                        @include flex(row, space-around, center);
+                        margin-top: 15px;
+                        background-color: $white;
+                        border-radius: 10px;
+                        .plate-description {
+                            //height: 100%;
+                            flex-grow: 1;
+                            @include flex(column, space-around, flex-start);
+                            padding: 15px;
+                            .text {
+                                font-size: 12px;
+                                height: 100px;
+                                overflow-y: auto;
+                            }
+                            .container-add-cart{
+                                button{
+                                    @include buttonLink($ourlogo, $white, 5px, 10px);
+                                    border: none;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        img {
+                            width: 100px;
+                            height: 100px;
+                            margin-right: 5px;
+                            border-radius: 5px;
+                        }
                     }
                 }
-
-                .free-delivery {
+                // parte carrello a DX
+                .momentary-total {
                     width: 370px;
-                    height: 50px;
-                    color: $ourgreen;
-                    @include flex(row, center, center);
-                
-                }
-                
-                .pay-delivery {
-                    width: 370px;
-                    height: 50px;
-                    color: $ourred;
-                    @include flex(row, center, center);
-                }
-                .mykart {
-                    @include flex(column, flex-start, center); 
-                    width: 100%;
-                   
-                   margin: 15px;
-
-                   div {
-                       width: 100%;
-                       
-                   }
-                    
-                   label {
-                       display: block;
-                       cursor: pointer;
-                       font-size: 16px;
-                       margin: 3px 0 1px 0;
-                       
-                   }
-
-                   input {
-                       width: 100%;
-                   }
-
-                 
-
-                // INPUT DEL PREZZO TOTALE NASCOSTO
-                   .total-price {
-
-                        
-                        margin: 5px, 0;
-                    
-                    #totalPrice {
-                        display: none;
-                    }
-                   }
-
-                    
-
-                //  FINE PARTE NASCOSTA
-                }
-
-                .total-calculator {
-                    display: flex;
-                    @include flex(column, space-around, space-around);
-                    height: 100px;
-                    text-align: center;
-                    
-                    span {
-                        
-                        font-size: 20px;
-                        
-                    }
-                }
-
-                .shop-link {
-                    height: 50px;
-                    width: 100%;
-                    margin-top: 15px;
-                    background-color: $ouryellow;
-                    color: black;
-                    @include flex(row, center, center);
-                
-                    i {
-                        width: 35px;
-                        color: $ourblue; 
-                
+                    border-radius: 10px;
+                    background-color: white;
+                    margin: 15px 0 0 30px;
+                    position: sticky;
+                    right: 0;
+                    top: 150px;
+                    @include flex(column, flex-start, center);     
+                    .mykart {
+                        @include flex(column, flex-start, center); 
+                        margin: 15px;
+                        .free-delivery {
+                            width: 370px;
+                            height: 50px;
+                            color: $ourgreen;
+                            @include flex(row, center, center);
+                        }
+                        .pay-delivery {
+                            width: 370px;
+                            height: 50px;
+                            color: $ourred;
+                            @include flex(row, center, center);
+                        }
+                        // QUANTITA' E PIATTI SELEZIONATI
+                        .elemQnty {
+                            .listitem {
+                                @include flex(row, space-between, flex-start);
+                                border-bottom: 1px solid $ourgrey;
+                                padding: 15px 20px;
+                                .pluseminus {
+                                    text-align: center;
+                                }
+                                .myelem {
+                                    flex-grow: 1;
+                                    text-align: center;
+                                }
+                                i {
+                                    font-size: 18px;  
+                                }
+                                .fa-plus-circle {
+                                    color: $ourgreen;
+                                }
+                                .fa-minus-circle {
+                                    color: $ourred;
+                                }
+                            }
+                        }
+                        // calcolo qty
+                        .total-calculator {
+                            display: flex;
+                            @include flex(column, space-around, center);
+                            height: 100px;
+                            text-align: flex-start;
+                            span {    
+                                font-size: 18px;
+                            }
+                            .amount {
+                                width: 100%;
+                                text-align: center;
+                                padding: 10px 0;
+                                border-bottom: 1px solid $ourgrey;
+                            }
+                        }
+                        // tasto per mostrare form
+                        .goToKart {
+                            background-color: #7f93c5;
+                            cursor: pointer;
+                            padding: 10px;
+                            @include flex(row, center, center);
+                            .display{
+                                display: none;
+                            }
+                            p {  
+                                color: white;
+                                font-size: 20px;
+                                i {
+                                    font-size: 25px;
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                        #userDetails{
+                            >div{
+                                text-align: center;
+                                label {
+                                    display: block;
+                                    cursor: pointer;
+                                    text-align: center;
+                                    font-size: 16px;
+                                    padding: 5px 0;
+                                }
+                                input {
+                                    width: 90%;
+                                    height: 30px;
+                                    padding-left: 8px;
+                                    border: 1px solid $ourlogo;
+                                    border-radius: 5px;
+                                    &:focus{
+                                        outline: none;
+                                    }
+                                }
+                            }
+                            .shop-link {
+                                @include buttonLink($ouryellow, black, 10px, 20px);
+                                height: 50px;
+                                width: 100%;
+                                background-color: $ouryellow;
+                                color: black;
+                                border: 1px solid $ourblue;
+                                margin-top: 15px;
+                                i {
+                                    width: 35px;
+                                    color: $ourblue; 
+                                }
+                            }
+                        }
                     }
                 }  
-
-        }
-
-    }
-
-}
-
-@media screen and(max-width: 1286px) {
-
-    // ZONA SUPERIORE: descrizione ristorante e foto
-    .restaurant-show-container {
-    height: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    @include flex(column, center, center );
-    
-
-
-    // Indirizzo e descrizione
-        .restaurant-description {
-            width: 100%;
-            @include flex(column, center, center);
-            margin-bottom: 25px;
-            text-align: center;
-            img {
-                
-                margin-right: 0px;
-                border-radius: 5px;
-                margin-bottom: 15px;
             }
         }
-
-        .restaurant-details {
-            @include flex(column, center, center);
-            
-        }
-
-        
-
-    //PARTE DESTRA SUPERIORE foto e indicazioni sull'ordine 
-    .restaurant-foto-order {
-        width: 100%;
-        margin-bottom: 15px;
-        @include flex(column, center, center);
-        
-                
-        img {
-            display: none;
-            border-radius: 15px;
-            width: 100%;
-        }
-        span {
-            text-align: center;
-            color: orange;
-            margin-bottom: 10px;
-        }
-
-        .restairamt-foto-order span:last-child {
-            color: brown;
-        }
-
-        .fa-clock
-         {
-            margin-right: 10px;
-            color: black;
-        }
-
-        .types-of-payment {
-            height: 50px;
-            width: 250px;
-            border: 1px solid $ourgrey;
-            @include flex(row, center, center);
-            margin-bottom: 10px;
-            i {
-                
-                font-size: 35px;
-                margin-right: 5px;
-                
-            }           
-        }       
     }
-}
-
-// ZONA INFERIORE: visione dei piatti e carrello
-.plates-choosing-view {
-    background-color: $ourgrey;
-
-    .cartFixed {
-        display:block;
-        height: 45px;
-        position: fixed;
-        top: 100px;   
-        background-color: $ouryellow;
-        @include flex(row, center, center);
-        z-index: 999;
-        width: 100%;
-
-        &>* {
-            margin-right: 5px;
-            z-index: 999;
-        }
-    }
-    
-    
-    // Contenitore dei piatti e del carrello
-
-    .choosing-and-total-container {
-
-        @include flex(column, center, center);
-        
-        
-
-        // contenitore dei piatti
-        .plate-selection-container {
-            
-            width: 100%;
-            @include flex(row, center, center);
-            
-            
-            // cornice per i piatti
-            .plate-selection-view {
-                width:100%;
-                margin-right: 0px;
-                height: auto;
-                padding: 10px 0;
-                
-                @include flex(row, space-around, center);
-                margin-top: 15px;
-                background-color: white;
-
-                
-                
-
-                .plate-description {
-                    height: 100%;
-                    flex-grow: 1;
-                    @include flex(column, space-around, flex-start);
-                    margin-left: 5px;
-
-                    &> * {
-                        margin: 5px 0;
-                    }
-
-                    span {
-                        font-size: 16px;
-                    }
-
-                    button {
-                        background-color: white;
-                        border: none;
-                    }
-
-                    i {
-                        padding: 3px;
-                    }
-
-                }
-        
-                img {
-                    width: 130px;
-                    margin-right: 5px;
-                    border-radius: 5px;
-                }
-                
-            }
-
-            .plate-selection-view:nth-child(2n + 1) {
-                margin-right: 0%;
-            }
-        
-        }
-    }
-        .momentary-total {
-
-            width: 100%;
-            border-radius: 10px;
-            background-color: white;
-            margin-top: 15px;
-            @include flex(column, flex-start, center);
-            text-align: center;
-
-            
-               
-                .mykart {
-                    @include flex(column, flex-start, center); 
-                    width: 100%;
-                   
-                   margin: 15px;
-
-                   div {
-                       width: 100%;
-                       
-                   }
-                    
-                   label {
-                       display: block;
-                       cursor: pointer;
-                       font-size: 16px;
-                       margin: 3px 0 1px 0;
-                       
-                   }
-
-                   input {
-                       width: 96%;
-                   }
-                // INPUT DEL PREZZO TOTALE NASCOSTO
-                   .total-price {
-
-                        
-                        margin: 5px, 0;
-                    
-                    #totalPrice {
-                        display: none;
-                    }
-                   }
-                //  FINE PARTE NASCOSTA
-                }
-
-                .total-calculator {
-                    display: flex;
-                    @include flex(column, space-around, space-around);
-                    height: 100px;
-                    text-align: center;
-                    
-                    span {
-                        
-                        font-size: 20px;
-                        
-                    }
-                }
-
-                .shop-link {
-                    height: 50px;
-                    width: 350px;
-                    margin-top: 15px;
-                    background-color: $ouryellow;
-                    color: black;
-                    
-                    @include flex(row, center, center);
-                
-                    i {
-                        width: 35px;
-                        color: $ourblue; 
-                
-                    }
-                }  
-                
-        }
-
-    }
-
-
+    // AVVISO A FONDO PAGINA
     .delivery-promotion {
-        span {
-            font-size: 12px;
+        text-align: center;
+        padding: 15px;
+        width: 100%;
+    }
+}
+
+@media screen and(max-width: 1300px) {
+    #restaurant-details-container{
+        .cartFixed {
+            display:block;
+            height: 45px;
+            position: fixed;
+            top: 100px;   
+            background-color: $ouryellow;
+            @include flex(row, center, center);
+            z-index: 999;
+            width: 100%;
+            >* {
+                margin-right: 5px;
+                z-index: 999;
+            }
+        }
+        // ZONA SUPERIORE: descrizione ristorante e foto
+        .restaurant-show-container {
+            height: 100%;
+            margin-top: 30px;
+            @include flex(column, center, center );
+            // Indirizzo e descrizione
+            .restaurant-description {
+                width: 100%;
+                @include flex(column, center, center);
+                margin-bottom: 25px;
+                text-align: center;
+                img {
+                    margin-bottom: 15px;
+                }
+                .restaurant-details {
+                    @include flex(column, center, center);
+                }
+            }
+            //PARTE DESTRA SUPERIORE foto e indicazioni sull'ordine 
+            .restaurant-foto-order {
+                width: 100%;
+                margin-bottom: 15px;
+                @include flex(column, center, center);
+                .delivery-hour{
+                    display: inline-block;
+                }
+            }
+        }
+        // ZONA INFERIORE: visione dei piatti e carrello
+        .restaurant-fooding-list{
+            .plates-choosing-view {
+                .choosing-and-total-container {
+                    @include flex(column, center, center);
+                    // contenitore dei piatti
+                    .plate-selection-container {
+                        width: 100%;
+                        padding-right: 0;
+                        @include flex(row, center, center);
+                        // cornice per i piatti
+                        .plate-selection-view {
+                            width:100%;
+                            margin-top: 15px;
+                            img {
+                                width: 130px;
+                                height: 130px;
+                            }
+                        }
+                    }
+                    .momentary-total {
+                        width: 100%;
+                        margin: auto;
+                        margin-top: 15px;
+                        .mykart {
+                            .goToKart{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
 
 @media screen and (max-width: 768px) {
-    .plates-choosing-view {
-        .choosing-and-total-container {
-            .plate-selection-container {
-                .plate-selection-view {
-                    flex-direction: column-reverse;                    
+    #restaurant-details-container{
+        .restaurant-show-container{
+            .restaurant-description{
+                img{
+                    width: 50vw;
+                    height: 50vw;
+                }
+            }
+            .restaurant-foto-order{
+                img{
+                    width: 60vw;
+                }
+            }
+        }
+        .restaurant-fooding-list{
+            .plates-choosing-view {
+                .choosing-and-total-container {
+                    .momentary-total{
+                        width: 100%;
+                        .mykart{
+                            width: 100%;
+                            .order-form{
+                                width: 100%;
+                            }
+                        }
+                    }
                 }
             }
         }

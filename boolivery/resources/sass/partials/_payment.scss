@@ -10,7 +10,6 @@
     .container-dropin{
         width: 40%;
         margin: 0 auto;
-
     }
 
     #container-button{
@@ -22,6 +21,15 @@
             @include buttonLink($ourlogo, $white, 10px, 20px);
             border: none;
             cursor: pointer;
+        }
+    }
+}
+
+@media screen and (max-width: 992px){
+    #container-payment{
+        .container-dropin{
+            width: 90%;
+            margin: 0 auto;
         }
     }
 }
