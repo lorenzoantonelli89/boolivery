@@ -6,26 +6,27 @@
 @section('content')
 <main>
     <div id="restaurant-details-container">
+        {{-- Poligono superiore --}}
         <div id="absolute-trapezoid"></div>
-        <!-- CARRELLO FISSO -->
+        <!-- CARRELLO FISSO WIDTH < 1286px -->
         <div class="cartFixed div-margin">
             <a href="#cartView">
             <h2><i class="fas fa-shopping-cart"></i> @{{total + getDeliveryCost()}}€ Go to Cart <i class="fas fa-caret-down"></i></h2>
             </a>
         </div>
-        <div class="restaurant-show-container">             
-            <div class="restaurant-description">                       
+        {{--  ZONA SUPERIORE - descrizione risto --}}
+        <div class="restaurant-show-container">
+            {{-- Indirizzo e descrizione --}}
+            <div class="restaurant-description">
+                {{-- img profilo ristorante                   --}}
                 <img src="{{ asset('/storage/restaurant-profile/' . $restaurant -> image_profile) }}" alt="">
                     <!-- ZONA ALTO SX nome, indirizzo e descrizione -->
                 <div class="restaurant-details">
                     <!-- nome      -->
-                    <h1>
-                        {{$restaurant -> name}}
-                    </h1>
+                    <h1>{{$restaurant -> name}}</h1>
                     <!-- indirizzo -->
-                    <h3>
-                        {{$restaurant -> address}}
-                    </h3>
+                    <h3>{{$restaurant -> address}}</h3>
+                    {{-- categorie --}}
                     <div>
                         @foreach ($restaurant->categories as $category)
                             <span><i class="fas fa-utensils"></i><i>{{$category->name}}</i></span>
@@ -33,33 +34,35 @@
                     </div>
                     <!-- descrizione -->
                     <div class="restaurant-description-text">
-                    
                         <p>
                             <i>{{$restaurant -> description}}</i>
                         </p>
-
                     </div> 
-                    
+                    {{-- torna ai ristoranti --}}
                     <a href="{{route('home')}}"><i class="fas fa-long-arrow-alt-left"></i> Torna ai ristoranti</a>
                 </div>
             </div>
-                <!-- IMMAGINE LATERALE E TEMPI DI CONSEGNA -->
+            <!-- IMMAGINE LATERALE E TEMPI DI CONSEGNA -->
             <div class="restaurant-foto-order">
                 <!-- cover del ristorante -->
                 <img src="{{ asset('/storage/restaurant-cover/' . $restaurant -> image_cover) }}" alt="">
                 <!-- tempi di consegna -->
-                <span>
-                    <i class="far fa-clock"></i>
-                    Consegna prevista tra 30 e 40 minuti.
-                    <p>Primo orario utile:
-                    <strong>@{{getTimeDelivery()}}</strong></p>
-                </span>
+                <div>
+                    <p>
+                        <i class="far fa-clock"></i>
+                        Consegna prevista tra 30 e 40 minuti.
+                    </p>
+                    <p>
+                        Primo orario utile:
+                        <strong>@{{getTimeDelivery()}}</strong>
+                    </p>
+                </div>
                 <!-- dettagli del pagamento -->
-                <span>
+                <p>
                 <i class="fas fa-comments-dollar"></i>
                     Accettiamo i seguenti metodi di pagamento
-                </span>
-
+                </p>
+                {{-- metodi di pagamento --}}
                 <div class="types-of-payment">
                     <i class="fab fa-cc-paypal"></i>
                     <i class="fab fa-cc-visa"></i>
@@ -69,49 +72,49 @@
                 </div>
             </div>
         </div>
-        <!-- LISTA DEI PRODOTTI DEL RISTORANTE -->
+
+        <!-- ZONA INFERIORE:LISTA PRODOTTI + FORM ORDINE -->
         <div class="restaurant-fooding-list">
             <div class="plates-choosing-view">
                 <div class="choosing-and-total-container div-margin">
+                   {{-- MENU: Parte sx --}}
                     <div class="plate-selection-container ">
                         @foreach ($restaurant -> plates as $plate)
-                        @if ($plate -> visible == true)
-                        <div class="plate-selection-view">
-                            <!-- descrizione del piatto -->
-                            <div class="plate-description">
-                                <h3>
-                                    <b>{{$plate -> name}}</b>
-                                </h3>
-                                
-                                <span>
-                                    {{$plate -> description}}
-                                </span>
-                                
-                                <h3>
-                                    {{$plate -> price}}&euro;
-                                </h3>
-                                <!-- bottoni per aggiungere o togliere un piatto -->
-                                <div class="container-add-cart">
-                                    <span>
-                                        <button v-on:click="addPlate({{$plate}})">
-                                            {{-- <i class="fas fa-plus-circle"></i> --}}
-                                            AGGIUNGI
-                                        </button>
-                                    </span>
+                            @if ($plate -> visible == true)
+                            <div class="plate-selection-view">
+                                <!-- descrizione del piatto -->
+                                <div class="plate-description">
+                                    <h3>
+                                        <b>{{$plate -> name}}</b>
+                                    </h3>
+                                    <div class="text">
+                                        {{$plate -> description}}
+                                    </div>
+                                    <h3>
+                                        {{$plate -> price}}&euro;
+                                    </h3>
+                                    <!-- bottoni per aggiungere o togliere un piatto -->
+                                    <div class="container-add-cart">
+                                        <span>
+                                            <button v-on:click="addPlate({{$plate}})">
+                                                {{-- <i class="fas fa-plus-circle"></i> --}}
+                                                AGGIUNGI
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
+                                <img id="imgchoice" src="{{asset('/storage/restaurant-plates/' . $plate -> image)}}" alt="">
                             </div>
-                            <img id="imgchoice" src="{{asset('/storage/restaurant-plates/' . $plate -> image)}}" alt="">
-                        </div>
-                        @endif
+                            @endif
                         @endforeach
+                        {{-- punto a cui torno con il click --}}
                         <a name="cartView"></a>
-                    </div>                    
+                    </div>                  
                     <!-- TABELLA PER L'ORDINE E PER IL TOTALE -->
                     <div class="momentary-total">
                         <!-- ZONA DEL CARRELLO -->
                         <div class="mykart">
                             <form action="{{route('storeOrder')}}" method="POST" onsubmit="setFormSubmitting()">
-                            
                                 @csrf
                                 @method('POST')
                                 {{-- RILEVAZIONE ERRORI COMPILAZIONE--}}
@@ -124,12 +127,10 @@
                                     </ul>
                                 </div>
                                 @endif
-                                
                                 <!-- OGGETTI NEL CARRELLO -->
                                 <div :class="total < 20 ? 'pay-delivery' : 'free-delivery'">
                                     <h6>La consegna è gratuita se spendi almeno 20€</h6>
                                 </div>
-                                
                                 <div class="elemQnty" v-for="item in showedItems">
                                     <div class="listitem">
                                         <div class="pluseminus">
@@ -151,9 +152,7 @@
                                             </div>
                                         </div>  
                                 </div>
-
                                 <!-- calcolo del totale -->
-                                
                                 <div class="total-calculator">
                                     {{-- <div>Totale(consegna esclusa): @{{total}}</div> --}}
                                     <div class="amount">
@@ -176,7 +175,6 @@
                                 <div>
                                     <input v-for="elem in cart"  type="hidden" name="plate_id[]" id="plate_id[]" :value="elem" readonly>
                                 </div>
-                                
                                 {{-- submit --}}
                                 <div class="goToKart" v-on:click="changeFormVisibility">
                                     <p>
@@ -185,7 +183,6 @@
                                         COMPLETA L'ORDINE
                                     </p>
                                 </div>
-
                                 <!-- campo del nome -->
                                 <div v-if="formView"id="userDetails">
                                 <div>
@@ -243,7 +240,7 @@
                                     };
                                     ?>" required>
                                 </div>
-                                
+                                {{-- concludi ordina --}}
                                 <button type="submit" class="shop-link">
                                         <i class="fas fa-shopping-cart"></i>
                                         CONCLUDI ORDINE
@@ -253,9 +250,11 @@
                         </div> 
                     </div>
                 </div>
-            </div> 
+            </div>
+            {{-- poligono in basso --}}
             <div id="absolute-trapezoid-gray"></div>   
         </div>
+        {{-- striscia prima del footer --}}
         <div class="delivery-promotion">
             <span>Spendi almeno 20,00€ per la <b>consegna gratuita </b>|| La mancia al Ryder non è obbligatoria ma è ben voluta &hearts; </span>
         </div>
@@ -264,13 +263,7 @@
 </main>
 
 <script>
-    // window.onbeforeunload = function() {
-    //         alert('stai lasciando');
-    //         console.log('hello');
-    // };
-    // window.addEventListener('beforeunload', function(){
-    //     alert('stai lasciando');
-    // });
+    // funzione per far apparire l'alert se abbandono
     var formSubmitting = false;
     var setFormSubmitting = function() { formSubmitting = true; };
     window.onbeforeunload = function(){
