@@ -10,14 +10,14 @@
     <div id="container-plate-list">
         <div class="container-link">
             <a href="{{route('listRestaurant')}}">
-                Torna ai ristoranti
+                Torna alla dashboard
             </a>
             <a href="{{route('createPlate', encrypt($restaurant -> id))}}">
                 Aggiungi un piatto
             </a>
         </div>
         <h2 class="titlePlateList">
-            Qui trovi tutti i piatti del ristorante {{$restaurant -> name}}
+            Menu ristorante {{$restaurant -> name}}
         </h2>
         {{-- immagine cover restaurant --}}
         <div class="restaurantCover">
