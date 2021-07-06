@@ -119,7 +119,7 @@
                     width: calc(100% - 370px);
                     @include flex(row, space-between, flex-start);
                     flex-wrap: wrap;
-                    padding-right: 40px;
+                    padding-right: 10px;
                     // CARD piatto
                     .plate-selection-view {
                         width: calc((100% - 40px) / 2);
