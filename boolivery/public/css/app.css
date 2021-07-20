@@ -1116,7 +1116,7 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
   align-items: flex-start;
   position: relative;
   padding: 25px 0;
-  z-index: 899;
+  z-index: 799;
 }
 
 #restaurant-details-container .restaurant-fooding-list .plates-choosing-view .choosing-and-total-container .plate-selection-container {
@@ -1362,13 +1362,13 @@ main #home-container .main-sec-3 #business-adv .cards-adv:hover {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    z-index: 899;
     width: 100%;
   }
 
   #restaurant-details-container .cartFixed > * {
     margin-right: 5px;
-    z-index: 999;
+    z-index: 899;
   }
 
   #restaurant-details-container .restaurant-show-container {
@@ -4528,6 +4528,7 @@ footer .footer-container .whoWeAre span {
     right: 0;
     border-radius: 15px;
     border: 1px solid orange;
+    z-index: 999;
   }
 
   header nav#nav-header .hamburger .menuHamburger ul {

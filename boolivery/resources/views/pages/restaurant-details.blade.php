@@ -54,7 +54,7 @@
                     </p>
                     <p class="delivery-hour">
                         Primo orario utile:
-                        <strong>@{{getTimeDelivery()}}</strong>
+                        <strong>@{{deliveryTime}}</strong>
                     </p>
                 </div>
                 <!-- dettagli del pagamento -->
@@ -215,19 +215,10 @@
                                     </div>
                                     <div>
                                         <label for="time_delivery">
-                                            Orario (attesa minima: <i>30minuti</i>)
+                                            Orario (prima disponibilità: <i>@{{deliveryTime}}</i>)
                                         </label>
                                         <input type="time" id="time_delivery" name="time_delivery"
-                                        min="08:00" max="23:00" value= "<?php
-                                        date_default_timezone_set("Europe/Rome");
-                                        if(date('H:i')>'08:00' && date('H:i')<'23:00'){
-                                            $now = date("H:i");
-                                            $firstAvailable = date('H:i', strtotime('+30 minutes', strtotime($now)));
-                                            echo $firstAvailable;
-                                        } else {
-                                            echo '08:00';
-                                        };
-                                        ?>" required>
+                                        min="08:00" max="23:00" required>
                                     </div>
                                     {{-- input nascosto che indica il tot prezzo --}}
                                     <div class="total-price">
@@ -276,7 +267,8 @@
             showedItems:[], // array di obj da mostrare nel carrello
             total:0, // prezzo totale
             formView:false, //visualizzazione del form
-            show: false
+            show: false,
+            deliveryTime: null,
         },
         methods: {
             addPlate: function(item){ // aggiungi piatto partendo da qty 0
@@ -310,6 +302,9 @@
                     this.showedItems.splice(objIndex,1);
                 }
             },
+            updateDelivery: function(){
+                setInterval(this.getTimeDelivery,1000);
+            },
             getTimeDelivery: function() {
                 const now = new Date();
                 now.setMinutes(now.getMinutes() + 30);
@@ -317,7 +312,7 @@
                 if(now.getMinutes() < 10){
                     time = now.getHours() + ":0" + now.getMinutes();
                 };
-                return time;
+                this.deliveryTime = time;
             },
             getDeliveryCost: function() {
                 if (this.total >= 20 || this.total == 0) {
@@ -340,6 +335,9 @@
                 }
             } 
         },
+        mounted(){
+            this.updateDelivery();
+        }
     });
 
 </script>

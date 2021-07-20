@@ -49,6 +49,7 @@
             </div>
           </a>        
         </li>
+        <li v-if="currentRestaurants.length == 0">LA RICERCA NON HA PRODOTTO RISULTATI</li>
       </ul>
     </div>
     <!-- SECONDA SEZIONE, VISIONE DEI PIATTI -->

@@ -113,7 +113,7 @@
                 @include flex(row, space-between, flex-start);
                 position: relative;
                 padding: 25px 0;
-                z-index: 899;
+                z-index: 799;
                 // contenitore dei piatti
                 .plate-selection-container {
                     width: calc(100% - 370px);
@@ -294,11 +294,11 @@
             top: 100px;   
             background-color: $ouryellow;
             @include flex(row, center, center);
-            z-index: 999;
+            z-index: 899;
             width: 100%;
             >* {
                 margin-right: 5px;
-                z-index: 999;
+                z-index: 899;
             }
         }
         // ZONA SUPERIORE: descrizione ristorante e foto

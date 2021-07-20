@@ -87,7 +87,7 @@ class PaymentController extends Controller
         $hour = date("H:i:s");
         $minTime = '08:00';
         $maxTime = '23:00';
-        $firstAvailable = date('H:i', strtotime('+25 minutes', strtotime($hour)));
+        $firstAvailable = date('H:i', strtotime('+29 minutes', strtotime($hour)));
         if($request->date_delivery < $date || $request->time_delivery < $minTime || $request->time_delivery > $maxTime){
             return redirect()->route('restaurant-details',$plates[0]->restaurant_id);
         };
