@@ -1,254 +1,509 @@
-// foglio di stile home
+@import 'partials/variables';
+
 
 main {
+  width: 100%;
+
+  #home-container{
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    #scroll{
+      background-color: rgba($ourlogo, $alpha: 0.5);
+      padding: 10px 13px;
+      border-radius: 5px;
+      position: fixed;
+      right: 75px;
+      top: 85vh;
+      z-index: 800;
+      display: none;
+      cursor: pointer;
+
+      i{
+          color: $white;
+          font-size: 20px;
+      }
+      &.active{
+          display: block;
+      }
+    }
+    
+    .myjumbotron {
+      width: 100%;
+      background-image: url("/storage/graphics/rider.png");
+      background-repeat: no-repeat;
+      background-position: 90% 40%;
+      position: relative;
+      background-color: $jumbogreen;
+
+      #triangle-topleft{
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        background-color: $headercl;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+
+        &.active{
+          background-color: $jumbogreen;
+        }
+      }
+      .content-jumbotron {
+        height: 100%;
+        padding-top: 100px;
+        @include centring;
+        position: relative;
+        
+        h1 {
+          margin-bottom: 30px;
+          font-size: 45px;
+          color: $ourlogo;
+        }
+
+        .research-request {
+          height: 90px;
+          
+          #guest-request {
+            width: 40%;  
+            height: 45px;
+            padding-left: 8px;
+            border: 1px solid $ourlogo;
+            border-radius: 10px;
+            font-size: 25px;
+            &:focus{
+              outline: none;
+            }
+            &::placeholder{
+              padding-left: 8px;
+              font-size: 16pt;
+              color: $ourlogo;
+            }
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: $ourlogo;
+            }
+
+            &::-ms-input-placeholder { /* Microsoft Edge */
+              color: $ourlogo;
+            }
+          }
+        }
+        #category-container-list{
+          width: 60%;
+          list-style-type: none;
+          @include flex(row, flex-start, center);
+          flex-wrap: wrap;
+          position: relative;
+          z-index: 300;
+
+          .category-list{
+            padding: 10px 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+            background-color: $ourlogo;
+            border-radius: 5px;
+
+            label{
+              color: $white;
+              padding-right: 10px;
+            }
+            label:hover{
+              cursor: pointer;
+            }
+            input:hover {
+              cursor: pointer;
+            }
+          }
+          .category-list:hover {
+            cursor: pointer;
+          }
+        }
+      }   
+    }
+
+    .main-sec-1 {
+      position: relative;
+      padding: 100px 0;
+      
+      #triangle-sec-1{
+        width: 100%;
+        height: 1300px;
+        position: absolute;
+        top: 0;
+        background-color: $jumbogreen;
+        clip-path: polygon(100% 100%, 100% 0, 0 0);
+        z-index: -1;
+      }
+      #title-sec-1 {
+        background-color: $ourlogo;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 30px;
+        text-align: center;
+        h1 {
+          font-family: 'Pacifico', cursive;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          vertical-align: middle;
+          line-height: 90px;
+          letter-spacing: 2px;
+          .fa-star {
+            color: rgb(255, 208, 0);
+          }
+        }
+      }
+      ul {
+        @include centring;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: calc(90% / 3);
+          list-style: none;
+          margin: 0 auto;
+          a {
+            text-decoration: none;
+            color: white;
+            .restaurants {
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.7);
+            img {
+              width: 100%;
+              border-radius: 10px;
+              height: 20vw;
+              }
+              #text {
+                padding: 20px 0;
+                h3 {
+                  color: salmon;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+        .restaurants:hover {
+          transform: scale(1.03);
+          transition: all 1s ease;
+        }
+      }
+    }
+
+    // SECONDA SEZIONE -> VISIONE PIATTI -> REGOLE DI STILE
+    #section-2 {
+      background-color: #ffeae4;
+      width: 100%;
+      padding: 70px 0;
+      position: relative;
+      #top-rating-plates {
+        background-color: salmon;
+        clip-path: polygon(100% 0, 100% 51%, 100% 100%, 0% 100%, 5% 51%, 0% 0%);
+        width: 600px;
+        height: 100px;
+        position: absolute;
+        top: -8.5%;
+        right: 0%;
+        h1 {
+          font-family: 'Pacifico', cursive;
+          color: rgb(255, 255, 255);
+          text-align: center;
+          vertical-align: middle;
+          line-height: 90px;
+          letter-spacing: 2px;
+          .fa-star {
+            color: rgb(255, 208, 0);
+          }
+        }
+      }
+      .flexible-carusel {
+        @include flex(row, inherit, center);
+        color: salmon;
+        #prev {
+          margin-left: 70px;
+        }
+        #plates-info {
+          @include centring;
+          @include flex(row, inherit, center);
+          background-color: rgba(0, 0, 0, .7);
+          border-radius: 10px;
+          img {
+            width: 800px;
+            height: 450px;
+            clip-path: polygon(87% 0, 100% 49%, 87% 100%, 0 100%, 0 0);
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+          }
+          #text-plates {
+            width: 100%;
+            margin-right: 20px;
+            margin-left: 20px;
+            color: white;
+            text-align: right;
+          }
+          h3 {
+            text-decoration: underline;
+          }
+          .restaurant-route{
+            a{
+              color: $ourlogo;
+              &:hover{
+                color: $ourcoral;
+              }
+            }
+          }
+        }
+        #next {
+          margin-right: 70px;
+        }
+      }
+      .fas {
+        font-size: 18pt;
+      }
+    }
+
+  //SEZIONE DEDICATA AI RISTORATORI
+    .main-sec-3 {  
+      padding: 100px 0;
+      // background-color: $jumbogreen;
+      #business-adv {
+        @include centring;
+        display: flex;
+        .cards-adv {
+          width: 100%;
+          margin-right: 15px;
+          border-radius: 10px;
+          .triangle-rect {
+            clip-path: polygon(0 0, 100% 0, 59% 100%, 0 100%);
+            width: 100%;
+            min-height: 300px;
+            border-radius: 10px;
+          }
+          #rider-img {
+            background-image: url('/storage/graphics/riders_open.jpg');
+            background-size: cover;
+            background-position-x: -50px;
+            background-repeat: no-repeat;
+          }
+          #engineer-img {
+            background-image: url('/storage/graphics/engineer2.png');
+            background-size: cover;
+            background-position-x: -50px;
+            background-repeat: no-repeat;
+          }
+          #chef-img {
+            background-image: url('/storage/graphics/ristoratore.jpg');
+            background-size: cover;
+            background-position-x: -50px;
+            background-repeat: no-repeat;
+          }
+          .textAdv {
+            padding: 20px;
+            color: white;
+            text-align: center;
+            p {
+              margin-top: 10px;
+            }
+            a {
+              text-decoration: none;
+              color: white;
+              .btn-to {
+                width: 150px;
+                height: 60px;
+                margin: 0 auto;
+                padding: 0 20px;
+                border-radius: 10px;
+                p {
+                  text-align: center;
+                  vertical-align: middle;
+                  line-height: 60px;
+                }
+              }
+              .btn-to:hover {
+                transform: scale(1.1);
+                transition: all 1s;
+              }
+              #btn-rider {
+                background-color: rgb(245, 95, 40);
+              }
+              #btn-engineer {
+                background-color: darkblue;
+              }
+              #btn-chef {
+                background-color: rgb(112, 112, 116);
+              }
+            }
+          }
+        }
+        #rider {
+          background-color: rgb(255, 127, 80);
+        }
+        #engineer {
+          background-color: rgb(58, 58, 214);
+        }
+        #chef {
+          background-color: rgb(200, 200, 216);
+        }
+        .cards-adv:last-child{
+          margin-right: 0px;
+        }
+        .cards-adv:hover {
+          transform: scale(1.05);
+          transition: all 1s ease;
+        }
+      }
+    }
+  }
 }
 
-// GRAFICA JUMBOTRON
-
-.jumbotron {
-    width: 100%;
-    height: 500px;
-    background-image: url("/storage/graphics/jumbotron.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-
-    .logo-login {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 15px;
-      flex-grow: 1;
-      
-      align-items: center;
-  
-      .logo {
-        width: 150px;
+//MEDIA QUERY JUMBOTRON-> Rimozione immagine
+@media screen and (max-width: 1220px) {
+  main {
+    #home-container {
+      .myjumbotron {
+        background-image: none;
+        .content-jumbotron {
+          text-align: center;
+          .research-request {
+            #guest-request {
+              width: 100%;
+            }    
+          }
+          #category-container-list{
+            width: 100%;
+            list-style-type: none;
+            justify-content: center;
+          }
+        }
       }
-  
     }
-    
-    .wellcome {
-      display: flex;
-      flex-direction: column;
-      width: 650px;
-      height: 100%;
-      justify-content: space-between;
-      
-    }
+  } 
+}
 
-    .title-research {
-      margin-bottom: 30px;
-      
-      h1 {
-        margin-bottom: 30px;
-        font-size: 45px;
-      }
-
-    }
-    .research-request {
-      flex-grow: 1;
-      height: 170px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 32px;
-      border-radius: 5px;
-      background-color: white;
-
-      .input-adresse {
-        display: flex;
-        width: 100%;
-        justify-content: space-between;
-              
-        #guest-request {
-         font-size: 25px;
-         flex-grow: 1;
-         height: 45px;
-         
-        }
-
-        #guest-request-click {
-          height: 45px;
-          width: 100px;
-          margin-left: 15px;
-        /*  #guest-request-click:hover {
-            background-color: #2caead;
-            color: white;
-          } */
-        }
-       
-      }
-
-    }
-  }
-
-  .main-sec-1 {
-  
-    height: 680px;
-    width: 100%;
-    background-image: url("/storage/assets/sfondo8.png");
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    .main-1-container {
-      height: 100%;
-      display: flex;
-      align-items: center;
-     
-      flex-wrap: wrap;
-      justify-content: space-between;
-      
-      
-      .piatto {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        height: 360px;
-        width: 320px;
-       
-        
-        
-        img {
-          width: 280px;
-          border-radius: 15px;
-        }
-    }
-
-    }
-
-  }
-
-// sezione dei piatti
-
-  #section-2 {
-    background-color: #7faf48;
-    width: 100%;
-    padding: 70px 0;
-    .cards {
-        display: flex;
-        background-color: white;
-        min-width: 80%;
-        width: 100%;
-        height: 300px;
-        margin: 40px 0;
-        border-radius: 20px;
-        z-index: 99;
-        .dx {
-            background-image: url("/storage/restaurant-plates/barbecueribs.png"); /* Inserisci array di immagini */
-            background-position: center;
-            clip-path: polygon(86% 0, 100% 51%, 88% 100%, 0 100%, 0 0);
-            min-width: 300px;
-            width: 600px;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            z-index: 2;
-        }
-        #column {
-            display: flex;
-            flex-flow: column wrap;
-            align-self: center;
-            margin-left: 40px;
-            .sx p {
-                margin: 30px 0;
+//MEDIA QUERY SEZIONE 1 -> VISIONE RISTORANTI FILTRATI
+@media screen and (max-width: 768px) {
+  main {
+    #home-container {
+      .main-sec-1 {
+        ul {
+          display: block;
+          li {
+            width: 100%;
+            margin: 0 auto;
+            .restaurants{
+              img{
+                height: 400px !important;
+              }
             }
+          }
         }
-    }
-    .cards:first-child {
-        margin-top: 0;
-    }
-    .cards:last-child {
-        margin-bottom: 0;
-    }
-    .cards:hover {
-        transform: scale(1.1);
-        transition: all 2s;
+      } 
     }
   }
+}
 
-//   SEZIONE DEDICATA AI RISTORATORI
-
-    .main-sec-3 {
-        background-color: white;
-        height: 350px;
-        background-image: url("/storage/graphics/sectionRestaurant.png");
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: flex-end;  
-        margin-top: 50px;
-        margin-bottom: 50px;
-    
-    .business-adv {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      width: 580px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .business-adv h1 {
-        margin-bottom: 15px;
+// MEDIA QUERY SEZIONE 2 -> VISIONE PIATTI TOP 
+@media screen and (max-width: 890px) {
+  main {
+    #home-container {
+      #section-2 {
+        #top-rating-plates {
+          clip-path: none;
+          width: 70%;
+          margin: 0 auto;
+          position: static;
+          margin-top: -20%;
+          margin-bottom: 30px;
         }
-
-        span {
-        margin-bottom: 15px;
+        .flexible-carusel {
+          #prev {
+            display: none;
+          }
+          #plates-info {
+            display: block;
+            img {
+              clip-path: none;
+              width: 100%;
+              border-top-right-radius: 10px;
+            }
+            #text-plates {
+              text-align: center;
+              margin: 0;
+              padding: 5px 20px;
+            }
+          }
+          #next {
+            display: none;
+          }
         }
-
-        .img-icon {
-        width: 100px;
-        margin-bottom: 15px;
-    }
-  }
-
-
-  /* Container in absolute */
-  .fas {
-    color: white;
-  }
-  #contacts {
-    position: fixed;
-    top: 50.5%;
-    right: 1%;
-    #mail {
-      background-color: rgb(255, 196, 0);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      cursor: pointer;
-    #mail:hover {
-      background-color: white;
-      width: -70px;
-      height: 20px;
-    }
-      .fa-at {
-        
-        display: flex;
-        justify-content: center;
-        vertical-align: middle;
-        line-height: 40px;
-      }
-    }
-    #phone {
-      background-color: rgb(28, 138, 0);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      cursor: pointer;
-      .fa-phone {
-        @include flex(column, center, center);
-        line-height: 40px;
-        
       }
     }
   }
+}
+
+// MEDIA QUERY SEZIONE 2 -> VISIONE PIATTI TOP -> STRETCH IMG
+@media screen and (max-width: 585px) {
+  main {
+    #home-container {
+      #section-2 {
+        .flexible-carusel {
+          #plates-info {
+            img {
+              height: 300px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 3 --> POSIZIONI DI LAVORO IN BOOLIVERY
+@media screen and (max-width: 1220px) {
+  main {
+    #home-container {
+      .main-sec-3 {
+        #business-adv {
+          display: block;
+          .cards-adv {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 3 --> POSIZIONI DI LAVORO IN BOOLIVERY
+@media screen and (max-width: 768px) {
+  main {
+    #home-container {
+      .main-sec-3 {
+        #business-adv {
+          display: block;
+          .cards-adv {
+            width: 100%;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//MEDIA QUERY SEZIONE 3 --> POSIZIONI DI LAVORO IN BOOLIVERY
+@media screen and (max-width: 480px) {
+  main {
+    #home-container {
+      .main-sec-3 {
+        #business-adv {
+          display: block;
+          .cards-adv {
+            width: 100%;
+            margin-bottom: 20px;
+            .triangle-rect {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

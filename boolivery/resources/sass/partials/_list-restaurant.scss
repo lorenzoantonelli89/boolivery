@@ -1,0 +1,206 @@
+.bg-color{
+    background-color: rgb(245, 168, 140);
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1;
+    #polygon-1 {
+        position: absolute;
+        z-index: -1;
+        clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+        background-color: rgb(73, 138, 138);
+        top: 1%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    #polygon-2 {
+        clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+        background-color: $ourlogo;
+        position: absolute;
+        z-index: -2;
+        top: 1%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    #list-restaurant-container {
+        @include centring;
+        a {
+            @include buttonLink($ourlogo, $white, 10px, 20px);
+        } 
+        #centered-list {
+            text-align: center;
+            #restaurant-user-title{
+                text-transform: uppercase;
+                margin-bottom: 15px;
+                padding-top: 30px;
+                color: $white; 
+            }
+        }
+        .restaurant-from-list {
+            margin-top: 35px;
+            max-width: 100%;
+            
+
+            .restaurantfl-details {
+                border-radius: 10px;
+                @include flex(column, space-between, flex-start);
+                flex-grow: 1;
+                background-color: $white;
+                padding: 15px;
+                #details {
+                    margin-bottom: 20px;
+                    width: 100%;
+                    #h2-btn-flex {
+                        display: flex;
+                        justify-content: space-between;
+                        h2 {
+                            color: salmon;
+                        }
+                        #btn-mod-del {
+                            display: flex;
+                            #icon-modify {
+                                background: rgb(61, 139, 255);
+                                width: 25px;
+                                height: 25px;
+                                padding: 0px;
+                                text-align: center;
+                                border-radius: 50%;
+                                margin-right: 5px;
+                                a {
+                                    background: none;
+                                    padding: 0;
+                                    vertical-align: middle;
+                                    line-height: 25px;
+                                    font-size: 10pt;
+                                    color: white;
+                                    font-weight: bold;
+                                }
+                            }
+                            #icon-delete {
+                                background: red;
+                                width: 25px;
+                                height: 25px;
+                                padding: 0px;
+                                text-align: center;
+                                border-radius: 50%;
+                                a {
+                                    background: none;
+                                    padding: 0;
+                                    vertical-align: middle;
+                                    line-height: 25px;
+                                    font-size: 10pt;
+                                    color: white;
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+                ul {
+                    @include flex(row, flex-start, flex-start);
+                    list-style-type: none; 
+
+                    li{
+                        color: #000;
+                        margin: 10px 0;
+                        .fa-star {
+                            color: $ourlogo;
+                        }
+                        i {
+                            margin-left: 5px;
+                        }
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                    li:first-child {
+                        i {
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .restaurantfl-foto {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        border-radius: 10px;
+                        object-fit: cover;
+                    }
+                }
+                .restaurantfl-modify {
+                    @include flex(row, baseline, center);
+                    flex-wrap: wrap;
+                    width: 100%;
+                    justify-content: space-around;
+                    a {
+                        margin: 5px auto;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and(max-width: 1264px) {
+        #list-restaurant-container {  
+
+            .restaurant-from-list {
+                
+                .restaurantfl-details {
+                    @include flex(column, space-between, flex-start);
+                    flex-grow: 1;
+                    ul {
+                        @include flex(column, flex-start, flex-start);
+                        list-style-type: none; 
+
+                    }
+
+                    .fa-star {
+                        color: $ourlogo;
+                    }
+                }
+
+                .restaurantfl-foto {
+                    @include flex(row, flex-start, flex-start);
+                    
+                    width: 100%;
+                    
+                    img {
+                        
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//MEDIA QUERY -> RIDIMENSIONAMENTO IMMAGINI
+@media screen and (max-width: 930px) {
+    .bg-color {
+        #list-restaurant-container {
+            .restaurant-from-list {
+                .restaurantfl-foto {
+                    img {
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }  
+}
+
+//MEDIA QUERY -> RIDIMENSIONAMENTO IMMAGINI
+@media screen and (max-width: 480px) {
+    .bg-color {
+        #list-restaurant-container {
+            .restaurant-from-list {
+                .restaurantfl-foto {
+                    img {
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }  
+}

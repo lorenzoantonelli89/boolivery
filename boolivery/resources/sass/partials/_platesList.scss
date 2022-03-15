@@ -1,0 +1,401 @@
+@import 'partials/variables';
+@import 'partials/common';
+
+@mixin textTitle {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+#back-color {
+    background-color: rgb(245, 168, 140);
+    position: relative;
+    z-index: 1;
+    #polygon-1 {
+        position: absolute;
+        z-index: -1;
+        clip-path: polygon(0 0, 100% 0, 100% 12%, 13% 13%, 13% 100%, 0 100%);
+        background-color: rgb(73, 138, 138);
+        top: 1%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    #polygon-2 {
+        clip-path: polygon(81% 85%, 91% 0, 100% 0, 100% 100%, 0 100%, 0 91%);
+        background-color: $ourlogo;
+        position: absolute;
+        z-index: -1;
+        top: 1%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+div#container-plate-list{
+    padding-top: 40px;
+
+    .container-link{
+        @include flex(row, space-around, center);
+        margin-bottom: 40px;
+
+        a{
+            @include buttonLink($ourlogo, $white, 10px, 20px);
+        }
+    }
+    .titlePlateList{
+        @include textTitle;
+        margin-bottom: 40px;
+        color: white;
+    }
+    div.restaurantCover{
+        text-align: center;
+
+        #coverRestImg{
+            border-radius: 10px;
+            opacity: .9;
+            width: 60%;
+            height: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+    }
+    .menuContainer{
+        // background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
+        min-height: 600px;
+
+        h2{
+            @include textTitle;
+            padding: 20px 0;
+            color: white;
+        }
+        .platesCards{
+            @include flex(row, space-around, baseline);
+            width: 90%;
+            margin: auto;
+            flex-wrap: wrap;
+        
+            li{
+                width: 300px;
+                // min-height: 250px;
+                @include flex(column, center, center);
+                text-align: center;
+
+                .plateCard{
+                    background-color: white;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    border-radius: 10px;
+
+                    div{
+                        position: relative;
+
+                        img {
+                            width: 100%;
+                            height: 260px;
+                            border-top-left-radius: 10px;
+                            border-top-right-radius: 10px;
+                            position: relative;
+                            
+                            &:hover + .editPlate{
+                                display: block;
+                            }
+                        }
+                        .editPlate{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            text-decoration: none;
+                            display: none;
+
+                            &:hover {
+                                display: block;
+                            }
+                        }
+                    }
+                    p, h6{
+                        margin-top: 10px;
+                    }
+                    #desc {
+                        height: 60px;
+                        overflow: auto;
+                        display: flex;
+                        justify-content: baseline;
+                        padding: 0 5px;
+                    }
+                }
+                &:hover {
+                    transform: scale(1.05);
+                    transition: all 1s ease;
+                }
+                a {
+                    button {
+                        @include buttonLink($ourlogo, white, 10px, 10px);
+                        margin: 10px 0;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* test @query */
+
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+   
+    div#container-plate-list{
+        padding-top: 40px;
+
+        .container-link{
+            @include flex(row, space-around, center);
+            margin-bottom: 40px;
+
+            a{
+                @include buttonLink($ourlogo, $white, 10px, 20px);
+            }
+        }
+        .titlePlateList{
+            margin-bottom: 70px;
+        }
+        div.restaurantCover{
+            text-align: center;
+            margin-bottom: 40px;
+
+            #coverRestImg{
+                display: none;
+                border-radius: 10px;
+                opacity: .9;
+            }
+        }
+        .menuContainer{
+            // background-image: linear-gradient(#00c2b8, rgb(141, 137, 137));
+            min-height: 600px;
+
+            h2{
+                @include textTitle;
+                padding: 20px 0;
+            }
+            .platesCards{
+                @include flex(row, space-around, baseline);
+                width: 90%;
+                margin: auto;
+                flex-wrap: wrap;
+            
+                li{
+                    width: 260px;
+                    // min-height: 250px;
+                    @include flex(column, center, center);
+                    text-align: center;
+
+                    .plateCard{
+                        padding-bottom: 10px;
+                        margin-bottom: 20px;
+                        border-radius: 10px;
+
+                        div{
+                            position: relative;
+
+                            img {
+                                width: 100%;
+                                border-top-left-radius: 10px;
+                                border-top-right-radius: 10px;
+                                position: relative;
+                                
+                                &:hover + .editPlate{
+                                    display: block;
+                                }
+                            }
+                            .editPlate{
+                                font-size: 50px;
+                                color: rgb(27, 26, 26);
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                text-decoration: none;
+                                display: none;
+
+                                &:hover {
+                                    display: block;
+                                }
+                            }
+                        }
+                        p, h6{
+                            margin-top: 10px;
+                        }
+                        a {
+                            margin: 10px 0;
+                        }
+                    }
+                }
+            }   
+        }    
+    }   
+}
+    
+//Media query -> Rimozione immagine copertina 
+@media screen and (max-width: 500px) {
+    div#container-plate-list{
+        div.restaurantCover{
+            display: none;
+        }
+    }
+}
+   
+    
+    
+    
+    
+    
+//     .platesCards{
+       
+// /*          overflow-y: none;
+//  */     
+//         li{
+//             width: 100% ;
+//             min-height: 250px;
+//             margin-right: 0;
+//             @include flex(column, center, center);
+//             text-align: center;
+//             cursor: pointer;
+//             margin-bottom: 40px;
+    
+//             .plateCard{
+//                 position: relative;
+//                 margin-bottom: 10px;
+//             }
+    
+    
+//             img {
+//                 width: 60%;
+//                 height:150px;
+//                 object-fit: cover;
+//                 border-radius: 10px;
+    
+//                 &:hover {
+//                     transform: scale(1.03);
+//                     transition: all 1s ease;
+//                     opacity: .75;
+//                   }
+//                   &:hover + .editPlate{
+//                       display: block;
+//                   }
+//                 }
+    
+//             .editPlate{
+//                     img{
+
+//                         width: 75px;
+//                         object-fit: scale-down;
+//                     }
+
+//                 position: absolute;
+//                 top: 50%;
+//                 left: 50%;
+//                 transform: translate(-50%, -50%);
+//                 text-decoration: none;
+//                 display: none;
+    
+//                 &:hover {
+//                     display: block;
+                   
+//                 }
+    
+//             }
+//         }
+//     }
+    
+// }
+
+
+/* test @Queries tablet-device*/
+
+@media screen and (min-width:481px) and (max-width: /* 768px */ 914px) {
+
+     .titlePlateList{
+       margin-top: 70px;
+    }
+     
+    .restaurantCover{
+    
+       height: 350px;
+    
+        .coverRestImg{
+            width: 100%;
+            height: 100%;
+            opacity: .9;
+            object-fit: fill;
+        }
+        
+    }
+    
+    .menuContainer{
+        min-height: 300px;
+    } 
+    
+    .platesCards{
+       
+/*          overflow-y: none;
+ */     
+        li{
+            width:  50% ;
+             min-height: 250px;
+            margin-right: 0;
+            @include flex(column, center, center);
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 40px;
+    
+             .plateCard{
+                position: relative;
+                margin-bottom: 10px;
+            }
+     
+    
+            img {
+                width: 60%;
+                height:150px;
+                object-fit: cover;
+                
+                  &:hover {
+                    transform: scale(1.03);
+                    transition: all 1s ease;
+                    opacity: .75;
+    
+                   
+                  }
+                  &:hover + .editPlate{
+                      display: block;
+                    } 
+                } 
+    
+            .editPlate{
+
+                img{
+
+                    width: 75px;
+                    object-fit: scale-down;
+                }
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-decoration: none;
+                display: none;
+    
+                &:hover {
+                    display: block;
+                }
+    
+            }
+        }
+    }
+    
+}
+
+

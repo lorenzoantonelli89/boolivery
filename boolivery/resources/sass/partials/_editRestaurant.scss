@@ -1,0 +1,271 @@
+@import 'partials/variables';
+@import 'partials/common';
+
+.containerEditRestaurant {
+   
+    @include centring;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    background:linear-gradient(#6098b9, #EE2644);
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    .turnBackCont{
+        text-align: center;
+
+        .turnBack{
+            @include buttonLink(#00c2b8, white,8px, 20px);
+        }
+    }
+
+    .createRestTitle{
+        padding-top: 2px;
+       
+
+
+        h2{
+            margin: 27px 11px 40px 0;
+            text-align: center;
+        }
+    }
+
+
+    .polygon{
+        clip-path: polygon(31% 0%, 72% 0%, 100% 100%, 0% 100%);
+        background-color: #9fc4d6f2;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -1;
+        
+ 
+    }
+
+    .polygonTwo{
+
+        clip-path: polygon(0% 0%, 100% 0%, 25% 100%, 25% 69%);
+        background-color: #425e7b;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -3;
+    }
+
+    .polygonThree{
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        background-color: #05e42061;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:30px;
+        right:60px;
+        z-index: -2;
+    }
+
+    .formEditRestaurant{
+        width: 45%;
+        min-height: 780px;
+        text-align: center;
+        border-radius: 15px;
+        margin: 0 auto ;
+       /*  background-image: url("/storage/graphics/TikTok.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position:top ; */
+        background-color: #449aad;
+        border: 8px solid black; 
+        padding-top: 50px;           
+      
+
+
+        .form-group  {
+          
+            width: 75%;
+            min-height: 35px;
+            margin: auto;
+            margin-bottom: 35px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            @include flex(row,space-between, baseline);               
+            input, textarea{
+                    width: 45%;
+                   border-radius: 7px;
+                   outline: transparent;
+                   padding:3px 8px;
+                   margin-left:10px;
+                   height: 25px;
+                   border: none;
+                   font-family: "Open Sans", sans-serif;
+               }
+    
+               textarea{
+                   height: auto;
+                   overflow:auto;
+               }
+        }
+    
+        .insert-img{
+            @include flex(row, space-between, center);
+          
+            & input{
+                white-space: break-spaces;
+            }
+    
+                label{
+                    white-space: nowrap;
+                }
+
+                img{
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 13px;
+                    border: 2px solid rgb(87, 85, 85);
+
+                }
+        }
+        
+        p{
+            width: 100%;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .categoryCheckboxes{
+            
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto ;
+            grid-row-gap: 10px;
+            
+           .checkboxesContainer{
+            text-align: left;
+            width: 30%;
+            margin: auto;
+            @include flex(row, flex-start, center);
+        
+           }
+            input{
+                margin-right: 5px;
+            }
+    
+            label{
+                font-size: 14px;
+            }
+        
+        }
+    
+        button{
+            @include buttonLink(#00c2b8, white,10px, 30px);
+            margin:30px 0;
+            border: none;
+        }
+    }
+    
+
+
+
+    }
+
+
+
+
+
+/* test @Queries mobile-device*/
+
+@media screen and (max-width: 480px) {
+
+.containerEditRestaurant{
+
+   /*  @include centring; */
+   width: 100%;
+
+    .formEditRestaurant{
+        width: 100%;
+
+    .imgSectionCont{
+        @include flex(row, space-between, center);
+
+        
+        .insert-img{
+            width: 50%;
+            @include flex(column, center, center);
+
+          
+            & input{
+                white-space: break-spaces;
+                margin:10px 5px 10px 0;
+            }
+    
+                label{
+                    white-space: nowrap;
+                }
+
+                img{
+                    width: 100px;
+                    height: 100px;
+                    object-fit: cover;
+                    border-radius: 13px;
+                    border: 2px solid rgb(87, 85, 85);
+
+                }
+        }
+    }
+       
+        
+    }
+
+}
+
+}
+
+/* test @Queries tablet-device*/
+@media screen and (min-width:481px) and (max-width: 1024px) {
+
+.containerEditRestaurant{
+
+    /*  @include centring; */
+    width: 100%;
+ 
+     .formEditRestaurant{
+         width: 85%;
+
+
+         .imgSectionCont{
+            @include flex(row, space-between, center);
+    
+            
+            .insert-img{
+                width: 50%;
+                @include flex(column, center, center);
+    
+              
+                & input{
+                    white-space: break-spaces;
+                    margin:10px 0 10px 25px;
+                }
+        
+                    label{
+                        white-space: nowrap;
+                    }
+    
+                    img{
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        border-radius: 13px;
+                        border: 2px solid rgb(87, 85, 85);
+    
+                    }
+            }
+        }
+     }
+ }
+
+}
+

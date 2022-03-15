@@ -27,35 +27,64 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-document.addEventListener('DOMContentLoaded', function () {
+// document.addEventListener('DOMContentLoaded', function () {
 
-    new Vue({
-        el: '#app',
-        data: {
-            restaurants: '',
-            activeRestaurant: '',
-        },
-        mounted() {
-            // chiamata axio che ritorna array di tutti i ristoranti
-            axios.get('/api/restaurants')
-                .then(res => {
-                    this.restaurants = res.data;
-                    console.log(this.restaurants);
-                })
-        },
-        methods: {
-            // funzione che valora il dato active restaurant al click del ristorante selezionato
-            getActiveRestaurant: function(elem){
-                this.activeRestaurant = elem.id;
-            }
-           
-        },
-        computed: {
-            // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
-            getHref: function(){
-                return '/restaurant-details/' + this.activeRestaurant;
-            }
-        }
-    });
-});
+//     new Vue({
+//         el: '#app',
+//         data: {
+//             restaurants: '',
+//             activeRestaurant: '',
+//             categories: '',
+//             plates: '',
+//         },
+//         mounted() {
+//             // chiamata axio che ritorna array di tutti i ristoranti
+//             axios.get('/api/restaurants')
+//                 .then(res => {
+//                     this.restaurants = res.data;
+//                     console.log(this.restaurants);
+//                 })
+//             // chiamata axio che ritorna array di tutte le categorie
+//             axios.get('/api/categories')
+//                 .then(res => {
+//                     this.categories = res.data;
+//                     console.log(this.categories);
+//                 })
+//             // axios.get('/api/plates/' + this.activeRestaurant)
+//             //     .then(res => {
+//             //         this.plates = res.data;
+//             //         console.log(this.plates);
+//             //     })
+//         },
+//         methods: {
+//             // funzione che valora il dato active restaurant al click del ristorante selezionato
+//             getActiveRestaurant: function(elem){
+//                 this.activeRestaurant = elem.id;
+//             },
+//             // funzione che al click fa una chiamata axios per avere array di piatti
+//             getActivePlates: function(){
+//                 // chiamata axio che ritorna array di tutti i piatti del ristorante cliccato
+//                 // axios.get('/api/plates/' + this.activeRestaurant)
+//                 //     .then(res => {
+//                 //         this.plates = res.data;
+//                 //         console.log('this.plates');
+//                 //     })
+//             },
+//             test: function(){
+//                 axios.get('/api/plates/' + this.activeRestaurant)
+//                     .then(res => {
+//                         this.plates = res.data;
+//                         console.log(this.plates);
+//                     })
+//                 console.log(this.activeRestaurant);
+//             }
+//         },
+//         computed: {
+//             // funzione per creare href da inserire nel link ristorante come rotta che porta al dettaglio del ristorante cliccato
+//             getHref: function(){
+//                 return '/restaurant-details/' + this.activeRestaurant;
+//             }
+//         }
+//     });
+// });
 

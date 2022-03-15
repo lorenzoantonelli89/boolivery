@@ -1,30 +1,50 @@
-// Body
-$body-bg: #f8fafc;
-
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
-
+$white: #ffff;
+$ourlogo: #28CCBC;
+$ourblue: #3490dc;
+$ourgreen: #7faf48;
+$ourorange: #fc6a01;
+$ourgrey: #e8ebeb;
+$ouryellow: #f4e432;
+$ourred: #ff0000;
+$paypal: #253b80;
+$visa: #f5b226;
+$mastercard: #eb001b;
+$amazonpay: #ff9900;
+$ourcoral: coral;
+$jumbogreen: #d0eb98;
+// $headercl: #EEE7D7;
+$headercl: #C1E8E5;
 
 //My-Style
 @mixin flex($direction, $justify, $align) {
-
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
-
 }
+
+@mixin buttonLink ($bg, $color, $topDown, $leftRight){
+    text-decoration: none;
+    background-color: $bg;
+    color: $color;
+    padding: $topDown $leftRight;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    &:hover{
+        background-color: coral;
+    }
+}
+
+@mixin centring {
+    width: 70%;
+    margin: 0 auto;
+}
+
+

@@ -14,11 +14,13 @@ class AddForeignKeys extends Migration
     public function up()
     {
         Schema::table('restaurants', function (Blueprint $table) {
+            $table->softDeletes();
             $table  ->foreign('user_id', 'userRestaurant')
                     ->references('id')
                     ->on('users');
         });
         Schema::table('plates', function (Blueprint $table) {
+            $table->softDeletes();
             $table  ->foreign('restaurant_id', 'restaurantplate')
                     ->references('id')
                     ->on('restaurants');
@@ -55,9 +57,11 @@ class AddForeignKeys extends Migration
         Schema::disableForeignKeyConstraints(); //per evitare di commentare le funzioni down ogni volta
 
         Schema::table('restaurants', function (Blueprint $table){
+            $table->dropSoftDeletes();
             $table -> dropForeign('userRestaurant');
         });
         Schema::table('plates', function (Blueprint $table){
+            $table->dropSoftDeletes();
             $table -> dropForeign('restaurantplate');
         });
         Schema::table('category_restaurant', function (Blueprint $table){

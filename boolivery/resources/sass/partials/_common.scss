@@ -1,16 +1,14 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+@import 'partials/variables';
 
 
-//   BOTTONE CLASSICO
+
+  //   BOTTONE CLASSICO
 
 .blink {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
     background-color: #2caead;
     padding: 5px;
     height: 50px;
@@ -23,7 +21,7 @@
 //   container per layout
 
 .my-container {
-    // @include flex(column, flex-start, center);
+    @include flex(column, flex-start, center);
     width: 100%;
     
   }
@@ -32,15 +30,11 @@
 
   .div-margin {
     
+    width: 70%;
     margin: 0 auto;
-    width: 60%;
   }
 
-//   FONT
 
-body {
-    font-family: 'Open Sans', sans-serif;;
-  }
 
 //   Flex con colonne accentrate
 
@@ -49,3 +43,11 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
+    .abutton {
+
+      padding: 7px;
+      font-size: 18px;
+      background-color: $ourlogo;
+      color: white;
+    }

@@ -72,8 +72,8 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'phone' => '023521421',
             'email' => 'bistrot@mail.it',
             'description' => "Il Ristorante offre genuinità di prodotti dell’orto di famiglia con sapori inconsueti. Essi generano sulla tavola alchimie armoniose che inebriano anche i palati più esigenti. Dall'atmosfera della sala alle calde serate nel centro città.Questo locale mette l’accento sul gusto e sulla qualità delle materie prime e fonda la sua proposta su piatti easy a prezzi corretti.",
-            'image_cover' => 'ilbistroitcover.png',
-            'image_profile' => 'ilbistroitlogo.png',
+            'image_cover' => 'ilbistrotcover.png',
+            'image_profile' => 'ilbistrotlogo.png',
             'popular' => 1,
         ],
         [
@@ -116,8 +116,8 @@ $factory->define(Restaurant::class, function (Faker $faker) use ($autoIncrement)
             'phone' => '023521498',
             'email' => 'Homu@mail.it',
             'description' => "Ideato da Johnny Hu, con l'obiettivo  di offrire ai propri clienti una pura esperienza, non solo culinaria, del Giappone: cibo, bevande, usi e costumi dell'estremo oriente.",
-            'image_cover' => 'pokehousecover.png',
-            'image_profile' => 'pokehouselogo.png',
+            'image_cover' => 'homucover.png',
+            'image_profile' => 'homulogo.png',
             'popular' => 1,
         ],
     ];

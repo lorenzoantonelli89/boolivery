@@ -1,81 +1,493 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-// @import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
 @import 'partials/common';
 @import 'partials/variables';
+@import 'partials/login';
+@import 'partials/register';
+@import 'partials/passwordReset';
 @import 'partials/home';
 @import 'partials/restaurant-details';
+@import 'partials/info-company';
+@import 'partials/platesList';
+@import 'partials/editPlate';
+@import 'partials/createPlate';
+@import 'partials/createRestaurant';
+@import 'partials/editRestaurant';
+@import 'partials/orderList&orderStats';
+@import 'partials/orderDetail';
+@import 'partials/payment';
+@import 'partials/checkout';
+@import 'partials/work';
+@import 'partials/faq';
+@import 'partials/list-restaurant';
 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+//   FONT
+body {
+  font-family: 'Open Sans', sans-serif;
+}
 // regole style header e footer
+.none{
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+.box-shadow{
+  box-shadow: rgb(0 0 0 / 12%) 0 1px 3px;
+}
+
+#app{
+  main{
+    margin-top: 75px;
+  }
+}
+
+.no-orders{
+  text-align: center;
+  margin-top: 10px;
+  color: rgb(252, 106, 1);
+}
 
 
 // HEADER
-
-// FOOTER
-
-footer {
+header{
+  height: 75px;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: $headercl;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  
     
-    width: 100%;
-
-    background-color: #fc6a01;
+  nav#nav-header{
     
-    .footer-container {
-        // @include flex(column, space-between, center);
-        height: 402px;
-        width: 100%;  
-        
-      
-        .footer-section-container {
-            display: flex;
-              justify-content: space-between;
-              align-items: center;
-              height: 100%;
-            
-            .footer-section {
-                height: 300px;
-                width: calc( 95% / 4 );
-                background-color: #f1ad7d;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 5px;
-    
-                .footer-list {
-                    height: 90%;
-                    width: 90%;
-                }
-            }    
-        }
+    height: 100%;
+    @include flex(row, space-between, center);
+    @include centring;
+    #logo img {
+      width: 50px;
     }
-  
-  //   ZONA BASSA DEL FOOTER
-  
-    .footer-links {
-        height: 44px;
-          display: flex;
-          justify-content: space-between;
-  
-          .links {
-              color:white;
-              font-size: 24px;
-            }
+    #container-list {
+      @include flex(row, flex-start, center);
+      ul {
+        @include flex(row, center, center);
+        list-style: none;
 
-            .weAre {
-              font-size: 18px;;
-              color: #696d6d;
+        li.nav-list {
+          margin-left: 50px;
+          padding: 2px 20px;
+          font-size: 18px;
+
+          &:hover {
+            background-color: white;
+            color: $ourlogo;
+            border-radius: 3px;
           }
-    }
+          a {
+            text-decoration: none;
+            color: $ourlogo;
+            &:visited {
+              color: $ourlogo;
+            }
+          }
+        }
+        #liDropdown.back-groundcl{
+          background-color: $white;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+        }
+        #liDropdown{
+          position: relative;
+          h5 {
+            display: inline;
+            color: black;
+            margin-right: 5px;
+          }
+          #drop-container{
+            width: 100%;
+            height: 80px;
+            padding-top: 10px;
+            text-align: center;
+            background-color: $white;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: rgb(0 0 0 / 12%) 0 1px 3px;
 
+            div{
+              margin-bottom: 10px;
+            }
+            #logout, #dashboard{
+              padding: 0;
+              border-radius: 0;
+              background-color: inherit;
+            }
+          }
+          
+        }
+      }
+    }
+    .hideList {
+      display: none;
+    }
+    // MENU HAMBURGER
+    .hamburger {
+      display: none;
+    }
+  }
+}
+// FOOTER
+footer {
+  width: 100%;
+  background-color: #729C98;
+  padding: 40px 0;
+  
+  .footer-container {
+    @include centring;
+    @include flex(row, space-between, center);
+    
+    ul{
+      width: 300px;
+      height: 300px;
+      list-style: none;
+      padding: 20px;
+      margin-right: 25px;
+      background-color: #363947;
+      border-radius: 10px;
+      text-align: center;
+
+      li{
+        padding-bottom: 10px;
+
+        h3{
+          text-transform: uppercase;
+          color: salmon;
+        }
+        a{
+          text-decoration: none;
+          color: $white;
+
+          &:hover {
+            color: $ouryellow;
+          }
+        }
+      }
+    }
+    .whoWeAre {
+      @include flex(column, space-between, center);
+      border-radius: 10px;
+      background-color: #363947;
+      text-align: center;
+      width: 300px;
+      height: 300px;
+      img {
+        width: 200px;
+        margin-top: 15px;
+      }
+
+      span {
+        margin: 0 5px 15px 5px;
+        color: $ourgrey;
+      }
+    }
+  }
 }
 
-  
+@media screen and(max-width: 1048px) and (min-width: 727px) {
 
+  header {
+    nav#nav-header {
+
+      #container-list {
+        display: none;
+      }
+
+      .hideList {
+        display: relative;
+        @include flex(row, flex-start, flex-start);
+        padding: 2px 20px;
+        font-size: 18px;
+
+        &:hover {
+          background-color: white;
+          color: $ourlogo;
+          border-radius: 3px;
+        }
+        a {
+          text-decoration: none;
+          color: $ourlogo;
+          &:visited {
+            color: $ourlogo;
+          }
+
+          h5 {
+            display: inline;
+            color: black;
+            margin-right: 5px;
+          }
+        }
+
+
+      }
+
+      #liDropdown{
+        position: relative;
+        h5 {
+          display: inline;
+          color: black;
+          margin-right: 5px;
+        }
+        #drop-container{
+          width: 100%;
+          height: 80px;
+          padding-top: 10px;
+          text-align: center;
+          background-color: $white;
+          position: absolute;
+          top: 25px;
+          left: 0;
+          border-bottom-left-radius: 10px;
+          border-bottom-right-radius: 10px;
+          box-shadow: rgb(0 0 0 / 12%) 0 1px 3px;
+
+          div{
+            margin-bottom: 10px;
+          }
+          #logout, #dashboard{
+            padding: 0;
+            border-radius: 0;
+            background-color: inherit;
+          }
+        }
+        
+      }
+        
+          
+      
+
+      .hamburger {
+        display: block;
+        position: relative;
+        
+        i {
+          font-size: 40px;
+          color: $ourlogo;
+        }
+
+        .menuHamburger {
+          position: absolute;
+          width: 250px;
+          background-color: white;
+          right: 0;
+          border-radius: 15px;
+          border: 1px solid orange;
+
+
+          ul {
+            @include flex(column, flex-start, flex-start);
+            list-style: none;
+    
+            li.nav-list {
+              @include flex(row, flex-start, flex-start);
+              margin-left: 0px;
+              margin: 25px 5px;
+              padding: 2px 5px;
+              font-size: 25px;
+              width: 100%;
+              i {
+                font-size: 25px;
+              }
+    
+              &:hover {
+                background-color: $ourorange;
+                border-radius: 3px;
+              }
+    
+              a {
+                text-decoration: none;
+                color: black;
+                &:visited {
+                  color: black;
+                }
+              }
+            }
+            #liDropdown{
+              position: relative;
+    
+              #drop-container{
+                width: 100%;
+                height: 80px;
+                padding-top: 20px;
+                text-align: center;
+                background-color: $ourlogo;
+                position: absolute;
+                top: 20px;
+                left: 0;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+    
+                div{
+                  margin-bottom: 10px;
+                }
+                #logout, #dashboard{
+                  padding: 0;
+                  border-radius: 0;
+                  background-color: inherit;
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
   
+  footer {
+
+    .footer-container {
+      @include flex(row, flex-start, center);
+      flex-wrap: wrap;
+      justify-content: space-between
+      ;
+
+
+      ul,
+      .whoWeAre {
+        width: 30vw;
+        
+        
+        margin:15px 0;
+        //width: 0px;
+        
+      }
+
+    }
+  }
+
+  }
+
+  @media screen and(max-width: 726px) {
+    
+    header {
+      nav#nav-header {
+  
+        #container-list {
+          display: none;
+        }
+        .hamburger {
+          display: block;
+          position: relative;
+          
+          i {
+            font-size: 50px;
+            color: $ourlogo;
+          }
+  
+          .menuHamburger {
+            position: absolute;
+            width: 230px;
+            background-color: white;
+            right: 0;
+            border-radius: 15px;
+            border: 1px solid orange;
+  
+  
+            ul {
+              @include flex(column, flex-start, flex-start);
+              list-style: none;
+              width: 100%;
+              
+      
+              li.nav-list {
+                @include flex(row, flex-start, flex-start);
+                margin-left: 0px;
+                margin: 25px 0px;
+                padding: 2px 0px;
+                font-size: 25px;
+                width: 100%;
+  
+                i {
+                  font-size: 25px;
+                  margin-left: 15px;
+                }
+      
+                &:hover {
+                  background-color: $ourorange;
+                }
+      
+                a {
+                  text-decoration: none;
+                  color: black;
+                  width: 100%;
+                  &:visited {
+                    color: black;
+
+                  }
+                }
+              }
+              #liDropdown{
+                position: relative;
+      
+                #drop-container{
+                  width: 100%;
+                  height: 80px;
+                  padding-top: 20px;
+                  text-align: center;
+                  background-color: $ourlogo;
+                  position: absolute;
+                  top: 20px;
+                  left: 0;
+                  border-bottom-left-radius: 10px;
+                  border-bottom-right-radius: 10px;
+      
+                  div{
+                    margin-bottom: 10px;
+                  }
+                  #logout, #dashboard{
+                    padding: 0;
+                    border-radius: 0;
+                    background-color: inherit;
+                  }
+                }
+              }
+            }
+  
+          }
+        }
+      }
+    }
+
+    footer {
+  
+      .footer-container {
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .whoWeAre {
+          width: 300px;
+          margin: 0 0px 15px 0;
+          //width: 0px;
+          
+        }
+  
+      }
+    }
+  
+    }
 
   

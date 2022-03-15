@@ -19,7 +19,7 @@ class CreateRestaurantsTable extends Migration
             $table->string('name');
             $table->string('address');
             $table->string('phone'); 
-            $table->string('email')->unique();
+            $table->string('email');
             $table->text('description');
             $table->string('image_cover');
             $table->string('image_profile');
